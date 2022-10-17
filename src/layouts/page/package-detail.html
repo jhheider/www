@@ -21,16 +21,13 @@
   </div>
 </section>
 
-{{ range where $.Site.Data.packages "name" .Title }}
 <hr>
 
 <!-- The text field -->
-<input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install {{- .Title -}}" id="myInput">
+<code class="one-liner" data-lang="sh">$ sh <(curl tea.xyz) install</code>
 
 <!-- The button used to copy the text -->
 <button class="clipboard-copy" onclick="myFunction()"><i class="icon-download-arrow"></i></button>
-
-{{end}}
 
 <style>
 
