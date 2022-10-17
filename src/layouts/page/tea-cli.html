@@ -12,46 +12,240 @@
 </section>
 
 <hr>
+  <div class="row button-container">
+    <input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install&nbsp;{{- .Title -}}" id="myInput" readonly>
 
-<!-- The text field -->
-<code class="one-liner" data-lang="sh">$ sh <(curl tea.xyz) install</code>
-
-<!-- The button used to copy the text -->
-<button class="clipboard-copy" onclick="myFunction()"><i class="icon-download-arrow"></i></button>
+    <!-- The button used to copy the text -->
+    <button class="clipboard-copy" onclick="myFunction()"><i class="icon-clipboard"></i></button>
+  </div>
+<hr>
 
 <style>
 
-  .one-liner{
-    width: 85%;
-    height: 8.371vw;
-    border-radius: 0px;
-    border: none;
-    background-color: #1a1a1a !important;
-    font-family: "pp-neue-machina";
-    color:#4d4d4d;
-    font-size: 2.1vw;
-    padding-left: 8.371vw;
+  @media only screen and (min-width: 1200px) {
+
+    .one-liner{
+      width: 85%;
+      height: 8.371vw;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      padding-left: 4.185vw;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      height: 8.371vw;
+      width: 14%;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      float:right;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
   }
 
-  .clipboard-copy{
-    height: 8.371vw;
-    width: 14%;
-    font-family: "pp-neue-machina";
-    color:#4d4d4d;
-    font-size: 2.1vw;
-    float:right;
-    background-color: #1a1a1a !important;
-    border: none;
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+    .one-liner{
+      width: 85%;
+      height: 8.371vw;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      padding-left: 4.185vw;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      height: 8.371vw;
+      width: 14%;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      float:right;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
   }
 
-  .clipboard-copy:hover{
-    background-color: #00ffd0 !important;
-    color: #1a1a1a !important;
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .one-liner{
+      width: 85%;
+      height: 8.371vw;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      padding-left: 4.185vw;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      height: 8.371vw;
+      width: 14%;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      float:right;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+
+    .one-liner{
+      width: 85%;
+      height: 8.371vw;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      padding-left: 4.185vw;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      height: 8.371vw;
+      width: 14%;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      float:right;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    .one-liner{
+      width: 85%;
+      height: 8.371vw;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      padding-left: 4.185vw;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      height: 8.371vw;
+      width: 14%;
+      font-family: "pp-neue-machina";
+      color:#4d4d4d;
+      font-size: 2.1vw;
+      float:right;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
   }
 
 </style>
 
 <script>
+
     function myFunction() {
     // Get the text field
     var copyText = document.getElementById("myInput");
@@ -66,6 +260,7 @@
     // Alert the copied text
     alert("Copied " + copyText.value + " to clipboard");
   }
+
 </script>
 
 <section class="teal-bg">

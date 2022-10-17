@@ -1,10 +1,11 @@
 <hr>
+  <div class="row button-container">
+    <input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install&nbsp;{{- .Title -}}" id="myInput" readonly>
 
-<!-- The text field -->
-<input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install {{- .Title -}}" id="myInput">
-
-<!-- The button used to copy the text -->
-<button class="clipboard-copy" onclick="myFunction()"><i class="icon-download-arrow"></i></button>
+    <!-- The button used to copy the text -->
+    <button class="clipboard-copy" onclick="myFunction()"><i class="icon-clipboard"></i></button>
+  </div>
+<hr>
 
 <style>
 
@@ -17,7 +18,16 @@
     font-family: "pp-neue-machina";
     color:#4d4d4d;
     font-size: 2.1vw;
-    padding-left: 8.371vw;
+    padding-left: 4.185vw;
+    border-left: 2px solid #949494;
+    border-right: 2px solid #949494;
+  }
+
+  .one-liner:focus{
+    border:none;
+    outline: none;
+    border-left: 2px solid #949494;
+    border-right: 2px solid #949494;
   }
 
   .clipboard-copy{
@@ -29,16 +39,20 @@
     float:right;
     background-color: #1a1a1a !important;
     border: none;
+    border-right: 2px solid #949494;
+    transition: 0.2s linear;
   }
 
   .clipboard-copy:hover{
     background-color: #00ffd0 !important;
     color: #1a1a1a !important;
+    box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
   }
 
 </style>
 
 <script>
+  
     function myFunction() {
     // Get the text field
     var copyText = document.getElementById("myInput");
@@ -53,4 +67,5 @@
     // Alert the copied text
     alert("Copied " + copyText.value + " to clipboard");
   }
+
 </script>
