@@ -14,14 +14,14 @@
           <p>{{- .desc -}}</p>
           {{ if not (eq .homepage "") }}
             {{- partial "detail-btn-large.html" .homepage -}}
+          {{end}}
+        {{ end }}
       </div>
     </div>
   </div>
 </section>
 
 {{- partial "clipboard-copy.html" -}}
-{{end}}
-{{ end }}
 
 <style>
 
