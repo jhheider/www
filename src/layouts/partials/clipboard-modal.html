@@ -3,11 +3,19 @@
     <div class="modal-content">
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       <div class="modal-body">
-        <h4><i class="icon-tea-checkmark"></i> Copied to clipboard, enjoy!</h4>
-        <p class="lead">But wait... using tea without authenticating is like buying a video game without the DLC.</p>
-        <p class="modal-text">By authenticating your GitHub, you'll be eligible for a variety of exciting rewards, including minted NFT certificates. Your authentication number is directly tied to the rarity of your certificate, so be sure to take a sip while it's hot!</p>
-        <button class="detail-btn-large" id="modal-cta"><i class="icon-enter-arrow"></i>AUTHENTICATE WITH TEA</button>
-        <div class="small grid-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-12 modal-image">
+
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-12 col-12 modal-message">
+            <h4 class="modal-head"><i class="icon-tea-checkmark"></i><br id="mobile-break"> Copied to clipboard, enjoy!</h4>
+            <p class="lead">But wait... using tea without authenticating is like buying a video game without the DLC.</p>
+            <p class="modal-text">By authenticating your GitHub, you'll be eligible for a variety of exciting rewards, including minted NFT certificates. Your authentication number is directly tied to the rarity of your certificate, so be sure to take a sip while it's hot!</p>
+            <button class="detail-btn-large" id="modal-cta"><i class="icon-enter-arrow"></i>AUTHENTICATE WITH TEA</button>
+            <div class="small grid-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -15,13 +23,16 @@
 
 <style>
 
-  #modal-cta{
-    width: 100%;
-    margin-bottom: 1vw;
+  .modal-image{
+    background-image: url("/Images/gen-art/abstract-pattern.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
   }
 
-  .modal-text{
-    margin-bottom: 2vw;
+  .modal-message{
+    padding-left: 2vw;
   }
 
   .btn-close{
@@ -40,11 +51,120 @@
     font-family: "sono";
     border-radius: 0px !important;
     border: 2px solid #949494;
-    padding: 2vw 2vw 5vw 2vw;
+    padding: 2vw 2vw 2vw 2vw;
   }
 
-  .modal-dialog{
-    max-width: 60%;
+  @media only screen and (min-width: 1200px) {
+
+    .modal-dialog{
+      max-width: 60%;
+    }
+
+    #mobile-break{
+      display: none;
+    }
+
+    .modal-text{
+      margin-bottom: 2vw;
+    }
+
+    #modal-cta{
+      width: 100%;
+      margin-bottom: 1vw;
+    }
+
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+    .modal-dialog{
+      max-width: 60%;
+    }
+
+    #mobile-break{
+      display: none;
+    }
+
+    .modal-text{
+      margin-bottom: 2vw;
+    }
+
+    #modal-cta{
+      width: 100%;
+      margin-bottom: 1vw;
+    }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .modal-dialog{
+      max-width: 80%;
+    }
+
+    #mobile-break{
+      display: none;
+    }
+
+    .modal-text{
+      margin-bottom: 2vw;
+    }
+
+    #modal-cta{
+      width: 100%;
+      margin-bottom: 1vw;
+    }
+
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+
+    .modal-dialog{
+      max-width: 100%;
+    }
+
+    #mobile-break{
+      display: block;
+    }
+
+    .modal-text{
+      margin-bottom: 8vw;
+    }
+
+    #modal-cta{
+      width: 100%;
+      margin-bottom: 4vw;
+    }
+
+    .modal-head{
+      margin-bottom: 4vw;
+    }
+
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    .modal-dialog{
+      max-width: 100%;
+    }
+
+    #mobile-break{
+      display: block;
+    }
+
+    .modal-text{
+      margin-bottom: 8vw;
+    }
+
+    #modal-cta{
+      width: 100%;
+      margin-bottom: 4vw;
+    }
+
+    .modal-head{
+      margin-bottom: 4vw;
+    }
+
   }
 
 </style>
