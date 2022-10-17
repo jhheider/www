@@ -21,7 +21,65 @@
   </div>
 </section>
 
-{{- partial "clipboard-copy.html" -}}
+{{ range where $.Site.Data.packages "name" .Title }}
+<hr>
+
+<!-- The text field -->
+<input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install {{- .Title -}}" id="myInput">
+
+<!-- The button used to copy the text -->
+<button class="clipboard-copy" onclick="myFunction()"><i class="icon-download-arrow"></i></button>
+
+{{end}}
+
+<style>
+
+  .one-liner{
+    width: 85%;
+    height: 8.371vw;
+    border-radius: 0px;
+    border: none;
+    background-color: #1a1a1a !important;
+    font-family: "pp-neue-machina";
+    color:#4d4d4d;
+    font-size: 2.1vw;
+    padding-left: 8.371vw;
+  }
+
+  .clipboard-copy{
+    height: 8.371vw;
+    width: 14%;
+    font-family: "pp-neue-machina";
+    color:#4d4d4d;
+    font-size: 2.1vw;
+    float:right;
+    background-color: #1a1a1a !important;
+    border: none;
+  }
+
+  .clipboard-copy:hover{
+    background-color: #00ffd0 !important;
+    color: #1a1a1a !important;
+  }
+
+</style>
+
+<script>
+    function myFunction() {
+    // Get the text field
+    var copyText = document.getElementById("myInput");
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    // Alert the copied text
+    alert("Copied " + copyText.value + " to clipboard");
+  }
+</script>
 
 <style>
 
