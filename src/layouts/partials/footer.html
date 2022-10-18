@@ -172,12 +172,22 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     fetch(url)
     .then(res => res.json())
     .then((out) => {
+      //Debugging
       console.log(out);
+      //Job Description One
       document.getElementById('typeOne').innerHTML = out[0].type.name;
       document.getElementById('deptOne').innerHTML = out[0].department;
+      out[0].location.is_remote === true ? document.getElementById('locOne').innerHTML = 'Remote' : document.getElementById('locOne').innerHTML = out[0].location.name;
       document.getElementById('jobOne').innerHTML = out[0].name;
       document.getElementById('descOne').innerHTML = out[0].description;
       document.getElementById('linkOne').href = out[0].url;
+      //Job Description Two
+      document.getElementById('typeTwo').innerHTML = out[1].type.name;
+      document.getElementById('deptTwo').innerHTML = out[1].department;
+      out[1].location.is_remote === true ? document.getElementById('locTwo').innerHTML = 'Remote' : document.getElementById('locTwo').innerHTML = out[1].location.name;
+      document.getElementById('jobTwo').innerHTML = out[1].name;
+      document.getElementById('descTwo').innerHTML = out[1].description;
+      document.getElementById('linkTwo').href = out[1].url;
     })
     .catch(err => { throw err });
 
