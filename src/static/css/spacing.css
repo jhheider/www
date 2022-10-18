@@ -1,0 +1,20 @@
+/* This file is entirely for spacing utlilities. Spacing is based of the grid-box height/width and various viewer widths. */
+
+/* Height spacers */
+
+
+
+.three-boxes{
+  padding-top: 12.556vw;
+  padding-bottom: 12.556vw;
+}
+
+.two-boxes{
+  padding-top: 8.371vw;
+  padding-bottom: 8.371vw;
+}
+
+.one-box{
+  padding-top: 4.185vw;
+  padding-bottom: 4.185vw;
+}
