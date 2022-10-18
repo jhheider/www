@@ -11,6 +11,9 @@
 }
 
 h1,h2,h3,h4,h5,h6,p,.lead{
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
   hyphens: auto !important;
 }
 
@@ -219,7 +222,7 @@ li{
 
   h1{
     font-size: 21.5vw;
-    line-height: 20.4vw !important;
+    line-height: 20.4vw;
   }
 
   h2{
