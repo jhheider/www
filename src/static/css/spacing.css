@@ -19,6 +19,30 @@
     padding-bottom: 4.185vw;
   }
 
+  .one-box-down{
+    margin-bottom: 4.185vw;
+  }
+
+  .two-boxes-down{
+    margin-bottom: 8.371vw;
+  }
+
+  .three-boxes-down{
+    margin-bottom: 12.556vw;
+  }
+
+  .one-box-up{
+    margin-top: 4.185vw;
+  }
+
+  .two-boxes-up{
+    margin-top: 8.371vw;
+  }
+
+  .three-boxes-up{
+    margin-top: 12.556vw;
+  }
+
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -36,6 +60,30 @@
   .one-box{
     padding-top: 5vw;
     padding-bottom: 5vw;
+  }
+
+  .one-box-down{
+    margin-bottom: 5vw;
+  }
+
+  .two-boxes-down{
+    margin-bottom: 10vw;
+  }
+
+  .three-boxes-down{
+    margin-bottom: 15vw;
+  }
+
+  .one-box-up{
+    margin-top: 5vw;
+  }
+
+  .two-boxes-up{
+    margin-top: 10vw;
+  }
+
+  .three-boxes-up{
+    margin-top: 15vw;
   }
 
 }
@@ -57,6 +105,30 @@
     padding-bottom: 5.141vw;
   }
 
+  .one-box-down{
+    margin-bottom: 5.141vw;
+  }
+
+  .two-boxes-down{
+    margin-bottom: 10.282vw;
+  }
+
+  .three-boxes-down{
+    margin-bottom: 15.423vw;
+  }
+
+  .one-box-up{
+    margin-top: 5.141vw;
+  }
+
+  .two-boxes-up{
+    margin-top: 10.282vw;
+  }
+
+  .three-boxes-up{
+    margin-top: 15.423vw;
+  }
+
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
@@ -76,6 +148,30 @@
     padding-bottom: 6.771vw;
   }
 
+  .one-box-down{
+    margin-bottom: 6.771vw;
+  }
+
+  .two-boxes-down{
+    margin-bottom: 13.542vw;
+  }
+
+  .three-boxes-down{
+    margin-bottom: 20.313vw;
+  }
+
+  .one-box-up{
+    margin-top: 6.771vw;
+  }
+
+  .two-boxes-up{
+    margin-top: 13.542vw;
+  }
+
+  .three-boxes-up{
+    margin-top: 20.313vw;
+  }
+
 }
 
 @media only screen and (max-width: 576px) {
@@ -93,6 +189,30 @@
   .one-box{
     padding-top: 9.722vw;
     padding-bottom: 9.722vw;
+  }
+
+  .one-box-down{
+    margin-bottom: 9.722vw;
+  }
+
+  .two-boxes-down{
+    margin-bottom: 19.444vw;
+  }
+
+  .three-boxes-down{
+    margin-bottom: 29.167vw;
+  }
+
+  .one-box-up{
+    margin-top: 9.722vw;
+  }
+
+  .two-boxes-up{
+    margin-top: 19.444vw;
+  }
+
+  .three-boxes-up{
+    margin-top: 29.167vw;
   }
 
 }
