@@ -2,19 +2,97 @@
 
 /* Height spacers */
 
+@media only screen and (min-width: 1200px) {
 
+  .three-boxes{
+    padding-top: 12.556vw;
+    padding-bottom: 12.556vw;
+  }
 
-.three-boxes{
-  padding-top: 12.556vw;
-  padding-bottom: 12.556vw;
+  .two-boxes{
+    padding-top: 8.371vw;
+    padding-bottom: 8.371vw;
+  }
+
+  .one-box{
+    padding-top: 4.185vw;
+    padding-bottom: 4.185vw;
+  }
+
 }
 
-.two-boxes{
-  padding-top: 8.371vw;
-  padding-bottom: 8.371vw;
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+  .three-boxes{
+    padding-top: 15vw;
+    padding-bottom: 15vw;
+  }
+
+  .two-boxes{
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+  }
+
+  .one-box{
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+
 }
 
-.one-box{
-  padding-top: 4.185vw;
-  padding-bottom: 4.185vw;
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  .three-boxes{
+    padding-top: 15.423vw;
+    padding-bottom: 15.423vw;
+  }
+
+  .two-boxes{
+    padding-top: 10.282vw;
+    padding-bottom: 10.282vw;
+  }
+
+  .one-box{
+    padding-top: 5.141vw;
+    padding-bottom: 5.141vw;
+  }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
+  .three-boxes{
+    padding-top: 20.313vw;
+    padding-bottom: 20.313vw;
+  }
+
+  .two-boxes{
+    padding-top: 13.542vw;
+    padding-bottom: 13.542vw;
+  }
+
+  .one-box{
+    padding-top: 6.771vw;
+    padding-bottom: 6.771vw;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+  .three-boxes{
+    padding-top: 29.167vw;
+    padding-bottom: 29.167vw;
+  }
+
+  .two-boxes{
+    padding-top: 19.444vw;
+    padding-bottom: 19.444vw;
+  }
+
+  .one-box{
+    padding-top: 9.722vw;
+    padding-bottom: 9.722vw;
+  }
+
 }
