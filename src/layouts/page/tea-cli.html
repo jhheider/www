@@ -1,5 +1,8 @@
 {{ define "main" }}
 
+<div class="teacli-gen-art-1"></div>
+<div class="teacli-gen-art-2"></div>
+
 <section class="tea-cli">
   <div class="container tea-cli-container two-boxes">
     <div class="row">
@@ -11,8 +14,18 @@
   </div>
 </section>
 
+<style>
+
+  .tea-cli-container{
+    background-image: url("/Images/x-large-grid.svg");
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+</style>
+
 <hr>
-  <div class="row button-container">
+  <div class="row button-container" onclick="myFunction()" style="display:flex; justify-content:space-between;">
     <input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install&nbsp;{{- .Title -}}" id="myInput" readonly>
 
     <!-- The button used to copy the text -->
@@ -33,26 +46,24 @@
       border: none;
       background-color: #1a1a1a !important;
       font-family: "pp-neue-machina";
-      color:#4d4d4d;
+      color:#ffffff;
       font-size: 2vw;
       border-left: 2px solid #949494;
-      border-right: 2px solid #949494;
     }
 
     .one-liner:focus{
       border:none;
       outline: none;
       border-left: 2px solid #949494;
-      border-right: 2px solid #949494;
     }
 
     .clipboard-copy{
       height: 8.371vw;
       width: 14%;
       font-family: "pp-neue-machina";
-      color:#4d4d4d;
+      color:#ffffff;
       font-size: 2.1vw;
-      float:right;
+      float:right !important;
       background-color: #1a1a1a !important;
       border: none;
       border-right: 2px solid #949494;
@@ -161,7 +172,7 @@
 </script>
 
 <section class="teal-bg two-boxes">
-  <div class="container tea-cli-container">
+  <div class="container">
     <div class="row">
       <div class="col">
         <h3 class="black text-center">Oh @#$%... the documentation <em>is</em> the script!?"</h3>
