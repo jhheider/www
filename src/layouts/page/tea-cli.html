@@ -29,7 +29,7 @@
     <input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install&nbsp;{{- .Title -}}" id="myInput" readonly>
 
     <!-- The button used to copy the text -->
-    <button class="clipboard-copy" onclick="myFunction()" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-clipboard"></i></button>
+    <button class="clipboard-copy" id="copy-icon" onclick="myFunction()" data-bs-toggle="modal" data-bs-target="#exampleModal">copy</button>
   </div>
 <hr>
 
@@ -167,6 +167,8 @@
 
     /* Alert the copied text
     alert("Copied " + copyText.value + " to clipboard");*/
+
+    document.getElementById("copy-icon").innerHTML = "copied!";
   }
 
 </script>

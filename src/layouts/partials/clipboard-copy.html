@@ -3,7 +3,7 @@
     <input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install&nbsp;{{- .Title -}}" id="myInput" readonly>
 
     <!-- The button used to copy the text -->
-    <button class="clipboard-copy" onclick="myFunction()"><i class="icon-clipboard"></i></button>
+    <button class="clipboard-copy" onclick="myFunction()" id="copy-icon"><i class="icon-clipboard"></i></button>
   </div>
 <hr>
 
@@ -66,6 +66,9 @@
 
     // Alert the copied text
     alert("Copied " + copyText.value + " to clipboard");
+
+    // Copy icon
+    document.getElementById("copy-icon").innerHTML = "copied!";
   }
 
 </script>
