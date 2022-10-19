@@ -29,11 +29,9 @@
     <input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install&nbsp;{{- .Title -}}" id="myInput" readonly>
 
     <!-- The button used to copy the text -->
-    <button class="clipboard-copy" id="copy-icon" onclick="myFunction()" data-bs-toggle="modal" data-bs-target="#exampleModal">copy</button>
+    <button class="clipboard-copy" id="copy-icon" onclick="myFunction()" data-bs-toggle="modal" data-bs-target="#exampleModal"><u>copy</u></button>
   </div>
 <hr>
-
-{{- partial "clipboard-modal.html" -}}
 
 <style>
 
