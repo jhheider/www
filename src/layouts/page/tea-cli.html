@@ -33,7 +33,7 @@
   </div>
 <hr>
 
-<section id="reveal" style="display:block;">
+<section class="animated-25" id="reveal" style="display:none;">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -44,6 +44,10 @@
 </section>
 
 <style>
+
+  #reveal{
+    transition: 0.2s linear;
+  }
 
   @media only screen and (min-width: 768px) {
 
@@ -176,7 +180,15 @@
     /* Alert the copied text
     alert("Copied " + copyText.value + " to clipboard");*/
 
+    //Change button text to 'copied'
     document.getElementById("copy-icon").innerHTML = "copied!";
+
+    // Reveal Auth text
+    if (document.getElementById("reveal").style.display = "none") {
+      document.getElementById("reveal").style.display = "block";
+    } else {
+      document.getElementById("reveal").style.display = "none";
+    }
   }
 
 </script>

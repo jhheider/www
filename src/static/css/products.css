@@ -12,11 +12,6 @@
     background-size: contain;
   }
 
-  .products-hero h1{
-    position: relative;
-    z-index: 2;
-  }
-
   .lead-container{
     padding-left: 25vw;
     padding-right: 25vw;
@@ -59,11 +54,6 @@
     background-position: top;
     background-repeat: repeat;
     background-size: contain;
-  }
-
-  .products-hero h1{
-    position: relative;
-    z-index: 2;
   }
 
   .lead-container{

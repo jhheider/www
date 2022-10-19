@@ -347,7 +347,7 @@ mark{
 @media only screen and (max-width: 576px) {
 
   .hero-section{
-    padding: 4vw !important;
+    padding: 1vw 4vw !important;
   }
 
   .hero-container{
