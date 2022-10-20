@@ -26,7 +26,7 @@ export const getAllAirtablePackages = async (): Promise<AirtablePackage[]> => {
         'full_name',
       ]),
       maintainer: record.fields?.maintainer || '',
-      desc: record.fields?.description || '',
+      desc: record.fields?.desc || '',
       thumb_image_url: _.get(record.fields, 'thumb_image[0].url', '/Images/package-thumb-nolabel3.jpg')
     } as AirtablePackage;
   });
