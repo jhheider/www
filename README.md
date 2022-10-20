@@ -16,7 +16,8 @@ The tea logo and wordmark are registered trademarks of tea.inc.
 * Repeated components are in [`./src/layouts/partials/`].
 
 ## Getting Started
-Just once assuming there are no updates in `/src/data/packages.json`. This will create the package detail pages.
+The detail pages of each package are not committed to the repository for the simple reason of that would be too much to much repeating data.
+Execute the following command just once per version of `/src/data/packages.json`. This will create the package detail pages in `/src/content/packages/[package_slug].md`.
 ```sh
 .github/build-package-pages.sh src/data/packages.json src/content/packages
 ```

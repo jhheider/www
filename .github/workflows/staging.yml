@@ -6,8 +6,29 @@ concurrency:
 
 env:
   TEA_SECRET: ${{ secrets.TEA_SECRET }}
+  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
 jobs:
+  deploy_sls:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+  
+    - uses: borales/actions-yarn@v3.0.0
+      with:
+        cmd: --cwd ./lambdas install
+  
+    - name: serverless deploy
+      uses: serverless/github-action@v3
+      with:
+        args: -c "cd ./lambdas && serverless deploy"
+        entrypoint: /bin/sh
+
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -43,9 +64,14 @@ jobs:
 
     - name: Create Package Detail Pages from packages.json
       uses: getneil/jq-action@v1
-      id: version
       with:
         cmd: '.github/build-package-pages.sh src/data/packages.json src/content/packages'
+
+    - name: Download package thumbnail images
+      uses: getneil/jq-action@v1
+      with:
+        cmd: '.github/prepare-thumb-images.sh src/data/packages.json ./src/static/Images/packages/'
+
 
     - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
 
@@ -78,7 +104,7 @@ jobs:
       id: cdk_deploy
       run: yarn deploy
       working-directory: .cdk
-
+  
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1
       if: always()
