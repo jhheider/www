@@ -29,83 +29,90 @@ jobs:
         args: -c "cd ./lambdas && serverless deploy"
         entrypoint: /bin/sh
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: inject slug/short variables
-  #     uses: rlespinasse/github-slug-action@v3.x
-  #   - name: Set STAGE variable in environment for next steps
-  #     run: echo "STAGE=pr-${{ github.event.number }}-${{ env.GITHUB_HEAD_REF_SLUG }}" >> $GITHUB_ENV
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: inject slug/short variables
+      uses: rlespinasse/github-slug-action@v3.x
+    - name: Set STAGE variable in environment for next steps
+      run: echo "STAGE=pr-${{ github.event.number }}-${{ env.GITHUB_HEAD_REF_SLUG }}" >> $GITHUB_ENV
 
-  #   - name: Create Deployment
-  #     uses: bobheadxi/deployments@v1
-  #     id: deployment
-  #     with:
-  #       step: start
-  #       env: ${{ env.STAGE }}
-  #       ref: ${{ github.head_ref }}
-  #       override: true
+    - name: Create Deployment
+      uses: bobheadxi/deployments@v1
+      id: deployment
+      with:
+        step: start
+        env: ${{ env.STAGE }}
+        ref: ${{ github.head_ref }}
+        override: true
 
-  #   - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-  #   - name: Apply Staging Configuration
-  #     run: |
-  #       sed -i -e 's/^baseURL\s*=.*$/baseUrl = ""/i' config.toml
-  #       echo "relativeurls = true" >>config.toml
-  #     working-directory: src
+    - name: Apply Staging Configuration
+      run: |
+        sed -i -e 's/^baseURL\s*=.*$/baseUrl = ""/i' config.toml
+        echo "relativeurls = true" >>config.toml
+      working-directory: src
 
-  #   - name: Copy packages.json summary from dist.tea.xyz
-  #     uses: prewk/s3-cp-action@v2
-  #     with:
-  #       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #       aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #       source: 's3://dist.tea.xyz/mock_packages.json'
-  #       dest: './src/data/packages.json'
+    - name: Copy packages.json summary from dist.tea.xyz
+      uses: prewk/s3-cp-action@v2
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        source: 's3://dist.tea.xyz/mock_packages.json'
+        dest: './src/data/packages.json'
 
-  #   - name: Create Package Detail Pages from packages.json
-  #     uses: getneil/jq-action@v1
-  #     id: version
-  #     with:
-  #       cmd: '.github/build-package-pages.sh src/data/packages.json src/content/packages'
+    - name: Create Package Detail Pages from packages.json
+      uses: getneil/jq-action@v1
+      id: version
+      with:
+        cmd: '.github/build-package-pages.sh src/data/packages.json src/content/packages'
 
-  #   - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
+    - name: Download package thumbnail images
+      uses: getneil/jq-action@v1
+      id: version
+      with:
+        cmd: '.github/prepare-thumb-images.sh src/data/packages.json ./src/static/Images/packages/'
 
-  #   - uses: teaxyz/setup@v0
-  #     with:
-  #       target: build
 
-  #   - name: Check for broken links
-  #     uses: lycheeverse/lychee-action@v1
-  #     with:
-  #       fail: true
-  #       args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
-  #     env:
-  #       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
 
-  #   - uses: actions/setup-node@v3
-  #     with:
-  #       node-version: 14
-  #   - uses: bahmutov/npm-install@v1
-  #     with:
-  #       working-directory: .cdk
+    - uses: teaxyz/setup@v0
+      with:
+        target: build
 
-  #   - uses: aws-actions/configure-aws-credentials@v1
-  #     with:
-  #       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #       aws-region: us-east-1
+    - name: Check for broken links
+      uses: lycheeverse/lychee-action@v1
+      with:
+        fail: true
+        args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-  #   - name: Deploy to AWS
-  #     id: cdk_deploy
-  #     run: yarn deploy
-  #     working-directory: .cdk
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 14
+    - uses: bahmutov/npm-install@v1
+      with:
+        working-directory: .cdk
+
+    - uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Deploy to AWS
+      id: cdk_deploy
+      run: yarn deploy
+      working-directory: .cdk
   
-  #   - name: Seal Deployment
-  #     uses: bobheadxi/deployments@v1
-  #     if: always()
-  #     with:
-  #       step: finish
-  #       status: ${{ job.status }}
-  #       deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-  #       env: ${{ env.STAGE }}
-  #       env_url: ${{ steps.cdk_deploy.outputs.env_url }}
+    - name: Seal Deployment
+      uses: bobheadxi/deployments@v1
+      if: always()
+      with:
+        step: finish
+        status: ${{ job.status }}
+        deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+        env: ${{ env.STAGE }}
+        env_url: ${{ steps.cdk_deploy.outputs.env_url }}
