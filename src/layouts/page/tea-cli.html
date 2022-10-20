@@ -1,28 +1,37 @@
 {{ define "main" }}
 
+<div class="teacli-gen-art-1"></div>
+<div class="teacli-gen-art-2"></div>
+
 <section class="tea-cli">
-  <div class="container tea-cli-container">
+  <div class="container tea-cli-container two-boxes">
     <div class="row">
       <div class="col my-auto">
         <h1>TEA CLI</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="lead">brew2 for web3 is here. The minds that changed the interwebs for the better back in 2009 have just done it again. tea is here to help make your dev experience a little more delightful. </p>
       </div>
     </div>
   </div>
 </section>
 
-{{- partial "full-width-cta-split.html" . -}}
+<style>
 
-<section class="teal-bg">
-  <div class="container tea-cli-container">
+  .tea-cli-container{
+    background-image: url("/Images/x-large-grid.svg");
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+</style>
+
+{{- partial "clipboard-copy.html" -}}
+
+<section class="teal-bg two-boxes">
+  <div class="container">
     <div class="row">
       <div class="col">
-        <p class="black text-center">TOTAL DOWNLOADS</p>
-        <p class="black text-center tea-cli-data"><span id="tea-cli-downloads">612,085</span></p>
-      </div>
-      <div class="col">
-        <p class="black text-center">FOR THIS VERSION</p>
-        <p class="black text-center tea-cli-data"><span id="tea-cli-ver-downloads">612,085</span></p>
+        <h3 class="black text-center">Oh @#$%... the documentation <em>is</em> the script!?"</h3>
+        <p class="black text-center">–Our latest developer discovering <strong>Executable Markdown</strong></p>
       </div>
     </div>
   </div>
@@ -36,11 +45,51 @@
 </style>
 
 <section>
-  <div class="container">
-    <h2>Versions</h2>
+  <div class="container two-boxes">
+    <div class="row one-box-down">
+      <h3>The new foundation of the internet.</h3>
+    </div>
+    <div class="row">
+      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 one-box-down">
+        <h4>teaxyz/cmd</h4>
+        <p>A big reason Homebrew was a massive success was “viral contribution”. This is a new form of viral contribution. tea is a packaging primitive. We are making it super easy and viral for people to create new tools on top of tea and to satisfy that “I'm a part of this” urge that open source vitality plays up.</p>
+      </div>
+      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 one-box-down">
+        <h4>executable markdown</h4>
+        <p>Markdown has become the ultimate documentation file format (white paper is written in it). Every project has comprehensive readmes. Every dev team documents their internal workspaces with markdown. We’re iterating the format by making it able to execute itself.</p>
+      </div>
+      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 one-box-down">
+        <h4>universal interpreter</h4>
+        <p>Making a PM or tool that uses other packages sucks RN. This has led to self contained ecosystems where people make a packaging tool (eg. npm) and then everybody can only use tools within that ecosystem because everything else is too much friction. tea changes this.</p>
+      </div>
+      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 one-box-down">
+        <h4>virtual environment</h4>
+        <p>devshops and open source projects need specific versions of tools and they need the whole team to be on those tools. Currently you either cross your fingers or use Docker. Docker sucks and slows down dev and hinders innovation. Docker is great for deployment but it sucks for dev. tea ensures that checking out a project uses the exact versions of things that project needs whatever platform they are developing on.</p>
+      </div>
+      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 one-box-down">
+        <h4>pantries</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 one-box-down">
+        <h4>Executable Blog Posts</h4>
+        <p>Every blog post and tutorial on dev starts with brew install foo in tea’s future they will instead do sh <(curl tea.xyz) [<http://blog-post.com/article-url/>](<http://blog-post.com/article-url/>) (we will also release web-buttons that activate tea if installed or install it first otherwise).
+</p>
+      </div>
+    </div>
   </div>
-  <hr>
-  {{- partial "tea-cli-accordion.html" . -}}
 </section>
+
+<hr>
+<section>
+  <div class="container three-boxes">
+    <div class="row">
+      <div class="col">
+        <h3 class="text-center">And it's even better if you join the tea party...</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+{{- partial "full-width-cta.html" -}}
 
 {{ end }}
