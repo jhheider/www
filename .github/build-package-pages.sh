@@ -10,7 +10,7 @@ for row in $(cat $1 | jq -r '.[] | @base64'); do
    content="---
 type: page
 title: \"$(_jq '.name')\"
-Description: \"$(_jq '.desc')\"
+Description: \"$(_jq '.desc' | tr '\"' "'")\"
 layout: \"package-detail\"
 ---"
    echo "$content" > $2/$(_jq '.slug').md
