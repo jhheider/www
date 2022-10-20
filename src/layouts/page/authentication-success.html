@@ -2,19 +2,11 @@
 
 <div class="container auth-success-container">
   <div class="row">
-    <div class="col my-auto">
-      <div class="success-div p-4" style="
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width:70%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);">
-        <h1 class="display-4 text-center">Thanks for Authenticating!</h1>
-        <p class="lead text-center mb-5">You've just become an integral part in the future of the internet, AND you'll be entitled to a variety of exciting rewards such as minted NFT badges to honor your work thus far.</p>
-        <a class="btn btn-primary mb-5" href="https://tea.xyz"
-          role="button">Return to Home</a>
+    <div class="col success-container">
+      <div class="success-content">
+        <h1 class="text-center display-4">Thanks for Authenticating!</h1>
+        <p class="lead text-center">You've just become an integral part in the future of the internet, AND you'll be entitled to a variety of exciting rewards such as minted NFT badges to honor your work thus far.</p>
+        <button onclick="window.location.href='/';" id="return-home" class="detail-btn-large"><i class="icon-enter-arrow"></i>RETURN HOME</button>
       </div>
     </div>
   </div>
@@ -22,44 +14,22 @@
 
 <style>
 
-  .auth-success-container{
-    height:100vh;
+  .success-container{
+    height: 80vh;
     position: relative;
-    background-image: url("/Images/tea-steam-dark.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
   }
 
-  .btn-primary{
-    display: block;
+  .success-content{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #return-home{
+    display:block;
     margin-left:auto;
     margin-right:auto;
-  }
-
-  .success-gif{
-    width: 7vw;
-    height: 7vw;
-    border-radius: 100px;
-    background-image: url("/Images/auth-success.gif");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  @media only screen and (max-width: 720px) {
-    .success-div{
-      width: 100% !important;
-    }
-
-    .success-gif{
-      width: 18vw;
-      height: 18vw;
-    }
-
   }
 
 </style>
