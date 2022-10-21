@@ -13,6 +13,7 @@ export type AirtablePackage = S3Package & {
   airtable_record_id: string,
   thumb_image_url: string,
   desc: string,
+  dl_count: number,
 }
 
 export type Package = Omit<AirtablePackage, 'airtable_record_id'> & {
