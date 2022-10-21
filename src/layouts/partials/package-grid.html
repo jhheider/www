@@ -14,7 +14,7 @@
     <!-- Start Package Grid -->
 
     <div class="row package-row black-bg g-0">
-      <div class="package-grid">
+      <div id="packageGrid" class="package-grid">
         {{ range $.Site.Data.packages }}
           {{- partial "package-thumbnail.html" .}}
         {{ end }}
@@ -90,17 +90,46 @@
 </style>
 
 <script language="javascript" type="text/javascript">
+  let sortBy = 'popularity'; // last_modified
+  let sortDirection = 'desc'; // asc
   let limit = 16;
   const packages = document.querySelectorAll('.card-thumbnail');
   const packagesCount = packages.length;
 
-  function refreshDisplayedPackages() {
-    for(let i = 0; i < packagesCount; i++) {
-      if (i >= limit) {
-        packages[i].classList.add('hidden');
-      } else {
-        packages[i].classList.remove('hidden');
+  function sortPackages() {
+    const packages = document.querySelectorAll('.card-thumbnail');
+    const packagesArray = Array.from(packages);
+    const sortedPackages = packagesArray.sort((a, b) => {
+      if (sortBy === 'popularity') {
+        const aPop = +a.dataset.popularity;
+        const bPop = +b.dataset.popularity;
+        return sortDirection === 'asc' ? aPop-bPop : bPop - aPop;
+      } else { // last_modified
+        const aDate = new Date(a.dataset.last_modified);
+        const bDate = new Date(b.dataset.last_modified);
+        return sortDirection === 'asc' ? aDate-bDate : bDate - aDate;
       }
+    });
+    const grid = document.getElementById('packageGrid');
+    for(const op of packages) {
+      op.remove();
+    }
+    for(const sp of sortedPackages) {
+      grid.appendChild(sp);
+    }
+    refreshDisplayedPackages();
+  }
+
+  function refreshDisplayedPackages() {
+    const packages = document.querySelectorAll('.card-thumbnail');
+    let i = 0;
+    for(const sp of packages) {
+      if (i >= limit) {
+        sp.classList.add('hidden');
+      } else {
+        sp.classList.remove('hidden');
+      }
+      i++;
     }
   }
 
@@ -113,6 +142,5 @@
       loadMoreSection.classList.add('hidden');
     }
   },false);
-
-  refreshDisplayedPackages();
+  sortPackages();
 </script>
