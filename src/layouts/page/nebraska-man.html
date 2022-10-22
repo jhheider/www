@@ -25,72 +25,130 @@
 
 <hr>
 
+<style>
+  .wrapper {
+  align-items: center;
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  margin: 5%;
+  width: 90%;
+}
+
+.aspect {
+  padding-bottom: 70%;
+  position: relative;
+  width: 100%;
+}
+
+.aspect-inner {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.flipbook {
+  height: 100%;
+  transition: margin-left 0.25s ease-out;
+  width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flipbook .page {
+  height: 100%;
+  width: 100%;
+}
+
+.flipbook .page img {
+  width: 100%;
+  height: 100%;
+}
+</style>
+
 <section class="nb-man-latest">
+  <div class="container">
+    <div class="row">
       <div class="col latest-container">
-        <div class="flipbook-viewport">
-        	<div class="container">
-        		<div class="flipbook">
-        			<div style="background-image:url(/Images/placeholder/batman-2016-120-1.jpeg)"></div>
-        			<div style="background-image:url(/Images/placeholder/batman-2016-120-3.jpeg)"></div>
-        			<div style="background-image:url(/Images/placeholder/batman-2016-120-4.jpeg)"></div>
-        			<div style="background-image:url(/Images/placeholder/batman-2016-120-5.jpeg)"></div>
-        			<div style="background-image:url(/Images/placeholder/batman-2016-120-7.jpeg)"></div>
-        			<div style="background-image:url(pages/6.jpg)"></div>
-        			<div style="background-image:url(pages/7.jpg)"></div>
-        			<div style="background-image:url(pages/8.jpg)"></div>
-        			<div style="background-image:url(pages/9.jpg)"></div>
-        			<div style="background-image:url(pages/10.jpg)"></div>
-        			<div style="background-image:url(pages/11.jpg)"></div>
-        			<div style="background-image:url(pages/12.jpg)"></div>
-        		</div>
-        	</div>
+        <div class="wrapper">
+          <div class="aspect">
+            <div class="aspect-inner">
+              <div class="flipbook" id="flipbook">
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-1.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-3.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-4.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-5.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-6.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-7.jpeg" draggable="false" alt="" /></div>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-        <script type="text/javascript">
-
-        function loadApp() {
-
-        	// Create the flipbook
-
-        	$('.flipbook').turn({
-        			// Width
-
-        			width:900,
-
-        			// Height
-
-        			height:700,
-
-        			// Elevation
-
-        			elevation: 50,
-
-        			// Enable gradients
-
-        			gradients: true,
-
-        			// Auto center this flipbook
-
-        			autoCenter: true
-
-        	});
-        }
-
-        // Load the HTML4 version if there's not CSS transform
-
-        yepnope({
-        	test : Modernizr.csstransforms,
-        	yep: ['/js/turn.js'],
-        	nope: ['/js/turn.html4.min.js'],
-        	both: ['/css/basic.css'],
-        	complete: loadApp
-        });
-
-        </script>
-
       </div>
+    </div>
+  </div>
 </section>
+
+<script type="text/javascript">
+
+function loadApp() {
+
+  // Create the flipbook
+
+  $('.flipbook').turn({
+      // Width
+
+      width:900,
+
+      // Height
+
+      height:700,
+
+      // Elevation
+
+      elevation: 50,
+
+      // Enable gradients
+
+      gradients: true,
+
+      // Auto center this flipbook
+
+      autoCenter: true
+
+  });
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+  test : Modernizr.csstransforms,
+  yep: ['/js/turn.js'],
+  nope: ['/js/turn.html4.min.js'],
+  both: ['/css/basic.css'],
+  complete: loadApp
+});
+
+var flipbookEL = document.getElementById('flipbook');
+
+window.addEventListener('resize', function (e) {
+  flipbookEL.style.width = '';
+  flipbookEL.style.height = '';
+  $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
+});
+
+$(flipbookEL).turn({
+    autoCenter: true
+});
+
+
+</script>
 
 <hr>
   <div class="row button-container">
