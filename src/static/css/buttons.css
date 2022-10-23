@@ -38,7 +38,8 @@
 
   /* Icon Styling */
 
-  .btn-primary .icon-enter-arrow{
+  .btn-primary .icon-enter-arrow,
+  .btn-primary .icon-download-arrow{
    display: inline-block;
    position: relative;
    margin-right: 0.558vw;
