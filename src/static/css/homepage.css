@@ -225,10 +225,11 @@ mark{
 
   .hero-section{
     background-image: url("/Images/large-grid.svg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
-    background-size: contain;  }
+    background-size: cover;
+  }
 
   .metric-block{
     padding: 4.185vw;
@@ -261,10 +262,10 @@ mark{
 
   .hero-section{
     background-image: url("/Images/large-grid.svg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
-    background-size: contain;
+    background-size: cover;
   }
 
   .metric-block{
@@ -297,7 +298,7 @@ mark{
 
   .hero-section{
     background-image: url("/Images/medium-grid.svg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
     background-size: cover;
