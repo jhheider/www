@@ -26,7 +26,7 @@
 
   .container{
     max-width: 1920px;
-    padding: 5vw 10vw 4.185vw 10vw !important;
+    padding: 4.2vw 10vw 4.185vw 10vw !important;
   }
 
   .hero-float{
@@ -71,7 +71,7 @@
     background-color: #1a1a1a;
     max-width: 1920px;
     overflow-x: hidden;
-    margin-top: 5.5vw !important;
+    margin-top: 7.5vw !important;
   }
 
   .container{
@@ -345,6 +345,7 @@ mark{
     padding-top: 21.800vw !important;
     padding-bottom: 21.800vw !important;
     border: 1px solid #949494;
+    margin-bottom: 5.4vw
   }
 
   .hero-container h1{

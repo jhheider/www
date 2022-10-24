@@ -222,8 +222,8 @@ li{
 @media only screen and (max-width: 576px) {
 
   .impact{
-    font-size: 24vw !important;
-    line-height: 20.4vw;
+    font-size: 20vw !important;
+    line-height: 20.4vw !important;
   }
 
   h1{
