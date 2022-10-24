@@ -1,0 +1,71 @@
+<style>
+    .sorting-container{
+      display:inline-block;
+      font-family: "pp-neue-machina", sans-serif;
+      background-color: #1a1a1a;
+      border: .5px solid #ffffff;
+      color: #fff;
+      padding-top: 0.279vw;
+      text-decoration: none;
+      text-transform: uppercase;
+      max-width: 240px;
+      width: 100%;
+      height: 60px;
+      min-height: 34px;
+      transition: 0.1s linear;
+    }
+
+    .dropdown {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #1a1a1a;
+        width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        color: white;
+        list-style: none;
+        padding: 0px;
+    }
+
+
+    .dropdown-content li {
+        padding: 0px 10px;
+        height: 40px;
+        line-height: 40px;;
+    }
+
+    .dropdown-content li:hover {
+        background: #00ffd0;
+        color: black;
+
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-title {
+        height: 60px;
+        line-height: 60px;
+        padding-left: 10px;
+    }
+
+</style>
+    
+<section class="sorting-container">
+    <div class="dropdown">
+        <div class="dropdown-title">SORT ORDER</div>
+        <ul class="dropdown-content flex column">
+            <li id="dropdownPopularityBtn">POPULARITY</li>
+            <li id="dropdownRecentBtn">MOST RECENT</li>
+        </ul>
+    </div>
+</section>
+    

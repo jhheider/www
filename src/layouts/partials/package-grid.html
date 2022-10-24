@@ -5,7 +5,10 @@
   <!-- Package Grid Header -->
   <hr>
     <div class="container package-grid-header">
-      <h3>packages</h3>
+      <section class="flex">
+        <h3>packages</h3>
+        {{- partial "sort-dropdown.html" -}}
+      </section>
       <p>There are already plenty of packages available through tea. As the communi’tea builds the library, contributions will live here.</p>
     </div>
   <hr>
@@ -90,17 +93,26 @@
 </style>
 
 <script language="javascript" type="text/javascript">
+  const sortOptions = {
+    popularity: 'popularity',
+    last_modified: 'last_modified',
+  }
   let sortBy = 'popularity'; // last_modified
   let sortDirection = 'desc'; // asc
   let limit = 16;
-  const packages = document.querySelectorAll('.card-thumbnail');
-  const packagesCount = packages.length;
+
+  function getPackageThumbs() {
+    const grid = document.getElementById('packageGrid');
+    return Array.from(grid.childNodes).filter((e) => e.dataset && e.dataset.name);
+  }
+
+  const packagesCount = getPackageThumbs().length;
 
   function sortPackages() {
-    const packages = document.querySelectorAll('.card-thumbnail');
-    const packagesArray = Array.from(packages);
-    const sortedPackages = packagesArray.sort((a, b) => {
-      if (sortBy === 'popularity') {
+    const packages = getPackageThumbs();
+
+    const sortedPackages = packages.sort((a, b) => {
+      if (sortBy === sortOptions.popularity) {
         const aPop = +a.dataset.popularity;
         const bPop = +b.dataset.popularity;
         return sortDirection === 'asc' ? aPop-bPop : bPop - aPop;
@@ -110,10 +122,10 @@
         return sortDirection === 'asc' ? aDate-bDate : bDate - aDate;
       }
     });
+
     const grid = document.getElementById('packageGrid');
-    for(const op of packages) {
-      op.remove();
-    }
+    grid.textContent = '';
+
     for(const sp of sortedPackages) {
       grid.appendChild(sp);
     }
@@ -121,7 +133,7 @@
   }
 
   function refreshDisplayedPackages() {
-    const packages = document.querySelectorAll('.card-thumbnail');
+    const packages = getPackageThumbs();
     let i = 0;
     for(const sp of packages) {
       if (i >= limit) {
@@ -141,6 +153,23 @@
       const loadMoreSection = document.getElementById('loadMoreSection');
       loadMoreSection.classList.add('hidden');
     }
-  },false);
+  }, false);
+
+  const dropdownPopularityBtn = document.getElementById('dropdownPopularityBtn');
+  dropdownPopularityBtn.addEventListener('click',() => {
+    if (sortBy != sortOptions.popularity) {
+      sortBy = sortOptions.popularity;
+      sortPackages();
+    }
+  }, false);
+
+  const dropdownRecentBtn = document.getElementById('dropdownRecentBtn');
+  dropdownRecentBtn.addEventListener('click',() => {
+    if (sortBy != sortOptions.last_modified) {
+      sortBy = sortOptions.last_modified;
+      sortPackages();
+    }
+  }, false);
+
   sortPackages();
 </script>
