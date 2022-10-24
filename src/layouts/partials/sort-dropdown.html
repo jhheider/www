@@ -37,10 +37,30 @@
 
 
     .dropdown-content li {
+        position: relative;
         padding: 0px 10px;
         height: 40px;
-        line-height: 40px;;
+        width: 100%;
+        line-height: 40px;
     }
+
+    .dropdown-content li .sort-btn {
+        height: 100%;
+        width: calc(100% - 40px);
+        opacity: 0.6;
+    }
+
+    .dropdown-content li .sort-btn.active {
+        font-weight: bold;
+        opacity: 1;
+    }
+
+    .dropdown-content li .direction-arrows {
+        position: absolute;
+        right: 10px;
+        top: 0px;
+    }
+
 
     .dropdown-content li:hover {
         background: #00ffd0;
@@ -63,8 +83,8 @@
     <div class="dropdown">
         <div class="dropdown-title">SORT ORDER</div>
         <ul class="dropdown-content flex column">
-            <li id="dropdownPopularityBtn">POPULARITY</li>
-            <li id="dropdownRecentBtn">MOST RECENT</li>
+            <li><div id="dropdown-popularity-btn" class="sort-btn">POPULARITY</div> {{- partial "sort-direction.html" "popularity"}}</li>
+            <li><div id="dropdown-last_modified-btn" class="sort-btn">MOST RECENT</div> {{- partial "sort-direction.html" "last_modified"}}</li>
         </ul>
     </div>
 </section>

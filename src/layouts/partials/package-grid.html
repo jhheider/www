@@ -22,7 +22,6 @@
           {{- partial "package-thumbnail.html" .}}
         {{ end }}
       </div>
-
     </div>
   </div>
   <hr>
@@ -97,13 +96,13 @@
     popularity: 'popularity',
     last_modified: 'last_modified',
   }
-  let sortBy = 'popularity'; // last_modified
+  let sortBy = sortOptions.popularity; // last_modified
   let sortDirection = 'desc'; // asc
   let limit = 16;
 
   function getPackageThumbs() {
     const grid = document.getElementById('packageGrid');
-    return Array.from(grid.childNodes).filter((e) => e.dataset && e.dataset.name);
+    return Array.from(grid.children).filter((e) => e.dataset && e.dataset.name);
   }
 
   const packagesCount = getPackageThumbs().length;
@@ -129,6 +128,11 @@
     for(const sp of sortedPackages) {
       grid.appendChild(sp);
     }
+    
+    const isPopularity = sortBy === sortOptions.popularity;
+
+    setBtnStyles(sortOptions.popularity, isPopularity);
+    setBtnStyles(sortOptions.last_modified, !isPopularity);
     refreshDisplayedPackages();
   }
 
@@ -155,21 +159,59 @@
     }
   }, false);
 
-  const dropdownPopularityBtn = document.getElementById('dropdownPopularityBtn');
-  dropdownPopularityBtn.addEventListener('click',() => {
-    if (sortBy != sortOptions.popularity) {
-      sortBy = sortOptions.popularity;
-      sortPackages();
-    }
-  }, false);
+  function getSortBtns(type) {
+    const typeBtn = document.getElementById(`dropdown-${type}-btn`);
+    const typeDownBtn = document.getElementById(`${type}-down-btn`);
+    const typeUpBtn = document.getElementById(`${type}-up-btn`);
+    return { typeBtn, typeDownBtn, typeUpBtn };
+  }
 
-  const dropdownRecentBtn = document.getElementById('dropdownRecentBtn');
-  dropdownRecentBtn.addEventListener('click',() => {
-    if (sortBy != sortOptions.last_modified) {
-      sortBy = sortOptions.last_modified;
-      sortPackages();
+  function setBtnStyles(type, active) {
+    const { typeBtn, typeDownBtn, typeUpBtn } = getSortBtns(type);
+    if (active) {
+      typeBtn.classList.add('active');
+      if (sortDirection === 'asc') {
+        typeUpBtn.classList.add('active');
+        typeDownBtn.classList.remove('active');
+      } else {
+        typeDownBtn.classList.add('active');
+        typeUpBtn.classList.remove('active');
+      }
+    } else {
+      typeBtn.classList.remove('active');
+      typeDownBtn.classList.remove('active');
+      typeUpBtn.classList.remove('active');
     }
-  }, false);
+  }
+
+  function configureSortButton(type) {
+    const { typeBtn, typeDownBtn, typeUpBtn } = getSortBtns(type);
+    typeBtn.addEventListener('click',() => {
+      if (sortBy != type) {
+        sortBy = type;
+        sortPackages();
+      }
+    }, false);
+
+    typeDownBtn.addEventListener('click',() => {
+      if (sortBy != type || sortDirection != 'desc') {
+        sortBy = type;
+        sortDirection = 'desc';
+        sortPackages();
+      }
+    }, false);
+
+    typeUpBtn.addEventListener('click',() => {
+      if (sortBy != type || sortDirection != 'asc') {
+        sortBy = type;
+        sortDirection = 'asc';
+        sortPackages();
+      }
+    }, false);
+  }
+
+  configureSortButton(sortOptions.popularity);
+  configureSortButton(sortOptions.last_modified);
 
   sortPackages();
 </script>
