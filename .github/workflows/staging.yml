@@ -9,10 +9,30 @@ env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
 jobs:
-  deploy_sls:
+  validation:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: dorny/paths-filter@v2
+      id: website
+      with:
+        filters: |
+          src:
+            - 'src/**'
+    - uses: dorny/paths-filter@v2
+      id: lambdas
+      with:
+        filters: |
+          lambdas:
+            - 'lambdas/**'
+
+  deploy_sls:
+    needs: validation
+    if: steps.lambdas.outputs.lambdas == 'true'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
     - uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -30,6 +50,8 @@ jobs:
         entrypoint: /bin/sh
 
   deploy:
+    needs: validation
+    if: steps.website.outputs.src == 'true'
     runs-on: ubuntu-latest
     steps:
     - name: inject slug/short variables
@@ -47,6 +69,12 @@ jobs:
         override: true
 
     - uses: actions/checkout@v3
+    - uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        filters: |
+          src:
+            - 'src/**'
 
     - name: Apply Staging Configuration
       run: |
@@ -71,7 +99,6 @@ jobs:
       uses: getneil/jq-action@v1
       with:
         cmd: '.github/prepare-thumb-images.sh src/data/packages.json ./src/static/Images/packages/'
-
 
     - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
 
