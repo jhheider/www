@@ -33,7 +33,7 @@
         "maintainer": "pascal",
         "thumb_image_url": "/Images/package-thumb-nolabel3.jpg",
         "dl_count": 3,
-        "last_modified": "2022-09-27:39:15.000Z"
+        "last_modified": "2022-09-27T15:39:15.000Z"
     },
     {
         "name": "h2c",
@@ -45,7 +45,7 @@
         "maintainer": "h2o",
         "thumb_image_url": "/Images/package-thumb-nolabel.jpg",
         "dl_count": 4,
-        "last_modified": "2022-09-25:39:15.000Z"
+        "last_modified": "2022-09-25T15:39:15.000Z"
     },
     {
         "name": "libmagic",
@@ -57,7 +57,7 @@
         "maintainer": "",
         "thumb_image_url": "/Images/package-thumb-nolabel3.jpg",
         "dl_count": 5,
-        "last_modified": "2022-09-24:39:15.000Z"
+        "last_modified": "2022-09-24T15:39:15.000Z"
     },
     {
         "name": "deno",
@@ -69,7 +69,7 @@
         "maintainer": "Ryan Dahl",
         "thumb_image_url": "/Images/package-thumb-nolabel2.jpg",
         "dl_count": 6,
-        "last_modified": "2022-09-23:39:15.000Z"
+        "last_modified": "2022-09-23T15:39:15.000Z"
     },
     {
         "name": "fontconfig",
@@ -81,7 +81,7 @@
         "maintainer": "Max Miedinger",
         "thumb_image_url": "/Images/package-thumb-nolabel.jpg",
         "dl_count": 7,
-        "last_modified": "2022-09-22:39:15.000Z"
+        "last_modified": "2022-09-22T15:39:15.000Z"
     },
     {
         "name": "pkg-config",
@@ -93,7 +93,7 @@
         "maintainer": "pascal",
         "thumb_image_url": "/Images/package-thumb-nolabel4.jpg",
         "dl_count": 8,
-        "last_modified": "2022-09-21:39:15.000Z"
+        "last_modified": "2022-09-21T15:39:15.000Z"
     },
     {
         "name": "shared-mime-info",
@@ -105,7 +105,7 @@
         "maintainer": "Mr.Mime",
         "thumb_image_url": "/Images/package-thumb-nolabel3.jpg",
         "dl_count": 9,
-        "last_modified": "2022-09-21:39:15.000Z"
+        "last_modified": "2022-09-21T15:39:15.000Z"
     },
     {
         "name": "ttfautohint",
@@ -117,7 +117,7 @@
         "maintainer": "pascal",
         "thumb_image_url": "/Images/package-thumb-nolabel.jpg",
         "dl_count": 10,
-        "last_modified": "2022-09-20:39:15.000Z"
+        "last_modified": "2022-09-20T15:39:15.000Z"
     },
     {
         "name": "numactl",
@@ -129,7 +129,7 @@
         "maintainer": "FSS",
         "thumb_image_url": "/Images/package-thumb-nolabel2.jpg",
         "dl_count": 11,
-        "last_modified": "2022-09-19:39:15.000Z"
+        "last_modified": "2022-09-19T15:39:15.000Z"
     },
     {
         "name": "flex",
@@ -141,6 +141,6 @@
         "maintainer": "",
         "thumb_image_url": "/Images/package-thumb-nolabel4.jpg",
         "dl_count": 12,
-        "last_modified": "2022-09-18:39:15.000Z"
+        "last_modified": "2022-09-18T15:39:15.000Z"
     }
 ]

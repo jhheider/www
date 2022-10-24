@@ -5,7 +5,10 @@
   <!-- Package Grid Header -->
   <hr>
     <div class="container package-grid-header">
-      <h3>packages</h3>
+      <section class="flex">
+        <h3>packages</h3>
+        {{- partial "sort-dropdown.html" -}}
+      </section>
       <p>There are already plenty of packages available through tea. As the communi’tea builds the library, contributions will live here.</p>
     </div>
   <hr>
@@ -14,12 +17,11 @@
     <!-- Start Package Grid -->
 
     <div class="row package-row black-bg g-0">
-      <div class="package-grid">
+      <div id="packageGrid" class="package-grid">
         {{ range $.Site.Data.packages }}
           {{- partial "package-thumbnail.html" .}}
         {{ end }}
       </div>
-
     </div>
   </div>
   <hr>
@@ -90,17 +92,60 @@
 </style>
 
 <script language="javascript" type="text/javascript">
+  const sortOptions = {
+    popularity: 'popularity',
+    last_modified: 'last_modified',
+  }
+  let sortBy = sortOptions.popularity; // last_modified
+  let sortDirection = 'desc'; // asc
   let limit = 16;
-  const packages = document.querySelectorAll('.card-thumbnail');
-  const packagesCount = packages.length;
+
+  function getPackageThumbs() {
+    const grid = document.getElementById('packageGrid');
+    return Array.from(grid.children).filter((e) => e.dataset && e.dataset.name);
+  }
+
+  const packagesCount = getPackageThumbs().length;
+
+  function sortPackages() {
+    const packages = getPackageThumbs();
+
+    const sortedPackages = packages.sort((a, b) => {
+      if (sortBy === sortOptions.popularity) {
+        const aPop = +a.dataset.popularity;
+        const bPop = +b.dataset.popularity;
+        return sortDirection === 'asc' ? aPop-bPop : bPop - aPop;
+      } else { // last_modified
+        const aDate = new Date(a.dataset.last_modified);
+        const bDate = new Date(b.dataset.last_modified);
+        return sortDirection === 'asc' ? aDate-bDate : bDate - aDate;
+      }
+    });
+
+    const grid = document.getElementById('packageGrid');
+    grid.textContent = '';
+
+    for(const sp of sortedPackages) {
+      grid.appendChild(sp);
+    }
+    
+    const isPopularity = sortBy === sortOptions.popularity;
+
+    setBtnStyles(sortOptions.popularity, isPopularity);
+    setBtnStyles(sortOptions.last_modified, !isPopularity);
+    refreshDisplayedPackages();
+  }
 
   function refreshDisplayedPackages() {
-    for(let i = 0; i < packagesCount; i++) {
+    const packages = getPackageThumbs();
+    let i = 0;
+    for(const sp of packages) {
       if (i >= limit) {
-        packages[i].classList.add('hidden');
+        sp.classList.add('hidden');
       } else {
-        packages[i].classList.remove('hidden');
+        sp.classList.remove('hidden');
       }
+      i++;
     }
   }
 
@@ -112,7 +157,61 @@
       const loadMoreSection = document.getElementById('loadMoreSection');
       loadMoreSection.classList.add('hidden');
     }
-  },false);
+  }, false);
 
-  refreshDisplayedPackages();
+  function getSortBtns(type) {
+    const typeBtn = document.getElementById(`dropdown-${type}-btn`);
+    const typeDownBtn = document.getElementById(`${type}-down-btn`);
+    const typeUpBtn = document.getElementById(`${type}-up-btn`);
+    return { typeBtn, typeDownBtn, typeUpBtn };
+  }
+
+  function setBtnStyles(type, active) {
+    const { typeBtn, typeDownBtn, typeUpBtn } = getSortBtns(type);
+    if (active) {
+      typeBtn.classList.add('active');
+      if (sortDirection === 'asc') {
+        typeUpBtn.classList.add('active');
+        typeDownBtn.classList.remove('active');
+      } else {
+        typeDownBtn.classList.add('active');
+        typeUpBtn.classList.remove('active');
+      }
+    } else {
+      typeBtn.classList.remove('active');
+      typeDownBtn.classList.remove('active');
+      typeUpBtn.classList.remove('active');
+    }
+  }
+
+  function configureSortButton(type) {
+    const { typeBtn, typeDownBtn, typeUpBtn } = getSortBtns(type);
+    typeBtn.addEventListener('click',() => {
+      if (sortBy != type) {
+        sortBy = type;
+        sortPackages();
+      }
+    }, false);
+
+    typeDownBtn.addEventListener('click',() => {
+      if (sortBy != type || sortDirection != 'desc') {
+        sortBy = type;
+        sortDirection = 'desc';
+        sortPackages();
+      }
+    }, false);
+
+    typeUpBtn.addEventListener('click',() => {
+      if (sortBy != type || sortDirection != 'asc') {
+        sortBy = type;
+        sortDirection = 'asc';
+        sortPackages();
+      }
+    }, false);
+  }
+
+  configureSortButton(sortOptions.popularity);
+  configureSortButton(sortOptions.last_modified);
+
+  sortPackages();
 </script>
