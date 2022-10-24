@@ -74,6 +74,11 @@
     margin-top: 7.5vw !important;
   }
 
+  section{
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
+  }
+
   .container{
     max-width: 1920px;
     padding: 5.5vw 3vw !important;
