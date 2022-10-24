@@ -281,7 +281,16 @@ mark{
 
 }
 
+
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  .hero-section{
+    background-image: url("/Images/large-grid.svg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+  }
 
   .metric-block{
     padding: 4.185vw;
@@ -316,7 +325,8 @@ mark{
     background-attachment: fixed;
     background-position: top;
     background-repeat: repeat;
-    background-size: contain;  }
+    background-size: cover;
+  }
 
   .metric-block{
     padding: 4.185vw;
@@ -347,7 +357,8 @@ mark{
 @media only screen and (max-width: 576px) {
 
   .hero-section{
-    padding: 1vw 4vw !important;
+    padding-right: 4vw !important;
+    padding-left: 4vw !important;
   }
 
   .hero-container{
@@ -355,8 +366,8 @@ mark{
     background-position: top;
     background-repeat: repeat-y;
     background-size: cover;
-    padding-top: 17.5vw;
-    padding-bottom: 21vw;
+    padding-top: 21.800vw !important;
+    padding-bottom: 21.800vw !important;
     border: 1px solid #949494;
   }
 

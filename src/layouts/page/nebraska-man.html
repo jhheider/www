@@ -12,7 +12,7 @@
   </div>
 </section>
 
-<section class="nb-man-about">
+<section class="nb-man-about two-boxes">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -25,104 +25,153 @@
 
 <hr>
 
+<style>
+  .wrapper {
+  align-items: center;
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  margin: 5%;
+  width: 90%;
+}
+
+.aspect {
+  padding-bottom: 70%;
+  position: relative;
+  width: 100%;
+}
+
+.aspect-inner {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.flipbook {
+  height: 100%;
+  transition: margin-left 0.25s ease-out;
+  width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flipbook .page {
+  height: 100%;
+  width: 100%;
+}
+
+.flipbook .page img {
+  width: 100%;
+  height: 100%;
+}
+</style>
+
 <section class="nb-man-latest">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-        <img src="/Images/nebraska-man-cover-issue-1l.jpg" alt="Nebraska Man Issue 1" style="width:100%;">
-      </div>
-      <div class="col-lg-8 col-md-8 col-sm-12 col-12 my-auto">
-        <h3>Latest Release</h3>
-        <p>Created by Niel Edwards (sp?), a frequent collaborator for Marvel and DC Comics, this first issue tells the story of Nebraska Man’s plight as an unthanked and uncompensated open-source dev. He is then approached by the Shadowy Super Coder and learns about a powerful new technology that could save the day.</p>
+      <div class="col">
+        <div class="wrapper">
+          <div class="aspect">
+            <div class="aspect-inner">
+              <div class="flipbook" id="flipbook">
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-1.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-3.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-4.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-5.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-6.jpeg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/placeholder/batman-2016-120-7.jpeg" draggable="false" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-{{- partial "full-width-cta.html" . -}}
+<hr>
+  <div class="row button-container">
+    <a href="#" role="button" class="btn btn-primary text-center auth-btn mt-lg-0 mt-md-0 mt-sm-0 mt-0" id="nav-cta">DOWNLOAD ISSUE #1</a>
+  </div>
+<hr>
 
-<section class="nb-man-catalog">
+<section>
   <div class="container">
-    <h3>catalog</h3>
-  </div>
-  <hr>
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Issue #1 // Who Will You Meet in the Shadows?
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-12 col-12">
-              <img class="comic-thumb" src="/Images/nebraska-man-cover-issue-1l.jpg" alt="">
-            </div>
-            <div class="col-lg-9 col-md-8 col-sm-12 col-12 my-auto">
-              <h4>Issue Title. Issue No. </h4>
-              <p class="small"> Release Date | Author Name | Illustrator Name</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <div class="parallel-btn-container">
-                <button href="#" class="detail-btn-large"><i class="icon-enter-arrow"></i>DOWNLOAD ISSUE</button>
-                <button href="#" class="detail-btn-large"><i class="icon-enter-arrow"></i>READ IN-BROWSER</button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="row two-boxes">
+      <div class="col">
+        <h3>Take 'saving the internet' one step further...</h3>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Issue #2 // Teamwork Makes the Dream Work
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-12 col-12">
-              <img class="comic-thumb" src="/Images/nebraska-man-cover-issue-1l.jpg" alt="">
-            </div>
-            <div class="col-lg-9 col-md-8 col-sm-12 col-12 my-auto">
-              <h4>Issue Title. Issue No. </h4>
-              <p class="small"> Release Date | Author Name | Illustrator Name</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <div class="parallel-btn-container">
-                <button href="#" class="detail-btn-large"><i class="icon-enter-arrow"></i>DOWNLOAD ISSUE</button>
-                <button href="#" class="detail-btn-large"><i class="icon-enter-arrow"></i>READ IN-BROWSER</button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <hr>
+    <div class="row gx-5 one-box">
+      <div class="col">
+        <h4>How to earn your Nebraska Man cover NFT's.</h4>
+        <ul class="list-group">
+          <li class="list-group-item">Follow our Twitter</li>
+          <li class="list-group-item">Like the Nebraska Man tweet</li>
+          <li class="list-group-item">Retweet</li>
+          <li class="list-group-item">Join Discord</li>
+          <li class="list-group-item">Attend AMA</li>
+          <li class="list-group-item">Join Subreddit</li>
+          <li class="list-group-item">Subscribe Youtube</li>
+        </ul>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Issue #3 // The Battle to Save the Internet
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-12 col-12">
-              <img class="comic-thumb" src="/Images/nebraska-man-cover-issue-1l.jpg" alt="">
-            </div>
-            <div class="col-lg-9 col-md-8 col-sm-12 col-12 my-auto">
-              <h4>Issue Title. Issue No. </h4>
-              <p class="small"> Release Date | Author Name | Illustrator Name</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <div class="parallel-btn-container">
-                <button href="#" class="detail-btn-large"><i class="icon-enter-arrow"></i>DOWNLOAD ISSUE</button>
-                <button href="#" class="detail-btn-large"><i class="icon-enter-arrow"></i>READ IN-BROWSER</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col">
+
       </div>
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+
+function loadApp() {
+
+  // Create the flipbook
+
+  $('.flipbook').turn({
+
+      // Enable gradients
+
+      gradients: true,
+
+      // Auto center this flipbook
+
+      autoCenter: true
+
+  });
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+  test : Modernizr.csstransforms,
+  yep: ['/js/turn.js'],
+  nope: ['/js/turn.html4.min.js'],
+  both: ['/css/basic.css'],
+  complete: loadApp
+});
+
+var flipbookEL = document.getElementById('flipbook');
+
+window.addEventListener('resize', function (e) {
+  flipbookEL.style.width = '';
+  flipbookEL.style.height = '';
+  $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
+});
+
+$(flipbookEL).turn({
+    autoCenter: true
+});
+
+
+</script>
 
 {{ end }}
