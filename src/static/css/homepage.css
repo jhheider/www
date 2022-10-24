@@ -182,9 +182,9 @@ mark{
 
   .statistics{
     background-image: url("/Images/x-large-stats-grid.svg");
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-position: top;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     background-size: cover;
   }
 
@@ -210,8 +210,8 @@ mark{
 
   .partners{
     background-image: url("/Images/x-large-grid.svg");
-    background-attachment: fixed;
-    background-repeat: repeat-y;
+    background-attachment: scroll;
+    background-repeat: repeat;
     background-size: cover;
   }
 
