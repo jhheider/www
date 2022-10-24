@@ -157,7 +157,7 @@ mark{
     background-position: top;
     background-repeat: repeat;
     background-size: cover;
-    height: 75px;
+    height: 4.185vw;
   }
 
   .impact-section{
@@ -338,8 +338,8 @@ mark{
 @media only screen and (max-width: 576px) {
 
   .hero-section{
-    padding-right: 4vw !important;
-    padding-left: 4vw !important;
+    padding-right: 4vw;
+    padding-left: 4vw;
   }
 
   .hero-container{
