@@ -11,7 +11,7 @@ env:
 jobs:
   validation:
     runs-on: ubuntu-latest
-    ouputs:
+    outputs:
       website: ${{steps.website.outputs.src}}
       lambdas: ${{steps.lambdas.outputs.lambdas}}
     steps:
