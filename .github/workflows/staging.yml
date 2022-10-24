@@ -11,6 +11,9 @@ env:
 jobs:
   validation:
     runs-on: ubuntu-latest
+    ouputs:
+      website: ${{steps.website.outputs.src}}
+      lambdas: ${{steps.lambdas.outputs.lambdas}}
     steps:
     - uses: actions/checkout@v3
     - uses: dorny/paths-filter@v2
@@ -28,7 +31,7 @@ jobs:
 
   deploy_sls:
     needs: validation
-    if: steps.lambdas.outputs.lambdas == 'true'
+    if: needs.validation.outputs.lambdas == 'true'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -51,7 +54,7 @@ jobs:
 
   deploy:
     needs: validation
-    if: steps.website.outputs.src == 'true'
+    if: needs.validation.outputs.website == 'true'
     runs-on: ubuntu-latest
     steps:
     - name: inject slug/short variables
