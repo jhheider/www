@@ -39,6 +39,7 @@ interface FinalPackageOutput {
 interface AirtablePackageDict {
   [slug: string]: AirtablePackage
 }
+
 const getFinalPackagesData = async (s3Packages: S3Package[], airtablePackages: AirtablePackage[]): Promise<FinalPackageOutput> => {
   const newPackages: NewAirtablePackage[] = [];
   const packagesJson: Package[] = [];
@@ -75,6 +76,7 @@ const getFinalPackagesData = async (s3Packages: S3Package[], airtablePackages: A
         homepage,
         desc,
         installs: 0, // TODO: get from algolia
+        dl_count: 0,
         thumb_image_url: '',
       }
       newPackages.push(newPackage);
@@ -87,6 +89,5 @@ const getFinalPackagesData = async (s3Packages: S3Package[], airtablePackages: A
     packagesJson,
   }
 }
-
 
 export const main = buildPackages;
