@@ -29,7 +29,7 @@ jobs:
           lambdas:
             - 'lambdas/**'
 
-  deploy_sls:
+  serverless:
     needs: validation
     if: needs.validation.outputs.lambdas == 'true'
     runs-on: ubuntu-latest
