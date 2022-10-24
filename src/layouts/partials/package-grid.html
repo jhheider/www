@@ -9,7 +9,7 @@
         <h3>packages</h3>
         {{- partial "sort-dropdown.html" -}}
       </section>
-      <p>There are already plenty of packages available through tea. As the communi’tea builds the library, contributions will live here.</p>
+      <p style="width:60%;">There are already plenty of packages available through tea. As the communi’tea builds the library, contributions will live here.</p>
     </div>
   <hr>
   <div class="container package-grid">
@@ -128,7 +128,7 @@
     for(const sp of sortedPackages) {
       grid.appendChild(sp);
     }
-    
+
     const isPopularity = sortBy === sortOptions.popularity;
 
     setBtnStyles(sortOptions.popularity, isPopularity);
