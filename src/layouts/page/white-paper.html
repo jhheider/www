@@ -1,34 +1,42 @@
 {{ define "main" }}
 
+
+
 <!-- Hero Section -->
-<div class="section">
+<div class="section two-boxes hero-section">
   <div class="container">
     <div class="row">
       <div class="col">
         <h1>White Paper</h1>
-        <p>Open‐source is about the many coming together to create something great. In the spirit of that, we’re inviting developers, speculators, and enthusiasts alike to contribute to our white paper and help brew the future of the internet. This is our revolutionary undertaking to create equitable open‐source for web3, and we want you to be a part of laying its groundwork.</p>
+        <p class="lead">Open‐source is about the many coming together to create something great. In the spirit of that, we’re inviting developers, speculators, and enthusiasts alike to contribute to our white paper and help brew the future of the internet. This is our revolutionary undertaking to create equitable open‐source for web3, and we want you to be a part of laying its groundwork.</p>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
       </div>
     </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="col mb-4 mt-3">
-          <h4>Our white paper is available in multiple languages</h4>
-          <p>Thanks to the tea community's generosity and time, our white paper is available in several world languages. Select your preferred language from the dropdown menu.</p>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle languages" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Choose a Language
-            </button>
-            <ul class="dropdown-menu" id="language-selector"></ul>
-          </div>
-        </div>
-      </div>
   </div>
 </div>
 
-<section>
+<hr>
+
+<section class="two-boxes">
   <div class="container">
+    <div class="row">
+      <div class="col">
+        <h4>Our white paper is available in multiple languages</h4>
+        <p>Thanks to the tea community's generosity and time, our white paper is available in several world languages. Select your preferred language from the dropdown menu.</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle languages" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Choose a Language
+          </button>
+          <ul class="dropdown-menu" id="language-selector"></ul>
+        </div>
+          <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="padding-top: 0px !important;">
     <div class="row">
       <div class="col">
         <div id="adobe-dc-view" style="width: 100%;"></div>
@@ -36,7 +44,7 @@
         <script type="text/javascript">
           document.addEventListener("adobe_dc_view_sdk.ready", function(){
             //Must change clientId before final merge
-            var adobeDCView = new AdobeDC.View({clientId: "374f4d10016d424d863bbd6ac0533849", divId: "adobe-dc-view"});
+            var adobeDCView = new AdobeDC.View({clientId: "fc933927b4e947c2aaf9a7b33b26f0b4", divId: "adobe-dc-view"});
             adobeDCView.previewFile({
               content:{location: {url: "https://tea.xyz/tea.white-paper.pdf"}},
               metaData:{fileName: "tea.white-paper.pdf"}

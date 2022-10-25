@@ -11,7 +11,7 @@
 
   .container{
     max-width: 1920px;
-    padding: 4.185vw 8.371vw 4.185vw 8.371vw;
+    padding: 4.5vw 8.371vw 4.185vw 8.371vw;
   }
 }
 
@@ -26,7 +26,7 @@
 
   .container{
     max-width: 1920px;
-    padding: 5vw 10vw 4.185vw 10vw !important;
+    padding: 4.2vw 10vw 4.185vw 10vw !important;
   }
 
   .hero-float{
@@ -71,12 +71,17 @@
     background-color: #1a1a1a;
     max-width: 1920px;
     overflow-x: hidden;
-    margin-top: 5.5vw !important;
+    margin-top: 7.5vw !important;
+  }
+
+  section{
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
   }
 
   .container{
     max-width: 1920px;
-    padding: 5.4vw 3vw;
+    padding: 5.5vw 3vw !important;
   }
 }
 
@@ -136,48 +141,23 @@ mark{
   color: #1a1a1a;
 }
 
-/* Homepage */
-@media only screen and (min-width: 1200px) {
-
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-
-}
-
-@media only screen and (min-width: 576px) and (max-width: 768px){
-
-}
-
-@media only screen and (max-width: 576px) {
-
-  .hero-subhead{
-    width: 100%;
-  }
-
-}
-
 @media only screen and (min-width: 1200px) {
 
   .hero-section{
-    background-image: url("/Images/x-large-grid-hero.svg");
-    background-attachment: fixed;
+    background-image: url("/Images/x-large-grid.svg");
+    background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
-    background-size: contain;
+    background-size: cover;
   }
 
   .hero-bottom{
-    background-image: url("/Images/x-large-grid-hero.svg");
-    background-attachment: fixed;
-    background-position: center-top;
+    background-image: url("/Images/x-large-grid.svg");
+    background-attachment: scroll;
+    background-position: top;
     background-repeat: repeat;
-    background-size: contain;
-    height: 75px;
+    background-size: cover;
+    height: 4.185vw;
   }
 
   .impact-section{
@@ -190,7 +170,7 @@ mark{
 
   .package_before{
     background-image: url("/Images/xl-grid-half-right.svg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-repeat: repeat-y;
     background-position: right;
     background-size: cover;
@@ -200,7 +180,7 @@ mark{
 
   .package-cta{
     background-image: url("/Images/x-large-grid.svg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-repeat: repeat-y;
     background-size: cover;
   }
@@ -209,7 +189,7 @@ mark{
     background-image: url("/Images/x-large-stats-grid.svg");
     background-attachment: fixed;
     background-position: top;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     background-size: cover;
   }
 
@@ -235,8 +215,8 @@ mark{
 
   .partners{
     background-image: url("/Images/x-large-grid.svg");
-    background-attachment: fixed;
-    background-repeat: repeat-y;
+    background-attachment: scroll;
+    background-repeat: repeat;
     background-size: cover;
   }
 
@@ -250,10 +230,11 @@ mark{
 
   .hero-section{
     background-image: url("/Images/large-grid.svg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
-    background-size: contain;  }
+    background-size: cover;
+  }
 
   .metric-block{
     padding: 4.185vw;
@@ -286,10 +267,10 @@ mark{
 
   .hero-section{
     background-image: url("/Images/large-grid.svg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
-    background-size: contain;
+    background-size: cover;
   }
 
   .metric-block{
@@ -322,7 +303,7 @@ mark{
 
   .hero-section{
     background-image: url("/Images/medium-grid.svg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
     background-size: cover;
@@ -357,18 +338,19 @@ mark{
 @media only screen and (max-width: 576px) {
 
   .hero-section{
-    padding-right: 4vw !important;
-    padding-left: 4vw !important;
+    padding-right: 4vw;
+    padding-left: 4vw;
   }
 
   .hero-container{
+    /*
     background-image: url("/Images/small-grid.svg");
     background-position: top;
     background-repeat: repeat-y;
-    background-size: cover;
+    background-size: cover;*/
     padding-top: 21.800vw !important;
     padding-bottom: 21.800vw !important;
-    border: 1px solid #949494;
+    margin-bottom: 5.4vw
   }
 
   .hero-container h1{
