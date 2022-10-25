@@ -203,3 +203,17 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     }
 
   </script>
+
+  <script>
+
+    fetch('stats.json')
+    .then(res => res.json())
+    .then((out) => {
+      //Debugging + Reference
+      console.log(out);
+      document.getElementById('stat-one').innerHTML = out[0].num_repos;
+      document.getElementById('stat-two').innerHTML = out[0].num_maintainers;
+    })
+    .catch(err => { throw err });
+
+  </script>

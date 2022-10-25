@@ -196,7 +196,7 @@ mark{
   .metric-block{
     padding: 4.185vw;
     border: 2px solid #949494;
-    max-width: 41.741vw;
+    max-width: 33.3vw;
     background-color: #1a1a1a;
     position: relative;
     z-index:2;
@@ -239,7 +239,7 @@ mark{
   .metric-block{
     padding: 4.185vw;
     border: 2px solid #949494;
-    max-width: 41.741vw;
+    max-width: 30vw;
     background-color: #1a1a1a;
     position: relative;
     z-index:2;
@@ -390,6 +390,10 @@ mark{
 
   .statistics{
     padding: 4vw !important;
+  }
+
+  .stat-small-text{
+    text-align: center;
   }
 
   .metric-block{
