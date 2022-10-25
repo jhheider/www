@@ -343,13 +343,13 @@ mark{
   }
 
   .hero-container{
+    /*
     background-image: url("/Images/small-grid.svg");
     background-position: top;
     background-repeat: repeat-y;
-    background-size: cover;
+    background-size: cover;*/
     padding-top: 21.800vw !important;
     padding-bottom: 21.800vw !important;
-    border: 1px solid #949494;
     margin-bottom: 5.4vw
   }
 
