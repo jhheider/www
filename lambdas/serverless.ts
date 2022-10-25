@@ -1,6 +1,7 @@
 import type { AWS } from '@serverless/typescript';
 
 import buildPackages from '@functions/buildPackages';
+import ipfsUpload from '@functions/ipfsUpload';
 
 const serverlessConfiguration: AWS = {
   service: 'lambdas',
@@ -43,6 +44,7 @@ const serverlessConfiguration: AWS = {
   // import the function via paths
   functions: {
     buildPackages,
+    ipfsUpload,
   },
   package: { individually: true },
   custom: {
