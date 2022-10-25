@@ -42,45 +42,75 @@
         <div id="adobe-dc-view" style="width: 100%;"></div>
         <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
         <script type="text/javascript">
+          const versions = [
+            ['English', ''],
+            ['Bahasa Indonesia', '_id'],
+            ['беларускі', '_be'],
+            ['български', '_bg'],
+            ['Deutsch', '_de'],
+            ['Русский', '_ru'],
+            ['українська', '_uk'],
+            ['官话', '_zh']
+          ];
+
+          let adobeDcView;
+
+          const getAdobeDcView = () => {
+            if (!adobeDcView) {
+              adobeDCView = new AdobeDC.View({
+                clientId: "fc933927b4e947c2aaf9a7b33b26f0b4",
+                divId: "adobe-dc-view"
+              });
+            }
+            return adobeDCView;
+          }
+
+          const getWhitePaperUrl = (suffix = '') => {
+            return 'https://tea.xyz/tea.white-paper' + suffix + '.pdf';
+          }
+
           document.addEventListener("adobe_dc_view_sdk.ready", function(){
             //Must change clientId before final merge
-            var adobeDCView = new AdobeDC.View({clientId: "fc933927b4e947c2aaf9a7b33b26f0b4", divId: "adobe-dc-view"});
-            adobeDCView.previewFile({
-              content:{location: {url: "https://tea.xyz/tea.white-paper.pdf"}},
-              metaData:{fileName: "tea.white-paper.pdf"}
-            }, {embedMode: "IN_LINE"});
+            try {
+              for (const lang of versions) {
+                $('#language-selector').append("<li><a class=\"dropdown-item\" onclick=\"viewWhitepaper(\'" + lang[1] + "')\">" + lang[0] + "</a></li>");
+              }
+              const adobeDCView = getAdobeDcView();
+
+              adobeDCView.previewFile({
+                content:{
+                  location: {
+                    url: getWhitePaperUrl(),
+                  }
+                },
+                metaData:{
+                  fileName: "tea.white-paper.pdf"
+                }
+              }, { embedMode: "IN_LINE" });
+            } catch (error) {
+              console.error('test:', error);
+            }
           });
+
+
+          function viewWhitepaper(suffix) {
+            const adobeDCView = getAdobeDcView();
+            const url = getWhitePaperUrl(suffix);
+            adobeDCView.previewFile({
+              content:{
+                location: { url }
+              },
+              metaData:{
+                fileName: "tea.white-paper.pdf"
+              }
+            }, { embedMode: "IN_LINE" });
+            // document.getElementById('mobile-wp-download').setAttribute('href', url);
+          }
         </script>
       </div>
     </div>
   </div>
 </section>
-
-    <script>
-      const versions = [
-        ['English', ''],
-        ['Bahasa Indonesia', '_id'],
-        ['беларускі', '_be'],
-        ['български', '_bg'],
-        ['Deutsch', '_de'],
-        ['Русский', '_ru'],
-        ['українська', '_uk'],
-        ['官话', '_zh']
-      ];
-
-      document.addEventListener('DOMContentLoaded', function () {
-        for (const lang of versions) {
-
-          $('#language-selector').append("<li><a class=\"dropdown-item\" onclick=\"go(\'" + lang[1] + "')\">" + lang[0] + "</a></li>");
-        }
-      }, false);
-
-      function go(suffix) {
-        const url = 'https://tea.xyz/tea.white-paper' + suffix + '.pdf';
-        document.getElementById('wp-iframe').setAttribute('src', url + '#toolbar=0&navpanes=0&view=fitH');
-        document.getElementById('mobile-wp-download').setAttribute('href', url);
-      }
-    </script>
 
   <!-- Start PDF
 
