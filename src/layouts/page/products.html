@@ -1,14 +1,106 @@
 {{ define "main" }}
 
+<!-- Desktop Gen Art -->
+
 <section class="two-boxes hero-section">
 <div class="gen-art animated-25 animatedFadeInUp fadeInUp" id="pro-gen-art-1"></div>
 <div class="gen-art animated-25 animatedFadeInUp fadeInUp" id="pro-gen-art-2"></div>
 <div class="gen-art animated-5 animatedFadeInUp fadeInUp" id="pro-gen-art-3"></div>
+<div class="gen-art animated-5 animatedFadeInUp fadeInUp" id="pro-gen-art-4"></div>
+<div class="gen-art animated-25 animatedFadeInUp fadeInUp" id="pro-gen-art-5"></div>
+
+<!-- Mobile Gen Art -->
+
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-p-gen-art-1"></div>
+<div class="gen-art-mobile animated-5 animatedFadeInUp fadeInUp" id="m-p-gen-art-2"></div>
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-p-gen-art-3"></div>
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-p-gen-art-4"></div>
+<div class="gen-art-mobile animated-5 animatedFadeInUp fadeInUp" id="m-p-gen-art-5"></div>
+
+
+<style media="screen">
+
+  #m-p-gen-art-1{
+    position:absolute;
+    width:48vw;
+    height: 18.6vw;
+    left: 6.8vw;
+    margin-top:61vw;
+    z-index: 3;
+    background-image: url("/Images/gen-art/glass-triangles.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-p-gen-art-2{
+    position:absolute;
+    width:15vw;
+    height: 15vw;
+    left: 45vw;
+    margin-top:72vw;
+    border-radius: 200px;
+    z-index: 3;
+    background-image: url("/Images/gen-art/colorful-sandal.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-p-gen-art-3{
+    position:absolute;
+    width:20vw;
+    height: 20vw;
+    right: 6.8vw;
+    margin-top: 70vw;
+    z-index: 3;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-p-gen-art-4{
+    position:absolute;
+    width:60vw;
+    height: 20vw;
+    right: 6.8vw;
+    margin-top: 0vw;
+    z-index:0;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-p-gen-art-5{
+    position:absolute;
+    width:25vw;
+    height: 10vw;
+    right: 15vw;
+    top: 30vw;
+    z-index:0;
+    background-image: url("/Images/gen-art/tribal-green.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  @media only screen and (min-width: 576px) {
+    .gen-art-mobile{
+      display: none;
+    }
+  }
+
+</style>
+
   <div class="container">
     <div class="row">
       <div class="col" style="position:relative; z-index:2;">
         <h1>Products</h1>
-        <p class="lead" style="width:50%">Just like the perfect cup of tea, greatness takes time to steep. But the wait is over… it’s time to take your first sip.</p>
+        <p class="lead animated-5 animatedFadeInUp fadeInUp">Just like the perfect cup of tea, greatness takes time to steep. But the wait is over… it’s time to take your first sip.</p>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
       </div>
     </div>
   </div>

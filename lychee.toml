@@ -17,5 +17,6 @@ exclude = [
   "https://github.com/teaxyz/pantry",
   "https://tea.xyz/tea.authentication-success",
   "https://tea.xyz/tea.email-subscribe",
-  "https://www.google.com/thank-you"
+  "https://www.google.com/thank-you",
+  "file:///home/runner/work/www/www/public/tea.white-paper.pdf"
 ]

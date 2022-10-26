@@ -9,7 +9,7 @@ title = 'Equitable Open-Source for Web3'
     identifier = 'community'
     name = 'Community'
     title = 'community'
-    url = '/#community'
+    url = './#community'
     weight = 4
   [[menu.main]]
     identifier = 'blog'

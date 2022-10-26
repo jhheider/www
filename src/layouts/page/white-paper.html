@@ -1,14 +1,14 @@
 {{ define "main" }}
 
-
+{{- partial "white-paper-gen-art.html" -}}
 
 <!-- Hero Section -->
 <div class="section two-boxes hero-section">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col" style="position: relative; z-index: 2;">
         <h1>White Paper</h1>
-        <p class="lead">Open‐source is about the many coming together to create something great. In the spirit of that, we’re inviting developers, speculators, and enthusiasts alike to contribute to our white paper and help brew the future of the internet. This is our revolutionary undertaking to create equitable open‐source for web3, and we want you to be a part of laying its groundwork.</p>
+        <p class="lead animated-5 animatedFadeInUp fadeInUp" style="background-color: #1a1a1a;">Open‐source is about the many coming together to create something great. In the spirit of that, we’re inviting developers, speculators, and enthusiasts alike to contribute to our white paper and help brew the future of the internet. This is our revolutionary undertaking to create equitable open‐source for web3, and we want you to be a part of laying its groundwork.</p>
         <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
       </div>
     </div>
@@ -16,8 +16,26 @@
 </div>
 
 <hr>
+  <div class="row button-container">
+    <a href="/tea.white-paper.pdf" role="button" class="btn btn-primary auth-btn split-btn" id="nav-cta"><i class="icon-enter-arrow"></i>DOWNLOAD WHITEPAPER</a>
+    <a href="https://github.com/teaxyz/white-paper" role="button" class="btn btn-primary auth-btn split-btn split-right" id="nav-cta"><i class="icon-enter-arrow"></i>CONTRIBUTE ON GITHUB</a>
+  </div>
+<hr>
 
-<section class="two-boxes">
+<style>
+  .split-btn{
+    display: inline-block;
+    width: 50%;
+  }
+
+  .split-right{
+    border-left: 0px !important;
+  }
+
+</style>
+
+
+<section class="one-box">
   <div class="container">
     <div class="row">
       <div class="col">
