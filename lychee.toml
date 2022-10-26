@@ -20,4 +20,5 @@ exclude = [
   "https://www.google.com/thank-you",
   "file:///home/runner/work/www/www/public/tea.white-paper.pdf",
   "//manage.kmail-lists.com/subscriptions/subscribe"
+  "//manage.kmail-lists.com/subscriptions/subscribe"
 ]
