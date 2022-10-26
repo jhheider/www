@@ -2,23 +2,6 @@
 
 @media only screen and (min-width: 1200px) {
 
-  .footer-email{
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.121vw;
-    line-height: 2.121vw;
-    padding: 1.953vw 0vw;
-    background: none;
-    border: none;
-  }
-
-  .footer-email:focus{
-    background-color: #1a1a1a;
-    color: #fff;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
   .social-box{
     border-radius: 0px !important;
     border: 2px solid #949494;
@@ -49,22 +32,6 @@
 
   .footer-content{
     padding-right: 5.580vw;
-  }
-
-  .email-btn{
-    width: 16%;
-    border-left: 2px solid #949494;
-    border-right: none !important;
-    border-radius: 0px;
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.121vw;
-  }
-
-  .email-btn:hover{
-    background-color: #00ffd0;
-    color: #1a1a1a;
-    box-shadow: inset 0vw 0vw 0vw 0.391vw #1a1a1a !important;
   }
 
   .social-icon{
@@ -81,23 +48,6 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
-  .footer-email{
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.121vw;
-    line-height: 2.121vw;
-    padding: 1.953vw 0vw;
-    background: none;
-    border: none;
-  }
-
-  .footer-email:focus{
-    background-color: #1a1a1a;
-    color: #fff;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
   .social-box{
     border-radius: 0px !important;
     border: 2px solid #949494;
@@ -128,22 +78,6 @@
 
   .footer-content{
     padding-right: 5.580vw;
-  }
-
-  .email-btn{
-    width: 16%;
-    border-left: 2px solid #949494;
-    border-right: none !important;
-    border-radius: 0px;
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.121vw;
-  }
-
-  .email-btn:hover{
-    background-color: #00ffd0;
-    color: #1a1a1a;
-    box-shadow: inset 0vw 0vw 0vw 0.391vw #1a1a1a !important;
   }
 
   .social-icon{
@@ -160,23 +94,6 @@
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
-  .footer-email{
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.121vw;
-    line-height: 2.121vw;
-    padding: 1.953vw 0vw;
-    background: none;
-    border: none;
-  }
-
-  .footer-email:focus{
-    background-color: #1a1a1a;
-    color: #fff;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
   .social-box{
     border-radius: 0px !important;
     border: 2px solid #949494;
@@ -207,22 +124,6 @@
 
   .footer-content{
     padding-right: 5.580vw;
-  }
-
-  .email-btn{
-    width: 16%;
-    border-left: 2px solid #949494;
-    border-right: none !important;
-    border-radius: 0px;
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.121vw;
-  }
-
-  .email-btn:hover{
-    background-color: #00ffd0;
-    color: #1a1a1a;
-    box-shadow: inset 0vw 0vw 0vw 0.391vw #1a1a1a !important;
   }
 
   .social-icon{
@@ -239,23 +140,6 @@
 
 @media only screen and (min-width: 576px) and (max-width: 768px){
 
-  .footer-email{
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.121vw;
-    line-height: 2.121vw;
-    padding: 1.953vw 0vw;
-    background: none;
-    border: none;
-  }
-
-  .footer-email:focus{
-    background-color: #1a1a1a;
-    color: #fff;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
   .social-box{
     border-radius: 0px !important;
     border: 2px solid #949494;
@@ -288,22 +172,6 @@
     padding-right: 5.580vw;
   }
 
-  .email-btn{
-    width: 16%;
-    border-left: 2px solid #949494;
-    border-right: none !important;
-    border-radius: 0px;
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 2.121vw;
-  }
-
-  .email-btn:hover{
-    background-color: #00ffd0;
-    color: #1a1a1a;
-    box-shadow: inset 0vw 0vw 0vw 0.391vw #1a1a1a !important;
-  }
-
   .social-icon{
     margin-right: 1.116vw !important;
     position: relative;
@@ -317,23 +185,6 @@
 }
 
 @media only screen and (max-width: 576px) {
-
-  .footer-email{
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 4vw;
-    line-height: 2.121vw;
-    padding: 6vw 0vw;
-    background: none;
-    border: none;
-  }
-
-  .footer-email:focus{
-    background-color: #1a1a1a;
-    color: #fff;
-    outline: none !important;
-    box-shadow: none !important;
-  }
 
   .social-box{
     border-radius: 0px !important;
@@ -365,22 +216,6 @@
 
   .footer-content{
     padding-right: 2.3vw;
-  }
-
-  .email-btn{
-    width: 16%;
-    border-left: 2px solid #949494;
-    border-right: none !important;
-    border-radius: 0px;
-    font-family: "pp-neue-machina", sans-serif;
-    text-transform: uppercase;
-    font-size: 4vw;
-  }
-
-  .email-btn:hover{
-    background-color: #00ffd0;
-    color: #1a1a1a;
-    box-shadow: inset 0vw 0vw 0vw 0.391vw #1a1a1a !important;
   }
 
   .social-icon{
