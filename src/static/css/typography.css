@@ -60,6 +60,16 @@ li{
   color: #ffffff;
 }
 
+a{
+  color: #00ffd0;
+  text-decoration: none;
+}
+
+a:hover{
+  background-color:#00ffd0;
+  color: #1a1a1a !important;
+}
+
 /* Breakpoint-Specific Typography */
 
 
