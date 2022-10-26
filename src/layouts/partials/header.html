@@ -1,4 +1,56 @@
+<section class="countdown-section">
+  <div class="countdown-container">
+    <div class="countdown-contents"><p class="text-center countdown" id="something-new">A new brew's coming in <span id="demo"></span></p></div>
+  </div>
+</section>
+
+
      <style>
+
+       @font-face {
+         font-family: "pp-neue-machina";
+         src: url("/fonts/PPNeueMachina-InktrapLight.woff") format("woff");
+       }
+
+       #demo, .authenticate, #something-new{
+         font-family: "pp-neue-machina", sans-serif;
+       }
+
+       #demo,
+       .authenticate a{
+         color: #00ffd0;
+       }
+
+       .countdown-section{
+         background-color: #1a1a1a;
+         position: relative;
+         z-index: 100;
+       }
+
+       .countdown-container{
+         height: 6vh;
+         position: relative;
+         width: 100%;
+       }
+
+       .countdown-contents{
+         width: 100%;
+         display: block;
+         position: absolute;
+         top: 50%;
+         -ms-transform: translateY(-50%);
+         transform: translateY(-50%);
+       }
+
+       .countdown{
+         margin-bottom: 0px !important;
+       }
+
+
+
+
+       /* Floating GitHub Icon */
+
       .gf-container {
         width: 80px;
         height: 80px;
@@ -54,7 +106,7 @@
         margin-top: auto;
         margin-bottom: auto;
       }
-      
+
     </style>
 
     <a href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz" class="gf-container" style="background-color:#8EC7BF;">
