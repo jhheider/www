@@ -1,0 +1,103 @@
+{{ define "main" }}
+
+<section class="countdown-section">
+  <div class="countdown-container">
+    <div class="countdown-contents my-auto">
+      <img class="tea-logo mb-5" src="/Images/tea-light.svg" alt="tea logo">
+      <p class="text-center display-1" id="demo"></p>
+      <p class="text-center authenticate display-6">You can still authenticate your GitHub <a href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz">here</a>.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Nov 3, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+<style>
+
+  @font-face {
+    font-family: "pp-neue-machina";
+    src: url("/fonts/PPNeueMachina-InktrapLight.woff") format("woff");
+  }
+
+  #demo, .authenticate{
+    font-family: "pp-neue-machina", sans-serif;
+  }
+
+  #demo,
+  .authenticate a{
+    color: #00ffd0;
+  }
+
+  .tea-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10vw;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .tea-logo{
+      width: 25vw;
+    }
+  }
+
+  .navbar,
+  footer,
+  .gf-container{
+    display: none;
+  }
+
+  html,body{
+    background-color: #1a1a1a !important;
+  }
+
+  .countdown-section{
+  }
+
+  .countdown-container{
+    height: 100vh;
+    position: relative;
+    width: 100%;
+  }
+
+  .countdown-contents{
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+</style>
+
+{{ end }}
