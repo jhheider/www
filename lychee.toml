@@ -18,5 +18,6 @@ exclude = [
   "https://tea.xyz/tea.authentication-success",
   "https://tea.xyz/tea.email-subscribe",
   "https://www.google.com/thank-you",
-  "file:///home/runner/work/www/www/public/tea.white-paper.pdf"
+  "file:///home/runner/work/www/www/public/tea.white-paper.pdf",
+  "//manage.kmail-lists.com/subscriptions/subscribe"
 ]
