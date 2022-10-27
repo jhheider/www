@@ -22,6 +22,121 @@
   }
 </style>
 
+<style>
+
+  #m-home-gen-art-1{
+    position:absolute;
+    width:57vw;
+    height: 19.3vw;
+    left: 6.8vw;
+    margin-top:164vw;
+    z-index: 1;
+    background-image: url("/Images/gen-art/orange-pattern.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-home-gen-art-2{
+    position:absolute;
+    width:36vw;
+    height: 19.3vw;
+    right: 6.8vw;
+    margin-top:154vw;
+    z-index: 3;
+    background-image: url("/Images/gen-art/gen-art-_0010_DALL·E 2022-09-01 10.48.33 - bright blue and green _It’s time we stop robbing Peter to pay Mark and Jeff._.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-home-gen-art-3{
+    position:absolute;
+    width:18vw;
+    height: 18vw;
+    border-radius:200px;
+    right: 40vw;
+    margin-top:167vw;
+    z-index: 3;
+    background-image: url("/Images/gen-art/gen-art-_0002_DALL·E 2022-09-01 09.50.45 - rainbow oil spill on pavement.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    animation: rotation 10s infinite linear;
+  }
+
+  #m-home-gen-art-4{
+    position:absolute;
+    width:36vw;
+    height: 12vw;
+    right: 50vw;
+    margin-top:180vw;
+    z-index: 2;
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-home-gen-art-5{
+    position:absolute;
+    width:36vw;
+    height: 100vw;
+    right: 50vw;
+    margin-top:20vw;
+    z-index: 1;
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-home-gen-art-6{
+    position:absolute;
+    width:36vw;
+    height: 60vw;
+    right: 30vw;
+    margin-top:30vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0020_DALL·E 2022-09-02 12.25.55 - crystals in polarized light under microscope.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  @keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+
+}
+
+@media only screen and (min-width: 576px) {
+
+  .gen-art-mobile{
+    display: none;
+  }
+
+}
+
+</style>
+
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-home-gen-art-1"></div>
+<div class="gen-art-mobile animated-5 animatedFadeInUp fadeInUp" id="m-home-gen-art-2"></div>
+<div class="gen-art-mobile" id="m-home-gen-art-3"></div>
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-home-gen-art-4"></div>
+<div class="gen-art-mobile animated-5 animatedFadeInUp fadeInUp" id="m-home-gen-art-5"></div>
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-home-gen-art-6"></div>
+
 <section class="hero-section">
 <div class="gen-art animated-25 animatedFadeInUp fadeInUp" id="gen-art-1"></div>
 <div class="gen-art animated-5 animatedFadeInUp fadeInUp" id="gen-art-2"></div>
@@ -35,7 +150,7 @@
     <div class="row">
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
         <p class="lead hero-subhead animated-25 animatedFadeInUp fadeInUp" style="margin-top:8px; margin-bottom: -9px;">The open-source revolution is here. We’re calling on all devs to build with our powerful, new unified package manager.</p>
-        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <img class="mobile-grid-element mt-5" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
       </div>
     </div>
   </div>
@@ -78,7 +193,7 @@
 </style>
 <!-- Package Section: Before -->
 
-<section class="package-before-section">
+<section class="package-before-section m-two-boxes">
   <div class="gen-art" id="gen-art-3"></div>
   <div class="gen-art" id="gen-art-4"></div>
   <div class="gen-art" id="gen-art-4_5"></div>
