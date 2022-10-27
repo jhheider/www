@@ -24,7 +24,7 @@ const ipfsUpload = async (event: S3CreateEvent) => {
       const cidHash = cid[0].hash
       console.log({cidHash})
   
-      console.log("process.env.BUCKET: ", process.env.BUCKET)
+      console.log("process.env.AWS_DIST_BUCKET: ", process.env.AWS_DIST_BUCKET)
       console.log("Path: ", record.s3.object.key + ".cid")
       
       const s3Ack = await s3.putObject({
