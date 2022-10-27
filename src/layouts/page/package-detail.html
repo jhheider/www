@@ -22,6 +22,16 @@
 
 <!-- Copy to clipboard field -->
 
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col grid-gray">
+        Copy the tea one-liner below into your terminal to install {{- .Title -}}. tea will interpret the documentation and take care of any dependencies.
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr>
   <div class="row button-container">
     <input class="one-liner" type="text" value="$ sh <(curl tea.xyz) install&nbsp;{{- .Title -}}" id="myInput" readonly>
@@ -127,6 +137,7 @@
       text-align: center !important;
       font-size: 4vw;
       border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
     }
 
     .one-liner:focus{
