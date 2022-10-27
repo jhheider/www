@@ -78,12 +78,20 @@
 
 @media only screen and (max-width: 576px) {
 
+  h1{
+    font-size: 15vw !important;
+  }
+
   .tea-cli-container{
     padding: 7vw !important;
   }
 
   .gen-art{
     display:none;
+  }
+
+  .mobile-grid-element{
+    z-index: 0 !important;
   }
 
 }

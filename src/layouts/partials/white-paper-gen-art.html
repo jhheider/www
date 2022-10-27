@@ -79,7 +79,6 @@
     margin-top:164vw;
     z-index: 3;
     background-image: url("/Images/gen-art/orange-pattern.jpg");
-    background-attachment: fixed;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
@@ -94,10 +93,10 @@
     border-radius: 200px;
     z-index: 3;
     background-image: url("/Images/gen-art/dream-tree.jpg");
-    background-attachment: fixed;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
+    animation: rotation 10s infinite linear;
   }
 
   #m-wp-gen-art-3{
@@ -108,7 +107,6 @@
     margin-top:154.5vw;
     z-index: 3;
     background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
-    background-attachment: fixed;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
@@ -122,10 +120,18 @@
     margin-top:20vw;
     z-index: 0;
     background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
-    background-attachment: fixed;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
   }
 
   @media only screen and (min-width: 576px) {
