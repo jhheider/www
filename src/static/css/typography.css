@@ -60,6 +60,15 @@ li{
   color: #ffffff;
 }
 
+a{
+  color: #00ffd0;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #1a1a1a;
+}
+
 /* Breakpoint-Specific Typography */
 
 

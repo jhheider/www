@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section>
+<section class="two-boxes">
   <div class="container">
     <div class="row">
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
@@ -21,6 +21,16 @@
 </section>
 
 <!-- Copy to clipboard field -->
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col grid-gray">
+        Copy the tea one-liner below into your terminal to install {{- .Title -}}. tea will interpret the documentation and take care of any dependencies.
+      </div>
+    </div>
+  </div>
+</section>
 
 <hr>
   <div class="row button-container">
@@ -127,12 +137,14 @@
       text-align: center !important;
       font-size: 4vw;
       border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
     }
 
     .one-liner:focus{
       border:none;
       outline: none;
       border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
     }
 
     .clipboard-copy{
