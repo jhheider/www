@@ -1,10 +1,10 @@
 {{ define "main" }}
 
-<section class="countdown-section">
-  <div class="countdown-container">
-    <div class="countdown-contents my-auto">
+<section class="countdown-lg-section">
+  <div class="countdown-lg-container">
+    <div class="countdown-lg-contents my-auto">
       <img class="tea-logo mb-5" src="/Images/tea-light.svg" alt="tea logo">
-      <p class="text-center display-1" id="demo"></p>
+      <p class="text-center display-1" id="demoLarge"></p>
       <p class="text-center authenticate display-6">You can still authenticate your GitHub <a href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz">here</a>.</p>
     </div>
   </div>
@@ -12,16 +12,20 @@
 
 <style>
 
+  .countdown-section{
+    display:none;
+  }
+
   @font-face {
     font-family: "pp-neue-machina";
     src: url("/fonts/PPNeueMachina-InktrapLight.woff") format("woff");
   }
 
-  #demo, .authenticate{
+  #demoLarge, .authenticate{
     font-family: "pp-neue-machina", sans-serif;
   }
 
-  #demo,
+  #demoLarge,
   .authenticate a{
     color: #00ffd0;
   }
@@ -49,16 +53,16 @@
     background-color: #1a1a1a !important;
   }
 
-  .countdown-section{
+  .countdown-lg-section{
   }
 
-  .countdown-container{
+  .countdown-lg-container{
     height: 100vh;
     position: relative;
     width: 100%;
   }
 
-  .countdown-contents{
+  .countdown-lg-contents{
     width: 100%;
     display: block;
     position: absolute;
