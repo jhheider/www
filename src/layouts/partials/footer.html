@@ -175,11 +175,18 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
       document.getElementById('jobOne').innerHTML = out[0].name;
       document.getElementById('descOne').innerHTML = out[0].description;
       document.getElementById('linkOne').href = out[0].url;
-      //Job Description Two
       document.getElementById('typeTwo').innerHTML = out[1].type.name;
       document.getElementById('deptTwo').innerHTML = out[1].department;
       document.getElementById('jobTwo').innerHTML = out[1].name;
       document.getElementById('descTwo').innerHTML = out[1].description;
+      out[1].location.is_remote === true ? document.getElementById('locTwo').innerHTML = 'Remote' : document.getElementById('locTwo').innerHTML = out[1].location.name;
+      document.getElementById('linkTwo').href = out[1].url;
+      document.getElementById('jobThree').innerHTML = out[2].name;
+      document.getElementById('typeThree').innerHTML = out[2].type.name;
+      document.getElementById('deptThree').innerHTML = out[2].department;
+      out[2].location.is_remote === true ? document.getElementById('locThree').innerHTML = 'Remote' : document.getElementById('locThree').innerHTML = out[2].location.name;
+      document.getElementById('descThree').innerHTML = out[2].description;
+      document.getElementById('linkThree').href = out[2].url;
     })
     .catch(err => { throw err });
 
