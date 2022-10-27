@@ -39,6 +39,15 @@ const serverlessConfiguration: AWS = {
           }
         ]
       }
+    },
+    vpc: {
+      securityGroupIds: [
+        "${ssm:/vpc/sg/serverless_lambdas}",
+      ],
+      subnetIds: [
+        "${ssm:/vpc/subnets/private_1}",
+        "${ssm:/vpc/subnets/private_2}"
+      ]
     }
   },
   // import the function via paths
