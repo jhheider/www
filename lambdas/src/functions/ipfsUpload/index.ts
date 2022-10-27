@@ -8,7 +8,7 @@ export default {
       s3: {
         bucket: '${ssm:AW5_S3_BUCKET}',
         existing: true,
-        event: 's3:ObjectCreated:Post',
+        event: 's3:ObjectCreated:*',
         rules: [
           {
             suffix: '.gz'
@@ -20,7 +20,7 @@ export default {
       s3: {
         bucket: '${ssm:AW5_S3_BUCKET}',
         existing: true,
-        event: 's3:ObjectCreated:Post',
+        event: 's3:ObjectCreated:*',
         rules: [
           {
             suffix: '.xz'
