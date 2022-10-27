@@ -159,26 +159,12 @@ mark{
   }
 
   .package_before{
-    background-image: url("/Images/xl-grid-half-right.svg");
-    background-attachment: scroll;
-    background-repeat: repeat-y;
-    background-position: right;
-    background-size: cover;
   }
 
   .package-cta{
-    background-image: url("/Images/x-large-grid.svg");
-    background-attachment: scroll;
-    background-repeat: repeat-y;
-    background-size: cover;
   }
 
   .statistics{
-    background-image: url("/Images/x-large-stats-grid.svg");
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: repeat;
-    background-size: cover;
   }
 
   .metric-block{
