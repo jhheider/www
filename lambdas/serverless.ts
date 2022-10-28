@@ -6,7 +6,10 @@ import ipfsUpload from '@functions/ipfsUpload';
 const serverlessConfiguration: AWS = {
   service: 'lambdas',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: [
+    'serverless-esbuild',
+    'serverless-iam-roles-per-function'
+  ],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -22,22 +25,7 @@ const serverlessConfiguration: AWS = {
     iam: {
       deploymentRole: `arn:aws:iam::${process.env.AWS_ACCOUNT_ID || '640264234305'}:role/CloudFormationExecutionRole`,
       role: {
-        statements: [
-          {
-            "Effect": "Allow",
-            "Resource": [
-              "arn:aws:s3:::dist.tea.xyz",
-              "arn:aws:s3:::dist.tea.xyz/*",
-              "arn:aws:s3:::dist.tea.xyz/*/*",
-            ],
-            "Action": [
-                "s3:GetBucketAcl",
-                "s3:List",
-                "s3:ListBucket",
-                "s3:PutObject"
-            ]
-          }
-        ]
+        statements: []
       }
     },
     vpc: {
@@ -67,6 +55,11 @@ const serverlessConfiguration: AWS = {
       platform: 'node',
       concurrency: 10,
     },
+    'serverless-iam-roles-per-function': {
+      // on inherit: try to configure permission per function correctly
+      // TODO: ci/cd puresec-ish auto-auditing permissions
+      defaultInherit: false, 
+    }
   },
 };
 
