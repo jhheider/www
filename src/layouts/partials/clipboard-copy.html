@@ -4,7 +4,7 @@
 
     <!-- The button used to copy the text -->
 
-    <button type="button" class="clipboard-copy" id="liveToastBtn" onclick="myFunction()">copy</button>
+    <button type="button" class="clipboard-copy" id="liveToastBtn" onclick="changeCopied()">copy</button>
   </div>
 <hr>
 
@@ -178,7 +178,7 @@
 
 <script>
 
-    function myFunction() {
+    function changeCopied() {
     // Get the text field
     var copyText = document.getElementById("myInput");
 
@@ -189,11 +189,8 @@
      // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);
 
-    /* Alert the copied text
-    alert("Copied " + copyText.value + " to clipboard");*/
 
-    //Change button text to 'copied'
-    document.getElementById("copy-icon").innerHTML = "copied!";
+    document.getElementById("liveToastBtn").innerHTML = "copied!";
 
   }
 
