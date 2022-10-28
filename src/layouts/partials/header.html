@@ -1,4 +1,109 @@
+
+
+<section class="countdown-section" id="countdown-section">
+  <button onclick="hideShow()" class="hide small" type="button" name="button">CLOSE</button>
+  <div class="countdown-container">
+    <div class="countdown-contents p-4">
+      <p class="text-center display-1" id="demo"></p>
+      <p class="text-center authenticate display-6">Something new is brewing in Lisbon.</p>
+    </div>
+  </div>
+</section>
+
+
      <style>
+
+       @media screen and (max-width: 576px) {
+
+         .hide{
+           position: absolute;
+           background-color:#1a1a1a !important;
+           border:none !important;
+           right: 5px;
+           top: 5px;
+           text-transform: uppercase;
+           color: #00ffd0;
+           z-index: 100;
+           opacity: 0.3;
+         }
+
+         .hide:hover{
+           opacity: 1;
+         }
+
+       }
+
+       @media screen and (min-width: 576px) {
+
+         .hide{
+           position: absolute;
+           background-color:#1a1a1a !important;
+           border:none !important;
+           right: 20px;
+           top: 20px;
+           text-transform: uppercase;
+           color: #00ffd0;
+           z-index: 100;
+           opacity: 0.3;
+           transition: 0.2s ease-in-out;
+         }
+
+         .hide:hover{
+           opacity: 1;
+         }
+
+       }
+
+
+       @font-face {
+         font-family: "pp-neue-machina";
+         src: url("/fonts/PPNeueMachina-InktrapLight.woff") format("woff");
+       }
+
+       .tea-logo{
+         width:20%;
+       }
+
+       #demo, .authenticate, #something-new, .hide{
+         font-family: "pp-neue-machina", sans-serif;
+       }
+
+       #demo,
+       .authenticate a{
+         color: #00ffd0;
+       }
+
+       .countdown-section{
+         background-color: #1a1a1a;
+         position: relative;
+         z-index: 100;
+         display: block;
+       }
+
+       .countdown-container{
+         height: 28vh;
+         position: relative;
+         width: 100%;
+       }
+
+       .countdown-contents{
+         width: 100%;
+         display: block;
+         position: absolute;
+         top: 50%;
+         -ms-transform: translateY(-50%);
+         transform: translateY(-50%);
+       }
+
+       .countdown{
+         margin-bottom: 0px !important;
+       }
+
+
+
+
+       /* Floating GitHub Icon */
+
       .gf-container {
         width: 80px;
         height: 80px;
@@ -54,8 +159,22 @@
         margin-top: auto;
         margin-bottom: auto;
       }
-      
+
     </style>
+
+    <script type="text/javascript">
+      function hideShow() {
+        var x = document.getElementById("countdown-section");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+    </script>
+
+
 
     <a href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz" class="gf-container" style="background-color:#8EC7BF;">
       <img src="/Images/github.svg" alt="" class="github-icon mx-auto">
