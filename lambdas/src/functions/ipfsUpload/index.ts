@@ -28,6 +28,30 @@ export default {
         ]
       },
     },
+    {
+      s3: {
+        bucket: '${ssm:AW5_S3_BUCKET}',
+        existing: true,
+        event: 's3:ObjectCreated:*',
+        rules: [
+          {
+            suffix: '.sha256sum'
+          },
+        ]
+      },
+    },
+    {
+      s3: {
+        bucket: '${ssm:AW5_S3_BUCKET}',
+        existing: true,
+        event: 's3:ObjectCreated:*',
+        rules: [
+          {
+            suffix: '.txt'
+          },
+        ]
+      },
+    },
   ],
   environment: {
     AWS_DIST_BUCKET: '${ssm:AW5_S3_BUCKET}',
