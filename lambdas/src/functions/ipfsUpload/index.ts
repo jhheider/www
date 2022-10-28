@@ -32,5 +32,19 @@ export default {
   environment: {
     AWS_DIST_BUCKET: '${ssm:AW5_S3_BUCKET}',
     IPFS_IP4_ADDRESS: '${ssm:/ipfs/ip4_address}',
-  }
+  },
+  iamRoleStatements: [
+    {
+      Effect: 'Allow',
+      Action: [
+        's3:GetObject',
+        's3:PutObject',
+      ],
+      Resource: [
+        "arn:aws:s3:::${ssm:AW5_S3_BUCKET}",
+        "arn:aws:s3:::${ssm:AW5_S3_BUCKET}/*",
+        "arn:aws:s3:::${ssm:AW5_S3_BUCKET}/*/*",
+      ]
+    }
+  ]
 };
