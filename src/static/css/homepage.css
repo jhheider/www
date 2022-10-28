@@ -131,7 +131,7 @@ mark{
   }
 
   .lead-text-container{
-    border: 2px solid #949494;
+    border: 1px solid #949494 !important;
     width: 41.6vw;
     display: flex;
     justify-content: center;
@@ -224,7 +224,7 @@ mark{
   }
 
   .lead-text-container{
-    border: 2px solid #949494;
+    border: 1px solid #949494;
     width: 60vw;
     display: flex;
     justify-content: center;
@@ -272,7 +272,7 @@ mark{
   }
 
   .lead-text-container{
-    border: 2px solid #949494;
+    border: 1px solid #949494;
     width: 70vw;
     display: flex;
     justify-content: center;
@@ -319,7 +319,7 @@ mark{
   }
 
   .lead-text-container{
-    border: 2px solid #949494;
+    border: 1px solid #949494;
     width: 100%;
     display: flex;
     justify-content: center;
