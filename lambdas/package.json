@@ -10,7 +10,7 @@
     "node": ">=14.15.0"
   },
   "resolutions": {
-    "node-fetch": "^1.6.3"
+    "node-fetch": "2.6.1"
   },
   "dependencies": {
     "@middy/core": "^3.4.0",
@@ -23,7 +23,7 @@
     "compare-versions": "^5.0.1",
     "ipfs-http-client": "^33.1.1",
     "lodash": "^4.17.21",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "2.6.1"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",

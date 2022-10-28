@@ -52,6 +52,18 @@ export default {
         ]
       },
     },
+    {
+      s3: {
+        bucket: '${ssm:AW5_S3_BUCKET}',
+        existing: true,
+        event: 's3:ObjectCreated:*',
+        rules: [
+          {
+            suffix: '.tgz'
+          },
+        ]
+      },
+    },
   ],
   environment: {
     AWS_DIST_BUCKET: '${ssm:AW5_S3_BUCKET}',
