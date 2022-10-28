@@ -92,10 +92,10 @@ jobs:
       with:
         cmd: '.github/build-package-pages.sh src/data/packages.json src/content/packages'
 
-    - name: Download package thumbnail images
-      uses: getneil/jq-action@v1
-      with:
-        cmd: '.github/prepare-thumb-images.sh src/data/packages.json ./src/static/Images/packages/'
+    # - name: Download package thumbnail images
+    #   uses: getneil/jq-action@v1
+    #   with:
+    #     cmd: '.github/prepare-thumb-images.sh src/data/packages.json ./src/static/Images/packages/'
 
     - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
 
