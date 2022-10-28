@@ -1,6 +1,6 @@
 <hr>
   <div class="row button-container" onclick="myFunction()" style="display:flex; justify-content:space-between;">
-    <input class="one-liner" type="text" value="sh <(curl tea.xyz)" id="myInput" readonly>
+    <input class="one-liner" type="text" value="sh <(curl tea.xyz)" id="shortcodeCopy" readonly>
 
     <!-- The button used to copy the text -->
 
@@ -180,7 +180,7 @@
 
     function changeCopied() {
     // Get the text field
-    var copyText = document.getElementById("myInput");
+    var copyText = document.getElementById("shortcodeCopy");
 
     // Select the text field
     copyText.select();
