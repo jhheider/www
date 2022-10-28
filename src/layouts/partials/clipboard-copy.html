@@ -14,11 +14,56 @@
     background-color: #1a1a1a;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 992px) {
 
     .one-liner{
       width: 80%;
       padding: 2.455vw 4.185vw;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      font-size: 2vw;
+      border-left: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      height: 8.371vw;
+      width: 18%;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      font-size: 2.1vw;
+      float:right !important;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .button-container{
+      padding:0px 6.1vw !important;
+    }
+
+    .one-liner{
+      width: 80%;
+      padding: 2.455vw 5.040vw !important;
       border-radius: 0px;
       border: none;
       background-color: #1a1a1a !important;
