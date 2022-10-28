@@ -61,7 +61,7 @@
 
   .container{
     max-width: 1920px;
-    padding: 4.185vw 8.371vw 4.185vw 8.371vw;
+    padding: 4.185vw 6.510vw 4.185vw 6.510vw;
   }
 }
 
@@ -337,6 +337,10 @@ mark{
   .hero-section{
     padding-right: 4vw;
     padding-left: 4vw;
+  }
+
+  .lead-text-container{
+    padding: 0px !important;
   }
 
   .hero-container{
