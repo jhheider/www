@@ -132,7 +132,12 @@ mark{
 
   .lead-text-container{
     border: 2px solid #949494;
-    width: 41.853vw;
+    width: 41.6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12.556vw;
+    margin-top: 1vw;
   }
 
   .hero-bottom{
@@ -220,7 +225,13 @@ mark{
 
   .lead-text-container{
     border: 2px solid #949494;
-    width: 50vw;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    margin-top: 0.4vw;
+    margin-bottom: 1vw;
   }
 
   .metric-block{
@@ -262,7 +273,13 @@ mark{
 
   .lead-text-container{
     border: 2px solid #949494;
-    width: 70.565vw;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    margin-top: 1.1vw;
+    margin-bottom: 1vw;
   }
 
   .metric-block{
@@ -304,6 +321,12 @@ mark{
   .lead-text-container{
     border: 2px solid #949494;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20.2vw;
+    margin-top: 1.3vw;
+    margin-bottom: 2.5vw;
   }
 
   .metric-block{
