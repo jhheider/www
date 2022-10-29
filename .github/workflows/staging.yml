@@ -92,10 +92,20 @@ jobs:
       with:
         cmd: '.github/build-package-pages.sh src/data/packages.json src/content/packages'
 
-    # - name: Download package thumbnail images
-    #   uses: getneil/jq-action@v1
-    #   with:
-    #     cmd: '.github/prepare-thumb-images.sh src/data/packages.json ./src/static/Images/packages/'
+    - name: Download package thumbnails from Airtable
+      uses: getneil/jq-action@v1
+      with:
+        cmd: '.github/prepare-thumb-images.sh src/data/packages.json'
+
+    - name: Upload package thumbnails to AWS S3
+      uses: jakejarvis/s3-sync-action@master
+      env:
+        AWS_S3_BUCKET: www.tea.xyz
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'us-east-1'
+        SOURCE_DIR: 'packages_thumbs_images'
+        DEST_DIR: 'Images/packages'
 
     - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
 
