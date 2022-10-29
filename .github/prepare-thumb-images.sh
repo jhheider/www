@@ -29,6 +29,3 @@ done
 
 # replace packages.json with the updated version with localized image links
 mv $temp_packages $1
-
-# upload thumb images to production cdn
-aws s3 sync ./packages_thumbs_images s3://www.tea.xyz/Images/packages
