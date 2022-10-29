@@ -2,7 +2,7 @@
     {
         "name": "mpdecimal",
         "full_name": "mpdecimal",
-        "desc": "Library for decimal floating point arithmetic",
+        "desc": "Library for decimal floating point arithmetics",
         "homepage": "https://www.bytereef.org/mpdecimal/",
         "version": "2.5.1",
         "installs": 3986221,

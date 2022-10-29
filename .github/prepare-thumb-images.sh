@@ -2,7 +2,8 @@
 # cmd: $ ./prepare-thumb-images.sh srcJson targetPath
 # sample:  $ .github/prepare-thumb-images.sh src/data/packages.json src/static/Images/packages/
 
-mkdir -p $2
+# create packages folder: where airtable images will be DLd
+mkdir -p ./packages_thumbs_images
 packages="cat $1"
 temp_packages="./src/data/temp.json"
 cp $1 $temp_packages
@@ -18,8 +19,8 @@ for row in $($packages | jq -r '.[] | @base64'); do
         filename="${filename%.*}"
         slug=$(_jq '.slug')
         outputPath=$2/$(_jq '.slug').$extension
-        new_thumb_image_url="/Images/packages/$slug.$extension"
-        curl $dl_url -o $2/$slug.$extension
+        new_thumb_image_url="https://tea.xyz/Images/packages/$slug.$extension"
+        curl $dl_url -o ./packages_thumbs_images/$slug.$extension
         updated_packages=$(jq '(.[] | select(.slug == "'$slug'") | .thumb_image_url) |= "'$new_thumb_image_url'"' ./src/data/temp.json)
         echo $updated_packages > $temp_packages
         echo "update $slug"
@@ -28,3 +29,6 @@ done
 
 # replace packages.json with the updated version with localized image links
 mv $temp_packages $1
+
+# upload thumb images to production cdn
+aws s3 sync ./packages_thumbs_images s3://www.tea.xyz/Images/packages
