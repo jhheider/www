@@ -200,10 +200,10 @@ a:hover{
 @media only screen and (min-width: 576px) and (max-width: 768px){
 
   h1{
-    font-size: 18.5vw;
+    font-size: 14vw;
     line-height: 20vw;
-    margin-top: 1vw;
-    margin-left: -2vw;
+    margin-top: 2vw;
+    margin-left: -0.7vw;
   }
 
   h2{

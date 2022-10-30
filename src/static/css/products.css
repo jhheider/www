@@ -16,13 +16,37 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
+  .product-hero-section{
+    background-image: url("/Images/prouct-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
+  .product-hero-section{
+    background-image: url("/Images/prouct-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
+
+  .product-hero-section{
+    background-image: url("/Images/prouct-medium-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
 
 }
 
