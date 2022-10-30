@@ -4,18 +4,12 @@
 
 @media only screen and (min-width: 1200px) {
 
-  .products-hero{
-    background-image: url("Images/x-large-grid.svg");
+  .product-hero-section{
+    background-image: url("/Images/prouct-x-large-grid-generative-art.gif") !important;
     background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
     background-size: cover;
-  }
-
-  .lead-container{
-    padding-left: 25vw;
-    padding-right: 25vw;
-    margin-bottom: -2.7vw;
   }
 
 }
