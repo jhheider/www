@@ -152,17 +152,17 @@ mark{
   .impact-section{
     background-image: url("/Images/impact-section-grid.svg");
     background-attachment: fixed;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     background-size: contain;
     opacity: 1;
   }
 
   .package_before{
-    background-image: url("/Images/xl-grid-half-right.svg");
+    background-image: url("/Images/home-x-large-grid-generative-art_half.gif") !important;
     background-attachment: scroll;
     background-repeat: repeat-y;
     background-position: right;
-    background-size: cover;
+    background-size: contain;
   }
 
   .package-cta{
@@ -234,6 +234,14 @@ mark{
     margin-bottom: 1vw;
   }
 
+  .package_before{
+    background-image: url("/Images/home-large-grid-generative-art_half.gif") !important;
+    background-attachment: scroll;
+    background-repeat: repeat-y;
+    background-position: right;
+    background-size: contain;
+  }
+
   .metric-block{
     padding: 4.185vw;
     border: 2px solid #949494;
@@ -281,6 +289,15 @@ mark{
     margin-top: 1.1vw;
     margin-bottom: 1vw;
   }
+
+  .package_before{
+    background-image: url("/Images/home-large-grid-generative-art_half.gif") !important;
+    background-attachment: scroll;
+    background-repeat: repeat-y;
+    background-position: right;
+    background-size: contain;
+  }
+
 
   .metric-block{
     padding: 4.185vw;
