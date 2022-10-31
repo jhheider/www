@@ -5,6 +5,8 @@
 <style type="text/css">
 	.st0{fill:none;}
 	.st1{fill:#949494;}
+	.st2{clip-path:url(#SVGID_00000052070916915058410510000009276169036291147436_);}
+	.st3{clip-path:url(#SVGID_00000044882087602071436240000017007853555419631284_);}
 </style>
 <g id="Group_1222" transform="translate(21671.25 0.25)">
 	<g id="Group_1180" transform="translate(-8091 -5447)">
@@ -443,29 +445,33 @@
 	</g>
 </g>
 <g>
-	<defs>
-		<rect id="SVGID_1_" x="1280.5" y="240.5" width="399.5" height="239.5"/>
-	</defs>
-	<clipPath id="SVGID_00000052800116721874502060000006317058657410122942_">
-		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-	</clipPath>
-	<g style="clip-path:url(#SVGID_00000052800116721874502060000006317058657410122942_);">
-		
-			<image style="overflow:visible;" width="1024" height="1024" xlink:href="gen-art/gen-art-_0002_DALL·E 2022-09-01 09.50.45 - rainbow oil spill on pavement.png.jpg"  transform="matrix(0.3933 0 0 0.3933 1278.2699 179.1164)">
-		</image>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="1280.5" y="240.5" width="399.5" height="239.5"/>
+		</defs>
+		<clipPath id="SVGID_00000119813964100342736430000000329285357377609884_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<g style="clip-path:url(#SVGID_00000119813964100342736430000000329285357377609884_);">
+			
+				<image style="overflow:visible;enable-background:new    ;" width="1024" height="1024" xlink:href="gen-art/gen-art-_0002_DALL·E 2022-09-01 09.50.45 - rainbow oil spill on pavement.png.jpg"  transform="matrix(0.3933 0 0 0.3933 1278.2699 179.1164)">
+			</image>
+		</g>
 	</g>
 </g>
 <g>
-	<defs>
-		<rect id="SVGID_00000080896094612754687480000007840554366870062478_" x="1120.5" y="560.5" width="159.5" height="159.5"/>
-	</defs>
-	<clipPath id="SVGID_00000170987347564820850550000011526108244330403237_">
-		<use xlink:href="#SVGID_00000080896094612754687480000007840554366870062478_"  style="overflow:visible;"/>
-	</clipPath>
-	<g style="clip-path:url(#SVGID_00000170987347564820850550000011526108244330403237_);">
-		
-			<image style="overflow:visible;" width="1024" height="1024" xlink:href="gen-art/gen-art-_0013_DALL·E 2022-09-01 11.17.52 - macro red world of pastel geometric shapes.png.jpg"  transform="matrix(0.187 0 0 0.187 1106.6669 538.376)">
-		</image>
+	<g>
+		<defs>
+			<rect id="SVGID_00000041998952529795988210000016367216174360950669_" x="1120.5" y="560.5" width="159.5" height="159.5"/>
+		</defs>
+		<clipPath id="SVGID_00000029023640205878812630000018356583098134657935_">
+			<use xlink:href="#SVGID_00000041998952529795988210000016367216174360950669_"  style="overflow:visible;"/>
+		</clipPath>
+		<g style="clip-path:url(#SVGID_00000029023640205878812630000018356583098134657935_);">
+			
+				<image style="overflow:visible;enable-background:new    ;" width="1024" height="1024" xlink:href="gen-art/gen-art-_0013_DALL·E 2022-09-01 11.17.52 - macro red world of pastel geometric shapes.png.jpg"  transform="matrix(0.187 0 0 0.187 1106.6669 538.376)">
+			</image>
+		</g>
 	</g>
 </g>
 </svg>

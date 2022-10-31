@@ -1,11 +1,57 @@
-.nb-man-hero{
-  background-image: url("/Images/x-large-grid.svg");
-  background-attachment: fixed;
-  background-position: top;
-  background-repeat: repeat;
-  background-size: cover;
-  border-bottom: 2px solid #949494;
+/* Breakpoints for re-use*/
+
+@media only screen and (min-width: 1200px) {
+
+  .nb-hero-section{
+    background-image: url("/Images/nbman-x-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
 }
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+  .nb-hero-section{
+    background-image: url("/Images/nbman-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  .nb-hero-section{
+    background-image: url("/Images/nbman-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
+  .nb-hero-section{
+    background-image: url("/Images/nbman-medium-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+}
+
 
 .nb-man-latest{
   background-image: url("/Images/x-large-grid.svg");

@@ -46,7 +46,7 @@
 
   .container{
     max-width: 1920px;
-    padding: 4.185vw 8.371vw 4.185vw 8.371vw;
+    padding: 4.185vw 5.040vw 4.185vw 5.040vw !important;
   }
 }
 
@@ -61,7 +61,7 @@
 
   .container{
     max-width: 1920px;
-    padding: 4.185vw 8.371vw 4.185vw 8.371vw;
+    padding: 4.185vw 6.510vw 4.185vw 6.510vw;
   }
 }
 
@@ -82,27 +82,6 @@
   .container{
     max-width: 1920px;
     padding: 5.5vw 3vw !important;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-
-  /* M5 Spacers (Bootstrap Utilities)*/
-
-  .m-5{
-    margin: 12.556vw !important;
-  }
-  .mb-5{
-    margin-bottom: 12.556vw !important;
-  }
-  .mt-5{
-    margin-top: 12.556vw !important;
-  }
-  .ms-5{
-    margin-left: 12.556vw !important;
-  }
-  .me-5{
-    margin-right: 12.556vw !important;
   }
 }
 
@@ -144,11 +123,21 @@ mark{
 @media only screen and (min-width: 1200px) {
 
   .hero-section{
-    background-image: url("/Images/x-large-grid.svg");
+    background-image: url("/Images/x-large-grid-generative-art.png") !important;
     background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
     background-size: cover;
+  }
+
+  .lead-text-container{
+    border: 1px solid #949494 !important;
+    width: 41.6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12.556vw;
+    margin-top: 1vw;
   }
 
   .hero-bottom{
@@ -163,17 +152,17 @@ mark{
   .impact-section{
     background-image: url("/Images/impact-section-grid.svg");
     background-attachment: fixed;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     background-size: contain;
     opacity: 1;
   }
 
   .package_before{
-    background-image: url("/Images/xl-grid-half-right.svg");
+    background-image: url("/Images/home-x-large-grid-generative-art_half.gif") !important;
     background-attachment: scroll;
     background-repeat: repeat-y;
     background-position: right;
-    background-size: cover;
+    background-size: contain;
   }
 
   .package-cta{
@@ -227,11 +216,30 @@ mark{
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
   .hero-section{
-    background-image: url("/Images/large-grid.svg");
+    background-image: url("/Images/large-grid-generative-art.png") !important;
     background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
     background-size: cover;
+  }
+
+  .lead-text-container{
+    border: 1px solid #949494;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    margin-top: 0.4vw;
+    margin-bottom: 1vw;
+  }
+
+  .package_before{
+    background-image: url("/Images/home-large-grid-generative-art_half.gif") !important;
+    background-attachment: scroll;
+    background-repeat: repeat-y;
+    background-position: right;
+    background-size: contain;
   }
 
   .metric-block{
@@ -264,12 +272,32 @@ mark{
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
   .hero-section{
-    background-image: url("/Images/large-grid.svg");
+    background-image: url("/Images/large-grid-generative-art.png") !important;
     background-attachment: scroll;
     background-position: top;
     background-repeat: repeat;
     background-size: cover;
   }
+
+  .lead-text-container{
+    border: 1px solid #949494;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    margin-top: 1.1vw;
+    margin-bottom: 1vw;
+  }
+
+  .package_before{
+    background-image: url("/Images/home-large-grid-generative-art_half.gif") !important;
+    background-attachment: scroll;
+    background-repeat: repeat-y;
+    background-position: right;
+    background-size: contain;
+  }
+
 
   .metric-block{
     padding: 4.185vw;
@@ -300,11 +328,22 @@ mark{
 @media only screen and (min-width: 576px) and (max-width: 768px) {
 
   .hero-section{
-    background-image: url("/Images/medium-grid.svg");
+    background-image: url("/Images/medium-grid-generative-art.png");
     background-attachment: scroll;
     background-position: top;
-    background-repeat: repeat;
+    background-repeat: repeat-y;
     background-size: cover;
+  }
+
+  .lead-text-container{
+    border: 1px solid #949494;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20.2vw;
+    margin-top: 1.3vw;
+    margin-bottom: 2.5vw;
   }
 
   .metric-block{
@@ -338,6 +377,10 @@ mark{
   .hero-section{
     padding-right: 4vw;
     padding-left: 4vw;
+  }
+
+  .lead-text-container{
+    padding: 0px !important;
   }
 
   .hero-container{

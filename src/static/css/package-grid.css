@@ -25,3 +25,12 @@
   background-repeat: repeat;
   background-size: contain;
 }
+
+@media only screen and (max-width: 576px) {
+
+  .package-grid{
+    padding-left: 0vw !important;
+    padding-right: 0vw !important;
+  }
+
+}

@@ -80,7 +80,6 @@ a:hover{
     line-height: 12.4vw;
     margin-top: -1.116vw;
     margin-left: -0.837vw;
-    margin-bottom: 1.2vw;
   }
 
   h2{
@@ -188,8 +187,8 @@ a:hover{
   }
 
   .lead{
-    font-size: 3vw !important;
-    line-height: 3vw !important;
+    font-size: 2.419vw !important;
+    line-height: 3.5vw !important;
   }
 
   p{
@@ -201,10 +200,10 @@ a:hover{
 @media only screen and (min-width: 576px) and (max-width: 768px){
 
   h1{
-    font-size: 18.5vw;
+    font-size: 14vw;
     line-height: 20vw;
-    margin-top: 1vw;
-    margin-left: -2vw;
+    margin-top: 2vw;
+    margin-left: -0.7vw;
   }
 
   h2{
@@ -223,8 +222,8 @@ a:hover{
   }
 
   .lead{
-    font-size: 28px !important;
-    line-height: 29px !important;
+    font-size: 3.125vw !important;
+    line-height: 3.776vw !important;
     margin-bottom: 40px;
   }
 
