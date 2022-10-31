@@ -66,7 +66,8 @@ a{
 }
 
 a:hover{
-  color: #1a1a1a;
+  color: #00ffd0;
+  text-decoration: underline;
 }
 
 /* Breakpoint-Specific Typography */
