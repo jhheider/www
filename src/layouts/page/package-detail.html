@@ -39,9 +39,11 @@
 
 <script type="text/javascript">
 
-  document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) +{{- .maintainer -}}/{{- .Title -}}";
+  document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) +{{- .Maintainer -}}/{{- .Title -}}";
 
 </script>
+
+{{ range where $.Site.Data.packages "maintainer" .Maintainer }}
 
 <style>
 
