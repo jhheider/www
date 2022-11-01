@@ -36,11 +36,11 @@
 </section>
 
 {{- partial "clipboard-copy.html" -}}
-{{ range where $.Site.Data.packages "maintainer" .Maintainer }}
+{{ range where $.Site.Data.packages "maintainer" .maintainer }}
 
 <script type="text/javascript">
 
-  document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) &#43;{{- .Maintainer -}}&#47;{{- .Title -}}";
+  document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) &#43;{{- .maintainer -}}&#47;{{- .Title -}}";
 
 </script>
 
