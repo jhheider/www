@@ -281,15 +281,15 @@
   .detail-btn-large{
     display:inline-block;
     font-family: "pp-neue-machina", sans-serif;
-    font-size: 1.116vw;
+    font-size: 16px;
     background-color: #1a1a1a;
     border: .5px solid #ffffff;
     color: #fff;
     padding-top: 0.279vw;
     text-decoration: none;
     text-transform: uppercase;
-    width: 25.000vw;
-    height: 4.185vw;
+    width: 375px;
+    height: 75px;
     transition: 0.2s ease-in-out;
   }
 
@@ -319,15 +319,15 @@
   .detail-btn-large{
     display:inline-block;
     font-family: "pp-neue-machina", sans-serif;
-    font-size: 1.116vw;
+    font-size: 16px;
     background-color: #1a1a1a;
     border: .5px solid #ffffff;
     color: #fff;
     padding-top: 0.279vw;
     text-decoration: none;
     text-transform: uppercase;
-    width: 25.000vw;
-    height: 4.185vw;
+    width: 300px;
+    height: 60px;
     transition: 0.2s ease-in-out;
   }
 
@@ -357,15 +357,15 @@
   .detail-btn-large{
     display:inline-block;
     font-family: "pp-neue-machina", sans-serif;
-    font-size: 1.116vw;
+    font-size: 14px;
     background-color: #1a1a1a;
     border: .5px solid #ffffff;
     color: #fff;
     padding-top: 0.279vw;
     text-decoration: none;
     text-transform: uppercase;
-    width: 25.000vw;
-    height: 4.185vw;
+    width: 250px;
+    height: 50px;
     transition: 0.2s ease-in-out;
   }
 
@@ -395,15 +395,15 @@
   .detail-btn-large{
     display:inline-block;
     font-family: "pp-neue-machina", sans-serif;
-    font-size: 1.116vw;
+    font-size: 14px;
     background-color: #1a1a1a;
     border: .5px solid #ffffff;
     color: #fff;
     padding-top: 0.279vw;
     text-decoration: none;
     text-transform: uppercase;
-    width: 25.000vw;
-    height: 4.185vw;
+    width: 250px;
+    height: 50px;
     transition: 0.2s ease-in-out;
   }
 
