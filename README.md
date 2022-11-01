@@ -31,11 +31,18 @@ hugo serve --watch --buildDrafts --source src
 
 ## Dependencies
 
-Install hugo yourself or use tea: `sh <(curl tea.xyz) hugo`.
-
 | Project    | Version |
 |------------|---------|
 | gohugo.io  |  >=0.99 |
+
+Install them yourself or use tea:
+
+```
+$ sh <(curl tea.xyz)
+$ tea +git-scm.org git clone https://github.com/teaxyz/www tea-www
+$ cd tea-www
+$ tea .
+```
 
 # Build
 
