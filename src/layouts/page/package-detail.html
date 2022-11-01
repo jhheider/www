@@ -35,13 +35,15 @@
   </div>
 </section>
 
-{{- partial "clipboard-copy.html" -}}
+{{ range where $.Site.Data.packages "name" .Title }}
+  {{- partial "clipboard-copy.html"  -}}
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) +{{- .full_name -}}";
+  </script>
+{{ end }}
 
-  document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) +{{- .Params.maintainer -}}/{{- .Title -}}";
 
-</script>
 
 <style>
 
