@@ -79,7 +79,7 @@ jobs:
     # cache-control of 10 mins because we *need* to be able to update
     # this and have people see the results can be fixed well with a static site builder
     - run: |
-        aws s3 sync public s3://www.tea.xyz \
+        aws s3 sync public s3://test1.tea.xyz \
           --metadata-directive REPLACE \
           --cache-control max-age=600 \
           --exclude '.git/*' --exclude '.github/*' \
@@ -92,10 +92,10 @@ jobs:
     #TODO create a github-action that can be used to parse the
     # output from `s3 sync` into invalidation commands. NOTE
     # I have already looked for something to do this and failed.
-    - run: |
-        aws cloudfront create-invalidation \
-          --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} \
-          --paths '/*'
+    # - run: |
+    #     aws cloudfront create-invalidation \
+    #       --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} \
+    #       --paths '/*'
 
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1
