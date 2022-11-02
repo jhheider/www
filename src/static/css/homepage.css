@@ -471,14 +471,8 @@ mark{
   }
 
   #binance-logo{
-    width: 50% !important;
+    width: 60% !important;
     margin-bottom: 5vw !important;
-  }
-
-  #galaxy-eco-labs{
-    width: 90% !important;
-    position: relative;
-    z-index: 1;
   }
 
   .footer{
