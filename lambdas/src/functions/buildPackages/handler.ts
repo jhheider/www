@@ -39,7 +39,7 @@ interface FinalPackageOutput {
 interface AirtablePackageDict {
   [slug: string]: AirtablePackage
 }
-
+const placeholderThumbImg = '/Images/package-thumb-nolabel4.jpg';
 const getFinalPackagesData = async (s3Packages: S3Package[], airtablePackages: AirtablePackage[]): Promise<FinalPackageOutput> => {
   const newPackages: NewAirtablePackage[] = [];
   const packagesJson: Package[] = [];
@@ -58,7 +58,7 @@ const getFinalPackagesData = async (s3Packages: S3Package[], airtablePackages: A
       const finalPackage: Package = {
         ...airtablePackage,
         installs: 0, // temporary get this from tea db/ipfs eventually
-        thumb_image_url: airtablePackage.thumb_image_url || '/Images/package-thumb-nolabel4.jpg',
+        thumb_image_url: airtablePackage.thumb_image_url || placeholderThumbImg,
       }
       packagesJson.push(finalPackage);
     } else {
@@ -77,7 +77,7 @@ const getFinalPackagesData = async (s3Packages: S3Package[], airtablePackages: A
         desc,
         installs: 0, // TODO: get from algolia
         dl_count: 0,
-        thumb_image_url: '',
+        thumb_image_url: placeholderThumbImg,
       }
       newPackages.push(newPackage);
       packagesJson.push(tempPackage);
