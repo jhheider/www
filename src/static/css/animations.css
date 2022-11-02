@@ -50,7 +50,7 @@
 
 /* Text Flicker Animation */
 
-
+/*
 h1{
   animation: text-flicker 1.5s linear;
   transition: 0.2s ease-out;

@@ -1,5 +1,5 @@
 ---
-title: "Nebraksa Man"
+title: "Nebraska Man"
 Description: "tea.nebraska-man"
 layout: "nebraska-man"
 menu: main
