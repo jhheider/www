@@ -1,29 +1,40 @@
 {{ define "main" }}
 
-<div class="container auth-success-container">
-  <div class="row">
-    <div class="col success-container">
-      <div class="success-content">
-        <h1 class="text-center display-4">Thanks for Authenticating!</h1>
-        <p class="lead text-center">You've just become an integral part in the future of the internet, AND you'll be entitled to a variety of exciting rewards such as minted NFT badges to honor your work thus far.</p>
-        <button onclick="window.location.href='/';" id="return-home" class="detail-btn-large"><i class="icon-enter-arrow"></i>RETURN HOME</button>
+<div class="section">
+  <div class="container auth-success-container">
+    <div class="row">
+      <div class="col success-container">
+        <div class="success-content">
+          <h3 class="text-center display-1">Thanks for Authenticating!</h3>
+          <p class="text-center mb-5">You've just become an integral part in the future of the internet, AND you'll be entitled to a variety of exciting rewards such as minted NFT badges to honor your work thus far.</p>
+          <button onclick="window.location.href='/';" id="return-home" class="detail-btn-large"><i class="icon-enter-arrow"></i>RETURN HOME</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+
 <style>
+
+  html,body{
+    background-color: #1a1a1a;
+    max-width: 1920px;
+    overflow-x: hidden;
+    margin-top: 2.2vw;
+  }
 
   .success-container{
     height: 80vh;
     position: relative;
+    padding: 0px !important;
   }
 
   .success-content{
-    margin: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    padding: 4vw;
   }
 
   #return-home{
