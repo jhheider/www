@@ -68,7 +68,7 @@ jobs:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     ## means s3 sync will only sync things we need sync’d
-    - uses: chetan/git-restore-mtime-action@v1
+    # - uses: chetan/git-restore-mtime-action@v1
 
     - uses: aws-actions/configure-aws-credentials@v1
       with:
