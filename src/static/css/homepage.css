@@ -1,6 +1,22 @@
 /* General/Utilities */
+@media only screen and (min-width: 1792px) {
 
-@media only screen and (min-width: 1200px) {
+  html,body{
+    background-color: #1a1a1a;
+    max-width: none;
+    overflow-x: hidden;
+    margin-top: 2.2vw;
+  }
+
+  .container{
+    max-width: none;
+    padding: 4.5vw 8.371vw 4.185vw 8.371vw;
+  }
+
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1792px) {
 
   html,body{
     background-color: #1a1a1a;
