@@ -1,806 +1,273 @@
 {{ define "main" }}
-  <!-- Hero Section -->
 
-  <img id="tea-steam-dark-1" src="Images/tea-steam-dark-1.svg" alt="">
-  <img id="tea-steam-dark-2" src="Images/tea-steam-dark-2.svg" alt="">
-  <div class="container mb-lg-5 mb-md-5 mb-sm-0 mb-0 mt-lg-5 mt-md-5 mt-sm-0 mt-0">
-    <div class="row hero my-auto">
-      <div style="z-index:100; display:flex; flex-direction:column;" class="col-lg-6 col-sm-12">
-        <div style="margin-top:auto; margin-bottom:auto;">
-          <h1 class="display-1 mb-4"><span class="yellow">Equitable</span> <span id="cycle-br-two"><br></span>Open&#8208;Source for <span id="cycle-br"><br></span><span id="cycle"></span></h1>
-          <p class="mb-5 fs-sm-5 fs-lg-6 lead">The tools that build the internet have steeped too long. For the past two
-            decades, big tech has made trillions off the generosity of visionary developers and web pioneers… never
-            thanking, never mentioning, and certainly never paying. At tea, we’re brewing something to change that by
-            enabling developers (you) to continue doing what you love, while earning what you deserve.</p>
-          <a class="btn btn-primary auth-btn mb-3" href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz"
-            role="button">Authenticate with tea<span class="badge rounded-pill bg-primary ms-3"><span
-                id="count2">287</span></span></a><br>
-          <a class="btn btn-primary mb-sm-5 mb-md-5 mb-5" id="whitepaper-btn" href="/white-paper/"
-            role="button">Read Our White Paper</a>
+<!-- Hero Section -->
+
+{{- partial "mobile-art-home" -}}
+
+<section class="hero-section">
+  <div class="container hero-container">
+    <div class="row">
+      <div class="col">
+        <h1 class="impact" style="z-index:3; position: relative;">Keep <span class="white">what</span><br><span class="hero-float" style="float:right;"><span class="white">is</span> yours.</span></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="lead-text-container animated-25 animatedFadeInUp fadeInUp black-bg p-4" style="z-index:3; position: relative;">
+          <p class="lead" style="margin-bottom: 0px;">The open-source revolution is here. We’re calling on all devs to build with our powerful, new unified package manager.</p>
         </div>
+        <img class="mobile-grid-element mt-5" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</section>
+  <div class="full-width-cta-container">
+   {{- partial "clipboard-copy.html" . -}}
+  </div>
+  <div class="hero-bottom">
 
+  </div>
+
+<!-- Teal Impact Section -->
+
+<section class="teal-bg impact-section two-boxes">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="box">
+          <div>
+            <h2 class="black text-center" style="z-index:2;">equitable open-source<br>for&nbsp;<br id="impact-break"><span class="cycle">web3</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box div {
+
+  }
+
+</style>
+<!-- Package Section: Before -->
+
+<section class="package-before-section ">
+  <div class="container package_before">
+    <div class="row one-box">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <h2 style="margin-bottom: 1vw;">about tea.</h2>
+        <p class="lead">tea.xyz is a feature-rich, delightful unified package manager that will revolutionize open-source development by providing creators and maintainers value for previously unpaid labor.</p>
+        <p>We’ve reimagined what a package manager can do for the first time since brew with new features such as executable markdown, a virtual environment manager, and universal interpretation. In short, we’ve built a tool that improves how you develop by getting out of your way so you can keep building.</p>
+        <p>Next we’re going to change the way you get rewarded for what you build by implementing a blockchain protocol that finally recognizes your hard work in open-source. You won’t have to use our web3 features to use tea, but we think you’ll want to. <a class="teal" href="/white-paper/">Check out our whitepaper for more details.</a></p>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <div class="gen-art-mobile" id="m-gen-art-1"></div>
+        <div class="gen-art-mobile" id="m-gen-art-2"></div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Package Grid -->
+
+<!-- Desktop/Tablet Package Display -->
+
+  <span class="grid-package-display">
+    {{- partial "package-grid.html" . -}}
+  </span>
+
+<!-- Mobile Package Display -->
+
+  <span class="swiper-package-display">
+    {{- partial "swiper.html" . -}}
+  </span>
+
+<!-- Style for Swiper -->
+
+<style>
+
+  @media only screen and (min-width: 576px) {
+
+      .grid-package-display{
+        display:block;
+      }
+
+      .swiper-package-display{
+        display:none;
+      }
+  }
+
+@media only screen and (max-width: 576px) {
+
+    .grid-package-display{
+      display:none;
+    }
+
+    .swiper-package-display{
+      display:block;
+    }
+}
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1vw !important;
+    margin-top: 1vw;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide figure > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+</style>
+
+<!-- Package CTA Section -->
+
+<hr>
+  <section class="package-cta-section" id="authenticate">
+      <div class="container package-cta-container one-box">
+        <div class="row one-box-down one-box-up">
+          <div class="col-lg-9">
+            <h3>Authenticate your GitHub for an even bigger sip</h3>
+            <p class="lead">Using tea without authenticating is like playing a video game without the DLC. There’s so much more to our ecosystem than a command line interface, and we want you to be a part of it.</p>
+          </div>
+        </div>
         <hr>
-
-        <!-- Start email subscribe form -->
-        <div class="row p-0">
-          <div class="col p-0">
-            <h3 class="mb-4 display-6">Stay up to date with all the latest tea news</h3>
+        <div class="row one-box-up">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 one-box-down">
+            <i class="icon-pattern-random-21 teal display-6"></i>
+            <h5>Map out the Tea’cosystem</h5>
+            <p>The more people authenticate, the clearer picture we have on just how strong the pot of tea we’re brewing is. We’ll be able to see just how many newcomers and bona-fide OSS veterans have enlisted for the revolution.</p>
+            <img class="mobile-grid-element" src="/Images/mobile-grid-element-one-row.svg" alt="grid">
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 one-box-down">
+            <i class="icon-pattern-random-15 teal display-6"></i>
+            <h5>Get Recognized</h5>
+            <p>Authenticating your GitHub enables us to quantify and reward the contributions <em>you’ve already made</em> to the Open-Source Community</p>
+            <img class="mobile-grid-element" src="/Images/mobile-grid-element-one-row.svg" alt="grid">
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 one-box-down">
+            <i class="icon-pattern-random-19 teal display-6"></i>
+            <h5>NFT Reward Badges</h5>
+            <p>Authenticating your GitHub entitles you to unique NFT reward badges, including one with rare artwork specific to how soon you authenticate.</p>
+            <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
           </div>
         </div>
-
-        <div class="row p-0">
-          <div class="col-lg-12 mb-lg-0 mb-md-5 mb-sm-5 mb-5 p-0">
-            {{- partial "klaviyo-form.html" . -}}
-          </div>
-        </div>
-
-        <!-- Styling for Subscibe form -->
-
-        <style>
-
-          @media only screen and (max-width: 576px) {
-
-            #SubscriberForm-Email-TRDBBvXuDV3vy1t0U684MU{
-              width:100%;
-            }
-
-            #keep-email-btn{
-              width:100%;
-              float:none;
-              margin-bottom:20px;
-            }
-
-            #whitepaper-btn{
-              width:100%;
-            }
-
-            #discord-btn{
-              width:100% !important;
-            }
-
-          }
-
-          @media only screen and (min-width: 576px) {
-
-            #SubscriberForm-Email-TRDBBvXuDV3vy1t0U684MU{
-              width:69%;
-            }
-
-            #keep-email-btn{
-              width:29%;
-              float:right;
-            }
-
-          }
-
-        </style>
-
-<!-- End styling for subscribe form -->
       </div>
-      <div class="col-lg-6 col-sm-12">
-        <div class="card ms-lg-5 ms-sm-0 mb-3" style="border-radius:15px; z-index:100;">
-          <div class="card-body my-auto"
-            style="display:flex; flex-direction:column; background-color: #23282C; border: 2px solid #54BAAB; border-radius:15px;">
-            <div class="p-lg-5 p-md-3 p-sm-0" style="margin-top:auto; margin-bottom:auto;">
-              <p class="card-title display-1"
-                style="color: #54BAAB; text-align:center; font-size: 6rem; font-family: 'Playfair Display', serif"><span
-                  id="count"></span></p>
-              <p class="text-center" id="count-sub-text" style="text-transform:uppercase; color:#54BAAB;">Developers
-                Authenticated</p>
-              <h5 class="mb-3" style="text-align:center; font-size:2rem;"><span id="communitea">Join the<span>
-                    communi'<span style="color:#54BAAB;">tea</span></h5>
-                <!-- ^^ deliberate prime rather than apostrophe -->
-              <p class="card-text lead" id="revolution-text" style="text-align:center;">The revolution is here. We’re calling on all open&#8208;source devs to authenticate their Github with tea.</p>
-              <p style="text-align:center;" id="auth-body-text">Developers who have contributed to OSS will be entitled to a variety of rewards, including minted NFT badges to honor your work so far. This is your chance to be an early member of our community: take a sip while it’s hot!</p>
-            </div>
-            <div class="box-auth-false">
-              <p class="text-center my-auto p-3">This is your chance to be early! <a
-                  style="color:#54BAAB; text-decoration:none;"
-                  href="/email-subscribe/"><strong>Authenticate now</strong></a>.</p>
-            </div>
-            <div class="box-auth-true">
-              <p class="text-center my-auto p-3" style="color:#23282C;"><i class="bi bi-check-circle-fill lead pe-2"
-                  style="color:#23282C;"></i>Authenticated as <span id="auth-username">[username]</span></p>
-            </div>
-          </div>
-        </div>
+  </section>
+{{- partial "full-width-cta.html" . -}}
 
-        <div class="card ms-lg-5 ms-sm-0 mx-auto" style="border-radius:15px; z-index:100;">
-          <div class="card-body my-auto" style="display:flex; flex-direction:column; background-color: #23282C; border: 2px solid #54BAAB; border-radius:15px;">
-            <div class="p-lg-2 p-md-2 p-sm-0 text-center">
-              <p class="ama-text mb-3">Join our discord, where you can talk to our team on the regular and ask anything. </p>
-              <a class="btn btn-primary discord-btn mb-2" id="discord-btn" href="https://discord.gg/KCZsXfJphn"
-                role="button">Join Discord</a>
-            </div>
-          </div>
-        </div>
+<!-- Statistics -->
 
-      </div>
-    </div>
-  </div>
+<section class="statistics" style="padding-top: 8.371vw !important; padding-bottom: 8.371vw !important;">
 
-  <style>
-    .discord-btn{
-      background-color: #327280;
-    }
+<!-- Generative Art for the statistics section -->
 
-    .discord-btn:hover{
-      background-color: #388495 !important;
-    }
+<div class="gen-art" id="gen-art-5"></div>
+<div class="gen-art" id="gen-art-6"></div>
+<div class="gen-art" id="gen-art-7"></div>
+<div class="gen-art" id="gen-art-8"></div>
+<div class="gen-art" id="gen-art-9"></div>
 
-    @media only screen and (min-width: 992px) {
-      #cycle-br{
-        display:none;
-      }
-    }
+<!-- End generative art -->
 
-    @media only screen and (max-width: 768px) {
-      #count{
-        font-size: 4rem !important;
-      }
-
-      .card-title{
-        line-height: 2.8rem;
-        margin-bottom: 1.7rem;
-      }
-    }
-  </style>
-
-  <!-- Mission Statement -->
-  <img id="tea-steam-1" src="Images/tea-steam-1.svg" alt="">
-  <img id="tea-steam-2" src="Images/tea-steam-2.svg" alt="">
-  <div class="row mission pb-5 pt-5">
-    <div class="container pb-5 pt-5">
-      <div class="row">
-        <div class="col">
-          <h2 class="charcoal display-4" style="text-align:center;">The tools you need to keep on building.</h2>
-          <p class="charcoal lead" style="text-align:center;">Like its predecessor, brew, tea is the base of the
-            developer stack–seated beneath the tools that build the internet. Unlike its predecessor, tea leverages
-            blockchain and web3 technology to eliminate anonymity and deliver compensation.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Web2 -->
-  <div class="container mb-5 mt-5 web2-container" id="why-tea">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-12 col-12 my-auto mb-5">
-        <p class="mb-5">WEB2</p>
-        <h3 class="mb-4 display-4">Thankless <span class="yellow">tech giants profit</span> from the generosity of
-          open&#8208;source developers.</h3>
-        <p class="mb-4">For more than twenty years the Internet has been built upon the fruits of freely available
-          open&hyphen;source. Whenever a project enabled new functionality it was (whether desired or not) added as a
-          new brick in the tower of infrastructure; giving the Internet new powers and capabilities; becoming a new
-          foundation for all the innovations that followed. The maintainers of these new bricks became thanklessly
-          unpaid volunteers.</p>
-        <hr class="mb-4">
-        <h4><img src="Images/no-compensation.svg" alt="no compensation icon" class="feature-icon me-2"> No Compensation
-        </h4>
-        <p class="mb-4 ps-5">Developers contribute innovations (bricks) to the tower of infrastructure that serves as a
-          feeding ground for big tech. Their efforts are capitalized on, yet they see none of that profit.</p>
-        <hr class="mb-4">
-        <h4><img src="Images/centralized.svg" alt="centralized icon" class="feature-icon me-2"> Centralized</h4>
-        <p class="mb-4 ps-5">Entire stacks are left at the mercy of single, proprietary vendors who control their
-          composition and deployment. This turns the “tower of bricks” into a game of Jenga.</p>
-        <hr class="mb-4">
-        <h4><img src="Images/obligation_maintain.svg" alt="obligation icon" class="feature-icon me-2"> Obligation to
-          Maintain</h4>
-        <p class="ps-5">Open&hyphen;source authors are pressured by their peers and the community at large to
-          continuously maintain and update their contributions... again, without pay or gratitude.</p>
-      </div>
-      <div class="col-lg-6 col-sm-12 col-md-6 col-12 mx-auto web2-col my-auto">
-        <img class="web2-tower" style="display:block; margin-left:auto; margin-right:auto;" src="Images/web2-tower.svg"
-          alt="">
-      </div>
-    </div>
-  </div>
-
-  <!-- Web3 -->
-  <div class="container web3-container">
-    <div class="row">
-      <div class="col order-lg-1 order-sm-2 order-2">
-        <img class="mt-5 web3-tower" src="/Images/web-3-towerAsset-2.svg" alt="">
-      </div>
-      <div class="col-lg-6 col-sm-12 my-auto order-lg-2 order-sm-1 order-1">
-        <p class="mb-5">WEB3</p>
-        <h3 class="mb-4 display-4">Blockchain <span class="yellow">empowers developers</span> to contribute to
-          open&#8208;source while <span class="yellow">reaping overdue benefits</span>.</h3>
-        <p class="mb-4">The problem has always existed, but the technology to solve it hasn’t. tea facilitates the graph
-          of open source that underpins all modern digital infrastructure. We’re putting it on‐chain creating a map
-          we’ll use to guide value redistribution to the open source that makes the Internet possible.
-          We’re not changing how open source works—it’s still free. web3 has introduced powerful new paradigms that
-          allow value to be compensated without direct payment. Creator economy, meet open source.</p>
-        <hr class="mb-4">
-        <h4><img src="Images/token_rewards.svg" alt="token rewards icon" class="me-2"> Token Rewards</h4>
-        <p class="mb-4 ps-5">Through tea, open&hyphen;source contributors are rewarded with our flagship token relative
-          to aggregate usage and sweat equity. Now, devs are able to monetize their generosity. </p>
-        <hr class="mb-4">
-        <h4><img src="Images/decentralized.svg" alt="tea.xyz is decentralized" class="me-2"> De-Centralized</h4>
-        <p class="mb-4 ps-5">web3 turns the “Jenga” game back into a tower of stable bricks. By putting everything
-          on-chain, we’re ensuring that entire stacks will no longer sit at the mercy of sole developers.</p>
-        <hr class="mb-4">
-        <h4><img src="Images/transferrable.svg" alt="tea.xyz is transferrable" class="me-2"> Transferrable</h4>
-        <p class="ps-5">Devs are not obligated to dedicate years to maintaining a single project. Instead, they can
-          transfer ownership to another interested party and move on to creating something else. </p>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Features & Benefits -->
-  <div class="container mb-5 mt-5" id="features">
-    <div class="row">
-      <div class="col mb-5">
-        <h2 class="display-4" style="text-align:center;">What makes it <span class="yellow">great</span>?</h2>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <h2>sta'tea'stics</h2>
+        <p class="lead">The problem is bigger than most realize. While everyday people use software every day, very few understand that the technology underlying their daily routine is provided by uncompensated labor.</p>
+        <p>Even many developers don’t fully recognize the security risks of unpaid open-source until something deep in the stack collapses, like log4J.We want to shine a light on the scale of OSS usage, both to celebrate the achievements of unsung heroes as well as highlight the need for a better way.</p><br>
+        <!-- Commenting this out until more data is available. Everything can fit on the homepage as of now.
+        {{- partial "detail-btn-large.html" "#" -}}
+        -->
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-12 col-lg-4 mb-4">
-        <div class="card mb-4">
-          <div class="card-body p-4">
-            <img src="Images/cross-platform.svg" alt="" class="mb-3">
-            <h4 class="mb-4">Cross Platform Compatible</h4>
-            <p>Wherever you develop, wherever your CI/CD runs, however you deploy your app, tea is there. We abstract
-              this detail away so you can get on with the work that matters to you.<br><br>
-
-              <code class="language-javascript">$ sh &lt;(curl tea.xyz) ci</code><br><br>
-
-              Your README, blog post or internal install instructions can all use the same, simple one‐liner.<br><br>
-
-              <code class="language-javascript">$ sh &lt;(curl tea.xyz) install deno.land</code><br><br>
-
-              Here, our one‐liner installs deno to ./bin/deno. If tea is installed it integrates with that installation,
-              if not the script just exits; tea itself is not installed either way. We’re happy to be just the
-              transmission layer.</p>
-          </div>
+      <div class="col">
+        <div class="metric-block" style="float:right; margin-top:-300px;">
+          <p class="stat-head">NUMBER OF REPOS</p>
+          <p class="stat-number teal" id="stat-one"></p>
+          <p class="small gray stat-small-text">Number of repos above 0 stars and forks, owned by tea authenticated develoeprs</p>
         </div>
-
-        <div class="card">
-          <div class="card-body p-4">
-            <img src="Images/delightful-dev.svg" alt="" class="mb-3">
-            <h4 class="mb-4">Delightful DevExperience</h4>
-            <p>tea is built with a “it just works” philosophy. It’s our job to set you up for success and then get out
-              of your way so you can work as effectively as possible. Development is hard enough without the toolset
-              being a source of pain as well.</p>
-
-            <p>Much like its predecessor, brew, tea is full of delightful touches. You’ll have to try it and see.</p>
-
-            <p>Of course delightful also means fast. You’ve got plenty to do and need tools that respect your time.</p>
-          </div>
+        <div class="gen-art-mobile" id="m-gen-art-3"></div>
+        <div class="gen-art-mobile" id="m-gen-art-4"></div>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <div class="metric-block mb-5 mt-4">
+          <p class="stat-head">AUTHENTICATED DEVS</p>
+          <p class="stat-number teal"><span id="count2"></span></p>
+          <p class="small gray stat-small-text">This is the number of OSS developers who have chosen to join the battle for the future of the internet.</p>
         </div>
-
+        <div class="gen-art-mobile" id="m-gen-art-5"></div>
+        <div class="gen-art-mobile" id="m-gen-art-6"></div>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <div class="metric-block" style="float:right;">
+          <p class="stat-head">OS CONTRIBUTIONS</p>
+          <p class="stat-number teal" id="stat-two"></p>
+          <p class="small gray stat-small-text">Number of maintainers for those 2042 packages</p>
+        </div>
+        <div class="gen-art-mobile" id="m-gen-art-7"></div>
+        <div class="gen-art-mobile" id="m-gen-art-8"></div>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
       </div>
-
-      <div class="col-12 col-sm-12 col-md-12 col-lg-4">
-        <div class="card mb-4">
-          <div class="card-body p-4">
-            <img src="Images/designed-teams.svg" alt="" class="mb-3">
-            <h4 class="mb-4">Designed for tea’ms</h4>
-            <p>Good developers create. Great developers collaborate.</p>
-
-            <p>You don’t work alone and neither should the tool that sits at the root of your stack. We’re designing tea
-              to be super great for teams.</p>
-
-            <p>tea sets your stack up right and makes working with it a delight so you and your team can focus on
-              building what matters.</p>
-          </div>
-        </div>
-
-        <div class="card mb-4">
-          <div class="card-body p-4">
-            <img src="Images/decentralized-secure.svg" alt="" class="mb-3">
-            <h4 class="mb-4">Decentralized &amp; Secure</h4>
-            <p>tea’s decentralization offers tangible benefits to ecosystem security. Every layer of your apps and dapps
-              is signed and verified on‐chain. Users can rest assured that the software they are using is what all its
-              creators intended.</p>
-
-            <p>In day to day development our decentralization increases reliability (leftpad is a sore memory) and gives
-              developers the flexibility they need to turn inspiration into empires; when a single proprietry vendor
-              controls how your stack is composed and deployed your stack is centralized and under their control.</p>
-
-            <p>We’re also saying goodbye to centralization at the installation layer. Say hello to native, built‐in
-              “version management”† for every tool in your stack and goodbye to dependency hell.</p>
-
-            <i style="color:#B7C7C7;">† similar to tools like rbenv, nvm or Python’s virtualenv.</i></p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col-12 col-sm-12 col-md-12 col-lg-4">
-        <div class="card mb-4">
-          <div class="card-body p-4">
-            <img src="Images/open-governance.svg" alt="" class="mb-3">
-            <h4 class="mb-4">Open Governance</h4>
-            <p>We believe the open source community needs to direct and control the ecosystem we will help launch. The
-              DAO will be an open, transparent and evolving governance structure where the depth of your contributions
-              will matter more than the depth of your pocket.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body p-4">
-            <img src="Images/help-build.svg" alt="" class="mb-3">
-            <h4 class="mb-4">Want to Help Us Build It?</h4>
-            <p>Join the team that is both fixing how open source is funded and creating the tools that will accelerate
-              its creation for the benefit of all humanity.</p>
-
-            <p>Max Howell, our CEO, created brew. He’s a self‐taught developer, yet has written software used by tens of
-              millions of people. He doesn’t care if you know how to invert a binary tree. If you have a passion for
-              changing the world and have built some cool stuff then why not <a
-                style="color:#8EC7BF; text-decoration:none;" href="mailto:hello@tea.xyz"><strong>email us</strong></a>
-              and speak for what job you have in mind?</p>
-          </div>
-        </div>
-
-      </div>
-
     </div>
   </div>
+</section>
+{{- partial "full-width-cta.html" . -}}
 
-  <!-- Partners -->
+<!-- partners -->
 
-  <div class="container partners mt-5 mb-5">
+<section class="partners">
+  <div class="gen-art" id="gen-art-10"></div>
+  <div class="container">
     <div class="row">
-      <div class="col mb-5">
-        <h3 style="text-align:center;" class="display-5">What’s a revolution without <span class="yellow">powerful
-            allies?</span></h3>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" style="position:relative; z-index: 2; margin-top: 20px;">
+        <h2>partners</h2>
+        <p>At our core, tea is about building an open-source ecosystem that is fair for everyone. This is an enormous undertaking and we can’t do it alone. Here we want to thank those that have already enlisted for the Open-Source Revolution.</p>
+        <!-- Add in community to partners, with large metric feed. Maybe use fists icon for that -->
+      </div>
+      <div class="col">
+
       </div>
     </div>
-
     <div class="row">
-      <div class="col-12 col-sm-12 col-lg-12 my-auto">
-        <a href="https://www.binance.com/en/blog/ecosystem/binance-labs-leads-$8-million-seed-funding-round-for-tea-421499824684903608"
-          style="cursor:pointer;"><img id="binance" class="partner-img" src="Images/binance.svg"
-            alt="Proud of Binance"></a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Top Commentary -->
-
-  <style>
-
-    @media only screen and (max-width: 992px) {
-      #top-commentary{
-        display:none;
-      }
-    }
-
-    @media only screen and (min-width: 992px) {
-      #top-commentary-mobile{
-        display:none;
-      }
-    }
-
-
-    .carousel-indicators{
-      margin-bottom: -50px;
-    }
-
-    .twi-card-container{
-      height: 400px;
-    }
-
-    .twitter-card{
-      transition: 0.2s ease-in-out;
-      cursor: crosshair;
-      box-shadow:none;
-    }
-
-    .twitter-card:hover{
-      background-color: #337280;
-    }
-
-    .twitter-card-logo{
-      width:25px;
-      float:right;
-      margin-top:5px;
-    }
-  </style>
-
-  <div class="container mb-5">
-    <hr>
-  </div>
-
-    <h3 class="text-center display-6 mb-5">What the <span class="yellow">internet's</span> saying.</h3>
-
-    <div class="container" id="top-commentary" style="margin-bottom: 100px;">
-      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="4000">
-        <!-- Item 1 -->
-
-        <div class="row">
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                  <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo">
-                  <p>alexpoon.eth<br>
-                  @alexpoon_hk</p>
-                  <p>Open source dev is broken. So cool to see @teaxyz_ bringing new life to popular software projects like homebrew to web3.</p>
-                  <p>10:52 AM - Mar 24, 2022</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 2 -->
-
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                <p>0xTea<br>
-                @0xTea_</p>
-                <p>This is the innovation we need , and technology with  the right frame of mind of rewarding the creators in a way that scales and is in perpetuity</p>
-                <p>10:52 AM - Mar 24, 2022</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                <p>jcinis.eth<br>
-                @jcinis</p>
-                <p>It is hard to think of a more perfect use for blockchain technology than coordinating package releases for opensource software. What @teaxyz_ is embarking on will improve security, maintenance, and reliability, while providing much-needed incentive for independent developers. 🙌🏼 </p>
-                <p>10:52 AM - Mar 24, 2022</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End first set -->
-      </div>
-      <div class="carousel-item" data-bs-interval="4000">
-        <div class="row">
-
-        <!-- Item 4 -->
-
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                  <p>Jason Warner<br>
-                  @jasoncwarner</p>
-                  <p>Now this is legitimately interesting. I’m super glad to see more open source veterans looking at using crypto as distribution mechanisms.</p>
-                  <p>3:14 PM - Mar 23, 2022</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 5 -->
-
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                <p>Andrew Fernandez<br>
-                  @bhsdrew</p>
-                <p>Congrats man [Max] this is one of the first real interesting use cases I’ve seen for web3… really excited to see this grow</p>
-                <p>8:38 AM - Mar 23, 2022</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 6 -->
-
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                <p>max is building infra-as-lowcode<br>
-                @maxcan</p>
-                <p>one of the first web3 projects that actually makes sense</p>
-                <p>3:31 PM - Mar 23, 2022</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="4000">
-        <div class="row">
-
-        <!-- Item 7 -->
-
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                  <p>Nick Dobos<br>
-                  @NickADobos</p>
-                  <p>Homebrew is getting a web3 upgrade! 👀 <br>
-
-                  Incredibly excited for this <br>
-
-                  If this works it might be the biggest step forward in building open source software ever <br>
-
-                  Pay the maintainers <br>
-                  Build all the things</p>
-                  <p>3:31 PM - Mar 23, 2022</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 8 -->
-
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                <p>Ben<br>
-                @ben_mathes</p>
-                <p>I'm skeptical of a lot of web3. Indirect value to package maintainers though I support. Tea looks rad.<br>
-                I hope no preferential attachment concentrates the value.</p>
-                <p>2:36 PM - Mar 24, 2022</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 9 -->
-
-          <div class="col-sm-12 col-lg-4">
-            <div class="card twi-card-container">
-              <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                <p>Developer DAO (🧱, 🚀)<br>
-                @developer_dao</p>
-                <p>probably nothing</p>
-                <p>6:28 PM - Mar 23, 2022</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col">
+        <img class="partner-logo" id="binance-logo" src="/Images/binance-logo-white.svg" alt="Binance Logo" style="width:37.757vw; margin-top:1.116vw; z-index:2; position:relative;">
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid" style="margin-top: -2.8vw;">
+        <div class="gen-art-mobile" id="m-gen-art-9"></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Start Mobile Top-Commentary -->
-
-  <div class="container" id="top-commentary-mobile" style="margin-bottom: 75px;">
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="3000">
-
-      <!-- Item 1 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-                <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo">
-                <p>alexpoon.eth<br>
-                @alexpoon_hk</p>
-                <p>Open source dev is broken. So cool to see @teaxyz_ bringing new life to popular software projects like homebrew to web3.</p>
-                <p>10:52 AM - Mar 24, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="carousel-item" data-bs-interval="3000">
-
-      <!-- Item 2 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-              <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-              <p>0xTea<br>
-              @0xTea_</p>
-              <p>This is the innovation we need , and technology with  the right frame of mind of rewarding the creators in a way that scales and is in perpetuity</p>
-              <p>10:52 AM - Mar 24, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="carousel-item" data-bs-interval="3000">
-
-      <!-- Item 3 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-              <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-              <p>jcinis.eth<br>
-              @jcinis</p>
-              <p>It is hard to think of a more perfect use for blockchain technology than coordinating package releases for opensource software. What @teaxyz_ is embarking on will improve security, maintenance, and reliability, while providing much-needed incentive for independent developers. 🙌🏼 </p>
-              <p>10:52 AM - Mar 24, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="carousel-item" data-bs-interval="3000">
-
-      <!-- Item 4 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-              <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                <p>Jason Warner<br>
-                @jasoncwarner</p>
-                <p>Now this is legitimately interesting. I’m super glad to see more open source veterans looking at using crypto as distribution mechanisms.</p>
-                <p>3:14 PM - Mar 23, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="carousel-item" data-bs-interval="3000">
-
-      <!-- Item 5 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-              <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-              <p>Andrew Fernandez<br>
-                @bhsdrew</p>
-              <p>Congrats man [Max] this is one of the first real interesting use cases I’ve seen for web3… really excited to see this grow</p>
-              <p>8:38 AM - Mar 23, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="carousel-item" data-bs-interval="3000">
-
-      <!-- Item 6 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-              <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-              <p>max is building infra-as-lowcode<br>
-              @maxcan</p>
-              <p>one of the first web3 projects that actually makes sense</p>
-              <p>3:31 PM - Mar 23, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="carousel-item" data-bs-interval="3000">
-
-      <!-- Item 7 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-              <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-                <p>Nick Dobos<br>
-                @NickADobos</p>
-                <p>Homebrew is getting a web3 upgrade! 👀 <br>
-
-                Incredibly excited for this <br>
-
-                If this works it might be the biggest step forward in building open source software ever <br>
-
-                Pay the maintainers <br>
-                Build all the things</p>
-                <p>3:31 PM - Mar 23, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="carousel-item" data-bs-interval="3000">
-
-      <!-- Item 8 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-              <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-              <p>Ben<br>
-              @ben_mathes</p>
-              <p>I'm skeptical of a lot of web3. Indirect value to package maintainers though I support. Tea looks rad.<br>
-              I hope no preferential attachment concentrates the value.</p>
-              <p>2:36 PM - Mar 24, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="carousel-item" data-bs-interval="3000">
-
-      <!-- Item 9 -->
-      <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card twi-card-container">
-            <div class="card-body p-4 twitter-card">
-              <img src="/Images/twitter.svg" alt="Twitter Logo" class="twitter-card-logo mb-4">
-              <p>Developer DAO (🧱, 🚀)<br>
-              @developer_dao</p>
-              <p>probably nothing</p>
-              <p>6:28 PM - Mar 23, 2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-  </div>
-
-  <!-- Community Links -->
-  <div class="row community-container pt-5 pb-5 mt-5 mb-5">
-    <div class="container p-4" id="community">
-      <div class="row">
-        <div class="col">
-          <h3 style="text-align:center;" class="mb-5 display-5">Join the Community</h3>
-        </div>
-
-      </div>
-      <div class="row">
-
-        <div class="col-6 col-sm-6 col-lg">
-          <a href="https://discord.gg/KCZsXfJphn">
-            <div class="com-card mb-4">
-              <img src="Images/discord.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg">
-          <a href="https://twitter.com/teaxyz_">
-            <div class="com-card mb-4">
-              <img src="Images/twitter.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg">
-          <a href="https://github.com/teaxyz">
-            <div class="com-card mb-4">
-              <img src="Images/github.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg">
-          <a href="https://t.me/tea_xyz">
-            <div class="com-card mb-4">
-              <img src="Images/telegram.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg align-self-center">
-          <a href="https://reddit.com/r/teaxyz">
-            <div class="com-card mb-4">
-              <img src="Images/reddit.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg align-self-center">
-          <a href="https://www.instagram.com/tea.xyz/">
-            <div class="com-card mb-4">
-              <img src="Images/instagram-iconAsset 1.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
 {{ end }}

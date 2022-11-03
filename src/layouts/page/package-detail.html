@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<section class="one-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="package-thumbnail">
+          {{ range where $.Site.Data.packages "name" .Title }}
+          <img class="package-image" src="{{- .thumb_image_url -}}" alt="{{- .name -}}" style="width:100%; height:100%;">
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
+        <h3>{{- .Title -}}</h3>
+        {{ range where $.Site.Data.packages "name" .Title }}
+          <p>{{- .desc -}}</p>
+          {{ if not (eq .homepage "") }}
+            {{- partial "detail-btn-large.html" .homepage -}}
+          {{end}}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Copy to clipboard field -->
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col grid-gray">
+        Copy the tea one-liner below into your terminal to install {{- .Title -}}. tea will interpret the documentation and take care of any dependencies.
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ range where $.Site.Data.packages "name" .Title }}
+  {{- partial "clipboard-copy.html"  -}}
+
+  <script type="text/javascript">
+    document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) +{{- .full_name -}}";
+  </script>
+{{ end }}
+
+
+
+<style>
+
+  .package-thumbnail{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+  }
+
+</style>
+
+{{ end }}

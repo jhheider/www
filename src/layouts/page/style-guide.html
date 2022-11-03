@@ -1,0 +1,83 @@
+{{ define "main" }}
+<section>
+  <div class="container style-guide-container">
+    <div class="row">
+      <div class="col">
+        <h1>The tea style guide. Also, this is an H1.</h1>
+        <h2>We believe in open-sourcing everything... right down to our brand's look and feel. Also, this is an H2.</h2>
+        <h3>Working with a visible grid system in a responsive framework is difficult, but you can inspect these elements to see how we did it.</h3>
+        <h4>This H4 is intended to explain how we convert 'px' meaurements from design specs to 'vw' units. The formula for that is (vw = pixels / viewport total width x 100).</h4>
+        <h5>This is an H5, and it's primarily used for things like the headers inside the footer section. It's a small one, but should still always be in our primary tea'l color.</h5>
+        <p class="lead">This is our 'lead' text and it's displays slightly larger than our regular paragraph text. This variant is used for sub-heads and important 'call-out' information. Each line's height should be equivalent to roughly 1/3 the height of a grid box.</p>
+        <p>And this is our good old-fashioned body copy. This font-size is on the larger end of what's considered standard for paragraph text. The monospace typeaces we're using, while super-cool, are not quite as ledgible as their variable-spaced counterparts. Thusly, we're over-compensating slightly. This variant, as well as the 'lead' text, should either be white (#fff) or 'Soft Black' (#1A1A1A)... depending on the background.</p>
+      </div>
+    </div>
+  </div>
+  <div class="full-width-cta-container">
+     {{- partial "full-width-cta.html" . -}}
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {{- partial "klaviyo-form.html" -}}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+@media only screen and (min-width: 1200px) {
+
+  .style-guide-container{
+    background-image: url("/Images/x-large-grid.svg");
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+
+  .style-guide-container{
+    background-image: url("/Images/large-grid.svg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
+  .style-guide-container{
+    background-image: url("/Images/medium-grid.svg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+  .style-guide-container{
+    background-image: url("/Images/small-grid.svg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+}
+
+</style>
+
+{{ end }}

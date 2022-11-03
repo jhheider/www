@@ -1,0 +1,325 @@
+@media only screen and (min-width: 1200px) {
+
+  .accordion-button{
+    font-family: "pp-neue-machina", sans-serif;
+    text-transform: uppercase;
+    height: 8.37vw;
+    border-radius: 0px !important;
+    background-color: #1a1a1a;
+    border-top: 1px solid #949494;
+    border-bottom: 1px solid #949494;
+    color: #ffffff;
+  }
+
+  .accordion-button:hover{
+    background-color: #4d4d4d;
+  }
+
+  .accordion-button:active{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:not(.collapsed){
+    background-color: #8000ff;
+    color: #ffffff;
+    border:none;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(90deg);
+  }
+
+  .accordion-button::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(0deg);
+      order:-1;
+      margin-left: 0;
+      margin-right: 1vw !important;
+  }
+
+  .accordion-body{
+    padding: 4.185vw 0vw;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: "sono", sans-serif;
+  }
+
+  .accordion-item{
+    border: none !important;
+  }
+
+  .accordion-button,
+  .accordion-body{
+    padding-left: 8.185vw !important;
+    padding-right: 8.185vw !important;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+  .accordion-button{
+    font-family: "pp-neue-machina", sans-serif;
+    text-transform: uppercase;
+    height: 8.37vw;
+    border-radius: 0px !important;
+    background-color: #1a1a1a;
+    border-top: 1px solid #949494;
+    border-bottom: 1px solid #949494;
+    color: #ffffff;
+  }
+
+  .accordion-button:hover{
+    background-color: #4d4d4d;
+  }
+
+  .accordion-button:active{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:not(.collapsed){
+    background-color: #8000ff;
+    color: #ffffff;
+    border:none;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(90deg);
+  }
+
+  .accordion-button::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(0deg);
+      order:-1;
+      margin-left: 0;
+      margin-right: 1vw;
+  }
+
+  .accordion-body{
+    padding: 4.185vw 0vw;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: "sono", sans-serif;
+  }
+
+  .accordion-item{
+    border: none !important;
+  }
+
+  .accordion-button,
+  .accordion-body{
+    padding-left: 8.185vw !important;
+    padding-right: 8.185vw !important;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  .accordion-button{
+    font-family: "pp-neue-machina", sans-serif;
+    text-transform: uppercase;
+    height: 8.37vw;
+    border-radius: 0px !important;
+    background-color: #1a1a1a;
+    border-top: 1px solid #949494;
+    border-bottom: 1px solid #949494;
+    color: #ffffff;
+  }
+
+  .accordion-button:hover{
+    background-color: #4d4d4d;
+  }
+
+  .accordion-button:active{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:not(.collapsed){
+    background-color: #8000ff;
+    color: #ffffff;
+    border:none;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(90deg);
+  }
+
+  .accordion-button::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(0deg);
+      order:-1;
+      margin-left: 0;
+      margin-right: 1vw;
+  }
+
+  .accordion-body{
+    padding: 4.185vw 0vw;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: "sono", sans-serif;
+  }
+
+  .accordion-item{
+    border: none !important;
+  }
+
+  .accordion-button,
+  .accordion-body{
+    padding-left: 8.185vw !important;
+    padding-right: 8.185vw !important;
+  }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
+  .accordion-button{
+    font-family: "pp-neue-machina", sans-serif;
+    text-transform: uppercase;
+    height: 8.37vw;
+    border-radius: 0px !important;
+    background-color: #1a1a1a;
+    border-top: 1px solid #949494;
+    border-bottom: 1px solid #949494;
+    color: #ffffff;
+  }
+
+  .accordion-button:hover{
+    background-color: #4d4d4d;
+  }
+
+  .accordion-button:active{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:not(.collapsed){
+    background-color: #8000ff;
+    color: #ffffff;
+    border:none;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(90deg);
+  }
+
+  .accordion-button::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(0deg);
+      order:-1;
+      margin-left: 0;
+      margin-right: 1vw;
+  }
+
+  .accordion-body{
+    padding: 4.185vw 0vw;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: "sono", sans-serif;
+  }
+
+  .accordion-item{
+    border: none !important;
+  }
+
+  .accordion-button,
+  .accordion-body{
+    padding-left: 8.185vw !important;
+    padding-right: 8.185vw !important;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+  .accordion-button{
+    font-family: "pp-neue-machina", sans-serif;
+    text-transform: uppercase;
+    height: 22vw;
+    line-height: 1.5vw;
+    border-radius: 0px !important;
+    background-color: #1a1a1a;
+    border-top: 1px solid #949494;
+    border-bottom: 1px solid #949494;
+    color: #ffffff;
+  }
+
+  .accordion-button:hover{
+    background-color: #4d4d4d;
+  }
+
+  .accordion-button:active{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:not(.collapsed){
+    background-color: #8000ff;
+    color: #ffffff;
+    border:none;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(90deg);
+  }
+
+  .accordion-button::after {
+      background-image: url(/Images/enter-icon.svg);
+      transform: rotate(0deg);
+      order:-1;
+      margin-left: 0;
+      margin-right: 6vw !important;
+  }
+
+  .accordion-body{
+    padding: 4.185vw 0vw;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: "sono", sans-serif;
+  }
+
+  .accordion-item{
+    border: none !important;
+  }
+
+  .accordion-button,
+  .accordion-body{
+    padding-left: 7vw !important;
+    padding-right: 7vw !important;
+  }
+
+}

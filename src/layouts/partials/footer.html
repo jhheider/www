@@ -1,70 +1,47 @@
-<div class="container footer mb-5 mt-5">
-    <div class="row mb-5 mt-5">
-      <div class="col-lg-4">
-        <img src="/Images/tea-light.svg" alt="tea.xyz logo" style="width:100px;">
-        <p class="boilerplate mt-3 small">tea is revolutionizing open&#8208;source by leveraging blockchain and web3 to
-          ensure fairness and equitability for the developers who power the internet. Now tell me, will you answer the
-          call? A shot&#x27;s been heard around the web, and the tea army wants you to join the cause.</p>
+<hr>
+<div id="myData"></div>
+
+<section class="footer" id="community">
+  <div class="container">
+      <div class="row footer-top">
+        <div class="col-lg-8 footer-content">
+          <h4>Changing the way you build. And what happens after you build it.</h4>
+          <p>tea.cli is a delightful package manager that gets out of your way and sets you up for a joyful development process. <a class="teal" href="#">You can install it today</a>. Our web3 protocol will create an OSS ecosystem that is safer for all users, and fair for all maintainers. Read our <a class="teal" href="#">white paper</a> here.</p>
+          <img class="footer-grid" src="/Images/footer-grid-element.svg" alt="tea.grid">
+          <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        </div>
+        <div class="col-lg-4">
+          <div class="card social-box" style="width: 100%; float:right;">
+            <ul class="list-group list-group-flush">
+              <a class="list-group-item" role="button" href="https://twitter.com/teaxyz_"><i class="icon-twitter social-icon"></i>Twitter</a>
+              <a class="list-group-item" role="button" href="https://discord.gg/KCZsXfJphn"><i class="icon-discord social-icon"></i>Discord</a>
+              <a class="list-group-item" role="button" href="https://github.com/teaxyz"><i class="icon-github social-icon"></i>GitHub</a>
+              <a class="list-group-item" role="button" href="https://reddit.com/r/teaxyz"><i class="icon-reddit social-icon"></i>Reddit</a>
+              <a class="list-group-item" role="button" href="https://t.me/tea_xyz"><i class="icon-telegram social-icon"></i>Telegram</a>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div class="col-lg-2 col-sm-6 col-6 mt-3">
-        <h6>Quick Links</h6>
-        <ul class="nav flex-column small">
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="/#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="/#why-tea">Why tea?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="/#features">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="/white-paper">White Paper</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="https://medium.com/teaxyz">Blog</a>
-          </li>
-        </ul>
+      <div class="row mb-4">
+        <h4 class="mb-4">sign up for tea'mails</h4>
+          <div class="col">
+            {{- partial "klaviyo-form.html" -}}
+          </div>
       </div>
-
-      <div class="col-lg-2 col-sm-6 col-6 mt-3 mb-3">
-        <h6>tea Links</h6>
-        <ul class="nav flex-column small">
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="https://linktr.ee/teaxyz">Linktree</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="/careers/">Careers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="/privacy-policy/">Privacy Policy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ps-0" href="/terms-of-use/">Terms of Use</a>
-          </li>
-        </ul>
+      <div class="row">
+        <div class="col-lg-6">
+          <p class="small">©2022 tea inc. You can also share our <a href="" class="teal">Linktree</a>.</p>
+        </div>
+        <div class="col-lg-6">
+          {{- partial "footer-nav.html" . -}}
+        </div>
       </div>
-
-      <div class="col-lg-4 mt-3">
-        <h6 class=" mb-4">Get updates to your inbox</h6>
-
-<!-- Start klaviyo Form Module -->
-
-        {{- partial "klaviyo-form.html" . -}}
-
-<!-- End Sendx Form -->
-
-        <p style="font-size: 16px; color: gray;">You can also share our <a style="color:#54BAAB;" href="https://linktr.ee/teaxyz">Linktree</a>.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <p class="text-center" style="font-size:12px; color:#B7C7C8;">© 2022 tea inc.</p>
-    </div>
   </div>
+</section>
 
-  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- JavaScript Bundle with Popper -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
@@ -153,14 +130,14 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     "everything",
     "<i>you<i>"
     ];
-    const cycle = document.querySelector("#cycle");
+    const cycle = document.querySelector(".cycle","#cycle");
     let i = 0;
     const cycleText = () => {
       cycle.innerHTML = textList[i];
       i = ++i % textList.length;
     };
     cycleText();
-    setInterval(cycleText, 1200);
+    setInterval(cycleText, 2400);
 
   </script>
 
@@ -169,39 +146,77 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     rdt('track', 'ViewContent');
   </script>
 
-  <!-- Launch Countdown Timer -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1.5,
+      spaceBetween: 10,
+      freeMode: true,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
 
   <script>
-  // Set the date we're counting down to
-  const teaDemoSchedule = "2022-11-03T07:45:00.000-04:00"; // Lisbon is UTC+0
-  var countDownDate = new Date(teaDemoSchedule).getTime();
 
-  // Update the count down every 1 second
-  var x = setInterval(function() {
+    const url = 'https://tea.breezy.hr/json?verbose=true';
 
-    // Get today's date and time
-    var now = new Date().getTime();
+    fetch(url)
+    .then(res => res.json())
+    .then((out) => {
+      //Debugging + Reference
+      console.log(out);
+      //Job Description One
+      document.getElementById('typeOne').innerHTML = out[0].type.name;
+      document.getElementById('deptOne').innerHTML = out[0].department;
+      out[0].location.is_remote === true ? document.getElementById('locOne').innerHTML = 'Remote' : document.getElementById('locOne').innerHTML = out[0].location.name;
+      document.getElementById('jobOne').innerHTML = out[0].name;
+      document.getElementById('descOne').innerHTML = out[0].description;
+      document.getElementById('linkOne').href = out[0].url;
+      document.getElementById('typeTwo').innerHTML = out[1].type.name;
+      document.getElementById('deptTwo').innerHTML = out[1].department;
+      document.getElementById('jobTwo').innerHTML = out[1].name;
+      document.getElementById('descTwo').innerHTML = out[1].description;
+      out[1].location.is_remote === true ? document.getElementById('locTwo').innerHTML = 'Remote' : document.getElementById('locTwo').innerHTML = out[1].location.name;
+      document.getElementById('linkTwo').href = out[1].url;
+      document.getElementById('jobThree').innerHTML = out[2].name;
+      document.getElementById('typeThree').innerHTML = out[2].type.name;
+      document.getElementById('deptThree').innerHTML = out[2].department;
+      out[2].location.is_remote === true ? document.getElementById('locThree').innerHTML = 'Remote' : document.getElementById('locThree').innerHTML = out[2].location.name;
+      document.getElementById('descThree').innerHTML = out[2].description;
+      document.getElementById('linkThree').href = out[2].url;
+    })
+    .catch(err => { throw err });
 
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
+  </script>
 
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <script>
 
-    // Display the result in the element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    document.getElementById("demoLarge").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
 
-    // If the count down is finished, write some text
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("demo").innerHTML = "EXPIRED";
-      document.getElementById("demoLarge").innerHTML = "EXPIRED";
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+      toastTrigger.addEventListener('click', () => {
+        const toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+      })
     }
-  }, 1000);
+
+  </script>
+
+  <script>
+
+    fetch('stats.json')
+    .then(res => res.json())
+    .then((out) => {
+      //Debugging + Reference
+      console.log(out);
+      document.getElementById('stat-one').innerHTML = out[0].num_repos;
+      document.getElementById('stat-two').innerHTML = out[0].num_maintainers;
+    })
+    .catch(err => { throw err });
+
   </script>

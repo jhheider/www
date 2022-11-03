@@ -1,0 +1,232 @@
+{{ define "main" }}
+
+<div class="section two-boxes nb-hero-section">
+  <div class="container">
+    <div class="row">
+      <div class="col" style="z-index:2;">
+        <h1>Nebraska Man</h1>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<section class="nb-man-about two-boxes">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <h3>the battle for the internet has just begun</h3>
+        <p class="lead">We’ve called open source devs the “unnamed heroes of the internet.” Now is the time to give them a name and tell their stories. Introducing The Maintainers: a comic series about the OSS Developer Universe. Our first issue follows the origins of Nebraska Man as he joins the fight for a fairer internet.</p>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<style>
+  .wrapper {
+  align-items: center;
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  margin: 5%;
+  width: 90%;
+}
+
+.aspect {
+  padding-bottom: 70%;
+  position: relative;
+  width: 100%;
+}
+
+.aspect-inner {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.flipbook {
+  height: 100%;
+  transition: margin-left 0.25s ease-out;
+  width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flipbook .page {
+  height: 100%;
+  width: 100%;
+}
+
+.flipbook .page img {
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<section class="nb-man-latest">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="wrapper">
+          <div class="aspect">
+            <div class="aspect-inner">
+              <div class="flipbook" id="flipbook">
+                <div class="page"><img src="/Images/nb-man-cover-one.jpg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_01.jpg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_02.jpg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_03.jpg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_04.jpg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_05.jpg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_06.jpg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_07.jpg" draggable="false" alt="" /></div>
+                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_08.jpg" draggable="false" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<hr>
+  <div class="row button-container">
+    <a href="#" role="button" class="btn btn-primary text-center auth-btn mt-lg-0 mt-md-0 mt-sm-0 mt-0" id="nav-cta">DOWNLOAD ISSUE #1</a>
+  </div>
+<hr>
+<section>
+  <div class="container">
+    <div class="row two-boxes">
+      <div class="col">
+        <h3>Take 'saving the internet' one step further...</h3>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+    <hr>
+    <div class="row gx-5 one-box">
+      <div class="col-lg-7 col-md-6 col-sm-12 col-12 one-box-down">
+        <h3>How to earn your Nebraska Man cover NFT's:</h3>
+        <div class="mb-4 mt-4">
+          <p class="lead nft-require">Follow our Twitter</p>
+        </div>
+        <hr>
+        <div class="mb-4 mt-4">
+          <p class="lead nft-require">like the Nebraska Man tweet</p>
+        </div>
+        <hr>
+        <div class="mb-4 mt-4">
+          <p class="lead nft-require">retweet that same tweet</p>
+        </div>
+        <hr>
+        <div class="mb-4 mt-4">
+          <p class="lead nft-require">join our discord</p>
+        </div>
+        <hr>
+        <div class="mb-4 mt-4">
+          <p class="lead nft-require">sign up for tea&#39;mails</p>
+        </div>
+        <hr>
+        <div class="mb-4 mt-4">
+          <p class="lead nft-require">attend an AMA</p>
+        </div>
+        <hr>
+        <div class="mb-4 mt-4">
+          <p class="lead nft-require">join our subreddit</p>
+        </div>
+        <hr>
+        <div class="mb-4 mt-4">
+          <p class="lead nft-require">subscribe to our youtube</p>
+        </div>
+        <p>That&#39;s all there is to it! 8 easy steps to earn your Nebraksa Man cover NFT&#39;s. Check out our Project Galaxy campaign to track your progress and earn your rewards. Thanks for being a part of the battle to save the ineternet!</p>
+      </div>
+
+      <style>
+
+        .nft-require{
+          margin-bottom: 0px;
+          font-family: "pp-neue-machina", sans-serif;
+          text-transform: uppercase;
+        }
+
+      </style>
+
+      <div class="col">
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/Images/nb-man-cover-one.jpg" class="d-block w-100" alt="Nebraska Man - Teamwor Makes the Dream Work">
+            </div>
+            <div class="carousel-item">
+              <img src="/Images/nb-man-cover-two.jpg" class="d-block w-100" alt="Nrebaska Man - Fight Night">
+            </div>
+            <div class="carousel-item">
+              <img src="/Images/nb-man-cover-three.jpg" class="d-block w-100" alt="Nebraska Man - Who Will You Meet in the Shadows?">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
+{{- partial "full-width-cta.html" -}}
+
+<script type="text/javascript">
+
+function loadApp() {
+
+  // Create the flipbook
+
+  $('.flipbook').turn({
+
+      // Enable gradients
+
+      gradients: true,
+
+      // Auto center this flipbook
+
+      autoCenter: true
+
+  });
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+  test : Modernizr.csstransforms,
+  yep: ['/js/turn.js'],
+  nope: ['/js/turn.html4.min.js'],
+  both: ['/css/basic.css'],
+  complete: loadApp
+});
+
+var flipbookEL = document.getElementById('flipbook');
+
+window.addEventListener('resize', function (e) {
+  flipbookEL.style.width = '';
+  flipbookEL.style.height = '';
+  $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
+});
+
+$(flipbookEL).turn({
+    autoCenter: true
+});
+
+
+</script>
+
+{{ end }}

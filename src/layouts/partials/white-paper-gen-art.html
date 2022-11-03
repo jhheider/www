@@ -1,0 +1,79 @@
+<!-- Mobile -->
+
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-wp-gen-art-1"></div>
+<div class="gen-art-mobile animated-5 animatedFadeInUp fadeInUp" id="m-wp-gen-art-2"></div>
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-wp-gen-art-3"></div>
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-wp-gen-art-4"></div>
+
+<style>
+
+  #m-wp-gen-art-1{
+    position:absolute;
+    width:29vw;
+    height: 19.3vw;
+    left: 6.8vw;
+    margin-top:164vw;
+    z-index: 3;
+    background-image: url("/Images/gen-art/orange-pattern.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-wp-gen-art-2{
+    position:absolute;
+    width:15vw;
+    height:15vw;
+    left: 29.8vw;
+    margin-top:155vw;
+    border-radius: 200px;
+    z-index: 3;
+    background-image: url("/Images/gen-art/dream-tree.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    animation: rotation 10s infinite linear;
+  }
+
+  #m-wp-gen-art-3{
+    position:absolute;
+    width:38.5vw;
+    height:9.5vw;
+    right: 6.8vw;
+    margin-top:154.5vw;
+    z-index: 3;
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-wp-gen-art-4{
+    position:absolute;
+    width:40vw;
+    height:40vw;
+    right: 12vw;
+    margin-top:20vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  @media only screen and (min-width: 576px) {
+    .gen-art-mobile{
+      display:none;
+    }
+  }
+
+</style>

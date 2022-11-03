@@ -1,0 +1,23 @@
+<!-- Package Grid Header -->
+<hr>
+  <div class="container package-grid-header">
+    <h3>packages</h3>
+  </div>
+<hr>
+
+<!-- Slider main container -->
+
+  <div class="row" style="margin-bottom: 2vw !important;">
+    <div class="col">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          {{ range $.Site.Data.packages }}
+            <div class="swiper-slide">
+            {{- partial "package-thumbnail.html" .}}
+            </div>
+          {{ end }}
+        </div>
+        <!--<div class="swiper-pagination"></div>-->
+      </div>
+    </div>
+  </div>

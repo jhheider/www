@@ -1,0 +1,729 @@
+@media only screen and (min-width: 1200px) {
+
+  #gen-art-1{
+    position:absolute;
+    width:15vw;
+    height: 12.5vw;
+    right: 5.8vw;
+    top:300px;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0002_DALL·E 2022-09-01 09.50.45 - rainbow oil spill on pavement.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-2{
+    position:absolute;
+    width:17vw;
+    height: 10vw;
+    right: 20.3vw !important;
+    top:33.3vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0013_DALL·E 2022-09-01 11.17.52 - macro red world of pastel geometric shapes.png.jpg");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #gen-art-3{
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    margin-top: 12.5vw;
+    right: 16.8vw;
+    width: 29vw;
+    height: 28vw;
+    z-index:1;
+  }
+
+  #gen-art-4{
+    background-image: url("/Images/gen-art/abstract-pattern.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    margin-top: 16.5vw;
+    right: 8.4vw;
+    width: 18vw;
+    height: 28vw;
+    z-index:1;
+  }
+
+  #gen-art-4_5{
+    background-image: url("/Images/gen-art/floating-city.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+    position: absolute;
+    margin-top: 12vw;
+    border-radius: 100px;
+    right: 12.4vw;
+    width: 8vw;
+    height: 8vw;
+    z-index:2;
+  }
+
+  #gen-art-5{
+    position:absolute;
+    width:24.275vw;
+    height: 21.857vw;
+    margin-top: 20vw;
+    right: 8.371vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/glass-triangles.jpg");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #gen-art-6{
+    position:absolute;
+    width: 13.560vw;
+    height: 26.897vw;
+    margin-top: 50vw;
+    right: 37.667vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/candy-land.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gen-art-7{
+    position:absolute;
+    width: 17.504vw;
+    height: 26.897vw;
+    margin-top: 70vw;
+    left: 8.371vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0007_DALL·E 2022-09-01 10.00.15 - futuristic billboard of japanese writing in neon lit city.png.jpg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gen-art-8{
+    position:absolute;
+    width: 8.371vw;
+    height: 8.371vw;
+    margin-top: 90vw;
+    left: 20.8vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-9{
+    position:absolute;
+    width: 8.371vw;
+    height: 24vw;
+    margin-top: 70vw;
+    right: 8.371vw;;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0010_DALL·E 2022-09-01 10.48.33 - bright blue and green _It’s time we stop robbing Peter to pay Mark and Jeff._.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-10{
+    position:absolute;
+    width: 50vw;
+    height: 25vw;
+    right: 8.371vw;;
+    z-index: 0;
+    background-image: url("/Images/gen-art/colorful-sandal.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+  #gen-art-1{
+    position:absolute;
+    width:15vw;
+    height: 12.5vw;
+    right: 5.8vw;
+    top:300px;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0002_DALL·E 2022-09-01 09.50.45 - rainbow oil spill on pavement.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-2{
+    position:absolute;
+    width:17vw;
+    height: 10vw;
+    right: 16.3vw;
+    top:33.3vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0013_DALL·E 2022-09-01 11.17.52 - macro red world of pastel geometric shapes.png.jpg");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #gen-art-3{
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    margin-top: 12.5vw;
+    right: 16.8vw;
+    width: 29vw;
+    height: 28vw;
+    z-index:1;
+  }
+
+  #gen-art-4{
+    background-image: url("/Images/gen-art/gen-art-_0012_DALL·E 2022-09-01 11.14.14 - a surrealist dream-like oil painting by Salvador Dalí of a tea cup melting i.jpg");
+    background-attachment: fixed;
+    background-position: left;
+    background-repeat: repeat;
+    background-size: contain;
+    position: absolute;
+    margin-top: 9.5vw;
+    right:  8.371vw;
+    width: 12.556vw;
+    height: 12.556vw;
+    z-index:1;
+  }
+
+  #gen-art-5{
+    position:absolute;
+    width:24.275vw;
+    height: 17.857vw;
+    margin-top: 20vw;
+    right: 8.371vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/glass-triangles.jpg");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #gen-art-6{
+    position:absolute;
+    width: 13.560vw;
+    height: 26.897vw;
+    margin-top: 50vw;
+    right: 37.667vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/candy-land.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gen-art-7{
+    position:absolute;
+    width: 17.504vw;
+    height: 26.897vw;
+    margin-top: 70vw;
+    left: 8.371vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0007_DALL·E 2022-09-01 10.00.15 - futuristic billboard of japanese writing in neon lit city.png.jpg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gen-art-8{
+    position:absolute;
+    width: 8.371vw;
+    height: 8.371vw;
+    margin-top: 90vw;
+    left: 20.8vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-9{
+    position:absolute;
+    width: 8.371vw;
+    height: 24vw;
+    margin-top: 70vw;
+    right: 8.371vw;;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0010_DALL·E 2022-09-01 10.48.33 - bright blue and green _It’s time we stop robbing Peter to pay Mark and Jeff._.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-10{
+    position:absolute;
+    width: 50vw;
+    height: 25vw;
+    right: 8.371vw;;
+    z-index: 0;
+    background-image: url("/Images/gen-art/colorful-sandal.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  #gen-art-1{
+    position:absolute;
+    width:15vw;
+    height: 12.5vw;
+    right: 5.8vw;
+    top:300px;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0002_DALL·E 2022-09-01 09.50.45 - rainbow oil spill on pavement.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-2{
+    position:absolute;
+    width:17vw;
+    height: 10vw;
+    right: 16.3vw;
+    top:33.3vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0013_DALL·E 2022-09-01 11.17.52 - macro red world of pastel geometric shapes.png.jpg");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #gen-art-3{
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    margin-top: 12.5vw;
+    right: 16.8vw;
+    width: 29vw;
+    height: 28vw;
+    z-index:1;
+  }
+
+  #gen-art-4{
+    background-image: url("/Images/gen-art/gen-art-_0012_DALL·E 2022-09-01 11.14.14 - a surrealist dream-like oil painting by Salvador Dalí of a tea cup melting i.jpg");
+    background-attachment: fixed;
+    background-position: left;
+    background-repeat: repeat;
+    background-size: contain;
+    position: absolute;
+    margin-top: 9.5vw;
+    right:  8.371vw;
+    width: 12.556vw;
+    height: 12.556vw;
+    z-index:1;
+  }
+
+  #gen-art-5{
+    position:absolute;
+    width:24.275vw;
+    height: 17.857vw;
+    margin-top: 20vw;
+    right: 8.371vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/glass-triangles.jpg");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #gen-art-6{
+    position:absolute;
+    width: 13.560vw;
+    height: 26.897vw;
+    margin-top: 50vw;
+    right: 37.667vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/candy-land.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gen-art-7{
+    position:absolute;
+    width: 17.504vw;
+    height: 26.897vw;
+    margin-top: 70vw;
+    left: 8.371vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0007_DALL·E 2022-09-01 10.00.15 - futuristic billboard of japanese writing in neon lit city.png.jpg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gen-art-8{
+    position:absolute;
+    width: 8.371vw;
+    height: 8.371vw;
+    margin-top: 90vw;
+    left: 20.8vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-9{
+    position:absolute;
+    width: 8.371vw;
+    height: 24vw;
+    margin-top: 70vw;
+    right: 8.371vw;;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0010_DALL·E 2022-09-01 10.48.33 - bright blue and green _It’s time we stop robbing Peter to pay Mark and Jeff._.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-10{
+    position:absolute;
+    width: 50vw;
+    height: 25vw;
+    right: 8.371vw;;
+    z-index: 0;
+    background-image: url("/Images/gen-art/colorful-sandal.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px){
+
+  #gen-art-1{
+    position:absolute;
+    width:15vw;
+    height: 12.5vw;
+    right: 5.8vw;
+    top:300px;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0002_DALL·E 2022-09-01 09.50.45 - rainbow oil spill on pavement.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-2{
+    position:absolute;
+    width:17vw;
+    height: 10vw;
+    right: 16.3vw;
+    top:33.3vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0013_DALL·E 2022-09-01 11.17.52 - macro red world of pastel geometric shapes.png.jpg");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #gen-art-3{
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    margin-top: 12.5vw;
+    right: 16.8vw;
+    width: 29vw;
+    height: 28vw;
+    z-index:1;
+  }
+
+  #gen-art-4{
+    background-image: url("/Images/gen-art/gen-art-_0012_DALL·E 2022-09-01 11.14.14 - a surrealist dream-like oil painting by Salvador Dalí of a tea cup melting i.jpg");
+    background-attachment: fixed;
+    background-position: left;
+    background-repeat: repeat;
+    background-size: contain;
+    position: absolute;
+    margin-top: 9.5vw;
+    right:  8.371vw;
+    width: 12.556vw;
+    height: 12.556vw;
+    z-index:1;
+  }
+
+  #gen-art-5{
+    position:absolute;
+    width:24.275vw;
+    height: 17.857vw;
+    margin-top: 20vw;
+    right: 8.371vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/glass-triangles.jpg");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #gen-art-6{
+    position:absolute;
+    width: 13.560vw;
+    height: 26.897vw;
+    margin-top: 50vw;
+    right: 37.667vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/candy-land.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gen-art-7{
+    position:absolute;
+    width: 17.504vw;
+    height: 26.897vw;
+    margin-top: 70vw;
+    left: 8.371vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0007_DALL·E 2022-09-01 10.00.15 - futuristic billboard of japanese writing in neon lit city.png.jpg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #gen-art-8{
+    position:absolute;
+    width: 8.371vw;
+    height: 8.371vw;
+    margin-top: 90vw;
+    left: 20.8vw;
+    z-index: 0;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-9{
+    position:absolute;
+    width: 8.371vw;
+    height: 24vw;
+    margin-top: 70vw;
+    right: 8.371vw;;
+    z-index: 0;
+    background-image: url("/Images/gen-art/gen-art-_0010_DALL·E 2022-09-01 10.48.33 - bright blue and green _It’s time we stop robbing Peter to pay Mark and Jeff._.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #gen-art-10{
+    position:absolute;
+    width: 50vw;
+    height: 25vw;
+    right: 8.371vw;;
+    z-index: 0;
+    background-image: url("/Images/gen-art/colorful-sandal.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+/* Different generative art at smaller breakpoints; parallax effect/location simply doesn't work */
+
+@media only screen and (max-width: 576px) {
+
+  #gen-art-1,
+  #gen-art-2,
+  #gen-art-3,
+  #gen-art-4,
+  #gen-art-5,
+  #gen-art-6,
+  #gen-art-7,
+  #gen-art-8,
+  #gen-art-9,
+  #gen-art-10{
+    display:none;
+  }
+
+  #m-gen-art-1{
+    width: 67vw;
+    height: 30vw;
+    margin-top: -9.5vw;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/glass-triangles.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-gen-art-2{
+    width: 19vw;
+    height: 19.5vw;
+    margin-top: -49.5vw;
+    right: 7vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-gen-art-3{
+    width: 38vw;
+    height: 19vw;
+    right: 7vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/tribal-green.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-gen-art-4{
+    width: 57.3vw;
+    height: 10vw;
+    left: 7vw;
+    margin-top: 19vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-gen-art-5{
+    width: 58vw;
+    height: 30vw;
+    left: 16.5vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/gen-art-_0011_DALL·E 2022-09-01 10.52.27 - neon pink colored subway wall painted in the style of keith haring.png.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-gen-art-6{
+    width: 20vw;
+    height: 20vw;
+    right: 16.5vw;
+    margin-top: 5vw;
+    border-radius: 100px;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/gen-art-_0021_DALL·E 2022-09-02 12.26.00 - crystals in polarized light under microscope.png.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-gen-art-7{
+    width: 20vw;
+    height: 19vw;
+    left: 7vw;
+    margin-top: 9.5vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/gen-art-_0021_DALL·E 2022-09-02 12.26.00 - crystals in polarized light under microscope.png.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-gen-art-8{
+    width: 48vw;
+    height: 19vw;
+    right: 7vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/gen-art-_0010_DALL·E 2022-09-01 10.48.33 - bright blue and green _It’s time we stop robbing Peter to pay Mark and Jeff._.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-gen-art-9{
+    width: 86vw;
+    height: 19vw;
+    right: 7vw;
+    margin-top: -19vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-image: url("/Images/gen-art/colorful-sandal.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}

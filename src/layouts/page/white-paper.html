@@ -1,158 +1,144 @@
 {{ define "main" }}
 
-<style media="screen">
-  .main-nav{
-    display:none;
+{{- partial "white-paper-gen-art.html" -}}
+
+<!-- Hero Section -->
+<div class="section two-boxes wp-hero-section">
+  <div class="container">
+    <div class="row">
+      <div class="col" style="position: relative; z-index: 2;">
+        <h1>White Paper</h1>
+        <div class="wp-lead-text-container animated-5 animatedFadeInUp fadeInUp p-4 black-bg">
+          <p class="lead" style="margin-bottom: 0px;">Open‐source is about the many coming together to create something great. In the spirit of that, we’re inviting developers, speculators, and enthusiasts alike to contribute to our white paper and help brew the future of the internet. This is our revolutionary undertaking to create equitable open‐source for web3, and we want you to be a part of laying its groundwork.</p>
+        </div>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+  <div class="row button-container">
+    <a href="/tea.white-paper.pdf" role="button" class="btn btn-primary auth-btn split-btn" id="nav-cta"><i class="icon-enter-arrow"></i>DOWNLOAD WHITEPAPER</a>
+    <a href="https://github.com/teaxyz/white-paper" role="button" class="btn btn-primary auth-btn split-btn split-right" id="nav-cta"><i class="icon-enter-arrow"></i>CONTRIBUTE ON GITHUB</a>
+  </div>
+<hr>
+
+<style>
+  .split-btn{
+    display: inline-block;
+    width: 50%;
   }
 
-  @media only screen and (max-width: 980px) {
-    .auth-btn {
-      width: 100%;
-      margin-bottom: 20px;
-    }
+  .split-right{
+    border-left: 0px !important;
   }
 
 </style>
 
-<nav class="navbar bg-dark navbar-expand-lg navbar-dark sticky-top my-auto">
-    <div class="container-fluid top-nav">
-      <a class="navbar-brand" href="#"><img src="/Images/tea-main-logo.svg" style="width:100px;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span>
-          <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
-          <label for="checkbox1">
-            <div class="hamburger hamburger1">
-              <span class="bar bar1"></span>
-              <span class="bar bar2"></span>
-              <span class="bar bar3"></span>
-              <span class="bar bar4"></span>
-            </div>
-          </label></span>
-      </button>
-      <div class="collapse navbar-collapse pt-2 pb-2" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto me-4 my-auto">
-          {{ range .Site.Menus.main }}
-          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-            <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-      <a class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-4 mt-4"
-        href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz" role="button">Authenticate with tea<span
-          class="badge rounded-pill bg-primary ms-3"><span id="count4">287</span></span></a>
-    </div>
-  </nav>
 
-<!-- Hero Section -->
-
-  <img style="display:none;" id="tea-steam-dark-1" src="/Images/tea-steam-dark-1.svg" alt="">
-  <img id="tea-steam-dark-2" src="/Images/tea-steam-dark-2.svg" alt="">
-  <div class="container mb-lg-2 mb-md-5 mb-sm-0 mb-0 mt-lg-2 mt-md-5 mt-sm-0 mt-0">
-    <div class="row hero my-auto">
-      <div style="z-index:100; display:flex; flex-direction:column;" class="col-lg-9 col-sm-12">
-        <div style="margin-top:auto; margin-bottom:auto;">
-          <h1 class="display-3 mb-4">We’re Open&#8208;Sourcing Our White Paper</h1>
-          <p class="mb-5 fs-sm-5 fs-lg-6 lead">Open&#8208;source is about the many coming together to create something
-            great. In the spirit of that, we’re inviting developers, speculators, and enthusiasts alike to contribute to
-            our white paper and help brew the future of the internet. This is our revolutionary undertaking to create
-            equitable open&#8208;source for web3, and we want you to be a part of laying its groundwork.<br><a
-              style="color:#54BAAB;" href="https://tea.xyz/tea.white-paper.pdf">Download our white paper</a>.</p>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column;" class="col-lg-3 col-sm-12">
-        <div style="margin-top:auto; z-index:100;">
-          <a class="btn btn-primary mb-3" href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz"
-            role="button">Authenticate with tea</a><br>
-          <a class="btn btn-primary align-middle mb-sm-5 mb-md-5 mb-5" id="whitepaper-btn"
-            href="https://github.com/teaxyz/white-paper" role="button"><i class="bi bi-github me-2" style="font-size:16px; "></i>Contribute to Our White Paper</a>
-        </div>
-      </div>
-    </div>
+<section class="one-box">
+  <div class="container">
     <div class="row">
-      <hr>
-        <div class="col mb-4 mt-3">
-          <h4>Our white paper is available in multiple languages</h4>
-          <p>Thanks to the tea community's generosity and time, our white paper is available in several world languages. Select your preferred language from the dropdown menu.</p>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle languages" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Choose a Language
-            </button>
-            <ul class="dropdown-menu" id="language-selector"></ul>
-          </div>
+      <div class="col">
+        <h4>Our white paper is available in multiple languages</h4>
+        <p>Thanks to the tea community's generosity and time, our white paper is available in several world languages. Select your preferred language from the dropdown menu.</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle languages" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Choose a Language
+          </button>
+          <ul class="dropdown-menu" id="language-selector"></ul>
         </div>
+          <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
       </div>
     </div>
+  </div>
+</section>
 
-    <script>
-      const versions = [
-        ['English', ''],
-        ['Bahasa Indonesia', '_id'],
-        ['беларускі', '_be'],
-        ['български', '_bg'],
-        ['Deutsch', '_de'],
-        ['Русский', '_ru'],
-        ['українська', '_uk'],
-        ['官话', '_zh']
-      ];
+<section>
+  <div class="container" style="padding-top: 0px !important;">
+    <div class="row">
+      <div class="col">
+        <div id="adobe-dc-view" style="width: 100%;"></div>
+        <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+        <script type="text/javascript">
+          const versions = [
+            ['English', ''],
+            ['Bahasa Indonesia', '_id'],
+            ['беларускі', '_be'],
+            ['български', '_bg'],
+            ['Deutsch', '_de'],
+            ['Русский', '_ru'],
+            ['українська', '_uk'],
+            ['官话', '_zh']
+          ];
 
-      document.addEventListener('DOMContentLoaded', function () {
-        for (const lang of versions) {
+          let adobeDcView;
 
-          $('#language-selector').append("<li><a class=\"dropdown-item\" onclick=\"go(\'" + lang[1] + "')\">" + lang[0] + "</a></li>");
-        }
-      }, false);
+          const getAdobeDcView = () => {
+            if (!adobeDcView) {
+              adobeDCView = new AdobeDC.View({
+                clientId: "fc933927b4e947c2aaf9a7b33b26f0b4",
+                divId: "adobe-dc-view"
+              });
+            }
+            return adobeDCView;
+          }
 
-      function go(suffix) {
-        const url = 'https://tea.xyz/tea.white-paper' + suffix + '.pdf';
-        document.getElementById('wp-iframe').setAttribute('src', url + '#toolbar=0&navpanes=0&view=fitH');
-        document.getElementById('mobile-wp-download').setAttribute('href', url);
-      }
-    </script>
+          const getWhitePaperUrl = (suffix = '') => {
+            return 'https://tea.xyz/tea.white-paper' + suffix + '.pdf';
+          }
 
-  <style>
+          document.addEventListener("adobe_dc_view_sdk.ready", function(){
+            //Must change clientId before final merge
+            try {
+              for (const lang of versions) {
+                $('#language-selector').append("<li><a class=\"dropdown-item\" onclick=\"viewWhitepaper(\'" + lang[1] + "')\">" + lang[0] + "</a></li>");
+              }
+              const adobeDCView = getAdobeDcView();
 
-    .languages{
-      border: 2px solid white;
-      border-radius: 30px;
-      width:240px;
-      background-color:#1C1E21;
-    }
+              adobeDCView.previewFile({
+                content:{
+                  location: {
+                    url: getWhitePaperUrl(),
+                  }
+                },
+                metaData:{
+                  fileName: "tea.white-paper.pdf"
+                }
+              }, { embedMode: "IN_LINE" });
+            } catch (error) {
+              console.error('test:', error);
+            }
+          });
 
-    .languages:hover{
-      background-color:#23282c;
-    }
 
-    .languages:focus{
-      background-color:#1C1E21;
-    }
+          function viewWhitepaper(suffix) {
+            const adobeDCView = getAdobeDcView();
+            const url = getWhitePaperUrl(suffix);
+            adobeDCView.previewFile({
+              content:{
+                location: { url }
+              },
+              metaData:{
+                fileName: "tea.white-paper.pdf"
+              }
+            }, { embedMode: "IN_LINE" });
+            // document.getElementById('mobile-wp-download').setAttribute('href', url);
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
 
-    .dropdown-menu{
-      width:240px;
-      background-color:#23282c;
-      color:white;
-    }
-
-    .dropdown-item{
-      color:white;
-    }
-
-    .dropdown-item:hover{
-      background-color: #54BAAB;
-    }
-
-  </style>
-
-  <!-- Start PDF -->
+  <!-- Start PDF
 
   <div class="container pdf-iframe"
     style="margin-bottom:100px; overflow:auto; -webkit-overflow-scrolling:touch; z-index:2;">
     <iframe id="wp-iframe"src="https://tea.xyz/tea.white-paper.pdf#toolbar=0&navpanes=0&view=fitH" width="100%" height="800px">
     </iframe>
   </div>
-
-  <!-- Mobile-only -->
 
   <div class="container mobile-pdf" style="margin-bottom:100px;">
     <div class="row">
@@ -169,69 +155,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Community Links -->
-  <div class="row community-container pt-5 pb-5 mt-5 mb-5">
-    <div class="container p-4" id="community">
-      <div class="row">
-        <div class="col">
-          <h3 style="text-align:center;" class="mb-5 display-5">Join the Community</h3>
-        </div>
-
-      </div>
-      <div class="row">
-
-        <div class="col-6 col-sm-6 col-lg">
-          <a href="https://discord.gg/KCZsXfJphn">
-            <div class="com-card mb-4">
-              <img src="/Images/discord.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg">
-          <a href="https://twitter.com/teaxyz_">
-            <div class="com-card mb-4">
-              <img src="/Images/twitter.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg">
-          <a href="https://github.com/teaxyz">
-            <div class="com-card mb-4">
-              <img src="/Images/github.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg">
-          <a href="https://t.me/tea_xyz">
-            <div class="com-card mb-4">
-              <img src="/Images/telegram.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg align-self-center">
-          <a href="https://reddit.com/r/teaxyz">
-            <div class="com-card mb-4">
-              <img src="/Images/reddit.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg align-self-center">
-          <a href="https://www.instagram.com/tea.xyz/">
-            <div class="com-card mb-4">
-              <img src="/Images/instagram-iconAsset 1.svg" alt="" class="community-icon">
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
+  </div>-->
 
 {{ end }}

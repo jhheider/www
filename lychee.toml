@@ -11,8 +11,15 @@ exclude = [
   "https://www.googletagmanager.com/gtm.js",
   ".*/mailto:.*@.*",
   "https://tea.xyz/tea.white-paper",
+  "https://tea.xyz/tea.products",
+  "https://tea.xyz/tea.nebraska-man",
+  "https://tea.xyz/tea.cli",
+  "https://github.com/teaxyz/pantry",
   "https://tea.xyz/tea.authentication-success",
   "https://tea.xyz/tea.email-subscribe",
   "https://www.google.com/thank-you",
-  "https://www.instagram.com/tea.xyz/"
+  "file:///home/runner/work/www/www/public/tea.white-paper.pdf",
+  "file:///home/runner/work/www/www/public/manage.kmail-lists.com/subscriptions/subscribe",
+  "file:///home/runner/work/www/www/public/www.klaviyo.com/media/js/public/klaviyo_subscribe.js",
+  "https://openssl.org/"
 ]

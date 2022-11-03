@@ -1,0 +1,90 @@
+<style>
+    .sorting-container{
+      display:inline-block;
+      font-family: "pp-neue-machina", sans-serif;
+      background-color: #1a1a1a;
+      border: 1px solid #ffffff;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      max-width: 240px;
+      width: 100%;
+      height: 60px;
+      min-height: 34px;
+      transition: 0.1s linear;
+    }
+
+    .dropdown {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #1a1a1a;
+        width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        color: white;
+        list-style: none;
+        padding: 0px;
+    }
+
+
+    .dropdown-content li {
+        position: relative;
+        padding: 0px 10px;
+        height: 40px;
+        width: 100%;
+        line-height: 40px;
+    }
+
+    .dropdown-content li .sort-btn {
+        height: 100%;
+        width: calc(100% - 40px);
+        opacity: 0.6;
+    }
+
+    .dropdown-content li .sort-btn.active {
+        font-weight: bold;
+        opacity: 1;
+    }
+
+    .dropdown-content li .direction-arrows {
+        position: absolute;
+        right: 10px;
+        top: 0px;
+    }
+
+
+    .dropdown-content li:hover {
+        background: #00ffd0;
+        color: black;
+
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-title {
+        height: 60px;
+        line-height: 60px;
+        padding-left: 10px;
+    }
+
+</style>
+
+<section class="sorting-container">
+    <div class="dropdown">
+        <div class="dropdown-title">SORT ORDER</div>
+        <ul class="dropdown-content flex column">
+            <li><div id="dropdown-popularity-btn" class="sort-btn">POPULARITY</div> {{- partial "sort-direction.html" "popularity"}}</li>
+            <li><div id="dropdown-last_modified-btn" class="sort-btn">MOST RECENT</div> {{- partial "sort-direction.html" "last_modified"}}</li>
+        </ul>
+    </div>
+</section>

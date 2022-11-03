@@ -1,0 +1,206 @@
+/*This page includes CSS for products page + all products ancillary pages*/
+
+/* Products - Main */
+
+@media only screen and (min-width: 1200px) {
+
+  .product-hero-section{
+    background-image: url("/Images/prouct-x-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+  .product-hero-section{
+    background-image: url("/Images/prouct-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  .product-hero-section{
+    background-image: url("/Images/prouct-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
+  .product-hero-section{
+    background-image: url("/Images/prouct-medium-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+  .gen-art{
+    display:none;
+  }
+
+  .lead{
+    width: 100% !important;
+  }
+
+}
+
+/* Products - TEA.CLI */
+
+@media only screen and (min-width: 1200px) {
+
+  .products-hero{
+    background-image: url("/Images/x-large-grid-hero.svg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  .lead-container{
+    padding-left: 25vw;
+    padding-right: 25vw;
+    margin-bottom: -2.7vw;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 576px) {
+
+  h1{
+    font-size: 15vw !important;
+  }
+
+  .tea-cli-container{
+    padding: 7vw !important;
+  }
+
+  .gen-art{
+    display:none;
+  }
+
+  .mobile-grid-element{
+    z-index: 0 !important;
+  }
+
+}
+
+/* Generative Art styling */
+
+#pro-gen-art-1{
+  background-image: url("/Images/gen-art/glass-triangles.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  left: 8.3vw;
+  top: 12.2vw;
+  width: 28.7vw;
+  height: 19vw;
+  z-index: 0;
+}
+
+#pro-gen-art-2{
+  background-image: url("/Images/gen-art/colorful-sandal.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  right: 8.3vw;
+  top: 19.2vw;
+  width: 32.7vw;
+  height: 18vw;
+}
+
+#pro-gen-art-3{
+  background-image: url("/Images/gen-art/pixel-mouth.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  right: 15.3vw;
+  top: 14.2vw;
+  border-radius: 200px;
+  width: 12vw;
+  height: 12vw;
+}
+
+#pro-gen-art-4{
+  background-image: url("/Images/gen-art/abstract-pattern.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  left: 30.3vw;
+  top: 10.2vw;
+  border-radius: 200px;
+  width: 8vw;
+  height: 8vw;
+}
+
+#pro-gen-art-5{
+  background-image: url("/Images/gen-art/floating-city.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  left: 16vw;
+  top: 30.2vw;
+  width: 32.7vw;
+  height: 11vw;
+}
+
+.teacli-gen-art-1{
+  background-image: url("/Images/gen-art/glass-triangles.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  right: 8.3vw;
+  top: 12.2vw;
+  width: 16.7vw;
+  height: 17vw;
+  z-index: 0;
+}
+
+.teacli-gen-art-2{
+  background-image: url("/Images/gen-art/pixel-mouth.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  right: 16.5vw;
+  top: 16.5vw;
+  width: 12vw;
+  height: 17vw;
+  z-index: 0;
+}

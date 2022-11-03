@@ -25,6 +25,35 @@ jobs:
 
     - uses: actions/checkout@v3
 
+    - name: Copy packages.json summary from dist.tea.xyz
+      uses: prewk/s3-cp-action@v2
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        source: 's3://dist.tea.xyz/packages.json'
+        dest: './src/data/packages.json'
+
+    - name: Create Package Detail Pages from packages.json
+      uses: getneil/jq-action@v1
+      id: version
+      with:
+        cmd: '.github/build-package-pages.sh src/data/packages.json src/content/packages'
+
+    - name: Download package thumbnails from Airtable
+      uses: getneil/jq-action@v1
+      with:
+        cmd: '.github/prepare-thumb-images.sh src/data/packages.json'
+
+    - name: Upload package thumbnails to AWS S3
+      uses: jakejarvis/s3-sync-action@master
+      env:
+        AWS_S3_BUCKET: www.tea.xyz
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'us-east-1'
+        SOURCE_DIR: 'packages_thumbs_images'
+        DEST_DIR: 'Images/packages'
+
     - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
     - uses: teaxyz/setup@v0
       with:
@@ -50,22 +79,23 @@ jobs:
     # cache-control of 10 mins because we *need* to be able to update
     # this and have people see the results can be fixed well with a static site builder
     - run: |
-        aws s3 sync public s3://www.tea.xyz \
+        aws s3 sync public s3://test1.tea.xyz \
           --metadata-directive REPLACE \
           --cache-control max-age=600 \
           --exclude '.git/*' --exclude '.github/*' \
           --exclude 'pour.sh' \
           --exclude 'tea.white-paper*.pdf' \
           --exclude '*.md' \
+          --exclude 'public/Images/packages/*' \
           --delete
 
     #TODO create a github-action that can be used to parse the
     # output from `s3 sync` into invalidation commands. NOTE
     # I have already looked for something to do this and failed.
-    - run: |
-        aws cloudfront create-invalidation \
-          --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} \
-          --paths '/*'
+    # - run: |
+    #     aws cloudfront create-invalidation \
+    #       --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} \
+    #       --paths '/*'
 
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1

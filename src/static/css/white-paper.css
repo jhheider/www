@@ -1,0 +1,93 @@
+/* Breakpoints for re-use*/
+
+@media only screen and (min-width: 1200px) {
+
+  .wp-hero-section{
+    background-image: url("/Images/wp-x-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  .wp-lead-text-container{
+    border: 1px solid #949494 !important;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20.8vw;
+    margin-top: 0.9vw;
+  }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+  .wp-hero-section{
+    background-image: url("/Images/wp-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  .wp-lead-text-container{
+    border: 1px solid #949494 !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vw;
+    margin-top: 1.1vw;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+  .wp-hero-section{
+    background-image: url("/Images/wp-large-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  .wp-lead-text-container{
+    border: 1px solid #949494 !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vw;
+    margin-top: 0vw;
+  }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
+  .wp-hero-section{
+    background-image: url("/Images/wp-medium-grid-generative-art.gif") !important;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  .wp-lead-text-container{
+    border: 1px solid #949494 !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 47vw;
+    margin-top: -1vw;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+}

@@ -1,0 +1,40 @@
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <i class="icon-tea-logo-iconasset-1 me-3 teal"></i>
+      <strong class="me-auto teal">Copied!</strong>
+      <small id="time"></small>
+      <button type="button" class="toast-close" data-bs-dismiss="toast" aria-label="Close">X</button>
+    </div>
+    <div class="toast-body">
+      Copied to clipboard. Now paste that command into your terminal.
+    </div>
+  </div>
+</div>
+
+<style>
+
+  #liveToast{
+    background-color:#1a1a1a !important;
+    color: white;
+    border-radius: 0px;
+    font-family: "sono";
+    border: 2px solid #949494;
+  }
+
+  .toast-header{
+    background-color:#1a1a1a;
+    color: white !important;
+  }
+
+  .toast-container{
+    z-index: 3;
+  }
+
+  .toast-close{
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+  }
+
+</style>

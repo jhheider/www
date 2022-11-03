@@ -1,182 +1,43 @@
-
-
-<section class="countdown-section" id="countdown-section">
-  <button onclick="hideShow()" class="hide small" type="button" name="button">CLOSE</button>
-  <div class="countdown-container">
-    <div class="countdown-contents p-4">
-      <p class="text-center display-1" id="demo"></p>
-      <p class="text-center authenticate display-6">Something new is brewing in <a class="teal" href="/lisbon/" style="text-decoration:none;">Lisbon</a>.</p>
-    </div>
+<div class="offcanvas black-bg offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">MENU</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-</section>
+  <div class="offcanvas-body">
 
+      <ul class="navbar-nav ms-auto me-4 my-auto">
+        {{ range .Site.Menus.main }}
+        <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+          <a class="top-nav-link nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
+        </li>
+        {{ end }}
+      </ul>
 
-     <style>
+  </div>
+</div>
 
-       @media screen and (max-width: 576px) {
+<style>
 
-         .hide{
-           position: absolute;
-           background-color:#1a1a1a !important;
-           border:none !important;
-           right: 5px;
-           top: 5px;
-           text-transform: uppercase;
-           color: #00ffd0;
-           z-index: 100;
-           opacity: 0.3;
-         }
+  @media only screen and (max-width: 992px) {
 
-         .hide:hover{
-           opacity: 1;
-         }
+    .offcanvas{
+      border-left: 2px solid #949494;
+    }
 
-       }
+    .offcanvas-title{
+      font-size: 3vw;
+    }
 
-       @media screen and (min-width: 576px) {
+    a.top-nav-link{
+      color: #00ffd0!important;
+      font-size: 6vw;
+      text-align: right;
+    }
 
-         .hide{
-           position: absolute;
-           background-color:#1a1a1a !important;
-           border:none !important;
-           right: 20px;
-           top: 20px;
-           text-transform: uppercase;
-           color: #00ffd0;
-           z-index: 100;
-           opacity: 0.3;
-           transition: 0.2s ease-in-out;
-         }
+    .btn-close{
+      color: white !important;
+    }
 
-         .hide:hover{
-           opacity: 1;
-         }
+  }
 
-       }
-
-
-       @font-face {
-         font-family: "pp-neue-machina";
-         src: url("/fonts/PPNeueMachina-InktrapLight.woff") format("woff");
-       }
-
-       .tea-logo{
-         width:20%;
-       }
-
-       #demo, .authenticate, #something-new, .hide{
-         font-family: "pp-neue-machina", sans-serif;
-       }
-
-       #demo,
-       .authenticate a{
-         color: #00ffd0;
-       }
-
-       .countdown-section{
-         background-color: #1a1a1a;
-         position: relative;
-         z-index: 100;
-         display: block;
-       }
-
-       .countdown-container{
-         height: 28vh;
-         position: relative;
-         width: 100%;
-       }
-
-       .countdown-contents{
-         width: 100%;
-         display: block;
-         position: absolute;
-         top: 50%;
-         -ms-transform: translateY(-50%);
-         transform: translateY(-50%);
-       }
-
-       .countdown{
-         margin-bottom: 0px !important;
-       }
-
-
-
-
-       /* Floating GitHub Icon */
-
-      .gf-container {
-        width: 80px;
-        height: 80px;
-        border-radius: 60px;
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        right: 15px;
-        bottom: 15px;
-        cursor: pointer;
-        box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
-        animation: pulse 2s infinite;
-        z-index: 200;
-      }
-
-      .gf-container:hover {
-        animation: none;
-      }
-
-      @-webkit-keyframes pulse {
-        0% {
-          -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-        }
-
-        70% {
-          -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-        }
-
-        100% {
-          -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-        }
-      }
-
-      @keyframes pulse {
-        0% {
-          -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-          box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-        }
-
-        70% {
-          -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-          box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-        }
-
-        100% {
-          -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-          box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-        }
-      }
-
-      .github-icon {
-        width: 60%;
-        margin-top: auto;
-        margin-bottom: auto;
-      }
-
-    </style>
-
-    <script type="text/javascript">
-      function hideShow() {
-        var x = document.getElementById("countdown-section");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-      }
-
-    </script>
-
-
-
-    <a href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz" class="gf-container" style="background-color:#8EC7BF;">
-      <img src="/Images/github.svg" alt="" class="github-icon mx-auto">
-
-    </a>
+</style>

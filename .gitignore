@@ -22,3 +22,9 @@ hugo.linux
 node_modules
 .envrc
 cdk.out
+
+.ideas
+
+# initially committed _sample.md only the rest will be ignored
+src/content/packages/*
+src/static/Images/packages/*

@@ -1,0 +1,141 @@
+{{ define "main" }}
+
+<!-- Desktop Gen Art -->
+
+<section class="two-boxes product-hero-section">
+
+<!-- Mobile Gen Art -->
+
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-p-gen-art-1"></div>
+<div class="gen-art-mobile animated-5 animatedFadeInUp fadeInUp" id="m-p-gen-art-2"></div>
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-p-gen-art-3"></div>
+<div class="gen-art-mobile animated-25 animatedFadeInUp fadeInUp" id="m-p-gen-art-4"></div>
+<div class="gen-art-mobile animated-5 animatedFadeInUp fadeInUp" id="m-p-gen-art-5"></div>
+
+
+<style media="screen">
+
+  #m-p-gen-art-1{
+    position:absolute;
+    width:48vw;
+    height: 18.6vw;
+    left: 6.8vw;
+    margin-top:61vw;
+    z-index: 3;
+    background-image: url("/Images/gen-art/glass-triangles.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-p-gen-art-2{
+    position:absolute;
+    width:15vw;
+    height: 15vw;
+    left: 45vw;
+    margin-top:72vw;
+    border-radius: 200px;
+    z-index: 3;
+    background-image: url("/Images/gen-art/colorful-sandal.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-p-gen-art-3{
+    position:absolute;
+    width:20vw;
+    height: 20vw;
+    right: 6.8vw;
+    margin-top: 70vw;
+    z-index: 3;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-p-gen-art-4{
+    position:absolute;
+    width:60vw;
+    height: 20vw;
+    right: 6.8vw;
+    margin-top: 0vw;
+    z-index:2;
+    background-image: url("/Images/gen-art/pixel-mouth.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  #m-p-gen-art-5{
+    position:absolute;
+    width:25vw;
+    height: 10vw;
+    right: 15vw;
+    top: 30vw;
+    z-index:2;
+    background-image: url("/Images/gen-art/tribal-green.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  @media only screen and (min-width: 576px) {
+    .gen-art-mobile{
+      display: none;
+    }
+  }
+
+</style>
+
+  <div class="container">
+    <div class="row">
+      <div class="col" style="position:relative; z-index:4;">
+        <h1 style="margin-bottom: 0px !important;">Products</h1>
+        <div class="lead-text-container animated-25 animatedFadeInUp fadeInUp black-bg p-4">
+          <p class="lead" style="margin-bottom: 0px">Just like the perfect cup of tea, greatness takes time to steep. But the wait is over… it’s time to take your first sip.</p>
+          <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="products-tea-cli">
+  <div class="container product-container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 my-auto">
+        <h3>tea.cli</h3>
+        <p>Tea.cli is more than a package manager. With new features such as executable markdown, a universal interpreter, and virtual environment manager it has never been easier to create and collaborate. </p>
+        <button onclick="window.location.href='/tea-cli/'" class="detail-btn-large"><i class="icon-enter-arrow"></i>VIEW ALL DETAILS</button>
+      </div>
+      <div class="col my-auto">
+        <img src="/Images/tea_cli_mockup_no_background.png" alt="tea-cli preview" style="width:100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="products-tea-package-manager">
+  <div class="container product-container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 order-lg-2 my-auto">
+        <h3>tea protocol</h3>
+        <p>The OSS funding problem has always existed, but until now, we haven't had the technology to fix it. tea is changing that by facilitating the graph of open source projects that underpin all modern digital infrastructure. We're putting this information on-chain so that we can create a map to guide value redistribution back into the open source projects that make the Internet possible.</p>
+        <button onclick="window.location.href='/white-paper/'" class="detail-btn-large"><i class="icon-enter-arrow"></i>READ OUR WHITE PAPER</button>
+      </div>
+      <div class="col">
+        <img src="/Images/tea_cli_mockup_no_background.png" alt="tea-cli preview" style="width:100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+{{- partial "full-width-cta.html" -}}
+
+{{ end }}

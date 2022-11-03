@@ -1,0 +1,36 @@
+/* Package Display Section */
+
+.grid-square{
+  margin-bottom: 1.116vw;
+  height: 17.857vw;
+  background-color: gray;
+  width: 100%;
+}
+
+.package-label{
+  font-size: 0.781vw;
+  float:left;
+  padding: 0.558vw 0vw;
+}
+
+.detail-btn{
+  float:right;
+}
+
+.package-grid{
+  padding-top: 0vw !important;
+  padding-bottom: 0vw !important;
+  background-image: url("/Images/x-large-grid.svg");
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 576px) {
+
+  .package-grid{
+    padding-left: 0vw !important;
+    padding-right: 0vw !important;
+  }
+
+}

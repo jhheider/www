@@ -1,0 +1,11 @@
+<svg id="enter-desktop" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.03" height="36.587" viewBox="0 0 40.03 36.587">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_449" data-name="Rectangle 449" width="40.03" height="36.587" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Group_45" data-name="Group 45" clip-path="url(#clip-path)">
+    <path id="Path_11" data-name="Path 11" d="M36.734,27.14H1.036A1.036,1.036,0,0,1,0,26.1V1.036a1.037,1.037,0,0,1,2.073,0V25.067h34.66a1.037,1.037,0,0,1,0,2.073" transform="translate(0 0)" fill="#fff"/>
+    <path id="Path_12" data-name="Path 12" d="M38.13,26.6a3.1,3.1,0,0,1-.925.779L23.146,35.462a1,1,0,0,1-.5.158.923.923,0,0,1-.733-.361,1.312,1.312,0,0,1-.3-.879,1.166,1.166,0,0,1,.4-.97,4.48,4.48,0,0,1,.869-.543l13.36-7.717-13.36-7.742a4.425,4.425,0,0,1-.869-.542,1.2,1.2,0,0,1-.4-.992,1.271,1.271,0,0,1,.3-.869.938.938,0,0,1,.733-.351,1.137,1.137,0,0,1,.5.135l14.059,8.1a3.66,3.66,0,0,1,.925.778,2.011,2.011,0,0,1,.474,1.389v.134A2.1,2.1,0,0,1,38.13,26.6" transform="translate(1.425 0.966)" fill="#fff"/>
+  </g>
+</svg>

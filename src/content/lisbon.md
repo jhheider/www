@@ -1,5 +1,5 @@
 ---
-title: "tea in Lisbon"
-Description: "tea Web Summit Agenda"
+title: "tea @ Web Summit 2022"
+Description: "tea.web_summit"
 layout: "lisbon"
 ---
