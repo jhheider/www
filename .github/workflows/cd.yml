@@ -30,7 +30,7 @@ jobs:
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        source: 's3://dist.tea.xyz/packages.json'
+        source: 's3://dist.tea.xyz/mock_packages.json'
         dest: './src/data/packages.json'
 
     - name: Create Package Detail Pages from packages.json
