@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section class="two-boxes">
+<section class="press-hero two-boxes">
   <div class="container">
     <div class="row">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -224,6 +224,46 @@
     overflow: hidden;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+  }
+
+  @media only screen and (min-width: 1200px) {
+
+    .press-hero{
+      background-image: url("/Images/home-x-large-grid-generative-art_half.gif") !important;
+      background-attachment: scroll;
+      background-repeat: repeat-y;
+      background-position: right;
+      background-size: contain;
+    }
+
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+    .press-hero{
+      background-image: url("/Images/home-large-grid-generative-art_half.gif") !important;
+      background-attachment: scroll;
+      background-repeat: repeat-y;
+      background-position: right;
+      background-size: contain;
+    }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .press-hero{
+      background-image: url("/Images/home-large-grid-generative-art_half.gif") !important;
+      background-attachment: scroll;
+      background-repeat: repeat-y;
+      background-position: right;
+      background-size: contain;
+    }
+
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+
   }
 
   @media only screen and (max-width: 576px) {
