@@ -30,74 +30,88 @@
 
 <style>
   .wrapper {
-  align-items: center;
-  display: flex;
-  height: 90%;
-  justify-content: center;
-  margin: 5%;
-  width: 90%;
-}
+    align-items: center;
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    margin: 5%;
+    width: 90%;
+  }
 
-.aspect {
-  padding-bottom: 70%;
-  position: relative;
-  width: 100%;
-}
+  .aspect {
+    padding-bottom: 70%;
+    position: relative;
+    width: 100%;
+  }
 
-.aspect-inner {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+  .aspect-inner {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
-.flipbook {
-  height: 100%;
-  transition: margin-left 0.25s ease-out;
-  width: 100%;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+  .flipbook {
+    height: 100%;
+    transition: margin-left 0.25s ease-out;
+    width: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-.flipbook .page {
-  height: 100%;
-  width: 100%;
-}
+  .flipbook .page {
+    width: 100%;
+    height: 100%;
+  }
 
-.flipbook .page img {
-  width: 100%;
-  height: 100%;
-}
+  .flipbook .page img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* .flipbook.desktop .page {
+    height: 100%;
+  }
+  .flipbook.desktop .page img {
+    height: 100%;
+  } */
+
+  #comicstrip #desktop_view {
+    display: none;
+  }
+  #comistrip #flipbook_mobile {
+    display: block;
+  }
+
+  #comicstrip.desktop #desktop_view {
+    display: flex;
+  }
+
+  #comicstrip.desktop #flipbook_mobile {
+    display: none;
+  }
+
 </style>
 
 <section class="nb-man-latest">
-  <div class="container">
-    <div class="row">
+  <div class="container" id="comicstrip">
+    <div class="row" id="desktop_view">
       <div class="col">
         <div class="wrapper">
           <div class="aspect">
             <div class="aspect-inner">
-              <div class="flipbook" id="flipbook">
-                <div class="page"><img src="/Images/nb-man-cover-one.jpg" draggable="false" alt="" /></div>
-                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_01.jpg" draggable="false" alt="" /></div>
-                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_02.jpg" draggable="false" alt="" /></div>
-                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_03.jpg" draggable="false" alt="" /></div>
-                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_04.jpg" draggable="false" alt="" /></div>
-                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_05.jpg" draggable="false" alt="" /></div>
-                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_06.jpg" draggable="false" alt="" /></div>
-                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_07.jpg" draggable="false" alt="" /></div>
-                <div class="page"><img src="/Images/nebraksa_man/Nebraska_Man_08.jpg" draggable="false" alt="" /></div>
-              </div>
+              {{- partial "nebraska-man-001.html" "flipbook_desktop" -}}
             </div>
           </div>
         </div>
       </div>
     </div>
+    {{- partial "nebraska-man-001.html" "flipbook_mobile" -}}
   </div>
 </section>
 
@@ -187,45 +201,43 @@
 
 <script type="text/javascript">
 
-function loadApp() {
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  // Create the flipbook
-
-  $('.flipbook').turn({
-
+  function loadApp() {
+    // Create the flipbook
+    $('.flipbook').turn({
       // Enable gradients
-
       gradients: true,
-
       // Auto center this flipbook
-
       autoCenter: true
+    });
+  }
 
-  });
-}
+  if (!isMobile) {
+    const comicstripEl = document.getElementById('comicstrip');
+    comicstripEl.classList.add('desktop');
 
-// Load the HTML4 version if there's not CSS transform
+    const flipbookEL = document.getElementById('flipbook_desktop');
 
-yepnope({
-  test : Modernizr.csstransforms,
-  yep: ['/js/turn.js'],
-  nope: ['/js/turn.html4.min.js'],
-  both: ['/css/basic.css'],
-  complete: loadApp
-});
+    // Load the HTML4 version if there's not CSS transform
+    yepnope({
+      test : Modernizr.csstransforms,
+      yep: ['/js/turn.js'],
+      nope: ['/js/turn.html4.min.js'],
+      both: ['/css/basic.css'],
+      complete: loadApp
+    });
 
-var flipbookEL = document.getElementById('flipbook');
+    window.addEventListener('resize', function (e) {
+      flipbookEL.style.width = '';
+      flipbookEL.style.height = '';
+      $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
+    });
 
-window.addEventListener('resize', function (e) {
-  flipbookEL.style.width = '';
-  flipbookEL.style.height = '';
-  $(flipbookEL).turn('size', flipbookEL.clientWidth, flipbookEL.clientHeight);
-});
-
-$(flipbookEL).turn({
-    autoCenter: true
-});
-
+    $(flipbookEL).turn({
+      autoCenter: true
+    });
+  }
 
 </script>
 
