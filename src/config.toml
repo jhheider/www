@@ -17,3 +17,9 @@ title = 'Equitable Open-Source for Web3'
     title = 'blog'
     url = 'https://medium.com/teaxyz'
     weight = 5
+  [[menu.main]]
+    identifier = 'github'
+    name = 'Github'
+    title = 'Github'
+    url = 'https://github.com/teaxyz'
+    weight = 6
