@@ -9,52 +9,7 @@ env:
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
 jobs:
-  validation:
-    runs-on: ubuntu-latest
-    outputs:
-      website: ${{steps.website.outputs.src}}
-      lambdas: ${{steps.lambdas.outputs.lambdas}}
-    steps:
-    - uses: actions/checkout@v3
-    - uses: dorny/paths-filter@v2
-      id: website
-      with:
-        filters: |
-          src:
-            - 'src/**'
-    - uses: dorny/paths-filter@v2
-      id: lambdas
-      with:
-        filters: |
-          lambdas:
-            - 'lambdas/**'
-
-  serverless:
-    needs: validation
-    if: needs.validation.outputs.lambdas == 'true'
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-
-    - uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
-  
-    - uses: borales/actions-yarn@v3.0.0
-      with:
-        cmd: --cwd ./lambdas install
-  
-    - name: serverless deploy
-      uses: serverless/github-action@v3
-      with:
-        args: -c "cd ./lambdas && serverless deploy"
-        entrypoint: /bin/sh
-
   deploy:
-    needs: validation
-    if: needs.validation.outputs.website == 'true'
     runs-on: ubuntu-latest
     steps:
     - name: inject slug/short variables
