@@ -5,6 +5,8 @@ base = "./public"
 exclude-mail = true
 include = ["./public/**/*.md", "./public/**/*.html"]
 exclude = [
+  "https://github.com/",
+  "https://twitter.com/",
   "https://fonts.gstatic.com/",
   "https://fonts.googleapis.com/",
   "https://www.clarity.ms/tag/",
