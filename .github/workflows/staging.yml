@@ -68,13 +68,13 @@ jobs:
       with:
         target: build
 
-    - name: Check for broken links
-      uses: lycheeverse/lychee-action@v1
-      with:
-        fail: true
-        args: --exclude twitter.com --verbose --no-progress './public/**/*.md' './public/**/*.html'
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    # - name: Check for broken links
+    #   uses: lycheeverse/lychee-action@v1
+    #   with:
+    #     fail: true
+    #     args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
+    #   env:
+    #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     - uses: actions/setup-node@v3
       with:
