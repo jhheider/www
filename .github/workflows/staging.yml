@@ -72,7 +72,7 @@ jobs:
       uses: lycheeverse/lychee-action@v1
       with:
         fail: true
-        args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
+        args: --exclude twitter.com --verbose --no-progress './public/**/*.md' './public/**/*.html'
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
