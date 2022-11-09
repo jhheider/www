@@ -21,5 +21,6 @@ exclude = [
   "file:///home/runner/work/www/www/public/tea.white-paper.pdf",
   "file:///home/runner/work/www/www/public/manage.kmail-lists.com/subscriptions/subscribe",
   "file:///home/runner/work/www/www/public/www.klaviyo.com/media/js/public/klaviyo_subscribe.js",
-  "https://openssl.org/"
+  "https://openssl.org/",
+  "https://twitter.com/teaxyz_"
 ]
