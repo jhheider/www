@@ -94,7 +94,12 @@
 <!-- Style for Swiper -->
 
 <style>
-
+  .swiper-package-display{
+    display:block;
+  }
+  .grid-package-display{
+    display:none;
+  }
   @media only screen and (min-width: 576px) {
 
       .grid-package-display{
@@ -105,51 +110,6 @@
         display:none;
       }
   }
-
-@media only screen and (max-width: 576px) {
-
-    .grid-package-display{
-      display:none;
-    }
-
-    .swiper-package-display{
-      display:block;
-    }
-}
-
-  .swiper {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 1vw !important;
-    margin-top: 1vw;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-
-  .swiper-slide figure > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
 </style>
 
 <!-- Package CTA Section -->
