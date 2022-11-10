@@ -23,3 +23,7 @@ title = 'Equitable Open-Source for Web3'
     title = 'github'
     url = 'https://github.com/teaxyz'
     weight = 6
+
+[security]
+  [security.exec]
+    allow = ['^go$', '^postcss$', '^npx$', '^babel$']
