@@ -1,7 +1,6 @@
 <!-- Package Grid -->
 
 <section>
-
   <!-- Package Grid Header -->
   <hr>
     <div class="container package-grid-header two-boxes">
@@ -12,20 +11,7 @@
     </div>
   <hr>
 
-  <section>
-      <div class="button-container">
-        <div id="searchBar">
-          <div style="display:flex; align-items:center;">
-            <div class="icon">
-              <i class="icon-search-icon"></i>
-            </div>
-            <input id="searchTerm" onsearch="onSearch()" onkeyup="onSearch()" onchange="onSearch()" type="search" placeholder="search_" />
-          </div>
-          {{- partial "sort-dropdown.html" -}}
-        </div>
-      </div>
-  </section>
-
+  {{- partial "search-menu.html" "searchTermDesktop" -}}
   <hr>
 
   <div class="package-grid">
@@ -105,43 +91,6 @@
     border: 0px;
     overflow: hidden;
   }
-
-  .icon-search-icon{
-    font-size: 30px;
-    color: #949494;
-    margin-right: 20px;
-    position: relative;
-    top: 2px;
-  }
-
-  #searchBar {
-    padding: 0px;
-    height: 150px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #searchBar .sorting-container {
-    min-width: 260px;
-  }
-  #searchBar input {
-    font-size: 32px;
-    font-family: "pp-neue-machina", sans-serif;
-    color:#00ffd0;
-    text-transform:uppercase;
-    margin-bottom: -5px;
-    min-width: 60%;
-    padding: 0px;
-    background-color: #1a1a1a !important;
-    border: none;
-    color: #00ffd0;
-    outline: none;
-    border-radius: 0px;
-  }
-  #searchBar input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #949494;
-    opacity: 1; /* Firefox */
-  }
 </style>
 <script async src="https://unpkg.com/string-similarity@4.0.1/umd/string-similarity.min.js"></script>
 <script language="javascript" type="text/javascript">
@@ -168,10 +117,9 @@
   }
 
   const onSearch = debounce(() => {
-    const searchInput = document.getElementById('searchTerm');
+    const searchInput = document.getElementById('searchTermDesktop');
     if (searchInput.value) {
       const term = searchInput.value;
-      // refreshDisplayedPackages(searchInput.value);
       const packages = getPackageThumbs();
       const sortedPackages = packages.sort((a, b) => {
         const aScore = getMatchScore(term, a.dataset);
@@ -182,7 +130,7 @@
       grid.textContent = '';
       for(const sp of sortedPackages) {
         const score = getMatchScore(term, sp.dataset);
-        if (score > 5) {
+        if (score > 20) {
           sp.classList.remove('hidden');
         } else {
           sp.classList.add('hidden');
@@ -193,6 +141,11 @@
       sortPackages();
     }
   }, 300);
+
+  const searchInputDesktop = document.getElementById('searchTermDesktop');
+  searchInputDesktop.addEventListener("search", onSearch);
+  searchInputDesktop.addEventListener("change", onSearch);
+  searchInputDesktop.addEventListener("keyup", onSearch);
 
   function getPackageThumbs() {
     // const grid = document.getElementById('packageGrid');
