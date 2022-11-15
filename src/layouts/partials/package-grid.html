@@ -39,7 +39,7 @@
   }
   .package-grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
   }
   #loadMorePackagesBtn {
     cursor: pointer;
@@ -98,6 +98,8 @@
     popularity: 'popularity',
     last_modified: 'last_modified',
   }
+  const showAllPackages = window.location.pathname.includes("/+/");
+
   let sortBy = sortOptions.popularity; // last_modified
   let sortDirection = 'desc'; // asc
   let limit = 16;
@@ -186,7 +188,7 @@
     const packages = getPackageThumbs();
     let i = 0;
     for(const sp of packages) {
-      if (i >= limit) {
+      if (i >= limit && !showAllPackages) {
         sp.classList.add('hidden');
       } else {
         sp.classList.remove('hidden');
@@ -204,6 +206,11 @@
   }
 
   const loadMoreButton = document.getElementById('loadMorePackagesBtn');
+  if (showAllPackages) {
+    loadMoreSection.classList.add('hidden');
+  } else {
+    loadMoreSection.classList.remove('hidden');
+  }
   loadMoreButton.addEventListener('click',() => {
     limit += 16;
     refreshDisplayedPackages();
