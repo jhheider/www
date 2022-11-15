@@ -37,7 +37,7 @@ jobs:
       uses: getneil/jq-action@v1
       id: version
       with:
-        cmd: '.github/build-package-pages.sh src/data/packages.json src/content/packages'
+        cmd: '.github/build-package-pages.sh src/data/packages.json src/content'
 
     - name: Download package thumbnails from Airtable
       uses: getneil/jq-action@v1
