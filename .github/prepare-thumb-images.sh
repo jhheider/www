@@ -13,7 +13,7 @@ for row in $($packages | jq -r '.[] | @base64'); do
     }
 
     dl_url=$(_jq '.thumb_image_url')
-    if [[ $dl_url == *"https://dl.airtable.com/.attachments"* ]]; then
+    if [[ $dl_url == *"airtable"* ]]; then
         filename=$(basename -- "$dl_url")
         extension="${filename##*.}"
         filename="${filename%.*}"
