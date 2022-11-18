@@ -19,8 +19,8 @@ for row in $($packages | jq -r '.[] | @base64'); do
         filename="${filename%.*}"
         slug=$(_jq '.slug')
         outputPath=$2/$(_jq '.slug').$extension
-        new_thumb_image_url="https://tea.xyz/Images/packages/$slug.$extension"
-        curl $dl_url -o ./packages_thumbs_images/$slug.$extension
+        new_thumb_image_url="https://tea.xyz/Images/packages/$slug.jpg"
+        curl $dl_url -o ./packages_thumbs_images/$slug.jpg
         updated_packages=$(jq '(.[] | select(.slug == "'$slug'") | .thumb_image_url) |= "'$new_thumb_image_url'"' ./src/data/temp.json)
         echo $updated_packages > $temp_packages
         echo "update $slug"
