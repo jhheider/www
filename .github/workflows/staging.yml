@@ -91,15 +91,9 @@ jobs:
     #   run: yarn deploy
     #   working-directory: .cdk
 
-    - uses: 8BitJonny/gh-get-current-pr@2.1.3
-      id: PR
-
     - name: get cdk bucket
-      if: steps.PR.outcome == 'success'
-      env:
-        prNumber: ${{ steps.PR.outputs.number }}
       run: |
-        aws s3 ls | grep "teaxyz-pr-${prNumber}"
+        aws s3 ls | grep $(echo teaxyz-pr-$GITHUB_REF_SLUG_URL | sed "s/-merge//")
 
 
     # sync images from www.tea.xyz/Images/packages to wherever bucket you are
