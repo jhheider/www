@@ -62,6 +62,17 @@ jobs:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     # update packages json data and rebuild again
+    - name: make images relative path to preview site
+      uses: getneil/jq-action@v1
+      with:
+        cmd: '.github/sync-thumb-images.sh src/data/packages.json'
+
+    # intentional to rebuild packages again with relative image data
+    # the first one to test it against prod resources via lychee
+    - uses: teaxyz/setup@v0
+      with:
+        target: build    
+
     - run: echo "TeaXYZ-${STAGE}"
     - uses: actions/setup-node@v3
       with:
@@ -82,7 +93,10 @@ jobs:
       working-directory: .cdk
 
     # sync images from www.tea.xyz/Images/packages to wherever bucket you are
-    - run: echo "TeaXYZ-${STAGE}"
+    - run: |
+        aws s3 sync s3://www.tea.xyz/Images/packages \
+          s3://TeaXYZ-${STAGE}/Images/packages
+
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1
       if: always()
