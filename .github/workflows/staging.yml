@@ -61,6 +61,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+    # update packages json data and rebuild again
+    - run: echo "TeaXYZ-${STAGE}"
     - uses: actions/setup-node@v3
       with:
         node-version: 14
@@ -78,7 +80,9 @@ jobs:
       id: cdk_deploy
       run: yarn deploy
       working-directory: .cdk
-  
+
+    # sync images from www.tea.xyz/Images/packages to wherever bucket you are
+    - run: echo "TeaXYZ-${STAGE}"
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1
       if: always()
