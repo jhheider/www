@@ -73,7 +73,6 @@ jobs:
       with:
         target: build    
 
-    - run: echo "TeaXYZ-${STAGE}"
     - uses: actions/setup-node@v3
       with:
         node-version: 14
@@ -97,7 +96,7 @@ jobs:
 
     - name: get cdk bucket
       run: |
-        aws s3 ls | grep teaxyz-pr-${{ steps.PR.outputs.number }}
+        aws s3 ls | "grep teaxyz-pr-${{ steps.PR.outputs.number }}"
 
 
     # sync images from www.tea.xyz/Images/packages to wherever bucket you are
