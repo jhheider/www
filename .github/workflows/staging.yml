@@ -86,17 +86,17 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: Deploy to AWS
-      id: cdk_deploy
-      run: yarn deploy
-      working-directory: .cdk
+    # - name: Deploy to AWS
+    #   id: cdk_deploy
+    #   run: yarn deploy
+    #   working-directory: .cdk
 
     - uses: 8BitJonny/gh-get-current-pr@2.1.3
       id: PR
 
     - name: get cdk bucket
       run: |
-        aws s3 ls | "grep teaxyz-pr-${{ steps.PR.outputs.number }}"
+        aws s3 ls | grep "teaxyz-pr-${{ steps.PR.outputs.number }}"
 
 
     # sync images from www.tea.xyz/Images/packages to wherever bucket you are
