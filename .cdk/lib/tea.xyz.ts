@@ -26,7 +26,7 @@ export default class TeaXYZ extends Stack {
       autoDeleteObjects: true,
       removalPolicy: RemovalPolicy.DESTROY,
     });
-    console.log("BUCKET NAME:", bucket.bucketName)
+    console.log("BUCKET ARN:", bucket.bucketArn)
     fs.writeFile(path.join(process.cwd(), "bucket.txt"), bucket.bucketName, () => {
       console.log('bucket name shared');
     })
