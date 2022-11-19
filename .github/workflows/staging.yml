@@ -92,6 +92,8 @@ jobs:
       run: yarn deploy
       working-directory: .cdk
 
+    - run: cat .cdk/cdk.out.json
+
     # sync images from www.tea.xyz/Images/packages to wherever bucket you are
     - run: |
         aws s3 sync s3://www.tea.xyz/Images/packages \
