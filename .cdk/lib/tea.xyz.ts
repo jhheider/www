@@ -9,6 +9,7 @@ import {
   RemovalPolicy,
   CfnOutput } from "aws-cdk-lib";
 import { Construct } from "constructs";
+import fs from "fs";
 
 /**
  * The CloudFormation stack holding all our resources
@@ -24,6 +25,10 @@ export default class TeaXYZ extends Stack {
       autoDeleteObjects: true,
       removalPolicy: RemovalPolicy.DESTROY,
     });
+    console.log("BUCKET NAME:", bucket.bucketName)
+    fs.writeFile('../bucket.txt', bucket.bucketName, () => {
+      console.log('bucket name shared');
+    })
 
     const edgeLambda = lambda.Version.fromVersionArn(this, "Lambda", "arn:aws:lambda:us-east-1:640264234305:function:www-redirect:10");
 
