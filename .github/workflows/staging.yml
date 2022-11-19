@@ -95,8 +95,11 @@ jobs:
       id: PR
 
     - name: get cdk bucket
+      if: steps.PR.outcome == 'success'
+      env:
+        prNumber: ${{ steps.PR.outputs.number }}
       run: |
-        aws s3 ls | grep "teaxyz-pr-${{ steps.PR.outputs.number }}"
+        aws s3 ls | grep "teaxyz-pr-${prNumber}"
 
 
     # sync images from www.tea.xyz/Images/packages to wherever bucket you are
