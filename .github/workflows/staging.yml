@@ -86,10 +86,10 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    # - name: Deploy to AWS
-    #   id: cdk_deploy
-    #   run: yarn deploy
-    #   working-directory: .cdk
+    - name: Deploy to AWS
+      id: cdk_deploy
+      run: yarn deploy
+      working-directory: .cdk
 
     - name: get cdk bucket
       id: DEPLOY_BUCKET
@@ -103,11 +103,6 @@ jobs:
           s3://$NEW_BUCKET/Images/packages
       env:
         NEW_BUCKET: ${{ steps.DEPLOY_BUCKET.outputs.bucket }}
-
-    # sync images from www.tea.xyz/Images/packages to wherever bucket you are
-    # - run: |
-    #     aws s3 sync s3://www.tea.xyz/Images/packages \
-    #       s3://TeaXYZ-${STAGE}/Images/packages
 
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1
