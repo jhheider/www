@@ -97,10 +97,11 @@ jobs:
         BUCKET=$(aws s3 ls | grep $(echo teaxyz-pr-$GITHUB_REF_SLUG_URL | sed "s/-merge//") | grep -o '[^ ]*$')
         echo "bucket=$BUCKET" >> $GITHUB_OUTPUT
 
-    - name: sync package images from prod to preview bucket
+    - name: cp package images from prod to preview bucket
       run: |
-        aws s3 sync s3://www.tea.xyz/Images/packages \
-          s3://$NEW_BUCKET/Images/packages
+        aws s3 cp s3://www.tea.xyz/Images/packages \
+          s3://$NEW_BUCKET/Images/packages \
+          --recursive
       env:
         NEW_BUCKET: ${{ steps.DEPLOY_BUCKET.outputs.bucket }}
 
