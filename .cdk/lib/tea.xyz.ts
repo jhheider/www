@@ -10,6 +10,7 @@ import {
   CfnOutput } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import fs from "fs";
+import path from "path";
 
 /**
  * The CloudFormation stack holding all our resources
@@ -26,7 +27,7 @@ export default class TeaXYZ extends Stack {
       removalPolicy: RemovalPolicy.DESTROY,
     });
     console.log("BUCKET NAME:", bucket.bucketName)
-    fs.writeFile('../bucket.txt', bucket.bucketName, () => {
+    fs.writeFile(path.join(process.cwd(), "bucket.txt"), bucket.bucketName, () => {
       console.log('bucket name shared');
     })
 
