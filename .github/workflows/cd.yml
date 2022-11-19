@@ -39,21 +39,6 @@ jobs:
       with:
         cmd: '.github/build-package-pages.sh src/data/packages.json src/content'
 
-    - name: Download package thumbnails from Airtable
-      uses: getneil/jq-action@v1
-      with:
-        cmd: '.github/prepare-thumb-images.sh src/data/packages.json'
-
-    - name: Upload package thumbnails to AWS S3
-      uses: jakejarvis/s3-sync-action@master
-      env:
-        AWS_S3_BUCKET: www.tea.xyz
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: 'us-east-1'
-        SOURCE_DIR: 'packages_thumbs_images'
-        DEST_DIR: 'Images/packages'
-
     - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
     - uses: teaxyz/setup@v0
       with:
@@ -75,8 +60,6 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
-
-    - run: cp -R packages_thumbs_images public/Images/packages
   
     # cache-control of 10 mins because we *need* to be able to update
     # this and have people see the results can be fixed well with a static site builder
@@ -85,6 +68,7 @@ jobs:
           --metadata-directive REPLACE \
           --cache-control max-age=600 \
           --exclude '.git/*' --exclude '.github/*' \
+          --exclude 'Images/packages/*' \
           --exclude 'pour.sh' \
           --exclude 'tea.white-paper*.pdf' \
           --exclude '*.md' \
