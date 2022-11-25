@@ -1,0 +1,197 @@
+<hr>
+  <div class="row button-container" onclick="myFunction()" style="display:flex; justify-content:space-between;">
+    <input class="one-liner" type="text" value="sh <(curl tea.xyz)" id="shortcodeCopy" readonly>
+
+    <!-- The button used to copy the text -->
+
+    <button type="button" class="clipboard-copy" id="liveToastBtn" onclick="changeCopied()">copy</button>
+  </div>
+<hr>
+
+<style>
+
+  .button-container{
+    background-color: #1a1a1a;
+  }
+
+  @media only screen and (min-width: 992px) {
+
+    .one-liner{
+      width: 80%;
+      padding: 2.455vw 4.185vw;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      font-size: 2vw;
+      border-left: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      height: 8.371vw;
+      width: 18%;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      font-size: 2.1vw;
+      float:right !important;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .button-container{
+      padding:0px 6.1vw !important;
+    }
+
+    .one-liner{
+      width: 80%;
+      padding: 2.455vw 5.040vw !important;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      font-size: 2vw;
+      border-left: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      height: 8.371vw;
+      width: 18%;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      font-size: 2.1vw;
+      float:right !important;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+
+    .button-container{
+      padding: 0vw 8vw !important;
+    }
+
+    .one-liner{
+      width: 77%;
+      padding: 5vw 4vw;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      font-size: 3.5vw;
+      border-left: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      padding: 5vw 4vw;
+      width: 20%;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      font-size: 3.5vw;
+      float:right;
+      background-color: #1a1a1a !important;
+      border: none;
+      border-right: 2px solid #949494;
+      transition: 0.2s linear;
+    }
+
+    .clipboard-copy:hover{
+      background-color: #00ffd0 !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0vw 0vw 0vw 0.558vw #1a1a1a !important;
+    }
+
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    .one-liner{
+      width: 100%;
+      padding: 7.5vw 7.5vw !important;
+      border-radius: 0px;
+      border: none;
+      background-color: #1a1a1a !important;
+      font-family: "pp-neue-machina";
+      color:#ffffff;
+      text-align: center !important;
+      font-size: 4vw;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .one-liner:focus{
+      border:none;
+      outline: none;
+      border-left: 2px solid #949494;
+      border-right: 2px solid #949494;
+    }
+
+    .clipboard-copy{
+      display: none;
+    }
+
+  }
+
+</style>
+
+<script>
+
+    function changeCopied() {
+    // Get the text field
+    var copyText = document.getElementById("shortcodeCopy");
+    var copiedValue = "sh <(curl https://tea.xyz)";
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(copiedValue + "+{{- .full_name -}}");
+
+    document.getElementById("liveToastBtn").innerHTML = "copied!";
+
+  }
+
+</script>
