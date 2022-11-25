@@ -1,6 +1,6 @@
 <hr>
   <div class="row button-container" onclick="myFunction()" style="display:flex; justify-content:space-between;">
-    <input class="one-liner" type="text" value="sh <(curl https://tea.xyz)" id="shortcodeCopy" readonly>
+    <input class="one-liner" type="text" value="sh <(curl tea.xyz)" id="shortcodeCopy" readonly>
 
     <!-- The button used to copy the text -->
 
@@ -182,13 +182,14 @@
     // Get the text field
     var copyText = document.getElementById("shortcodeCopy");
 
+    copyText.value = "sh <(curl https://tea.xyz)";
+
     // Select the text field
     copyText.select();
     copyText.setSelectionRange(0, 99999); // For mobile devices
 
      // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);
-
 
     document.getElementById("liveToastBtn").innerHTML = "copied!";
 
