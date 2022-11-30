@@ -36,7 +36,7 @@
 </section>
 
 {{ range where $.Site.Data.packages "name" .Title }}
-  {{- partial "clipboard-copy-package-detail.html"  -}}
+  {{- partial "clipboard-copy-package-detail.html" .  -}}
 
 {{ end }}
 
