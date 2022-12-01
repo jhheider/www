@@ -36,11 +36,8 @@
 </section>
 
 {{ range where $.Site.Data.packages "name" .Title }}
-  {{- partial "clipboard-copy.html"  -}}
+  {{- partial "clipboard-copy-package-detail.html" .  -}}
 
-  <script type="text/javascript">
-    document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) +{{- .full_name -}}";
-  </script>
 {{ end }}
 
 
