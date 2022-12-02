@@ -72,7 +72,7 @@ jobs:
           --exclude 'pour.sh' \
           --exclude 'tea.white-paper*.pdf' \
           --exclude '*.md' \
-          --exclude 'tea-*+*' \ # naked binaries
+          --exclude 'tea-*+*' \
           --delete
 
     #TODO create a github-action that can be used to parse the
