@@ -1,5 +1,5 @@
 <div align="left">
-<a href="https://contribute.design"><img src="https://i.imgur.com/ZoPpMsS.png" /></a>
+<a href="https://tea.xyz/"><img src="https://tea.xyz/banner.png" /></a>
   <h1>tea design guidelines</h1>
   <p>We&#39;re calling on designers from our communi&#39;tea to help take our aesthetic to the next level! Whether you want to tackle some graphic design, UI/UX, or if you just have a small typographic nit&#8208;pick, we would be over the moon if you lent us your talents! This is a perfect opportunity for young designers who want experience working with style guides and larger teams. And for the seasoned designers out there, by all means, show is what you&#39;ve got!</p>
 </div>
