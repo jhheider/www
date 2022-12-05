@@ -1,10 +1,10 @@
 <div align="center">
 <a href="https://contribute.design"><img src="https://i.imgur.com/ZoPpMsS.png" /></a>
-  <h1>.design guidelines</h1>
-  <p>How to successfully contribute ideas and thoughts to the contribute.design example repository.</p>
+  <h1>tea design guidelines</h1>
+  <p>We&#39;re calling on designers from our communi&#39;tea to help take our aesthetic to the next level! Whether you want to tackle some graphic design, UI/UX, or if you just have a small typographic nit&#8208;pick, we would be over the moon if you lent us your talents! This is a perfect opportunity for young designers who want experience working with style guides and larger teams. And for the seasoned designers out there, by all means, show is what you&#39;ve got!</p>
 </div>
 
-## 👋 Create issues before PRs
+## 👋 Check out of style guide here:
 
 Please create issues for your thought and add a `design: 💡 idea` label to them. We will follow those isseues closely and foster a fruitful discussion.
 
