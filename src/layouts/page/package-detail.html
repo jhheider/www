@@ -13,21 +13,20 @@
       <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
         <h3>{{- .Title -}}</h3>
         {{ range where $.Site.Data.packages "name" .Title }}
-          <p>{{- .desc -}}</p>
+          <p class="one-box-down">{{- .desc -}}</p>
+          <a target="_blank" href="{{- .homepage -}}">
+            <button class="detail-btn-large me-3" id="purple-bg-btn"><i class="icon-enter-arrow"></i>View on GitHub</button>
+          </a>
           {{ if not (eq .homepage "") }}
-            {{- partial "detail-btn-large.html" .homepage -}}
+          <a target="_blank" href="{{- .homepage -}}">
+              <button class="detail-btn-large" id="standard-detail-btn"><i class="icon-enter-arrow"></i>Visit package home</button>
+          </a>
           {{end}}
         {{ end }}
       </div>
     </div>
   </div>
 </section>
-
-<script>
-
-  document.getElementById("detail-btn-large").innerHTML = "View Package.yml";
-
-</script>
 
 <!-- Copy to clipboard field -->
 
@@ -54,6 +53,20 @@
     width: 100%;
     height: 100%;
     background-color: gray;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+
+  #purple-bg-btn{
+    background-color: #8000FF;
+    border: 2px solid #8000FF;
+  }
+
+  #standard-detail-btn:hover{
+    background-color: #212020 !important;
+    box-shadow: inset 0vw 0vw 0vw 0.335vw #1a1a1a !important;
   }
 
 </style>
