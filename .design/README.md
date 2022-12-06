@@ -6,11 +6,15 @@
 
 ## 👋 Check out of style guide here:
 
-Please create issues for your thought and add a `design: 💡 idea` label to them. We will follow those isseues closely and foster a fruitful discussion.
+Much like tea, our brand aesthetic is pushing the envelope of the design world. We use a visual grid system that defines the sizing of every element in the foreground, as well as typefaces that embody our core values and mission. The artwork you see throughout are website is generated with AI (Stable Diffusion); if your contribution includes custom artwork, we recommend utilizing our prompt in order to best match the existing generations:
 
-## ❤️ Share your flows, materials and experiences
+`focal point,  highly detailed, surrealism, #FF7BA7, #FF00FF, #2675F5, #29F746, #FFFF00, #FF8E00, smooth, sharp focus, matte, elegant, illustration, digital paint, sharp, dramatic lighting, beautiful, ambient lighting`
 
-Feel free to start discussions around anything that is relevant for you as a designer to effectively contribute towards a projects success.
+Prepend a unique prompt of your own to the text above and see what Stable Diffusion spits out!
+
+## ❤️ Type of contributions we accept:
+
+Figma links, Illustrator/Photoshop files, PNG/SVG's for visual elements, Miro boards, HTML files... whichever medium you feel you can make that greatest impact with, that's the one we want.
 
 No matter if it's tooling, required materials or other thoughts.
 
