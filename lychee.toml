@@ -25,5 +25,6 @@ exclude = [
   "file:///home/runner/work/www/www/public/www.klaviyo.com/media/js/public/klaviyo_subscribe.js",
   "https://openssl.org/",
   "https://twitter.com/teaxyz_",
+  "file:///home/runner/work/www/www/public/+github.com/rhash/RHash",
   "file:///home/runner/work/www/www/public/+github.com/rhash/RHash"
 ]
