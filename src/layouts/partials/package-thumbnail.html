@@ -19,7 +19,7 @@
         <span class="package-install-no">>{{- .installs -}}&nbsp;installs</span> -->
       </p>
     </div>
-    <a href="/+{{- .full_name -}}/">
+    <a href="/+{{- lower .full_name -}}/">
       {{- partial "detail-btn.html" . -}}
     </a>
   </div>
