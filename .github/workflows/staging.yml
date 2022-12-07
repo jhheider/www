@@ -52,7 +52,7 @@ jobs:
     - uses: teaxyz/setup@v0
       with:
         target: build
-    - run: echo ./public/+github.com
+    - run: ls ./public/+github.com
     # - name: Check for broken links
     #   uses: lycheeverse/lychee-action@v1
     #   with:
