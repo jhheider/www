@@ -52,65 +52,65 @@ jobs:
     - uses: teaxyz/setup@v0
       with:
         target: build
+    - run: echo ./public/+github.com
+    # - name: Check for broken links
+    #   uses: lycheeverse/lychee-action@v1
+    #   with:
+    #     fail: true
+    #     args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
+    #   env:
+    #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-    - name: Check for broken links
-      uses: lycheeverse/lychee-action@v1
-      with:
-        fail: true
-        args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    # # update packages json data and rebuild again
+    # - name: make images relative path to preview site
+    #   uses: getneil/jq-action@v1
+    #   with:
+    #     cmd: '.github/sync-thumb-images.sh src/data/packages.json'
 
-    # update packages json data and rebuild again
-    - name: make images relative path to preview site
-      uses: getneil/jq-action@v1
-      with:
-        cmd: '.github/sync-thumb-images.sh src/data/packages.json'
+    # # intentional to rebuild packages again with relative image data
+    # # the first one to test it against prod resources via lychee
+    # - uses: teaxyz/setup@v0
+    #   with:
+    #     target: build    
 
-    # intentional to rebuild packages again with relative image data
-    # the first one to test it against prod resources via lychee
-    - uses: teaxyz/setup@v0
-      with:
-        target: build    
+    # - uses: actions/setup-node@v3
+    #   with:
+    #     node-version: 14
+    # - uses: bahmutov/npm-install@v1
+    #   with:
+    #     working-directory: .cdk
 
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 14
-    - uses: bahmutov/npm-install@v1
-      with:
-        working-directory: .cdk
+    # - uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     aws-region: us-east-1
 
-    - uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
+    # - name: Deploy to AWS
+    #   id: cdk_deploy
+    #   run: yarn deploy
+    #   working-directory: .cdk
 
-    - name: Deploy to AWS
-      id: cdk_deploy
-      run: yarn deploy
-      working-directory: .cdk
+    # - name: get cdk bucket
+    #   id: DEPLOY_BUCKET
+    #   run: |
+    #     BUCKET=$(aws s3 ls | grep $(echo teaxyz-pr-$GITHUB_REF_SLUG_URL | sed "s/-merge//") | grep -o '[^ ]*$')
+    #     echo "bucket=$BUCKET" >> $GITHUB_OUTPUT
 
-    - name: get cdk bucket
-      id: DEPLOY_BUCKET
-      run: |
-        BUCKET=$(aws s3 ls | grep $(echo teaxyz-pr-$GITHUB_REF_SLUG_URL | sed "s/-merge//") | grep -o '[^ ]*$')
-        echo "bucket=$BUCKET" >> $GITHUB_OUTPUT
+    # - name: cp package images from prod to preview bucket
+    #   run: |
+    #     aws s3 cp s3://www.tea.xyz/Images/packages \
+    #       s3://$NEW_BUCKET/Images/packages \
+    #       --recursive
+    #   env:
+    #     NEW_BUCKET: ${{ steps.DEPLOY_BUCKET.outputs.bucket }}
 
-    - name: cp package images from prod to preview bucket
-      run: |
-        aws s3 cp s3://www.tea.xyz/Images/packages \
-          s3://$NEW_BUCKET/Images/packages \
-          --recursive
-      env:
-        NEW_BUCKET: ${{ steps.DEPLOY_BUCKET.outputs.bucket }}
-
-    - name: Seal Deployment
-      uses: bobheadxi/deployments@v1
-      if: always()
-      with:
-        step: finish
-        status: ${{ job.status }}
-        deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-        env: ${{ env.STAGE }}
-        env_url: ${{ steps.cdk_deploy.outputs.env_url }}
+    # - name: Seal Deployment
+    #   uses: bobheadxi/deployments@v1
+    #   if: always()
+    #   with:
+    #     step: finish
+    #     status: ${{ job.status }}
+    #     deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+    #     env: ${{ env.STAGE }}
+    #     env_url: ${{ steps.cdk_deploy.outputs.env_url }}
