@@ -14,13 +14,15 @@
         <h3>{{- .Title -}}</h3>
         {{ range where $.Site.Data.packages "name" .Title }}
           <p class="one-box-down">{{- .desc -}}</p>
-          <a target="_blank" href="{{- .homepage -}}">
-            <button class="detail-btn-large me-3" id="purple-bg-btn"><i class="icon-enter-arrow"></i>View on GitHub</button>
-          </a>
+          {{ if not (eq .package_yml_url "#")}}
+            <a target="_blank" href="{{- .package_yml_url -}}">
+              <button class="detail-btn-large me-3" id="purple-bg-btn"><i class="icon-enter-arrow"></i>View on GitHub</button>
+            </a>
+          {{end}}
           {{ if not (eq .homepage "") }}
-          <a target="_blank" href="{{- .homepage -}}">
-              <button class="detail-btn-large" id="standard-detail-btn"><i class="icon-enter-arrow"></i>Visit package home</button>
-          </a>
+            <a target="_blank" href="{{- .homepage -}}">
+                <button class="detail-btn-large" id="standard-detail-btn"><i class="icon-enter-arrow"></i>Visit package home</button>
+            </a>
           {{end}}
         {{ end }}
       </div>
