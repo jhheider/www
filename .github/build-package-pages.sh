@@ -6,7 +6,7 @@ for row in $(jq -r '.[] | @base64' < "$1"); do
     _jq() {
      echo "${row}" | base64 --decode | jq -r "${1}"
     }
-   full_name=$(_jq '.full_name' | tr '[:upper:]' '[:lower:]')
+   full_name=$(_jq '.full_name' | sed 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/')
 
    if [[ "$full_name" == *\/* ]] || [[ "$full_name" == *\\* ]]
    then
