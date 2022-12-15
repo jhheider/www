@@ -32,7 +32,7 @@ function Bottles() {
           {versions.length} version{versions.length === 1 ? "" : "s"} bottled
         </h4>
         {expanded && (
-          <table>
+          <table className="one-box-down">
             <thead>
               <tr>
                 <th>version</th>
