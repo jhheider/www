@@ -47,8 +47,6 @@ jobs:
       with:
         cmd: '.github/build-package-pages.sh src/data/packages.json src/content'
 
-    - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
-
     - uses: teaxyz/setup@v0
       with:
         target: build
@@ -71,7 +69,7 @@ jobs:
     # the first one to test it against prod resources via lychee
     - uses: teaxyz/setup@v0
       with:
-        target: build    
+        target: build
 
     - uses: actions/setup-node@v3
       with:

@@ -64,6 +64,7 @@ export default class TeaXYZ extends Stack {
       destinationBucket: bucket,
       distribution,
       distributionPaths: ["/*"],
+      memoryLimit: 512,
       sources: [s3Deployment.Source.asset('../public')],
     });
   }
