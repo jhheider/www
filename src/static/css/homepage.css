@@ -247,7 +247,7 @@ mark{
     align-items: center;
     height: 15vw;
     margin-top: 0.4vw;
-    margin-bottom: 1vw;
+    margin-bottom: 0px;
   }
 
   .package_before{
@@ -303,7 +303,7 @@ mark{
     align-items: center;
     height: 15vw;
     margin-top: 1.1vw;
-    margin-bottom: 1vw;
+    margin-bottom: 0px;
   }
 
   .package_before{
@@ -358,8 +358,8 @@ mark{
     justify-content: center;
     align-items: center;
     height: 20.2vw;
-    margin-top: 1.3vw;
-    margin-bottom: 2.5vw;
+    margin-top: .5vw;
+    margin-bottom: 0;
   }
 
   .metric-block{

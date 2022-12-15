@@ -5,19 +5,110 @@
   </div>
 <hr>
 
+{{- partial "search-menu.html" "searchTermMobile" -}}
+<hr>
 <!-- Slider main container -->
 
-  <div class="row" style="margin-bottom: 2vw !important;">
-    <div class="col">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          {{ range $.Site.Data.packages }}
-            <div class="swiper-slide">
+<div class="row" style="margin-bottom: 2vw !important;">
+  <div class="col">
+    <div class="swiper mySwiper">
+      <div id="parentSwiper" class="swiper-wrapper">
+        {{ range $.Site.Data.packages }}
+          <div class="swiper-slide">
             {{- partial "package-thumbnail.html" .}}
-            </div>
-          {{ end }}
-        </div>
-        <!--<div class="swiper-pagination"></div>-->
+          </div>
+        {{ end }}
       </div>
+      <!--<div class="swiper-pagination"></div>-->
     </div>
   </div>
+</div>
+<style>
+  .swiper {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1vw !important;
+    margin-top: 1vw;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide figure > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+  let swipeyPackagesCache;
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    freeMode: true,
+    loop: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      afterInit: () => {
+        const swiperParent = document.getElementById('parentSwiper');
+        swipeyPackagesCache = Array.from(swiperParent.children)
+          .filter((e) => e.childNodes[0].dataset.popularity)
+          .map((e) => {
+            e.classList = ['swiper-slide'];
+            return e;
+          });
+      }
+    }
+  });
+
+
+  const onSearchMobile = debounce(async () => {
+    const searchInput = document.getElementById('searchTermMobile');
+    if (searchInput.value) {
+      const term = searchInput.value;
+      const packages = [...swipeyPackagesCache];
+      const sortedPackages = packages.sort((a, b) => {
+        const aScore = getMatchScore(term, a.childNodes[0].dataset);
+        const bScore = getMatchScore(term, b.childNodes[0].dataset);
+        return bScore - aScore;
+      });
+      swiper.removeAllSlides();
+      for(const sp of sortedPackages) {
+        const score = getMatchScore(term, sp.childNodes[0].dataset);
+        if (score > 20) {
+          swiper.addSlide(1, sp);
+        }
+      }
+    } else {
+      const recache = [...swipeyPackagesCache];
+      await swiper.removeAllSlides();
+      swiper.appendSlide(recache);
+    }
+  }, 300);
+
+  const searchInputMobile = document.getElementById('searchTermMobile');
+  searchInputMobile.addEventListener("search", onSearchMobile);
+  searchInputMobile.addEventListener("change", onSearchMobile);
+  searchInputMobile.addEventListener("keyup", onSearchMobile);
+</script>

@@ -13,9 +13,16 @@
       <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
         <h3>{{- .Title -}}</h3>
         {{ range where $.Site.Data.packages "name" .Title }}
-          <p>{{- .desc -}}</p>
+          <p class="one-box-down">{{- .desc -}}</p>
+          {{ if not (eq .package_yml_url "#")}}
+            <a target="_blank" href="{{- .package_yml_url -}}">
+              <button class="detail-btn-large me-3" id="purple-bg-btn"><i class="icon-enter-arrow"></i>View on GitHub</button>
+            </a>
+          {{end}}
           {{ if not (eq .homepage "") }}
-            {{- partial "detail-btn-large.html" .homepage -}}
+            <a target="_blank" href="{{- .homepage -}}">
+                <button class="detail-btn-large" id="standard-detail-btn"><i class="icon-enter-arrow"></i>Visit package home</button>
+            </a>
           {{end}}
         {{ end }}
       </div>
@@ -29,18 +36,15 @@
   <div class="container">
     <div class="row">
       <div class="col grid-gray">
-        Copy the tea one-liner below into your terminal to install {{- .Title -}}. tea will interpret the documentation and take care of any dependencies.
+        Copy the tea one-liner below into your terminal to install &#160;{{- .Title -}}. tea will interpret the documentation and take care of any dependencies.
       </div>
     </div>
   </div>
 </section>
 
 {{ range where $.Site.Data.packages "name" .Title }}
-  {{- partial "clipboard-copy.html"  -}}
+  {{- partial "clipboard-copy-package-detail.html" .  -}}
 
-  <script type="text/javascript">
-    document.getElementById("shortcodeCopy").value = "sh <(curl tea.xyz) +{{- .full_name -}}";
-  </script>
 {{ end }}
 
 
@@ -51,6 +55,20 @@
     width: 100%;
     height: 100%;
     background-color: gray;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+
+  #purple-bg-btn{
+    background-color: #8000FF;
+    border: 2px solid #8000FF;
+  }
+
+  #standard-detail-btn:hover{
+    background-color: #212020 !important;
+    box-shadow: inset 0vw 0vw 0vw 0.335vw #1a1a1a !important;
   }
 
 </style>

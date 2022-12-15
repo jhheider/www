@@ -8,14 +8,15 @@
   <div class="container hero-container">
     <div class="row">
       <div class="col">
-        <h1 class="impact" style="z-index:3; position: relative;">Keep <span class="white">what</span><br><span class="hero-float" style="float:right;"><span class="white">is</span> yours.</span></h1>
+        <h1 class="impact" style="z-index:3; position: relative;">TEA <span class="white">CLI</span><br><span class="hero-float" style="float:right;"><span class="white">is</span> HERE.</span></h1>
       </div>
     </div>
     <div class="row">
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
         <div class="lead-text-container animated-25 animatedFadeInUp fadeInUp black-bg p-4" style="z-index:3; position: relative;">
-          <p class="lead" style="margin-bottom: 0px;">The open-source revolution is here. We’re calling on all devs to build with our powerful, new unified package manager.</p>
+          <p class="lead" style="margin-bottom: 0px;"><a href="https://github.com/teaxyz/cli">Visit GitHub</a> to check out our README, and &#11088; the repository. You can install tea by running the one&#8208;liner in your terminal.</p>
         </div>
+        {{- partial "purple-btn-large.html" -}}
         <img class="mobile-grid-element mt-5" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
       </div>
     </div>
@@ -94,7 +95,12 @@
 <!-- Style for Swiper -->
 
 <style>
-
+  .swiper-package-display{
+    display:block;
+  }
+  .grid-package-display{
+    display:none;
+  }
   @media only screen and (min-width: 576px) {
 
       .grid-package-display{
@@ -105,51 +111,6 @@
         display:none;
       }
   }
-
-@media only screen and (max-width: 576px) {
-
-    .grid-package-display{
-      display:none;
-    }
-
-    .swiper-package-display{
-      display:block;
-    }
-}
-
-  .swiper {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 1vw !important;
-    margin-top: 1vw;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-
-  .swiper-slide figure > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
 </style>
 
 <!-- Bottle CTA -->
@@ -250,7 +211,7 @@
         <div class="metric-block" style="float:right; margin-top:-300px;">
           <p class="stat-head">NUMBER OF REPOS</p>
           <p class="stat-number teal" id="stat-one"></p>
-          <p class="small gray stat-small-text">Number of repos above 0 stars and forks, owned by tea authenticated developers.</p>
+          <p class="small gray stat-small-text">Number of rated repos owned by tea&#8208;authenticated developers.</p>
         </div>
         <div class="gen-art-mobile" id="m-gen-art-3"></div>
         <div class="gen-art-mobile" id="m-gen-art-4"></div>
@@ -264,9 +225,9 @@
         <div class="gen-art-mobile" id="m-gen-art-6"></div>
         <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
         <div class="metric-block" style="float:right;">
-          <p class="stat-head">OS CONTRIBUTIONS</p>
+          <p class="stat-head">TEA MAINTAINERS</p>
           <p class="stat-number teal" id="stat-two"></p>
-          <p class="small gray stat-small-text">Number of maintainers for those 2042 packages.</p>
+          <p class="small gray stat-small-text">Number of tea-maintainers for those 2042 packages.</p>
         </div>
         <div class="gen-art-mobile" id="m-gen-art-7"></div>
         <div class="gen-art-mobile" id="m-gen-art-8"></div>
