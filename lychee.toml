@@ -12,7 +12,7 @@ exclude = [
   "https://www.clarity.ms/tag/",
   "https://www.googletagmanager.com/gtm.js",
   ".*/mailto:.*@.*",
-  "https://tea.xyz/tea.white-paper",
+  "https://tea.xyz/tea.white-paper",                                                              # fragment used in js
   "https://tea.xyz/tea.products",
   "https://tea.xyz/tea.nebraska-man",
   "https://tea.xyz/tea.cli",
@@ -27,5 +27,5 @@ exclude = [
   "https://twitter.com/teaxyz_",
   "file:///home/runner/work/www/www/public/+github.com/rhash/RHash",
   "file:///home/runner/work/www/www/public/+github.com/rhash/RHash",
-  "https://app.tea.xyz/api/signups",
+  "https://app.tea.xyz/api/signups",                                                              # can take a little too long, and no reason to hammer here.
 ]
