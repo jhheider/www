@@ -89,6 +89,8 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
         $('#count5').html(signups)
         $('#count6').html(signups)
         $('#count7').html(signups)
+        $('#stat-one').html(res.repos ? res.repos.toLocaleString() : "")
+        $('#stat-two').html(res.maintainers ? res.maintainers.toLocaleString() : "")
       })
   } catch (e) {
     console.error(e)
@@ -190,19 +192,5 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
         toast.show()
       })
     }
-
-  </script>
-
-  <script>
-
-    fetch('stats.json')
-    .then(res => res.json())
-    .then((out) => {
-      //Debugging + Reference
-      console.log(out);
-      document.getElementById('stat-one').innerHTML = out[0].num_repos;
-      document.getElementById('stat-two').innerHTML = out[0].num_maintainers;
-    })
-    .catch(err => { throw err });
 
   </script>
