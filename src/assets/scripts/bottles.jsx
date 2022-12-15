@@ -13,7 +13,7 @@ function Bottles() {
 
   return (
     <div>
-      <p>{names.length} packages</p>
+      <p>Showing {names.length} packages</p>
       {names.map((name) => (
         <Bottle key={name} name={name} />
       ))}
@@ -27,9 +27,9 @@ function Bottles() {
     ];
     return (
       <div className="expand" onClick={() => toggleExpanded(!expanded)}>
-        <div className="expand-text">
-          <h3>{name}</h3>
-          <h4>
+        <div className="expand-text one-box-down">
+          <h3 className="display-3">{name}</h3>
+          <h4 className="display-6">
             {versions.length} version{versions.length === 1 ? "" : "s"} bottled
           </h4>
         </div>
@@ -64,6 +64,9 @@ function Bottles() {
             </tbody>
           </table>
         )}
+        <div className="one-box-down">
+          <hr />
+        </div>
       </div>
     );
   }
