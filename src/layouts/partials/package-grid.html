@@ -1,17 +1,19 @@
 <!-- Package Grid -->
 
 <section>
-
   <!-- Package Grid Header -->
   <hr>
-    <div class="container package-grid-header">
-      <section class="flex">
+    <div class="container package-grid-header two-boxes">
+      <section class="flex flex-column flex-md-row">
         <h3>packages</h3>
-        {{- partial "sort-dropdown.html" -}}
       </section>
       <p style="width:60%;">There are already plenty of packages available through tea. As the communi’tea builds the library, contributions will live here. We use <a href="https://stability.ai/blog/stable-diffusion-public-release">Stable Diffusion</a> to generate the artwork for each package using their title and code for input. That’s the power of Open Source.</p>
     </div>
   <hr>
+
+  {{- partial "search-menu.html" "searchTermDesktop" -}}
+  <hr>
+
   <div class="package-grid">
 
     <!-- Start Package Grid -->
@@ -37,7 +39,7 @@
   }
   .package-grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
   }
   #loadMorePackagesBtn {
     cursor: pointer;
@@ -90,26 +92,72 @@
     overflow: hidden;
   }
 </style>
-
+<script async src="https://unpkg.com/string-similarity@4.0.1/umd/string-similarity.min.js"></script>
 <script language="javascript" type="text/javascript">
   const sortOptions = {
     popularity: 'popularity',
     last_modified: 'last_modified',
   }
+  const showAllPackages = window.location.pathname.includes("/+/");
+
   let sortBy = sortOptions.popularity; // last_modified
   let sortDirection = 'desc'; // asc
   let limit = 16;
 
+  const grid = document.getElementById('packageGrid');
+  const packagesCache = Array.from(grid.children).filter((e) => e.dataset && e.dataset.name);
+
+  function debounce(fn, delay) {
+    var timer = null;
+    return function () {
+      var context = this, args = arguments;
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        fn.apply(context, args);
+      }, delay);
+    };
+  }
+
+  const onSearch = debounce(() => {
+    const searchInput = document.getElementById('searchTermDesktop');
+    if (searchInput.value) {
+      const term = searchInput.value;
+      const packages = getPackageThumbs();
+      const sortedPackages = packages.sort((a, b) => {
+        const aScore = getMatchScore(term, a.dataset);
+        const bScore = getMatchScore(term, b.dataset);
+        return bScore - aScore;
+      });
+      const grid = document.getElementById('packageGrid');
+      grid.textContent = '';
+      for(const sp of sortedPackages) {
+        const score = getMatchScore(term, sp.dataset);
+        if (score > 20) {
+          sp.classList.remove('hidden');
+        } else {
+          sp.classList.add('hidden');
+        }
+        grid.appendChild(sp);
+      }
+    } else {
+      sortPackages();
+    }
+  }, 300);
+
+  const searchInputDesktop = document.getElementById('searchTermDesktop');
+  searchInputDesktop.addEventListener("search", onSearch);
+  searchInputDesktop.addEventListener("change", onSearch);
+  searchInputDesktop.addEventListener("keyup", onSearch);
+
   function getPackageThumbs() {
-    const grid = document.getElementById('packageGrid');
-    return Array.from(grid.children).filter((e) => e.dataset && e.dataset.name);
+    // const grid = document.getElementById('packageGrid');
+    return packagesCache;
   }
 
   const packagesCount = getPackageThumbs().length;
 
   function sortPackages() {
     const packages = getPackageThumbs();
-
     const sortedPackages = packages.sort((a, b) => {
       if (sortBy === sortOptions.popularity) {
         const aPop = +a.dataset.popularity;
@@ -140,7 +188,7 @@
     const packages = getPackageThumbs();
     let i = 0;
     for(const sp of packages) {
-      if (i >= limit) {
+      if (i >= limit && !showAllPackages) {
         sp.classList.add('hidden');
       } else {
         sp.classList.remove('hidden');
@@ -149,7 +197,20 @@
     }
   }
 
+  function getMatchScore(term, dataset) {
+    // provide higher value with name
+    const { name, description } = dataset;
+    const nameScore = stringSimilarity.compareTwoStrings(name, term);
+    const descriptionScore = stringSimilarity.compareTwoStrings(description, term);
+    return (nameScore*80) + (descriptionScore*20)
+  }
+
   const loadMoreButton = document.getElementById('loadMorePackagesBtn');
+  if (showAllPackages) {
+    loadMoreSection.classList.add('hidden');
+  } else {
+    loadMoreSection.classList.remove('hidden');
+  }
   loadMoreButton.addEventListener('click',() => {
     limit += 16;
     refreshDisplayedPackages();

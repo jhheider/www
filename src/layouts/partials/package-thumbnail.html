@@ -1,4 +1,4 @@
-<div class="card card-thumbnail" style="width: 100%" data-name="{{- .name -}}" data-popularity="{{- .dl_count -}}" data-last_modified="{{- .last_modified -}}">
+<div class="card card-thumbnail" style="width: 100%" data-name="{{- .name -}}" data-popularity="{{- .dl_count -}}" data-last_modified="{{- .last_modified -}}" data-description="{{- .desc -}}">
   <figure class="card-img-top" >
     <img class="package-image" src="{{- .thumb_image_url -}}" alt="{{- .name -}}" style="width:100%; height:100%;">
     <article class="card-thumb-label">
@@ -19,12 +19,12 @@
         <span class="package-install-no">>{{- .installs -}}&nbsp;installs</span> -->
       </p>
     </div>
-    <a href="/packages/{{- .slug -}}/">
+    <a href="/+{{- lower .full_name -}}/">
       {{- partial "detail-btn.html" . -}}
     </a>
   </div>
   <div class="card-body thumbnail-body-mobile">
-    <a href="/packages/{{- .slug -}}/">
+    <a href="/+{{- lower .full_name -}}/">
       <button class="detail-btn-mobile"><i class="icon-enter-arrow"></i>details</button>
     </a>
   </div>

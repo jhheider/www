@@ -29,10 +29,11 @@ The detail pages of each package are not committed to the repository for the
 simple reason of that would be too much repeating data.
 Execute the following command just once per version of
 `/src/data/packages.json`. This will create the package detail pages in
-`/src/content/packages/[package_slug].md`.
+`/src/content/+[package.full_name].md`.
+Which resembles the installation tag in tea cli
 
 ```sh
-.github/build-package-pages.sh src/data/packages.json src/content/packages
+.github/build-package-pages.sh src/data/packages.json src/content
 ```
 
 
