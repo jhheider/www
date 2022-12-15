@@ -42,6 +42,8 @@ Which resembles the installation tag in tea cli
 | Project    | Version |
 |------------|---------|
 | gohugo.io  |  >=0.99 |
+| nodejs.org |  >=14   |
+| npmjs.com  |  *      |
 
 Install them yourself or use tea:
 
@@ -57,6 +59,7 @@ $ tea .
 Builds a static, deployable version of the website.
 
 ```sh
+npm ci
 hugo --source src --destination ../public --minify
 ```
 

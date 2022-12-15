@@ -1,0 +1,24 @@
+{
+  "name": "tea-www",
+  "version": "0.1.0",
+  "description": "basic react config for https://tea.xyz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teaxyz/www.git"
+  },
+  "author": "Jacob Heider <jacob@tea.xyz>",
+  "license": "CC-BY-NC-4.0",
+  "bugs": {
+    "url": "https://github.com/teaxyz/www/issues"
+  },
+  "homepage": "https://github.com/teaxyz/www#readme",
+  "dependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-react": "^7.18.6"
+  }
+}

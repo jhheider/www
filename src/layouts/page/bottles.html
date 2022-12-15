@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col title-col" style="padding:1.4vw;">
+        <h1 class="display-1">Bottles</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col bottles-container">
+
+        {{- partial "bottle-grid.html" -}}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+  table{
+    color: #fff;
+    width: 100%;
+  }
+
+  table, th, td {
+    border: 1px solid #949494;
+    font-family: "sono", sans-serif;
+    padding: 20px;
+  }
+
+  .expand{
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 576px) {
+
+    .bottles-container{
+      padding: 0px !important;
+    }
+
+    table, th, td {
+      border: 1px solid #949494;
+      font-family: "sono", sans-serif;
+      padding: 10px;
+      font-size: 12px;
+    }
+
+    .title-col{
+      padding: 4vw !important;
+
+    }
+
+  }
+
+
+</style>
+
+{{ end }}
