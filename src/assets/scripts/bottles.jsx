@@ -26,11 +26,13 @@ function Bottles() {
       ...new Set(bottles.filter((b) => b.name === name).map((b) => b.version)),
     ];
     return (
-      <div onClick={() => toggleExpanded(!expanded)}>
-        <h3>{name}</h3>
-        <h4>
-          {versions.length} version{versions.length === 1 ? "" : "s"} bottled
-        </h4>
+      <div className="expand" onClick={() => toggleExpanded(!expanded)}>
+        <div className="expand-text">
+          <h3>{name}</h3>
+          <h4>
+            {versions.length} version{versions.length === 1 ? "" : "s"} bottled
+          </h4>
+        </div>
         {expanded && (
           <table className="one-box-down">
             <thead>
