@@ -1,6 +1,6 @@
 ---
 title: "Products"
-Description: "tea.products"
+Description: "Our Products"
 layout: "products"
 menu: main
 weight: 1

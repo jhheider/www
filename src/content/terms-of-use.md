@@ -1,6 +1,6 @@
 ---
 title: "Website Terms of Use"
-Description: "tea.terms-of-use"
+Description: "Terms of Use"
 layout: "terms-of-use"
 ---
 # Website Terms of Use

@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-Description: "tea.privacy-policy"
+Description: "Privacy Policy"
 layout: "privacy-policy"
 ---
 
