@@ -73,31 +73,6 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     }
   </script>
 
-<script>
-  try {
-    fetch('https://app.tea.xyz/api/signups')
-      .then(res => res.json())
-      .then(res => {
-        const signups = res.signups ? res.signups.toLocaleString() : ""
-        if (!(localStorage['signup'] || '').match(/:::/)) {
-          $('#count').html(signups)
-        }
-        $('#count1').html(signups)
-        $('#count2').html(signups)
-        $('#count3').html(signups)
-        $('#count4').html(signups)
-        $('#count5').html(signups)
-        $('#count6').html(signups)
-        $('#count7').html(signups)
-        $('#stat-one').html(res.repos ? res.repos.toLocaleString() : "")
-        $('#stat-one-small').html(res.repos ? res.repos.toLocaleString() : "")
-        $('#stat-two').html(res.maintainers ? res.maintainers.toLocaleString() : "")
-      })
-  } catch (e) {
-    console.error(e)
-  }
-</script>
-
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
