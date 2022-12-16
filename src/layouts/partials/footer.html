@@ -90,6 +90,7 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
         $('#count6').html(signups)
         $('#count7').html(signups)
         $('#stat-one').html(res.repos ? res.repos.toLocaleString() : "")
+        $('#stat-one-small').html(res.repos ? res.repos.toLocaleString() : "")
         $('#stat-two').html(res.maintainers ? res.maintainers.toLocaleString() : "")
       })
   } catch (e) {
