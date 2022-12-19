@@ -1,5 +1,5 @@
 ---
 title: "Careers"
-Description: "tea.careers"
+Description: "We're Hiring! Apply Today!"
 layout: "careers"
 ---

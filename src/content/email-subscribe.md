@@ -1,5 +1,5 @@
 ---
 title: "Email Subscribe"
-Description: "tea.email subscribe"
+Description: "Subscribe to Our tea'Mail List"
 layout: "email-subscribe"
 ---

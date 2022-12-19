@@ -1,5 +1,5 @@
 ---
 title: "tea CLI"
-Description: "tea.cli"
+Description: "tea-cli is here! Install today!"
 layout: "tea-cli"
 ---

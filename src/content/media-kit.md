@@ -1,5 +1,5 @@
 ---
 title: "tea Media Kit"
-Description: "tea.media_kit"
+Description: "Tell Everyone About Our Tea Party!"
 layout: "media-kit"
 ---

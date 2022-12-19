@@ -1,6 +1,6 @@
 ---
 title: "White Paper"
-Description: "tea.white paper"
+Description: "Read & Share Our White Paper"
 layout: "white-paper"
 menu: main
 weight: 7
