@@ -21,3 +21,7 @@ Figma links, Illustrator/Photoshop files, PNG/SVG's for visual elements, MIRO bo
 In terms of deciding *what* to contribute, you can audit our website and digital presence to find visual weak points, you can design new pages that you think augment the brand and messaging, or you can find a [design-related issue](https://github.com/teaxyz/www/issues) to tackle.
 
 We want *everybody* to join our tea party and contribute to a better internet, so we're thrilled to be opening that up to designers.
+
+## How to contribute:
+
+Simply fork our repository (www), add your design files to the .design folder, and then submit a pull request with a description of your submisson. We'll critique and discuss your designs via GitHub. We look forward to seeing what you come up with!
