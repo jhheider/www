@@ -24,6 +24,7 @@
           {{- partial "package-thumbnail.html" .}}
         {{ end }}
       </div>
+      {{- partial "no-results-found.html" }}
     </div>
   </div>
   <hr>
@@ -120,6 +121,7 @@
 
   const onSearch = debounce(() => {
     const searchInput = document.getElementById('searchTermDesktop');
+    const noResult = document.getElementById('noResult');
     if (searchInput.value) {
       const term = searchInput.value;
       const packages = getPackageThumbs();
@@ -130,16 +132,25 @@
       });
       const grid = document.getElementById('packageGrid');
       grid.textContent = '';
+      let searchCount = 0;
       for(const sp of sortedPackages) {
         const score = getMatchScore(term, sp.dataset);
         if (score > 20) {
           sp.classList.remove('hidden');
+          searchCount++;
         } else {
           sp.classList.add('hidden');
         }
         grid.appendChild(sp);
       }
+
+      if (searchCount) {
+        noResult.classList.remove('show');
+      } else {
+        noResult.classList.add('show');
+      }
     } else {
+      noResult.classList.remove('show');
       sortPackages();
     }
   }, 300);
