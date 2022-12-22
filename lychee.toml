@@ -28,4 +28,6 @@ exclude = [
   "file:///home/runner/work/www/www/public/+github.com/rhash/RHash",
   "file:///home/runner/work/www/www/public/+github.com/rhash/RHash",
   "https://app.tea.xyz/api/signups",                                                              # can take a little too long, and no reason to hammer here.
+  "https://unicode.org/",
+  "https://gnome.org/"
 ]
