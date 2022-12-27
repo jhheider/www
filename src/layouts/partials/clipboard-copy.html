@@ -5,7 +5,9 @@
     <!-- The button used to copy the text -->
 
     <button type="button" class="clipboard-copy" id="liveToastBtn" onclick="changeCopied()">copy</button>
-    <button type="button" class="clipboard-copy" id="source-btn" onclick="window.open('https://github.com/teaxyz/setup/blob/main/install.sh');">view source</button>
+    <a href="https://github.com/teaxyz/setup/blob/main/install.sh" class="src-link">
+      <button type="button" class="clipboard-copy source-btn" id="source-btn">view source</button>
+    </a>
   </div>
 <hr>
 
@@ -33,6 +35,15 @@
       border:none;
       outline: none;
       border-left: 2px solid #949494;
+    }
+
+    .source-btn{
+      width: 100% !important;
+    }
+
+    .src-link{
+      width: 20% !important;
+      padding: 0px !important;
     }
 
     .clipboard-copy{
@@ -82,6 +93,15 @@
       border:none;
       outline: none;
       border-left: 2px solid #949494;
+    }
+
+    .source-btn{
+      width: 100% !important;
+    }
+
+    .src-link{
+      width: 20% !important;
+      padding: 0px !important;
     }
 
     .clipboard-copy{
@@ -136,6 +156,15 @@
       border-left: 2px solid #949494;
     }
 
+    .source-btn{
+      width: 100% !important;
+    }
+
+    .src-link{
+      width: 50% !important;
+      padding: 0px !important;
+    }
+
     .clipboard-copy{
       padding: 5vw 4vw;
       width: 50%;
@@ -183,6 +212,15 @@
       outline: none;
       border-left: 2px solid #949494;
       border-right: 2px solid #949494;
+    }
+
+    .source-btn{
+      width: 100% !important;
+    }
+
+    .src-link{
+      width: 50% !important;
+      padding: 0px !important;
     }
 
     .clipboard-copy{
