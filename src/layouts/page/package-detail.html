@@ -30,10 +30,18 @@
   </div>
 </section>
 
+
 <!-- Copy to clipboard field -->
 
 <section>
   <div class="container">
+    <div class="row">
+      <div class="col bottles-container">
+
+        {{- partial "package-bottle.html" .Title -}}
+
+      </div>
+    </div>
     <div class="row">
       <div class="col grid-gray">
         Copy the tea one-liner below into your terminal to install &#160;{{- .Title -}}. tea will interpret the documentation and take care of any dependencies.
@@ -71,6 +79,41 @@
     box-shadow: inset 0vw 0vw 0vw 0.335vw #1a1a1a !important;
   }
 
-</style>
+  table{
+    color: #fff;
+    width: 100%;
+  }
 
+  table, th, td {
+    border: 1px solid #949494;
+    font-family: "sono", sans-serif;
+    padding: 20px;
+  }
+
+  .expand{
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 576px) {
+
+    .bottles-container{
+      padding: 0px !important;
+    }
+
+    table, th, td {
+      border: 1px solid #949494;
+      font-family: "sono", sans-serif;
+      padding: 10px;
+      font-size: 12px;
+    }
+
+    .title-col{
+      padding: 4vw !important;
+
+    }
+
+  }
+
+
+</style>
 {{ end }}
