@@ -32,4 +32,5 @@ exclude = [
   "https://gnome.org/",
   "https://libuv.org/",
   "file:///home/runner/work/www/www/public/blog",
+  "https://api.github.com/repos/",
 ]
