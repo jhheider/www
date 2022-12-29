@@ -15,7 +15,7 @@
             <ul class="list-group list-group-flush">
               <a class="list-group-item" role="button" href="https://twitter.com/teaxyz"><i class="icon-twitter social-icon"></i>Twitter</a>
               <a class="list-group-item" role="button" href="https://discord.gg/KCZsXfJphn"><i class="icon-discord social-icon"></i>Discord</a>
-              <a class="list-group-item" role="button" href="https://github.com/teaxyz"><i class="icon-github social-icon"></i>GitHub <span style="font-size:16px;">(<span id="starcount"></span> stars)</span></a>
+              <a class="list-group-item" role="button" href="https://github.com/teaxyz"><i class="icon-github social-icon"></i>GitHub <span style="font-size:16px;">(&#9734;<span id="starcount"></span>)</span></a>
               <a class="list-group-item" role="button" href="https://t.me/tea_xyz"><i class="icon-telegram social-icon"></i>Telegram</a>
             </ul>
           </div>
@@ -172,9 +172,13 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 
   <script>
     function getStarcount(repo, resultElement) {
+    var repo = 'teaxyz/cli';
     var url = 'https://api.github.com/repos/' + repo;
       axios.get(url)
         .then(function (response) {
+          console.log(response.data.stargazers_count);
+          document.getElementById('starcount').innerHTML=response.data.stargazers_count;
+          document.getElementById('starcount2').innerHTML=response.data.stargazers_count;
           resultElement.innerHTML = response.data.stargazers_count;
         })
         .catch(function (error) {
@@ -184,7 +188,6 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 
     function repo() {
         var repo = 'teaxyz/cli';
-        var starcount = document.getElementById('starcount');
         getStarcount(repo, starcount);
     }
 
