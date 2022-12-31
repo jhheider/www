@@ -42,14 +42,14 @@ jobs:
     - uses: teaxyz/setup@v0
       with:
         target: build
-
-    - name: Check for broken links
-      uses: lycheeverse/lychee-action@v1
-      with:
-        fail: true
-        args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    # NOTE: temp disabled? maybe can be addressed by https://github.com/teaxyz/www/issues/252
+    # - name: Check for broken links
+    #   uses: lycheeverse/lychee-action@v1
+    #   with:
+    #     fail: true
+    #     args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
+    #   env:
+    #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     ## means s3 sync will only sync things we need sync’d
     # - uses: chetan/git-restore-mtime-action@v1
