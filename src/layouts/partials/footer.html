@@ -3,7 +3,7 @@
 
 <section class="footer" id="community">
   <div class="container">
-      <div class="row footer-top">
+      <div class="row footer-top one-box-down">
         <div class="col-lg-8 footer-content">
           <h4>Changing the way you build. And what happens after you build it.</h4>
           <p>tea.cli is a delightful package manager that gets out of your way and sets you up for a joyful development process. <a class="teal" href="#">You can install it today</a>. Our web3 protocol will create an OSS ecosystem that is safer for all users, and fair for all maintainers. Read our <a class="teal" href="#">white paper</a> here.</p>
@@ -15,8 +15,7 @@
             <ul class="list-group list-group-flush">
               <a class="list-group-item" role="button" href="https://twitter.com/teaxyz"><i class="icon-twitter social-icon"></i>Twitter</a>
               <a class="list-group-item" role="button" href="https://discord.gg/KCZsXfJphn"><i class="icon-discord social-icon"></i>Discord</a>
-              <a class="list-group-item" role="button" href="https://github.com/teaxyz"><i class="icon-github social-icon"></i>GitHub</a>
-              <a class="list-group-item" role="button" href="https://reddit.com/r/teaxyz"><i class="icon-reddit social-icon"></i>Reddit</a>
+              <a class="list-group-item" role="button" href="https://github.com/teaxyz"><i class="icon-github social-icon"></i>GitHub <span style="font-size:16px;">(&#9734;<span id="starcount"></span>)</span></a>
               <a class="list-group-item" role="button" href="https://t.me/tea_xyz"><i class="icon-telegram social-icon"></i>Telegram</a>
             </ul>
           </div>
@@ -170,3 +169,27 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     }
 
   </script>
+
+  <script>
+    function getStarcount(repo, resultElement) {
+    var repo = 'teaxyz/cli';
+    var url = 'https://api.github.com/repos/' + repo;
+      axios.get(url)
+        .then(function (response) {
+          console.log(response.data.stargazers_count);
+          document.getElementById('starcount').innerHTML=response.data.stargazers_count;
+          document.getElementById('starcount2').innerHTML=response.data.stargazers_count;
+          resultElement.innerHTML = response.data.stargazers_count;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    function repo() {
+        var repo = 'teaxyz/cli';
+        getStarcount(repo, starcount);
+    }
+
+    document.addEventListener('DOMContentLoaded', repo());
+</script>
