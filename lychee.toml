@@ -33,4 +33,9 @@ exclude = [
   "https://libuv.org/",
   "file:///home/runner/work/www/www/public/blog",
   "https://api.github.com/repos/",
+  "https://oracle.com/",
+  "https://lz4.org/",
+  "https://rigaux.org/",
+  "https://radicle.org/",
+  "https://nushell.sh/",
 ]
