@@ -35,7 +35,7 @@ exclude = [
   "https://api.github.com/repos/",
   "https://oracle.com/",
   "https://lz4.org/",
-  "https://rigaux.org/",
   "https://radicle.org/",
+  "https://rigaux.org/",
   "https://nushell.sh/",
 ]
