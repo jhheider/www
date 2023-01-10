@@ -29,7 +29,7 @@
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <p class="small">©2022 tea inc. You can also share our <a href="https://linktr.ee/teaxyz" class="teal">Linktree</a>.</p>
+          <p class="small">©<span id="copyYear"></span> tea inc. You can also share our <a href="https://linktr.ee/teaxyz" class="teal">Linktree</a>.</p>
         </div>
         <div class="col-lg-6">
           {{- partial "footer-nav.html" . -}}
@@ -37,6 +37,13 @@
       </div>
   </div>
 </section>
+
+<script>
+
+  const copyrightDate = new Date().getFullYear();
+  document.getElementById('copyYear').innerHTML = copyrightDate;
+
+</script>
 
 
 <!-- JavaScript Bundle with Popper -->
