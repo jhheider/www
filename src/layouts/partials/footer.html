@@ -15,7 +15,7 @@
             <ul class="list-group list-group-flush">
               <a class="list-group-item" role="button" href="https://twitter.com/teaxyz"><i class="icon-twitter social-icon"></i>Twitter</a>
               <a class="list-group-item" role="button" href="https://discord.gg/KCZsXfJphn"><i class="icon-discord social-icon"></i>Discord</a>
-              <a class="list-group-item" role="button" href="https://github.com/teaxyz"><i class="icon-github social-icon"></i>GitHub <span style="font-size:16px;">(&#9734;<span id="starcount"></span>)</span></a>
+              <a class="list-group-item" role="button" href="https://github.com/teaxyz"><i class="icon-github social-icon"></i>GitHub <span style="font-size:16px;">(&#9734;<span id="starcount"></span>, <span class="release"></span>)</span></a>
               <a class="list-group-item" role="button" href="https://t.me/tea_xyz"><i class="icon-telegram social-icon"></i>Telegram</a>
             </ul>
           </div>
@@ -199,4 +199,18 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     }
 
     document.addEventListener('DOMContentLoaded', repo());
+</script>
+
+<script>
+
+    $(document).ready(function() {
+      var repository = "teaxyz/cli";
+      var url = "https://api.github.com/repos/"+ repository +"/releases/latest";
+
+      $.get(url, function(data) {
+        var release = data.tag_name;
+        $(".release").html(release);
+      });
+    });
+
 </script>
