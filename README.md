@@ -21,6 +21,8 @@ hugo can render your edits while you work:
 
 ```sh
 hugo serve --watch --buildDrafts --source src
+# or
+just serve
 ```
 
 ## Package Pages
@@ -34,25 +36,18 @@ Which resembles the installation tag in tea cli
 
 ```sh
 .github/build-package-pages.sh src/data/packages.json src/content
+# or
+just package-pages
 ```
-
 
 ## Dependencies
 
-| Project    | Version |
-|------------|---------|
-| gohugo.io  |  >=0.99 |
-| nodejs.org |  >=14   |
-| npmjs.com  |  *      |
-
-Install them yourself or use tea:
-
-```
-$ sh <(curl tea.xyz)
-$ tea +git-scm.org git clone https://github.com/teaxyz/www tea-www
-$ cd tea-www
-$ tea .
-```
+| Project      | Version |
+|--------------|---------|
+| gohugo.io    |  >=0.99 |
+| nodejs.org   |  >=14   |
+| npmjs.com    |  *      |
+| just.systems |  ~1     |
 
 # Build
 
@@ -61,6 +56,8 @@ Builds a static, deployable version of the website.
 ```sh
 npm ci
 hugo --source src --destination ../public --minify
+# or
+just build
 ```
 
 

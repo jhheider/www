@@ -1,3 +1,5 @@
+name: cd
+
 on:
   push:
     branches:
@@ -8,9 +10,6 @@ on:
 concurrency:
   group: deploy
   cancel-in-progress: true
-
-env:
-  TEA_SECRET: ${{ secrets.TEA_SECRET }}
 
 jobs:
   deploy:
@@ -40,8 +39,8 @@ jobs:
         cmd: '.github/build-package-pages.sh src/data/packages.json src/content'
 
     - uses: teaxyz/setup@v0
-      with:
-        target: build
+    - run: tea -E just ci
+
     # NOTE: temp disabled? maybe can be addressed by https://github.com/teaxyz/www/issues/252
     # - name: Check for broken links
     #   uses: lycheeverse/lychee-action@v1

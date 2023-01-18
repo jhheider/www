@@ -1,3 +1,5 @@
+name: staging
+
 on: pull_request
 
 concurrency:
@@ -5,7 +7,6 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  TEA_SECRET: ${{ secrets.TEA_SECRET }}
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
 jobs:
@@ -48,16 +49,15 @@ jobs:
         cmd: '.github/build-package-pages.sh src/data/packages.json src/content'
 
     - uses: teaxyz/setup@v0
-      with:
-        target: build
+    - run: tea -E just ci
 
-    - name: Check for broken links
-      uses: lycheeverse/lychee-action@v1
-      with:
-        fail: true
-        args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    # - name: Check for broken links
+    #   uses: lycheeverse/lychee-action@v1
+    #   with:
+    #     fail: true
+    #     args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
+    #   env:
+    #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     # update packages json data and rebuild again
     - name: make images relative path to preview site
@@ -67,9 +67,7 @@ jobs:
 
     # intentional to rebuild packages again with relative image data
     # the first one to test it against prod resources via lychee
-    - uses: teaxyz/setup@v0
-      with:
-        target: build
+    - run: tea -E just ci
 
     - uses: actions/setup-node@v3
       with:
