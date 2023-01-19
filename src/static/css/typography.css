@@ -18,8 +18,10 @@ h1,h2,h3,h4,h5,h6,p,.lead{
 }
 
 .impact{
-  font-size: 5.022vw !important;
-  line-height: 4.520vw !important;
+  font-size: 7.812vw !important;
+  line-height: 8.3vw!important;
+  margin-top: 2vw !important;
+  margin-bottom: 1vw !important;
 }
 
 h1{
