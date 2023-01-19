@@ -1,12 +1,17 @@
 function Bottles() {
   const [bottles, setBottles] = React.useState();
+  const [isLoading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     fetch("https://app.tea.xyz/api/bottles")
       .then((res) => res.json())
-      .then((res) => setBottles(res));
+      .then((res) => {
+        setBottles(res);
+        setLoading(false);
+      });
   }, []);
 
+  if (isLoading) return <p>Loading...</p>;
   if (!bottles) return null;
 
   const names = [...new Set(bottles.map((b) => b.name))];
