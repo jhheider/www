@@ -25,15 +25,17 @@
     color: #333;
   }
 
-  .loading:after {
+  .loading:before {
     content: "";
     display: block;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
     border-radius: 50%;
-    border: 6px solid #fff;
-    border-color: #fff transparent #fff transparent;
+    border: 2px solid #00ffd0;
+    border-color: #fff transparent #00ffd0 transparent;
     animation: lds-dual-ring 1.2s linear infinite;
   }
 
