@@ -142,8 +142,8 @@ mark{
     background-image: url("/Images/x-large-grid-generative-art.png") !important;
     background-attachment: scroll;
     background-position: top;
-    background-repeat: repeat;
-    background-size: cover;
+    background-repeat: repeat-y;
+    background-size: cover !important;
   }
 
   .lead-text-container{
@@ -235,8 +235,8 @@ mark{
     background-image: url("/Images/large-grid-generative-art.png") !important;
     background-attachment: scroll;
     background-position: top;
-    background-repeat: repeat;
-    background-size: cover;
+    background-repeat: repeat-y !important;
+    background-size: contain !important;
   }
 
   .lead-text-container{
@@ -291,8 +291,8 @@ mark{
     background-image: url("/Images/large-grid-generative-art.png") !important;
     background-attachment: scroll;
     background-position: top;
-    background-repeat: repeat;
-    background-size: cover;
+    background-repeat: repeat-y !important;
+    background-size: contain !important;
   }
 
   .lead-text-container{
