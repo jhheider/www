@@ -17,13 +17,6 @@ h1,h2,h3,h4,h5,h6,p,.lead{
   hyphens: auto !important;
 }
 
-.impact{
-  font-size: 7.812vw !important;
-  line-height: 8.3vw!important;
-  margin-top: 2vw !important;
-  margin-bottom: 1vw !important;
-}
-
 h1{
   font-family: "pp-neue-machina", sans-serif;
   color:#00ffd0;
@@ -82,6 +75,13 @@ a:hover{
 /* Extra-Large Screens*/
 @media only screen and (min-width: 1200px) {
 
+  .impact{
+    font-size: 7.812vw !important;
+    line-height: 8.3vw!important;
+    margin-top: 2vw !important;
+    margin-bottom: 1vw !important;
+  }
+
   h1{
     font-size: 11.5vw;
     line-height: 12.4vw;
@@ -123,6 +123,13 @@ a:hover{
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+  .impact{
+    font-size: 8.5vw !important;
+    line-height: 9.9vw!important;
+    margin-top: 4vw !important;
+    margin-bottom: 1.9vw !important;
+  }
 
   h1{
     font-size: 14vw;
