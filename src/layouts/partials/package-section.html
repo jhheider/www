@@ -1,0 +1,52 @@
+<!-- Package Section: Before -->
+
+<section class="package-before-section ">
+  <div class="container package_before">
+    <div class="row one-box">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <h2 style="margin-bottom: 1vw;">The unified packaging infrastructure.</h2>
+        <p class="lead">Access the latest tools, languages and frameworks seamlessly across all platforms with tea&#8212;the standalone, binary download from the creator of brew. Unleash the power of the open-source ecosystem by <a href="https://github.com/teaxyz/setup/blob/main/install.sh">installing tea</a> today.</p>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <div class="gen-art-mobile" id="m-gen-art-1"></div>
+        <div class="gen-art-mobile" id="m-gen-art-2"></div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Package Grid -->
+
+<!-- Desktop/Tablet Package Display -->
+
+  <span class="grid-package-display">
+    {{- partial "package-grid.html" . -}}
+  </span>
+
+<!-- Mobile Package Display -->
+
+  <span class="swiper-package-display">
+    {{- partial "swiper.html" . -}}
+  </span>
+
+<!-- Style for Swiper -->
+
+<style>
+  .swiper-package-display{
+    display:block;
+  }
+  .grid-package-display{
+    display:none;
+  }
+  @media only screen and (min-width: 576px) {
+
+      .grid-package-display{
+        display:block;
+      }
+
+      .swiper-package-display{
+        display:none;
+      }
+  }
+</style>
