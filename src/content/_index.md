@@ -1,6 +1,6 @@
 ---
 title: "Home"
-Description: "tea.xyz is a feature-rich, delightful unified package manager that will revolutionize open-source development"
+Description: "the next-generation, cross‐platform package manager"
 layout: "index"
 menu: main
 weight: 1
