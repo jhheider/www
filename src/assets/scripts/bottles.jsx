@@ -11,7 +11,14 @@ function Bottles() {
       });
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return (
+    <div id="bottle-preloader" className="flex">
+      <div id="bottle-status" className="justify-content-center mx-auto">
+        <i className="icon-tea-logo-iconasset-1 grid-gray tea-icon lead mb-0"></i>
+        <div id="bottle-loading-text"><p className="grid-gray">steeping...</p></div>
+      </div>
+    </div>
+  );
   if (!bottles) return null;
 
   const names = [...new Set(bottles.map((b) => b.name))];
