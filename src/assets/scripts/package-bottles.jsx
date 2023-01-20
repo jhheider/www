@@ -1,12 +1,18 @@
 function PackageBottles() {
   const [bottles, setBottles] = React.useState();
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     const url = window.location.pathname.replace('/+', 'https://app.tea.xyz/api/bottles/');
     fetch(url)
       .then((res) => res.json())
-      .then((res) => setBottles(res));
+      .then((res) => {
+        setBottles(res);
+        setIsLoading(false);
+      });
   }, []);
+
+  if (isLoading) return <div>Loading...</div>;
 
   if (!bottles) return null;
 
