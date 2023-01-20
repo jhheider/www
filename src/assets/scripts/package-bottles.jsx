@@ -13,10 +13,12 @@ function PackageBottles() {
   }, []);
 
   if (isLoading) return (
-    <div id="bottle-preloader" className="flex">
-      <div id="bottle-status" className="my-auto">
-        <i className="icon-tea-logo-iconasset-1 grid-gray tea-icon lead mb-0"></i>
-        <div id="bottle-loading-text"><p className="grid-gray">steeping available versions...</p></div>
+    <div id="bottle-preloader" className="flex one-box-down">
+      <div id="bottle-status" className="flex justifit-content-center">
+        <div className="mx-auto">
+          <i className="icon-tea-logo-iconasset-1 grid-gray tea-icon lead mb-0"></i>
+          <div id="bottle-loading-text"><p className="grid-gray">steeping available versions...</p></div>
+        </div>
       </div>
     </div>
   );
