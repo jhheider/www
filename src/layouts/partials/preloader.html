@@ -1,6 +1,6 @@
 <div id="preloader">
   <div id="status">
-    <i class="icon-tea-logo-iconasset-1 grid-gray tea-icon lead"></i>
+    <i class="icon-tea-logo-iconasset-1 grid-gray tea-icon lead mb-0"></i>
     <div id="loading-text"><p class="grid-gray">steeping...</p></div>
   </div>
 </div>
@@ -12,9 +12,9 @@
     animation: pulse 1s infinite;
   }
   @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
   }
   #preloader {
     position: fixed;
@@ -37,7 +37,6 @@
   #loading-text {
     font-size: 20px;
     text-align: center;
-    margin-top: 10px;
     animation: pulse 1s infinite;
   }
 </style>
