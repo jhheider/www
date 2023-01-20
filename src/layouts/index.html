@@ -19,7 +19,20 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="terminal"></div>
+        <div class="terminal flex">
+          <div class="terminal-bar dark-gray-bg"></div>
+            <div class="p-5">
+              <code class="lead teal">
+                $ node --eval 'console.log("Hello World!")'command not found: node<br><br>
+
+                $ sh <(curl tea.xyz) --yes installing ~/.tea…<br><br>
+
+                $ node --eval 'console.log("Hello World!")'
+                tea: installing nodejs.org^19
+                Hello World!
+            </code>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -38,6 +51,11 @@
     background-color: #121212;
     box-shadow: 0px 0px 18px #000;
     border: 1px solid gray;
+  }
+
+  .terminal-bar{
+    height: 30px;
+    border-radius: 10px 10px 0px 0px;
   }
 
 </style>
