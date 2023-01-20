@@ -14,9 +14,9 @@
         $('#count5').html(signups)
         $('#count6').html(signups)
         $('#count7').html(signups)
-        $('#stat-one').html(res.repos ? res.repos.toLocaleString() : "")
-        $('#stat-one-small').html(res.repos ? res.repos.toLocaleString() : "")
-        $('#stat-two').html(res.maintainers ? res.maintainers.toLocaleString() : "")
+        $('#stat-one').html(res.repos ? res.repos.toLocaleString() : "loading...")
+        $('#stat-one-small').html(res.repos ? res.repos.toLocaleString() : "loading...")
+        $('#stat-two').html(res.maintainers ? res.maintainers.toLocaleString() : "loading...")
       })
   } catch (e) {
     console.error(e)
