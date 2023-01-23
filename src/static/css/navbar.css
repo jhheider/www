@@ -9,6 +9,7 @@
 
   div.container-fluid.top-nav{
     padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
   .navbar{
