@@ -5,8 +5,8 @@
         aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
         MENU
       </button>
-      <div class="collapse navbar-collapse pt-2 pb-2" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto me-4 my-auto">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto my-auto">
           {{ range .Site.Menus.main }}
           <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
             <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
@@ -15,9 +15,21 @@
           <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
             <a class="nav-link" aria-current="page" href="https://github.com/teaxyz/cli">GIVE A STAR (&#9734;<span class="stargazers"></span>)</a>
           </li>
-          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-            <a class="nav-link" aria-current="page" href="https://github.com/teaxyz/cli">INSTALL TEA (<span class="release" style="text-transform: lowercase;"></span>)</a>
-          </li>
+          <a href="https://github.com/teaxyz/cli" class="ms-3">
+              <button class="purple-btn-top purple-bg">INSTALL TEA (<span class="release" style="text-transform: lowercase;"></span>)</button>
+          </a>
+
+          <style>
+
+            .purple-btn-top{
+              color: white;
+              border:none;
+              width: 225px;
+              height:100%;
+              font-family: "pp-neue-machina";
+            }
+
+          </style>
 
         </ul>
         <!--
