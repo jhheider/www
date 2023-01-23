@@ -6,11 +6,11 @@ title = 'Equitable Open-Source for Web3'
 
 [menu]
   [[menu.main]]
-    identifier = 'community'
-    name = 'Community'
-    title = 'community'
-    url = '../#community'
-    weight = 4
+    identifier = 'docs'
+    name = 'Docs'
+    title = 'docs'
+    url = 'https://github.com/teaxyz/cli/blob/main/README.md'
+    weight = 3
 
 [security]
   [security.exec]
