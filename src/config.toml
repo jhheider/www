@@ -12,6 +12,13 @@ title = 'Equitable Open-Source for Web3'
     url = 'https://github.com/teaxyz/cli/blob/main/README.md'
     weight = 3
 
+  [[menu.main]]
+    identifier = 'Quick Start'
+    name = 'Quick Start'
+    title = 'Quick Start'
+    url = 'https://github.com/teaxyz/cli#getting-started'
+    weight = 4
+
 [security]
   [security.exec]
     allow = ['^go$', '^postcss$', '^npx$', '^babel$']
