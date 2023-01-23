@@ -72,10 +72,10 @@ a:hover{
 @media only screen and (min-width: 1200px) {
 
   .impact{
-    font-size: 7.812vw !important;
-    line-height: 8.3vw!important;
-    margin-top: 2vw !important;
-    margin-bottom: 1vw !important;
+    font-size: 6vw !important;
+    line-height: 6.2vw!important;
+    margin-top: 3.5vw !important;
+    margin-bottom: 2.5vw !important;
   }
 
   h1{
