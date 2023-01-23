@@ -291,8 +291,8 @@ mark{
     background-image: url("/Images/large-grid-generative-art.png") !important;
     background-attachment: scroll;
     background-position: top;
-    background-repeat: repeat-y !important;
-    background-size: contain !important;
+    background-repeat: repeat !important;
+    background-size: cover !important;
   }
 
   .lead-text-container{
