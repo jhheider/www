@@ -7,6 +7,60 @@
 
 @media only screen and (min-width: 1200px) {
 
+  /* Menu CTA */
+
+  .hbtn {
+    font-family: "pp-neue-machina";
+    background-color: #8000ff;
+    position: relative;
+    box-sizing: border-box;
+    height: 4.4vw !important;
+    display: inline-block;
+    overflow: hidden;
+    padding: 8px 20px;
+    width: 300px;
+    text-align: center;
+    border:none;
+    text-decoration: none;
+    color: rgb(225, 225, 225);
+    white-space: nowrap;
+    z-index: 0;
+  }
+
+
+  .hbtn i {
+        padding-right: 8px;
+  }
+
+
+  .hb-fill-right::before {
+        position: absolute;
+        content: "";
+        background: rgb(91, 0, 184);
+        transition-duration: 0.2s;
+        z-index: -1;
+        inset: 0px auto auto 0px;
+        width: 0px;
+        height: 100%;
+        opacity: 1;
+  }
+
+
+  .hb-fill-right:hover::before {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+  }
+
+
+  .hb-fill-right:hover {
+        color: rgb(255, 255, 255);
+        background: rgb(91, 0, 184);
+        transition: color 0.3s ease 0s, background 0s ease 0.3s;
+  }
+
+  /* End Menu CTA */
+
   div.container-fluid.top-nav{
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -35,8 +89,63 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
+  /* Menu CTA */
+
+  .hbtn {
+    font-family: "pp-neue-machina";
+    background-color: #8000ff;
+    position: relative;
+    box-sizing: border-box;
+    height: 4.9vw !important;
+    display: inline-block;
+    overflow: hidden;
+    padding: 8px 20px;
+    width: 300px;
+    text-align: center;
+    border:none;
+    text-decoration: none;
+    color: rgb(225, 225, 225);
+    white-space: nowrap;
+    z-index: 0;
+  }
+
+
+  .hbtn i {
+        padding-right: 8px;
+  }
+
+
+  .hb-fill-right::before {
+        position: absolute;
+        content: "";
+        background: rgb(91, 0, 184);
+        transition-duration: 0.2s;
+        z-index: -1;
+        inset: 0px auto auto 0px;
+        width: 0px;
+        height: 100%;
+        opacity: 1;
+  }
+
+
+  .hb-fill-right:hover::before {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+  }
+
+
+  .hb-fill-right:hover {
+        color: rgb(255, 255, 255);
+        background: rgb(91, 0, 184);
+        transition: color 0.3s ease 0s, background 0s ease 0.3s;
+  }
+
+  /* End Menu CTA */
+
   div.container-fluid.top-nav{
     padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
   .navbar{

@@ -121,10 +121,10 @@ a:hover{
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
   .impact{
-    font-size: 8.5vw !important;
-    line-height: 9.9vw!important;
-    margin-top: 4vw !important;
-    margin-bottom: 1.9vw !important;
+    font-size: 7vw !important;
+    line-height: 7.4vw!important;
+    margin-top: .5vw !important;
+    margin-bottom: 1.6vw !important;
   }
 
   h1{
