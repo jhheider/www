@@ -68,7 +68,8 @@
 
   .terminal-bar{
     height: 30px;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 1px solid gray;
   }
 
 </style>
@@ -142,12 +143,26 @@
     <div class="row">
       <div class="col p-5" style="border: 2px solid gray;">
         <p class="lead">While homebrew takes about as long as your earl grey takes to steep, tea is done before you’ve time to put the bag in the cup.</p>
-        <div class="flex">
+        <div class="flex speed-comparison">
           <div class="speed-terminal">
-
+            <div class="terminal-bar black-bg flex-start p-1 ps-3">
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+            </div>
+            <div class="terminal-content p-5">
+              <p class="teal">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
           </div>
           <div class="speed-terminal">
-
+            <div class="terminal-bar black-bg flex-start p-1 ps-3">
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+            </div>
+            <div class="terminal-content p-5">
+              <p class="teal">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -158,9 +173,10 @@
 <style>
 
   .speed-terminal{
-    width: 50%;
-    height: 500px;
-    background-color: #4d4d4d;
+    width: 49%;
+    height: auto;
+    border: 2px solid gray;
+    background-color: #1a1a1a;
     border-radius: 10px;
   }
 
