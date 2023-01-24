@@ -9,14 +9,14 @@
   font-family: "sono";
   src: url("/fonts/Sono-Light.woff2");
 }
-
+/*
 h1,h2,h3,h4,h5,h6,p,.lead{
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto !important;
 }
-
+*/
 h1{
   font-family: "pp-neue-machina", sans-serif;
   color:#00ffd0;
