@@ -26,7 +26,7 @@
             <div class="traffic-light"></div>
           </div>
             <div class="p-5">
-              <p class="teal lead">
+              <p class="teal">
                 node --eval 'console.log("Hello World!")'<br>command not found: node<br><br>
 
                 sh <(curl tea.xyz) --yes installing ~/.tea…<br><br>
@@ -54,15 +54,15 @@
   }
 
   .terminal{
-    height: 37.667vw;
+    height: auto;
     width: 58.594vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top:-0.3vw;
     margin-bottom: -8.371vw;
     border-radius: 10px;
     background-color: #121212;
-    box-shadow: 0px 0px 18px #000;
     border: 1px solid gray;
   }
 
@@ -77,19 +77,45 @@
 
 <section class="teal-bg impact-section two-boxes">
   <div class="container">
+    <div class="row one-box-down">
+      <div class="col-10">
+          <div>
+            <h2 class="black" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING INFRASTRUCTURE.</h2>
+          </div>
+      </div>
+      <img src="/Images/xl-grid-one-row.svg" alt="grid-element" class="single-grid-row">
+    </div>
     <div class="row">
       <div class="col">
-        <div class="box">
-          <div>
-            <h2 class="black text-center" style="z-index:2;">equitable open-source<br>for&nbsp;<br id="impact-break"><span class="cycle">web3</span></h2>
-          </div>
-        </div>
+        <i class="icon-pattern-random-15 black display-6"></i><br><br>
+        <h3 class="black">Integrate multiple tools</h3>
+        <p class="black">Tea can easily integrate different tools and languages. This allows users to throw together scripts that use entirely separate tools and languages and share them with others with just a simple one-liner command.</p>
       </div>
+      <div class="col">
+        <i class="icon-pattern-random-15 black display-6"></i><br><br>
+        <h3 class="black">UNIVERSAL<br>BINARY</h3>
+        <p class="black">tea is a standalone, binary download that can be used on multiple different devices and operating systems. This makes it easy to use Tea on a variety of different devices, without the need to worry about compatibility issues.</p>
+      </div>
+      <div class="col">
+        <i class="icon-pattern-random-15 black display-6"></i><br><br>
+        <h3 class="black">All-inclusive<br>Packaging</h3>
+        <p class="black">tea is a unified packaging infrastructure, providing access to the entire open source ecosystem. This means that Tea users can easily find and use a wide variety of software packages.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
 <style>
+
+  i{
+    font-weight: 900 !important;
+  }
+
+  .single-grid-row{
+    margin-top: -1.6vw;
+  }
+
 
   .box {
     display: flex;

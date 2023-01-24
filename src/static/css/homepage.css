@@ -166,11 +166,7 @@ mark{
   }
 
   .impact-section{
-    background-image: url("/Images/impact-section-grid.svg");
-    background-attachment: fixed;
-    background-repeat: repeat;
-    background-size: contain;
-    opacity: 1;
+
   }
 
   .package_before{
