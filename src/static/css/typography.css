@@ -110,12 +110,6 @@ a:hover{
     margin-bottom: 1.2vw;
   }
 
-  .lead{
-    font-size: 1.5vw !important;
-    line-height: 2.3vw !important;
-    margin-bottom: 2.232vw;
-  }
-
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -156,12 +150,6 @@ a:hover{
     margin-bottom: 1.2vw;
   }
 
-  .lead{
-    font-size: 2vw !important;
-    line-height: 2.8vw !important;
-    margin-bottom: 2.232vw;
-  }
-
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -200,11 +188,6 @@ a:hover{
     line-height: 5vw;
   }
 
-  .lead{
-    font-size: 2.419vw !important;
-    line-height: 3.5vw !important;
-  }
-
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px){
@@ -238,12 +221,6 @@ a:hover{
     line-height: 45px;
   }
 
-  .lead{
-    font-size: 3.125vw !important;
-    line-height: 3.776vw !important;
-    margin-bottom: 40px;
-  }
-
 }
 
 @media only screen and (max-width: 576px) {
@@ -273,11 +250,6 @@ a:hover{
   h4{
     font-size: 7.6vw;
     line-height: 9vw;
-  }
-
-  .lead{
-    font-size: 4.800vw !important;
-    line-height: 6vw !important;
   }
 
   a.nav-link.footer-link.small{
