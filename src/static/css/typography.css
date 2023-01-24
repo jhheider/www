@@ -116,9 +116,6 @@ a:hover{
     margin-bottom: 2.232vw;
   }
 
-  p{
-    font-size: 1.116vw;
-  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -165,9 +162,6 @@ a:hover{
     margin-bottom: 2.232vw;
   }
 
-  p{
-    font-size: 1.667vw;
-  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -211,10 +205,6 @@ a:hover{
     line-height: 3.5vw !important;
   }
 
-  p{
-    font-size: 2.016vw;
-  }
-
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px){
@@ -254,10 +244,6 @@ a:hover{
     margin-bottom: 40px;
   }
 
-  p{
-    font-size: 20px;
-  }
-
 }
 
 @media only screen and (max-width: 576px) {
@@ -292,10 +278,6 @@ a:hover{
   .lead{
     font-size: 4.800vw !important;
     line-height: 6vw !important;
-  }
-
-  p{
-    font-size: 4vw;
   }
 
   a.nav-link.footer-link.small{
