@@ -55,6 +55,7 @@
 
   .terminal{
     height: auto;
+    min-height: 449px;
     width: 58.594vw;
     display: block;
     margin-left: auto;
@@ -62,8 +63,10 @@
     margin-top:-0.3vw;
     margin-bottom: -8.371vw;
     border-radius: 10px;
-    background-color: #121212;
+    background-color: #1a1a1a;
     border: 1px solid gray;
+    box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
+    animation: float 3s ease-in-out infinite;
   }
 
   .terminal-bar{
@@ -427,6 +430,23 @@
     </div>
   </div>
 </section>
+
+<hr>
+
+<section>
+  <div class="container">
+    <div class="row two-boxes">
+      <div class="col">
+        <h2 class="display-3 text-center">Ready to start building?<br>All you need is tea.</h2>
+        <p class="lead text-center">Introducing tea’s +pkg syntax, the ultimate tool for streamlined open source access, allowing you to access the entire ecosystem with one command, compose and combine everything, and even more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-width-cta-container">
+ {{- partial "full-width-cta-split.html" . -}}
+</div>
 
 <style>
 
