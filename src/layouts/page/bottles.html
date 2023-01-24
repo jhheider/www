@@ -40,6 +40,36 @@
   .expand{
     cursor: pointer;
   }
+    .tea-icon{
+      display:block;
+      text-align:center;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    #bottle-preloader {
+      width: 100%;
+      height: 200px;
+      background: #1a1a1a;
+
+    }
+    #bottle-status {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background-position: center;
+      margin: -100px 0 0 -100px;
+    }
+    #bottle-loading-text {
+      font-size: 20px;
+      text-align: center;
+      animation: pulse 1s infinite !important;
+    }
 
   @media screen and (max-width: 576px) {
 
@@ -56,7 +86,6 @@
 
     .title-col{
       padding: 4vw !important;
-
     }
 
   }

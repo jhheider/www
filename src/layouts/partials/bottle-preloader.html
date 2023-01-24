@@ -1,0 +1,45 @@
+<div id="bottle-preloader" class="flex">
+  <div id="bottle-status" class="justify-content-center mx-auto">
+    <i class="icon-tea-logo-iconasset-1 grid-gray tea-icon lead mb-0"></i>
+    <div id="bottle-loading-text"><p class="grid-gray">steeping...</p></div>
+  </div>
+</div>
+
+<style>
+  .tea-icon{
+    display:block;
+    text-align:center;
+    animation: pulse 1s infinite;
+  }
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  #bottle-preloader {
+    width: 100%;
+    height: 200px;
+    background: #1a1a1a;
+  }
+  #bottle-status {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+  }
+  #bottle-loading-text {
+    font-size: 20px;
+    text-align: center;
+    animation: pulse 1s infinite !important;
+  }
+</style>
+
+<script>
+  $(window).on('load', function() {
+    $('#status').fadeOut();
+    $('#preloader').delay(350).fadeOut('slow');
+  });
+</script>
