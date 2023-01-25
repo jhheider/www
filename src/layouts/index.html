@@ -26,8 +26,8 @@
             <div class="traffic-light"></div>
           </div>
             <div class="p-5">
-              <p id="output"></p>
-              <p id="input"><span id="typing"></span></p>
+              <p id="terminal-output"></p>
+              <p id="terminal-input"></p>
           </div>
         </div>
       </div>
@@ -66,6 +66,19 @@
     height: 30px;
     border-radius: 8px 8px 0px 0px;
     border-bottom: 1px solid gray;
+  }
+
+  #terminal-output {
+    white-space: pre;
+  }
+  #terminal-input {
+    position: relative;
+  }
+  #terminal-input:before {
+    content: ">";
+    color: green;
+    position: absolute;
+    left: 0;
   }
 
 </style>
@@ -467,10 +480,7 @@
 
 
         <script>
-          var output = document.getElementById("output");
-          var typing = document.getElementById("typing");
-
-          var commands = [
+          const commands = [
             "$ node --eval 'console.log(\"Hello World!\")'",
             "command not found: node",
             "$ sh <(curl tea.xyz) --yes",
@@ -480,25 +490,29 @@
             "Hello World!"
           ];
 
-          var index = 0;
+          let commandIndex = 0;
+          let command = commands[commandIndex];
+          let commandOutput = "";
 
-          function type() {
-            var command = commands[index];
-            var chars = command.split("");
-            var loop = setInterval(function() {
-              typing.innerHTML += chars.shift();
-              if (!chars.length) {
-                clearInterval(loop);
-                output.innerHTML += command + "<br>";
-                index++;
-                if (index < commands.length) {
-                  setTimeout(type, 1000);
-                }
-              }
-            }, 50);
+          function typeCommand() {
+            if (commandIndex === commands.length) {
+              return;
+            }
+            if (command.length === 0) {
+              commandIndex++;
+              command = commands[commandIndex];
+              commandOutput += '\n';
+              document.querySelector("#terminal-output").innerHTML = commandOutput;
+              setTimeout(typeCommand, 1000);
+              return;
+            }
+            commandOutput += command[0];
+            command = command.slice(1);
+            document.querySelector("#terminal-output").innerHTML = commandOutput;
+            setTimeout(typeCommand, 50);
           }
 
-          type();
+          typeCommand();
         </script>
 
       </div>
