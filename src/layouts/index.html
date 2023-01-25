@@ -26,8 +26,8 @@
             <div class="traffic-light"></div>
           </div>
             <div class="p-5">
-              <p id="terminal-output"></p>
-              <p id="terminal-input"></p>
+              <p class="lead" id="terminal-output"></p>
+              <p class="lead" id="terminal-input"></p>
           </div>
         </div>
       </div>
@@ -68,17 +68,31 @@
     border-bottom: 1px solid gray;
   }
 
-  #terminal-output {
-    white-space: pre;
-  }
-  #terminal-input {
-    position: relative;
-  }
   #terminal-input:before {
     content: ">";
     color: green;
     position: absolute;
     left: 0;
+    animation: blink 1s linear infinite;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  #terminal-output {
+    white-space: pre;
+  }
+  #terminal-input {
+    position: relative;
   }
 
 </style>
@@ -481,13 +495,9 @@
 
         <script>
           const commands = [
-            "$ node --eval 'console.log(\"Hello World!\")'",
-            "command not found: node",
-            "$ sh <(curl tea.xyz) --yes",
-            "installing ~/.tea...",
-            "$ node --eval 'console.log(\"Hello World!\")'",
-            "tea: installing nodejs.org^19",
-            "Hello World!"
+            { input: "$ node --eval 'console.log(\"Hello World!\")'", output: "command not found: node" },
+            { input: "$ sh <(curl tea.xyz) --yes", output: "installing ~/.tea..." },
+            { input: "$ node --eval 'console.log(\"Hello World!\")'", output: "tea: installing nodejs.org^19\nHello World!" }
           ];
 
           let commandIndex = 0;
@@ -498,16 +508,16 @@
             if (commandIndex === commands.length) {
               return;
             }
-            if (command.length === 0) {
+            if (command.input.length === 0) {
+              commandOutput += '\n' + command.output + '\n';
+              document.querySelector("#terminal-output").innerHTML = commandOutput;
               commandIndex++;
               command = commands[commandIndex];
-              commandOutput += '\n';
-              document.querySelector("#terminal-output").innerHTML = commandOutput;
               setTimeout(typeCommand, 1000);
               return;
             }
-            commandOutput += command[0];
-            command = command.slice(1);
+            commandOutput += command.input[0];
+            command.input = command.input.slice(1);
             document.querySelector("#terminal-output").innerHTML = commandOutput;
             setTimeout(typeCommand, 50);
           }
