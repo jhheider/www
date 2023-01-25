@@ -26,15 +26,7 @@
             <div class="traffic-light"></div>
           </div>
             <div class="p-5">
-              <p class="teal">
-                node --eval 'console.log("Hello World!")'<br>command not found: node<br><br>
-
-                sh <(curl tea.xyz) --yes installing ~/.tea…<br><br>
-
-                node --eval 'console.log("Hello World!")'<br>
-                tea: installing nodejs.org^19
-                Hello World!
-            </p>
+              <p class="command"></p>
           </div>
         </div>
       </div>
@@ -413,17 +405,17 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
       </div>
-      <div class="col">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
       </div>
-      <div class="col">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
@@ -467,5 +459,57 @@
   }
 
 </style>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+
+        <script>
+          var terminal = document.querySelector('.command');
+        var commands = [
+          '$ node --eval "console.log(\'Hello World!\')"',
+          'command not found: node',
+          '$ sh <(curl tea.xyz) --yes',
+          'installing ~/.tea...',
+          'tea: installing nodejs.org^19',
+          'Hello World!'
+        ];
+        var delay = 100;
+        var index = 0;
+        var currentCommand = "";
+        function typeCommand() {
+          if (index >= commands.length) {
+            return;
+          }
+          var command = commands[index];
+          var commandEl = document.createElement('p');
+          commandEl.classList.add('command');
+          terminal.appendChild(commandEl);
+          var currentIndex = 0;
+          var typing = setInterval(() => {
+            commandEl.innerHTML = currentCommand + command.slice(0, currentIndex + 1);
+            currentIndex++;
+            if (currentIndex === command.length) {
+              clearInterval(typing);
+              currentCommand = commandEl.innerHTML;
+              if (command.includes("error")) {
+                commandEl.classList.add("error")
+              }
+              index++;
+              setTimeout(() => {
+                typeCommand();
+              }, delay);
+            }
+          }, delay);
+        }
+        typeCommand();
+        </script>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 {{ end }}
