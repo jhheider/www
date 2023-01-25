@@ -15,10 +15,12 @@
    {{- partial "full-width-cta-split.html" . -}}
   </div>
 
+
 <section class="hero-section terminal-demo">
   <div class="container">
     <div class="row">
       <div class="col">
+        <a href="https://github.com/teaxyz/cli#teacli-0212" target="_blank">
         <div class="terminal flex">
           <div class="terminal-bar black-bg flex-start p-1 ps-3">
             <div class="traffic-light"></div>
@@ -26,16 +28,42 @@
             <div class="traffic-light"></div>
           </div>
             <div class="p-5">
-              <p class="lead" id="terminal-output"></p>
-              <p class="lead" id="terminal-input"></p>
+              <div>
+                <p id="terminal-output"></p>
+                <p id="terminal-input"></p>
+              </div>
           </div>
+          <a href="https://github.com/teaxyz/cli#teacli-0212">
+            <button id="tryIt" class="term-btn"type="button" name="button" target="_blank"><i class="icon-github term-icon"></i> Visit README</button>
+          </a>
         </div>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+
+  .term-icon{
+    position: relative;
+    top: 3px;
+  }
+
+  .term-btn{
+    text-transform: uppercase;
+  }
+
+  #tryIt{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #8000ff;
+    border: none;
+    color: white;
+    font-familY: "pp-neue-machina";
+    padding: 5px 20px;
+  }
 
   .traffic-light{
     height: 16px;
@@ -68,8 +96,8 @@
     border-bottom: 1px solid gray;
   }
 
-  #terminal-input:before {
-    content: ">";
+  #terminal-input:after {
+    content: "|";
     color: green;
     position: absolute;
     left: 0;
@@ -90,9 +118,23 @@
 
   #terminal-output {
     white-space: pre;
+    display: inline-block;
   }
   #terminal-input {
     position: relative;
+    display: inline-block;
+  }
+
+  .term-blue{
+    color: #2675f5;
+  }
+
+  .term-orange{
+    color: #ff8e00;
+  }
+
+  .term-yellow{
+    color: #ffff00;
   }
 
 </style>
@@ -495,9 +537,39 @@
 
         <script>
           const commands = [
-            { input: "$ node --eval 'console.log(\"Hello World!\")'", output: "command not found: node" },
-            { input: "$ sh <(curl tea.xyz) --yes", output: "installing ~/.tea..." },
-            { input: "$ node --eval 'console.log(\"Hello World!\")'", output: "tea: installing nodejs.org^19\nHello World!" }
+            { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
+            { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table style="font-size:12px;" class="teal small">
+    <thead>
+        <tr>
+            <th>% Total</th>
+            <th>% Received</th>
+            <th>% Xferd</th>
+            <th>Average Speed</th>
+            <th>Time</th>
+            <th>Time</th>
+            <th>Time</th>
+            <th>Current</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>100</td>
+            <td>13306</td>
+            <td>100</td>
+            <td>54983</td>
+            <td>0</td>
+            <td>--:--:--</td>
+            <td>--:--:--</td>
+            <td>--:--:--</td>
+        </tr>
+        <tr>
+            <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
+        </tr>
+    </tbody>
+</table>
+` },
+            { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
+            { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
           ];
 
           let commandIndex = 0;
@@ -519,7 +591,7 @@
             commandOutput += command.input[0];
             command.input = command.input.slice(1);
             document.querySelector("#terminal-output").innerHTML = commandOutput;
-            setTimeout(typeCommand, 50);
+            setTimeout(typeCommand, 100);
           }
 
           typeCommand();
