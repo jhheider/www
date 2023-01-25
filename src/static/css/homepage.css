@@ -139,13 +139,11 @@ mark{
 @media only screen and (min-width: 1200px) {
 
   .hero-section{
-    position: relative;
     background-image: url("/Images/x-large-grid.svg") !important;
     background-attachment: scroll;
     background-position: top;
     background-repeat: repeat-y;
     background-size: cover !important;
-    z-index:10;
   }
 
   .lead-text-container{
@@ -230,7 +228,7 @@ mark{
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
   .hero-section{
-    background-image: url("/Images/large-grid-generative-art.png") !important;
+    background-image: url("/Images/large-grid.svg") !important;
     background-attachment: scroll;
     background-position: top;
     background-repeat: repeat !important;
@@ -286,10 +284,10 @@ mark{
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
   .hero-section{
-    background-image: url("/Images/large-grid-generative-art.png") !important;
+    background-image: url("/Images/large-grid.svg") !important;
     background-attachment: scroll;
     background-position: top;
-    background-repeat: repeat !important;
+    background-repeat: repeat-y !important;
     background-size: cover !important;
   }
 
@@ -342,11 +340,11 @@ mark{
 @media only screen and (min-width: 576px) and (max-width: 768px) {
 
   .hero-section{
-    background-image: url("/Images/medium-grid-generative-art.png");
+    background-image: url("/Images/medium-grid.svg");
     background-attachment: scroll;
     background-position: top;
     background-repeat: repeat-y;
-    background-size: cover;
+    background-size: contain;
   }
 
   .lead-text-container{

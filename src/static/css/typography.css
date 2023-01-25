@@ -22,6 +22,7 @@ h1{
   color:#00ffd0;
   text-transform:uppercase;
   text-shadow: 0px 0px 4px #1a1a1a !important;
+  animation: float 3s ease-in-out infinite;
 }
 
 h2{
@@ -116,10 +117,10 @@ a:hover{
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
   .impact{
-    font-size: 5vw !important;
-    line-height: 5vw!important;
-    margin-top: 7vw !important;
-    margin-bottom: 4.4vw !important;
+    font-size: 6.8vw !important;
+    line-height: 10.05vw!important;
+    margin-top: -1vw !important;
+    margin-bottom: -2.4vw !important;
   }
 
   h1{
@@ -156,10 +157,10 @@ a:hover{
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
   .impact{
-    font-size: 5vw !important;
-    line-height: 5.1vw!important;
-    margin-top: 7vw !important;
-    margin-bottom: 4.7vw !important;
+    font-size: 6.5vw !important;
+    line-height: 10vw!important;
+    margin-top: -1vw !important;
+    margin-bottom: -2.5vw !important;
   }
 
   h1{
@@ -194,10 +195,10 @@ a:hover{
 @media only screen and (min-width: 576px) and (max-width: 768px){
 
   .impact{
-    font-size: 12vw !important;
-    line-height: 13.3vw!important;
-    margin-top: 0vw !important;
-    margin-bottom: 2vw !important;
+    font-size: 9.5vw !important;
+    line-height: 13.4vw!important;
+    margin-top: .2vw !important;
+    margin-bottom: -1.6vw !important;
   }
 
   h1{
