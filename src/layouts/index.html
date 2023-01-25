@@ -26,7 +26,8 @@
             <div class="traffic-light"></div>
           </div>
             <div class="p-5">
-              <p class="command"></p>
+              <p id="output"></p>
+              <p id="input"><span id="typing"></span></p>
           </div>
         </div>
       </div>
@@ -467,44 +468,38 @@
 
 
         <script>
-          var terminal = document.querySelector('.command');
-        var commands = [
-          '$ node --eval "console.log(\'Hello World!\')"',
-          'command not found: node',
-          '$ sh <(curl tea.xyz) --yes',
-          'installing ~/.tea...',
-          'tea: installing nodejs.org^19',
-          'Hello World!'
-        ];
-        var delay = 100;
-        var index = 0;
-        var currentCommand = "";
-        function typeCommand() {
-          if (index >= commands.length) {
-            return;
-          }
-          var command = commands[index];
-          var commandEl = document.createElement('p');
-          commandEl.classList.add('command');
-          terminal.appendChild(commandEl);
-          var currentIndex = 0;
-          var typing = setInterval(() => {
-            commandEl.innerHTML = currentCommand + command.slice(0, currentIndex + 1);
-            currentIndex++;
-            if (currentIndex === command.length) {
-              clearInterval(typing);
-              currentCommand = commandEl.innerHTML;
-              if (command.includes("error")) {
-                commandEl.classList.add("error")
+          var output = document.getElementById("output");
+          var typing = document.getElementById("typing");
+
+          var commands = [
+            "$ node --eval 'console.log(\"Hello World!\")'",
+            "command not found: node",
+            "$ sh <(curl tea.xyz) --yes",
+            "installing ~/.tea...",
+            "$ node --eval 'console.log(\"Hello World!\")'",
+            "tea: installing nodejs.org^19",
+            "Hello World!"
+          ];
+
+          var index = 0;
+
+          function type() {
+            var command = commands[index];
+            var chars = command.split("");
+            var loop = setInterval(function() {
+              typing.innerHTML += chars.shift();
+              if (!chars.length) {
+                clearInterval(loop);
+                output.innerHTML += command + "<br>";
+                index++;
+                if (index < commands.length) {
+                  setTimeout(type, 1000);
+                }
               }
-              index++;
-              setTimeout(() => {
-                typeCommand();
-              }, delay);
-            }
-          }, delay);
-        }
-        typeCommand();
+            }, 50);
+          }
+
+          type();
         </script>
 
       </div>
