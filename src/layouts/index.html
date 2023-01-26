@@ -28,7 +28,7 @@
             <div class="traffic-light"></div>
           </div>
             <div class="p-5">
-              <div>
+              <div class="terminal-content">
                 <p id="terminal-output"></p>
                 <p id="terminal-input"></p>
               </div>
@@ -45,84 +45,439 @@
 
 <style>
 
-  .term-icon{
-    position: relative;
-    top: 3px;
-  }
+  @media only screen and (min-width: 1200px) {
 
-  .term-btn{
-    text-transform: uppercase;
-  }
-
-  #tryIt{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background-color: #8000ff;
-    border: none;
-    color: white;
-    font-familY: "pp-neue-machina";
-    padding: 5px 20px;
-  }
-
-  .traffic-light{
-    height: 16px;
-    width: 16px;
-    border: 1px solid gray;
-    border-radius: 100px;
-    display: inline-block;
-    margin-right: 5px;
-  }
-
-  .terminal{
-    height: auto;
-    min-height: 449px;
-    width: 58.594vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:-0.3vw;
-    margin-bottom: -8.371vw;
-    border-radius: 10px;
-    background-color: #1a1a1a;
-    border: 1px solid gray;
-    box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .terminal-bar{
-    height: 30px;
-    border-radius: 8px 8px 0px 0px;
-    border-bottom: 1px solid gray;
-  }
-
-  #terminal-input:after {
-    content: "|";
-    color: green;
-    position: absolute;
-    left: 0;
-    animation: blink 1s linear infinite;
-  }
-
-  @keyframes blink {
-    0% {
-      opacity: 0;
+    .term-icon{
+      position: relative;
+      top: 3px;
     }
-    50% {
-      opacity: 1;
+
+    .term-btn{
+      text-transform: uppercase;
     }
-    100% {
-      opacity: 0;
+
+    #tryIt{
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #8000ff;
+      border: none;
+      color: white;
+      font-familY: "pp-neue-machina";
+      padding: 5px 20px;
     }
+
+    .traffic-light{
+      height: 16px;
+      width: 16px;
+      border: 1px solid gray;
+      border-radius: 100px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .terminal{
+      height: auto;
+      min-height: 449px;
+      width: 58.594vw;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top:-0.3vw;
+      margin-bottom: -8.371vw;
+      border-radius: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid gray;
+      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .terminal-bar{
+      height: 30px;
+      border-radius: 8px 8px 0px 0px;
+      border-bottom: 1px solid gray;
+    }
+
+    #terminal-input:after {
+      content: "|";
+      color: green;
+      position: absolute;
+      left: 0;
+      animation: blink 1s linear infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    #terminal-output {
+      white-space: pre;
+      display: inline-block;
+    }
+    #terminal-input {
+      position: relative;
+      display: inline-block;
+    }
+    .terminal-content{
+      overflow: hidden;
+    }
+
   }
 
-  #terminal-output {
-    white-space: pre;
-    display: inline-block;
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+    .term-icon{
+      position: relative;
+      top: 3px;
+    }
+
+    .term-btn{
+      text-transform: uppercase;
+    }
+
+    #tryIt{
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #8000ff;
+      border: none;
+      color: white;
+      font-familY: "pp-neue-machina";
+      padding: 5px 20px;
+    }
+
+    .traffic-light{
+      height: 16px;
+      width: 16px;
+      border: 1px solid gray;
+      border-radius: 100px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .terminal{
+      height: auto;
+      min-height: 449px;
+      width: 58.594vw;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top:-0.3vw;
+      margin-bottom: -8.371vw;
+      border-radius: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid gray;
+      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .terminal-bar{
+      height: 30px;
+      border-radius: 8px 8px 0px 0px;
+      border-bottom: 1px solid gray;
+    }
+
+    #terminal-input:after {
+      content: "|";
+      color: green;
+      position: absolute;
+      left: 0;
+      animation: blink 1s linear infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    #terminal-output {
+      white-space: pre;
+      display: inline-block;
+    }
+    #terminal-input {
+      position: relative;
+      display: inline-block;
+    }
+    .terminal-content{
+      overflow: hidden;
+    }
+
   }
-  #terminal-input {
-    position: relative;
-    display: inline-block;
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .term-icon{
+      position: relative;
+      top: 3px;
+    }
+
+    .term-btn{
+      text-transform: uppercase;
+    }
+
+    #tryIt{
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #8000ff;
+      border: none;
+      color: white;
+      font-familY: "pp-neue-machina";
+      padding: 5px 20px;
+    }
+
+    .traffic-light{
+      height: 16px;
+      width: 16px;
+      border: 1px solid gray;
+      border-radius: 100px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .terminal{
+      height: auto;
+      min-height: 449px;
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top:-0.3vw;
+      margin-bottom: -8.371vw;
+      border-radius: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid gray;
+      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .terminal-bar{
+      height: 30px;
+      border-radius: 8px 8px 0px 0px;
+      border-bottom: 1px solid gray;
+    }
+
+    #terminal-input:after {
+      content: "|";
+      color: green;
+      position: absolute;
+      left: 0;
+      animation: blink 1s linear infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    #terminal-output {
+      white-space: pre;
+      display: inline-block;
+    }
+    #terminal-input {
+      position: relative;
+      display: inline-block;
+    }
+    .terminal-content{
+      overflow: hidden;
+    }
+
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+
+    .term-icon{
+      position: relative;
+      top: 3px;
+    }
+
+    .term-btn{
+      text-transform: uppercase;
+    }
+
+    #tryIt{
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #8000ff;
+      border: none;
+      color: white;
+      font-familY: "pp-neue-machina";
+      padding: 5px 20px;
+    }
+
+    .traffic-light{
+      height: 16px;
+      width: 16px;
+      border: 1px solid gray;
+      border-radius: 100px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .terminal{
+      height: auto;
+      min-height: 449px;
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top:-0.3vw;
+      margin-bottom: -8.371vw;
+      border-radius: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid gray;
+      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .terminal-bar{
+      height: 30px;
+      border-radius: 8px 8px 0px 0px;
+      border-bottom: 1px solid gray;
+    }
+
+    #terminal-input:after {
+      content: "|";
+      color: green;
+      position: absolute;
+      left: 0;
+      animation: blink 1s linear infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    #terminal-output {
+      white-space: pre;
+      display: inline-block;
+    }
+    #terminal-input {
+      position: relative;
+      display: inline-block;
+    }
+    .terminal-content{
+      overflow: hidden;
+    }
+
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    .term-icon{
+      position: relative;
+      top: 3px;
+    }
+
+    .term-btn{
+      text-transform: uppercase;
+    }
+
+    #tryIt{
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #8000ff;
+      border: none;
+      color: white;
+      font-familY: "pp-neue-machina";
+      padding: 5px 20px;
+    }
+
+    .traffic-light{
+      height: 16px;
+      width: 16px;
+      border: 1px solid gray;
+      border-radius: 100px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .terminal{
+      height: auto;
+      min-height: 449px;
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top:-0.3vw;
+      margin-bottom: -8.371vw;
+      border-radius: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid gray;
+      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .terminal-bar{
+      height: 30px;
+      border-radius: 8px 8px 0px 0px;
+      border-bottom: 1px solid gray;
+    }
+
+    #terminal-input:after {
+      content: "|";
+      color: green;
+      position: absolute;
+      left: 0;
+      animation: blink 1s linear infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    #terminal-output {
+      white-space: pre;
+      display: inline-block;
+    }
+    #terminal-input {
+      position: relative;
+      display: inline-block;
+    }
+    .terminal-content{
+      overflow: hidden;
+    }
+
   }
 
 </style>
@@ -142,17 +497,17 @@
     <div class="row">
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         <i class="icon-pattern-random-15 black display-6"></i><br><br>
-        <h3 class="black display-6">Integrate multiple tools</h3>
+        <h3 class="black display-6">Integrate Multiple Tools</h3>
         <p class="black">Tea can easily integrate different tools and languages. This allows users to throw together scripts that use entirely separate tools and languages and share them with others with just a simple one-liner command.</p>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         <i class="icon-pattern-random-15 black display-6"></i><br><br>
-        <h3 class="black display-6">UNIVERSAL<br>BINARY</h3>
+        <h3 class="black display-6">Universal Binary</h3>
         <p class="black">tea is a standalone, binary download that can be used on multiple different devices and operating systems. This makes it easy to use Tea on a variety of different devices, without the need to worry about compatibility issues.</p>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         <i class="icon-pattern-random-15 black display-6"></i><br><br>
-        <h3 class="black display-6">All-inclusive<br>Packaging</h3>
+        <h3 class="black display-6">All-inclusive Packaging</h3>
         <p class="black">tea is a unified packaging infrastructure, providing access to the entire open source ecosystem. This means that Tea users can easily find and use a wide variety of software packages.</p>
       </div>
 

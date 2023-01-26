@@ -227,10 +227,11 @@ a:hover{
 @media only screen and (max-width: 576px) {
 
   .impact{
-    font-size: 12vw !important;
-    line-height: 13.3vw!important;
-    margin-top: 0vw !important;
-    margin-bottom: 2vw !important;
+    font-size: 11vw !important;
+    line-height: 11.2vw!important;
+    margin-top: 1.2vw !important;
+    margin-bottom: 2.8vw !important;
+    text-align: left !important;
   }
 
   h1{
