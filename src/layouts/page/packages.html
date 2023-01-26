@@ -4,14 +4,12 @@
 
 <!-- Desktop/Tablet Package Display -->
 
-  <span>
+  <span class="grid-package-display">
     {{- partial "package-grid.html" . -}}
   </span>
 
 <!-- Mobile Package Display -->
-  <!-- dont remove, it is not completely useless there is a ui bug i couldnt figure out
-    the only solution is to keep it here. sorry - neil
-    -->
+
   <span class="swiper-package-display">
     {{- partial "swiper.html" . -}}
   </span>
@@ -19,12 +17,21 @@
 <!-- Style for Swiper -->
 
 <style>
-  .grid-package-display{
+  .swiper-package-display{
     display:block;
   }
-  .swiper-package-display {
-    /* dont remove refer to comment above */
-    display: none;
+  .grid-package-display{
+    display:none;
+  }
+  @media only screen and (min-width: 576px) {
+
+      .grid-package-display{
+        display:block;
+      }
+
+      .swiper-package-display{
+        display:none;
+      }
   }
 </style>
 
