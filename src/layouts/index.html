@@ -820,7 +820,7 @@
         <h2 class="display-3">DON’T JUST TAKE OUR WORD FOR IT… TWITTER’S BEEN SIPPING THE TEA TOO!</h2>
       </div>
     </div>
-    <div class="row">
+    <div class="row twitter-desktop">
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
@@ -835,6 +835,19 @@
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
         {{- partial "twitter-card.html" -}}
+      </div>
+    </div>
+    <div class="row twitter-mobile">
+      <div class="col">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {{- range .Data.Pages }}
+                    <div class="swiper-slide">
+                        {{- partial "twitter-card.html" . -}}
+                    </div>
+                {{- end }}
+            </div>
+        </div>
       </div>
     </div>
   </div>
@@ -859,6 +872,30 @@
 
 <style>
 
+  @media only screen and (min-width: 576px) {
+
+    .twitter-desktop{
+      visibility: visible;
+    }
+    .twitter-mobile{
+      visibility: hidden;
+      display: none;
+    }
+
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    .twitter-desktop{
+      visibility: hidden;
+      display: none;
+    }
+    .twitter-mobile{
+      visibility: visible;
+    }
+
+  }
+
   .twitter-card{
     border: 2px solid gray;
     border-radius: 10px;
@@ -875,5 +912,32 @@
   }
 
 </style>
+
+
+<section>
+  <div class="container">
+
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+
+  var mySwiper = new Swiper ('.swiper-container', {
+  spaceBetween: 10,
+  freeMode: true,
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })
+
+</script>
 
 {{ end }}
