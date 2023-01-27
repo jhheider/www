@@ -1,24 +1,38 @@
-<script>
-  try {
-    fetch('https://app.tea.xyz/api/signups')
-      .then(res => res.json())
-      .then(res => {
-        const signups = res.signups ? res.signups.toLocaleString() : ""
-        if (!(localStorage['signup'] || '').match(/:::/)) {
-          $('#count').html(signups)
-        }
-        $('#count1').html(signups)
-        $('#count2').html(signups)
-        $('#count3').html(signups)
-        $('#count4').html(signups)
-        $('#count5').html(signups)
-        $('#count6').html(signups)
-        $('#count7').html(signups)
-        $('#stat-one').html(res.repos ? res.repos.toLocaleString() : "")
-        $('#stat-one-small').html(res.repos ? res.repos.toLocaleString() : "")
-        $('#stat-two').html(res.maintainers ? res.maintainers.toLocaleString() : "")
-      })
-  } catch (e) {
-    console.error(e)
-  }
-</script>
+
+  <script>
+    // Add a 400px tall placeholder
+    $('#count').html('<div style="height: 400px"></div>');
+    $('#count1').html('<div style="height: 400px"></div>');
+    $('#count2').html('<div style="height: 400px"></div>');
+    $('#count3').html('<div style="height: 400px"></div>');
+    $('#count4').html('<div style="height: 400px"></div>');
+    $('#count5').html('<div style="height: 400px"></div>');
+    $('#count6').html('<div style="height: 400px"></div>');
+    $('#count7').html('<div style="height: 400px"></div>');
+    $('#stat-one').html('<div style="height: 400px"></div>');
+    $('#stat-one-small').html('<div style="height: 400px"></div>');
+    $('#stat-two').html('<div style="height: 400px"></div>');
+
+    try {
+      fetch('https://app.tea.xyz/api/signups')
+        .then(res => res.json())
+        .then(res => {
+          const signups = res.signups ? res.signups.toLocaleString() : ""
+          if (!(localStorage['signup'] || '').match(/:::/)) {
+            $('#count').html(signups)
+          }
+          $('#count1').html(signups)
+          $('#count2').html(signups)
+          $('#count3').html(signups)
+          $('#count4').html(signups)
+          $('#count5').html(signups)
+          $('#count6').html(signups)
+          $('#count7').html(signups)
+          $('#stat-one').html(res.repos ? res.repos.toLocaleString() : "")
+          $('#stat-one-small').html(res.repos ? res.repos.toLocaleString() : "")
+          $('#stat-two').html(res.maintainers ? res.maintainers.toLocaleString() : "")
+        })
+    } catch (e) {
+      console.error(e)
+    }
+  </script>
