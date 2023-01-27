@@ -18,7 +18,7 @@
       {{- partial "no-results-found.html" }}
     </div>
   </div>
-  <hr>
+
   <div id="loadMoreSection" class="container small">
     <div id="loadMorePackagesBtn"><i class="icon-enter-arrow"></i> SHOW MORE</div>
   </div>
@@ -33,25 +33,91 @@
     display: grid;
     grid-template-columns: auto;
   }
-  #loadMorePackagesBtn {
-    cursor: pointer;
-    font-size: 2rem;
-    font-family: "pp-neue-machina", sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
-    padding-top: 0.279vw;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.1s linear;
+
+  @media only screen and (min-width: 1200px) {
+    #loadMorePackagesBtn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      font-size: 2rem;
+      height:  4.185vw !important;
+      font-family: "pp-neue-machina", sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding-top: 0.279vw;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.1s linear;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    #loadMorePackagesBtn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      font-size: 2rem;
+      height:  5vw !important;
+      font-family: "pp-neue-machina", sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding-top: 0.279vw;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.1s linear;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    #loadMorePackagesBtn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      font-size: 2rem;
+      height:  5.141vw !important;
+      font-family: "pp-neue-machina", sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding-top: 0.279vw;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.1s linear;
+    }
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    #loadMorePackagesBtn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      font-size: 2rem;
+      height:  6.771vw!important;
+      font-family: "pp-neue-machina", sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding-top: 0.279vw;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.1s linear;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+
   }
   #loadMorePackagesBtn .icon-enter-arrow {
     display: inline-block;
     position: relaitve;
     transition: all 0.2s ease-in-out;
+    margin-right:20px;
   }
   #loadMorePackagesBtn:hover .icon-enter-arrow{
     display: inline-block;
-    transform: rotate(-45deg) !important;
+    transform: rotate(90deg) !important;
   }
   #loadMoreSection.hidden {
     display: none;
