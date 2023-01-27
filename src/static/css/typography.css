@@ -156,10 +156,10 @@ a:hover{
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
   .impact{
-    font-size: 6.5vw !important;
-    line-height: 10vw!important;
-    margin-top: -1vw !important;
-    margin-bottom: -2.5vw !important;
+    font-size: 9.5vw !important;
+    line-height: 10.05vw!important;
+    margin-top: 3.2vw !important;
+    margin-bottom: -2.4vw !important;
   }
 
   h1{
@@ -194,10 +194,10 @@ a:hover{
 @media only screen and (min-width: 576px) and (max-width: 768px){
 
   .impact{
-    font-size: 9.5vw !important;
-    line-height: 13.4vw!important;
-    margin-top: .2vw !important;
-    margin-bottom: -1.6vw !important;
+    font-size: 12vw !important;
+    line-height: 13.5vw!important;
+    margin-top: 5.7vw !important;
+    margin-bottom: -3.5vw !important;
   }
 
   h1{
@@ -227,10 +227,10 @@ a:hover{
 @media only screen and (max-width: 576px) {
 
   .impact{
-    font-size: 11vw !important;
+    font-size: 12vw !important;
     line-height: 11.2vw!important;
-    margin-top: 1.2vw !important;
-    margin-bottom: 2.8vw !important;
+    margin-top: 1vw !important;
+    margin-bottom: -2.5vw !important;
     text-align: left !important;
   }
 
