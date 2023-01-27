@@ -177,15 +177,15 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
   </script>
 
   <script>
-      $(document).ready(function() {
-        var repository = "teaxyz/cli";
-        var url = "https://api.github.com/repos/" + repository;
+    $(document).ready(function() {
+    var repository = "teaxyz/cli";
+    var url = "https://api.github.com/repos/" + repository;
 
-        $.get(url, function(data) {
-          var stargazers = numeral(data.stargazers_count).format("0.0a");
-          $(".stargazers").html(stargazers);
-        });
-      });
+    $.get(url, function(data) {
+    var stargazers = numeral(data.stargazers_count).format("0.0a");
+    $(".stargazers").html(stargazers).hide().fadeIn(400);
+    });
+    });
 </script>
 
 <script>
