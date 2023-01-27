@@ -931,4 +931,46 @@
 
 </script>
 
+<section>
+  <div class="container two-boxes">
+    <div class="row">
+      <h2 class="display-2">OSS wouldn't work without talented contributors.</h2>
+      <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+    <div class="row" id="contributors-list">
+
+    </div>
+  </div>
+</section>
+
+<script>
+
+  $.getJSON("https://api.github.com/repos/teaxyz/cli/contributors", function(contributors) {
+  var contributorsList = $("#contributors-list");
+  $.each(contributors, function(i, contributor) {
+  contributorsList.append("<div class='col-3 col-sm-3 col-md-3 col-lg-1 col-xl-1'>" + "<a href='" + contributor.html_url + "' target='_blank'><img class='con-img mb-3' src='" + contributor.avatar_url + "'></a>" + "<p class='small' style='hyphens:auto;'>" + contributor.login + "</p>" + "</div>");
+  });
+  });
+
+
+</script>
+
+<style>
+
+  .con-img{
+    width:100%;
+    border-radius: 5px;
+    background-color: gray;
+    filter: grayscale(100%);
+    transition: 0.1s ease-in-out;
+  }
+
+  .con-img:hover{
+    filter:none;
+    transform: translateY(-5px);
+  }
+
+</style>
+
 {{ end }}
