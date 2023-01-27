@@ -190,14 +190,14 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 
 <script>
 
-    $(document).ready(function() {
-      var repository = "teaxyz/cli";
-      var url = "https://api.github.com/repos/"+ repository +"/releases/latest";
+  $(document).ready(function() {
+  var repository = "teaxyz/cli";
+  var url = "https://api.github.com/repos/"+ repository +"/releases/latest";
 
-      $.get(url, function(data) {
-        var release = data.tag_name;
-        $(".release").html(release);
-      });
-    });
+  $.get(url, function(data) {
+  var release = data.tag_name;
+  $(".release").html(release).hide().fadeIn(400);
+  });
+  });
 
 </script>
