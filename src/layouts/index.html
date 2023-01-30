@@ -552,7 +552,7 @@
     <div class="row one-box-down">
       <div class="col-10">
           <div>
-            <h2 class="black display-2" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING <br>INFRASTRUCTURE.</h2>
+            <h2 class="black display-3" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING <br>INFRASTRUCTURE.</h2>
           </div>
       </div>
       <img src="/Images/xl-grid-one-row.svg" alt="grid-element" class="single-grid-row">
@@ -610,14 +610,17 @@
         <div class="gs-content">
           <h2 class="display-3">Getting started with tea!</h2>
           <p class="lead">Installing tea is easy and convenient, with multiple options to choose from.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="mb-5">Tea is a standalone, cross-platform binary that can be installed by cURLing or using a package manager like brew. Additionally, there's an installer available that provides shell magic and sets up the environment. The one-liner abstracts away the installation process and creates a sandbox for running code. With the installation, there's no need for a preamble in tutorials and blog posts. The installer also updates tea. The binary is supported on Linux, macOS, and WSL and will soon be available for Windows natively. Another option for installation is using GitHub Actions, which installs dependencies and makes tea accessible in the workflow.</p>
+          <a href="https://github.com/teaxyz/cli#getting-started" target="_blank">
+            <button class="hbtn hb-fill-right" id="hb-btn" style="text-transform:uppercase;"><i class="btn-icon icon-github"></i>VIEW README<span style="text-transform:lowercase;">.md</span></button>
+          </a>
         </div>
       </div>
       <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ps-xl-5 ps-lg-5 ps-md-0 ps-sm-3 ps-3">
 
         <div class="mb-5">
           <!-- terminal description -->
-          <p class="mb-4">If you want to just use tea as a standalone binary, you can cURL it:</p>
+          <p class="mb-4 lead light-gray">If you want to just use tea as a standalone binary, you can cURL it:</p>
           <!-- Terminal sample -->
           <div class="terminal flex term-getting-started">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
@@ -638,7 +641,7 @@
 
         <div class="mb-5">
           <!-- terminal description -->
-          <p class="mb-4">If you want tea’s shell magic, use the installer:</p>
+          <p class="mb-4 lead light-gray">If you want tea’s shell magic, use the installer:</p>
           <!-- Terminal sample -->
           <div class="terminal flex term-getting-started">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
@@ -656,7 +659,7 @@
 
         <div class="mb-5">
           <!-- terminal description -->
-          <p class="mb-4">This will confirm before setting up ~/.tea and adding to your ~/.shellrc. Our one-liner even abstracts installing tea itself:</p>
+          <p class="mb-4 light-gray">This will confirm before setting up ~/.tea and adding to your ~/.shellrc. Our one-liner even abstracts installing tea itself:</p>
           <!-- Terminal sample -->
           <div class="terminal flex term-getting-started">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
@@ -674,7 +677,7 @@
 
         <div class="mb-5">
           <!-- terminal description -->
-          <p class="mb-4">This way, you don't need to start with "how to install tea" in your tutorials and blog posts. The installer also updates tea. If you hate installers, use brew:</p>
+          <p class="mb-4 light-gray">This way, you don't need to start with "how to install tea" in your tutorials and blog posts. The installer also updates tea. If you hate installers, use brew:</p>
           <!-- Terminal sample -->
           <div class="terminal flex term-getting-started">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
@@ -692,7 +695,7 @@
 
         <div class="mb-3">
           <!-- terminal description -->
-          <p class="mb-4">You can also install tea through GitHub Actions:</p>
+          <p class="mb-4 light-gray">You can also install tea through GitHub Actions:</p>
           <!-- Terminal sample -->
           <div class="terminal flex term-getting-started">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
@@ -708,7 +711,7 @@
           </div>
         </div>
 
-        <p>tea is supported on macOS >= 11, Linux (glibc >= 23), and WSL, with Windows native support coming soon.</p>
+        <p class="light-gray">tea is supported on macOS >= 11, Linux (glibc >= 23), and WSL, with Windows native support coming soon.</p>
 
       </div>
     </div>
@@ -725,6 +728,7 @@
   }
 </style>
 
+
 <div class="full-width-cta-container">
  {{- partial "full-width-cta-split.html" . -}}
 </div>
@@ -738,12 +742,12 @@
     <div class="row one-box">
       <div class="col">
         <h3 class="display-6 one-box-down">tea Features (<span class="release"></span>)</h3>
-        <h2 class="display-2">TO CALL TEA ‘REVOLUTIONARY’ WOULD BE AN UNDERSTATEMENT. <a href="https://twitter.com/mxcl?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" style="color:#2675f5;">@MXCL</a> HAS SET A NEW BAR.</h2>
+        <h2 class="display-3">TO CALL TEA ‘REVOLUTIONARY’ WOULD BE AN UNDERSTATEMENT. <a href="https://twitter.com/mxcl?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" style="color:#2675f5;">@MXCL</a> HAS SET A NEW BAR.</h2>
       </div>
     </div>
     <div class="row one-box-down">
       <div class="col p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4 pt-5 pb-5" style="border: 2px solid gray;">
-        <h2 class="display-3">Faster Steeping</h2>
+        <h2 class="display-5">Faster Steeping</h2>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p class="one-box-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class="row speed-comparison">
@@ -782,7 +786,7 @@
     <div class="row feature-row p-xl-5 p-lg-5 p-md-3 p-sm-1 p-3 one-box-down">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
-            <h2 class="display-3">tea magic</h2>
+            <h2 class="display-4">tea magic</h2>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
             <p class="mb-xl-5 mb-lg-5 mb-md-3 mb-sm-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <div class="">
@@ -813,7 +817,7 @@
     <div class="row feature-row p-xl-5 p-lg-5 p-md-3 p-sm-1 p-3 one-box-down">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
-            <h2 class="display-3">value prop</h2>
+            <h2 class="display-4">value prop</h2>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
             <p class="mb-xl-5 mb-lg-5 mb-md-3 mb-sm-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <div class="">
@@ -843,7 +847,7 @@
     <div class="row feature-row p-xl-5 p-lg-5 p-md-3 p-sm-1 p-3 one-box-down">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
-            <h2 class="display-3">value prop</h2>
+            <h2 class="display-4">value prop</h2>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
             <p class="mb-xl-5 mb-lg-5 mb-md-3 mb-sm-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <div class="">
@@ -873,7 +877,7 @@
     <div class="row feature-row p-xl-5 p-lg-5 p-md-3 p-sm-1 p-3 one-box-down">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
-            <h2 class="display-3">value prop</h2>
+            <h2 class="display-4">value prop</h2>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
             <p class="mb-xl-5 mb-lg-5 mb-md-3 mb-sm-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <div class="">
@@ -1159,12 +1163,14 @@
   .con-img{
     width:100%;
     border-radius: 5px;
+    filter: grayscale(100);
     background-color: gray;
     transition: 0.1s ease-in-out;
   }
 
   .con-img:hover{
     transform: translateY(-5px);
+    filter:none;
   }
 
 </style>
