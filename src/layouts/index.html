@@ -8,7 +8,7 @@
       <div class="col">
         <h1 class="impact text-center" style="z-index:3; position: relative;">Invisible yet <span class="callout white">powerful</span></h1>
         <div class="lead-box flex text-center black-bg p-xl-5 p-lg-5 p-md-5 p-sm-3 p-3">
-          <p class="lead-text lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+          <p class="lead-text lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
         </div>
       </div>
     </div>
@@ -560,18 +560,18 @@
     <div class="row">
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5">
         <i class="icon-pattern-random-15 black display-6"></i><br><br>
-        <h3 class="black display-6">Integrate Multiple Tools</h3>
-        <p class="black">Tea can easily integrate different tools and languages. This allows users to throw together scripts that use entirely separate tools and languages and share them with others with just a simple one-liner command.</p>
+        <h3 class="black display-6">Effortless Package Management</h3>
+        <p class="black">Tea eliminates the need to manually install packages, as it automatically fetches and installs the required packages and creates a virtual environment.</p>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5">
         <i class="icon-pattern-random-15 black display-6"></i><br><br>
-        <h3 class="black display-6">Universal Binary</h3>
-        <p class="black">tea is a standalone, binary download that can be used on multiple different devices and operating systems. This makes it easy to use Tea on a variety of different devices, without the need to worry about compatibility issues.</p>
+        <h3 class="black display-6">Virtual Envir. Creation</h3>
+        <p class="black">Cross-Platform and Versatile: Tea supports multiple platforms and programming languages and allows users to specify specific versions of tools.</p>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         <i class="icon-pattern-random-15 black display-6"></i><br><br>
-        <h3 class="black display-6">All-inclusive Packaging</h3>
-        <p class="black">tea is a unified packaging infrastructure, providing access to the entire open source ecosystem. This means that Tea users can easily find and use a wide variety of software packages.</p>
+        <h3 class="black display-6">Flexible Dependency Control</h3>
+        <p class="black">Tea allows developers to encode project-specific dependencies into the project README, making it effortless for both tea users and non-tea users to work on the project.</p>
       </div>
 
     </div>
@@ -600,6 +600,52 @@
   }
 
 </style>
+
+<!-- Getting Started -->
+
+<section>
+  <div class="container">
+    <div class="row two-boxes">
+      <div class="col-5">
+        <h2 class="display-3">Getting started with tea!</h2>
+        <p class="lead">Installing tea is easy and convenient, with multiple options to choose from.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col-7 ps-5">
+        <!-- terminal description -->
+        <p class="mb-5">If you want to just use tea as a standalone binary, you can cURL it:</p>
+        <!-- Terminal sample -->
+        <div class="terminal flex term-getting-started">
+          <div class="terminal-bar black-bg flex-start p-1 ps-3">
+            <div class="traffic-light"></div>
+            <div class="traffic-light"></div>
+            <div class="traffic-light"></div>
+          </div>
+            <div class="p-5">
+              <div class="terminal-content">
+                <p>$ curl -Lo tea https://tea.xyz/$(uname)/$(uname -m)<br>
+                $ chmod u+x ./tea</p>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .term-getting-started{
+    min-height: 0px !important;
+    height: auto;
+    width: 100% !important;
+  }
+
+</style>
+
+<div class="full-width-cta-container">
+ {{- partial "full-width-cta-split.html" . -}}
+</div>
 
 <!-- Features -->
 
@@ -1032,12 +1078,10 @@
     width:100%;
     border-radius: 5px;
     background-color: gray;
-    filter: invert(100%);
     transition: 0.1s ease-in-out;
   }
 
   .con-img:hover{
-    filter:none;
     transform: translateY(-5px);
   }
 
