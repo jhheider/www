@@ -603,31 +603,112 @@
 
 <!-- Getting Started -->
 
-<section>
+<section class="gs-section">
   <div class="container">
     <div class="row two-boxes">
-      <div class="col-5">
-        <h2 class="display-3">Getting started with tea!</h2>
-        <p class="lead">Installing tea is easy and convenient, with multiple options to choose from.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 mb-5">
+        <div class="gs-content">
+          <h2 class="display-3">Getting started with tea!</h2>
+          <p class="lead">Installing tea is easy and convenient, with multiple options to choose from.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
       </div>
-      <div class="col-7 ps-5">
-        <!-- terminal description -->
-        <p class="mb-5">If you want to just use tea as a standalone binary, you can cURL it:</p>
-        <!-- Terminal sample -->
-        <div class="terminal flex term-getting-started">
-          <div class="terminal-bar black-bg flex-start p-1 ps-3">
-            <div class="traffic-light"></div>
-            <div class="traffic-light"></div>
-            <div class="traffic-light"></div>
-          </div>
-            <div class="p-5">
-              <div class="terminal-content">
-                <p>$ curl -Lo tea https://tea.xyz/$(uname)/$(uname -m)<br>
-                $ chmod u+x ./tea</p>
-              </div>
+      <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ps-xl-5 ps-lg-5 ps-md-0 ps-sm-3 ps-3">
+
+        <div class="mb-5">
+          <!-- terminal description -->
+          <p class="mb-4">If you want to just use tea as a standalone binary, you can cURL it:</p>
+          <!-- Terminal sample -->
+          <div class="terminal flex term-getting-started">
+            <div class="terminal-bar black-bg flex-start p-1 ps-3">
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+            </div>
+              <div class="p-5">
+                <div class="terminal-content">
+                  <p>$ curl -Lo tea https://tea.xyz/$(uname)/$(uname -m)<br>
+                  $ chmod u+x ./tea</p>
+                </div>
+            </div>
           </div>
         </div>
+
+        <hr class="mb-5">
+
+        <div class="mb-5">
+          <!-- terminal description -->
+          <p class="mb-4">If you want tea’s shell magic, use the installer:</p>
+          <!-- Terminal sample -->
+          <div class="terminal flex term-getting-started">
+            <div class="terminal-bar black-bg flex-start p-1 ps-3">
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+            </div>
+              <div class="p-5">
+                <div class="terminal-content">
+                  <p>sh <(curl https://tea.xyz)</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <!-- terminal description -->
+          <p class="mb-4">This will confirm before setting up ~/.tea and adding to your ~/.shellrc. Our one-liner even abstracts installing tea itself:</p>
+          <!-- Terminal sample -->
+          <div class="terminal flex term-getting-started">
+            <div class="terminal-bar black-bg flex-start p-1 ps-3">
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+            </div>
+              <div class="p-5">
+                <div class="terminal-content">
+                  <p>sh <(curl tea.xyz) bun run start</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <!-- terminal description -->
+          <p class="mb-4">This way, you don't need to start with "how to install tea" in your tutorials and blog posts. The installer also updates tea. If you hate installers, use brew:</p>
+          <!-- Terminal sample -->
+          <div class="terminal flex term-getting-started">
+            <div class="terminal-bar black-bg flex-start p-1 ps-3">
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+            </div>
+              <div class="p-5">
+                <div class="terminal-content">
+                  <p>$ brew install teaxyz/pkgs/tea-cli</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <!-- terminal description -->
+          <p class="mb-4">You can also install tea through GitHub Actions:</p>
+          <!-- Terminal sample -->
+          <div class="terminal flex term-getting-started">
+            <div class="terminal-bar black-bg flex-start p-1 ps-3">
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+              <div class="traffic-light"></div>
+            </div>
+              <div class="p-5">
+                <div class="terminal-content">
+                  <p>- uses: teaxyz/setup@v0</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <p>tea is supported on macOS >= 11, Linux (glibc >= 23), and WSL, with Windows native support coming soon.</p>
 
       </div>
     </div>
@@ -639,8 +720,9 @@
     min-height: 0px !important;
     height: auto;
     width: 100% !important;
+    animation: none !important;
+    margin-bottom: 0 !important;
   }
-
 </style>
 
 <div class="full-width-cta-container">
