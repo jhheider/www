@@ -9,6 +9,12 @@
   font-family: "sono";
   src: url("/fonts/Sono-Light.woff2");
 }
+
+@font-face {
+  font-family: "inter";
+  src: url("/fonts/Inter-Regular.woff2") format("woff2"),
+  url("/fonts/Inter-Regular.woff") format("woff");
+}
 /*
 h1,h2,h3,h4,h5,h6,p,.lead{
   -ms-hyphens: auto;
@@ -53,7 +59,7 @@ h5{
 }
 
 p{
-  font-family: "sono", sans-serif;
+  font-family: "inter", sans-serif;
   color: #ffffff;
   font-weight: 500;
 }
