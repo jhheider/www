@@ -608,11 +608,11 @@
 
       </div>
       <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ps-xl-5 ps-lg-5 ps-md-0 ps-sm-3 ps-3">
-        <div class="mb-5">
+        <div class="">
           <!-- terminal description -->
           <p class="mb-4 lead light-gray">If you want tea’s shell magic, use the installer:</p>
           <!-- Terminal sample -->
-          <div class="terminal flex term-getting-started">
+          <div class="terminal flex term-getting-started term-lead">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
               <div class="traffic-light"></div>
               <div class="traffic-light"></div>
@@ -626,7 +626,55 @@
           </div>
         </div>
 
-        <div class="mb-5">
+        <div class="vertical-rule"></div>
+        <div class="circle mb-3"></div>
+
+
+        <style>
+
+          .vertical-rule {
+            width: 2px;
+            height: 75px;
+            background-color: #00ffd0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .circle{
+            width:12px;
+            border: 2px solid #00ffd0;
+            height: 12px;
+            border-radius: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .vertical-rule-gray {
+            width: 1px;
+            height: 75px;
+            background-color: #949494;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .circle-gray{
+            width:12px;
+            border: 1px solid #949494;
+            height: 12px;
+            border-radius: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+
+
+        </style>
+
+        <div>
           <!-- terminal description -->
           <p class="mb-4 light-gray">This will confirm before setting up ~/.tea and adding to your ~/.shellrc. Our one-liner even abstracts installing tea itself:</p>
           <!-- Terminal sample -->
@@ -644,7 +692,10 @@
           </div>
         </div>
 
-        <div class="mb-5">
+        <div class="vertical-rule-gray"></div>
+        <div class="circle-gray mb-3"></div>
+
+        <div>
           <!-- terminal description -->
           <p class="mb-4 light-gray">This way, you don't need to start with "how to install tea" in your tutorials and blog posts. The installer also updates tea. If you hate installers, use brew:</p>
           <!-- Terminal sample -->
@@ -661,6 +712,9 @@
             </div>
           </div>
         </div>
+
+        <div class="vertical-rule-gray"></div>
+        <div class="circle-gray mb-3"></div>
 
         <div class="mb-3">
           <!-- terminal description -->
@@ -694,6 +748,9 @@
     width: 100% !important;
     animation: none !important;
     margin-bottom: 0 !important;
+  }
+  .term-lead{
+    border: 2px solid #00ffd0;
   }
 </style>
 

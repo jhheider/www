@@ -1,5 +1,5 @@
 ---
-title: "Package Vault"
+title: "Pantry"
 Description: "Browse our packages"
 layout: "packages"
 menu: main
