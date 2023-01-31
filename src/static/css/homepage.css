@@ -3,9 +3,8 @@
 
   html,body{
     background-color: #1a1a1a;
-    max-width: none;
+    max-width: 1920px;
     overflow-x: hidden;
-    margin-top: 2.2vw;
   }
 
   .container{

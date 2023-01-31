@@ -12,8 +12,12 @@
 
 @font-face {
   font-family: "inter";
-  src: url("/fonts/Inter-Regular.woff2") format("woff2"),
-  url("/fonts/Inter-Regular.woff") format("woff");
+  src: url("/fonts/Inter-Regular.woff");
+}
+
+@font-face {
+  font-family: "mona";
+  src: url("/fonts/Mona-Sans-ExtraBold.woff");
 }
 /*
 h1,h2,h3,h4,h5,h6,p,.lead{
@@ -29,14 +33,14 @@ h1,h2,h3,h4,h5,h6,p,.lead{
 }
 
 h1{
-  font-family: "pp-neue-machina", sans-serif;
+  font-family: "mona", sans-serif;
   color:#00ffd0;
   text-transform:uppercase;
   text-shadow: 0px 0px 4px #1a1a1a !important;
 }
 
 h2{
-  font-family: "pp-neue-machina", sans-serif;
+  font-family: "mona", sans-serif;
   color:#00ffd0;
   text-transform:uppercase;
   hyphens: auto;
@@ -59,13 +63,18 @@ h5{
 }
 
 p{
-  font-family: "inter", sans-serif;
+  font-family: "inter", sans-serif !important;
   color: #ffffff;
   font-weight: 500;
 }
 
 li{
   font-family: "sono", sans-serif;
+  color: #ffffff;
+}
+
+.terminal-output,.terminal-input{
+  font-family: "sono", sans-serif !important;
   color: #ffffff;
 }
 
@@ -97,7 +106,6 @@ a:hover{
     font-size: 11.5vw;
     line-height: 12.4vw;
     margin-top: -1.116vw;
-    margin-left: -0.837vw;
   }
 
   h2{
@@ -138,7 +146,6 @@ a:hover{
     font-size: 14vw;
     line-height: 15vw;
     margin-top: -0.3vw;
-    margin-left: -0.837vw;
   }
 
   h2{
@@ -178,7 +185,6 @@ a:hover{
     font-size: 14vw;
     line-height: 15vw;
     margin-top: -0.3vw;
-    margin-left: -0.837vw;
   }
 
   h2{

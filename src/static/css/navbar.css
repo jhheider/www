@@ -14,12 +14,12 @@
 
   .navbar{
     background-color: #1a1a1a !important;
-    height: 4.5vw;
+    height: 60px !important;
     border-bottom: 2px solid #949494;
   }
 
   .nav-logo{
-    width: 4.4vw;
+    width: 60px;
   }
 
   .nav-logo:hover{
