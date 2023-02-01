@@ -28,7 +28,7 @@
               padding: 8px 20px;
               width: 300px;
               text-align: center;
-              border:none;
+              border: 1px solid #8000ff;
               text-decoration: none;
               color: rgb(225, 225, 225);
               white-space: nowrap;
@@ -63,6 +63,56 @@
 
             .hb-fill-right:hover {
                   color: rgb(255, 255, 255);
+                  background: rgb(91, 0, 184);
+                  transition: color 0.3s ease 0s, background 0s ease 0.3s;
+            }
+
+            .hbtn-light {
+              font-family: "pp-neue-machina";
+              background: none !important;
+              position: relative;
+              box-sizing: border-box;
+              height: 60px;
+              display: inline-block;
+              overflow: hidden;
+              padding: 8px 20px;
+              width: 300px;
+              text-align: center;
+              border: 1px solid #e1e1e1;
+              text-decoration: none;
+              color: #e1e1e1;
+              white-space: nowrap;
+              z-index: 0;
+            }
+
+
+            .hbtn-light i {
+                  padding-right: 8px;
+            }
+
+
+            .hb-light-fill-right::before {
+                  position: absolute;
+                  content: "";
+                  background: #e1e1e1;
+                  transition-duration: 0.2s;
+                  z-index: -1;
+                  inset: 0px auto auto 0px;
+                  width: 0px;
+                  height: 100%;
+                  opacity: 1;
+            }
+
+
+            .hb-light-fill-right:hover::before {
+                  width: 100%;
+                  height: 100%;
+                  opacity: 1;
+            }
+
+
+            .hb-light-fill-right:hover {
+                  color: #1a1a1a;
                   background: rgb(91, 0, 184);
                   transition: color 0.3s ease 0s, background 0s ease 0.3s;
             }

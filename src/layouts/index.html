@@ -2,24 +2,47 @@
 
 <!-- Hero Section -->
 
-<section>
+<style>
+  .hero{
+    background-image: url("/Images/hero-background-mountains.png") !important;
+    background-attachment: scroll;
+    background-position: right;
+    background-repeat: repeat-y;
+    background-size: cover !important;
+  }
+
+  .stats-top{
+    background-image: url("/Images/gen-art/orange-pattern.jpg") !important;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  code{
+    color:white;
+    font-size: 14px;
+  }
+</style>
+
+<section class="hero">
   <div class="container">
     <div class="row gx-5">
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <h1 class="display-1" style="z-index:3; position: relative;">Invisible yet <span class="callout white">powerful</span></h1>
           <p class="lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
           <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <div class="flex-start mb-3">
-            <a href="https://github.com/teaxyz/cli" class="me-3 mb-3">
-              <button class="hbtn hb-fill-right">INSTALL TEA (<span class="release" style="text-transform: lowercase;"></span>)</button>
+            <a href="https://github.com/teaxyz/cli" class="me-3">
+              <button class="hbtn hb-fill-right"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform: lowercase;"></span>)</button>
             </a>
             <a href="https://github.com/teaxyz/cli">
-              <button class="hbtn hb-fill-right">INSTALL TEA (<span class="release" style="text-transform: lowercase;"></span>)</button>
+              <button class="hbtn-light hb-light-fill-right"><i class="icon-github" style="position:relative;top:2px;"></i>GITHUB (&#9734;<span class="stargazers" style="text-transform: lowercase;"></span>)</button>
             </a>
           </div>
-          <p class="small dark-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="small dark-gray mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <a href="https://github.com/teaxyz/cli#teacli-0212" target="_blank">
         <div class="terminal flex">
           <div class="terminal-bar black-bg flex-start p-1 ps-3">
@@ -29,7 +52,7 @@
           </div>
             <div class="p-5">
               <div class="terminal-content">
-                <p id="terminal-output"></p>
+                <code id="terminal-output"></code>
                 <p id="terminal-input"></p>
               </div>
           </div>
@@ -42,8 +65,6 @@
     </div>
   </div>
 </section>
-
-<hr>
 
 {{- partial "hero-terminal-animation.html" -}}
 
@@ -81,7 +102,8 @@
     }
 
     .terminal{
-      height: 100%;
+      height: auto;
+      min-height: 40%;
       width: 100%;
       display: block;
       margin-left: auto;
@@ -492,8 +514,26 @@
     <div class="row">
       <div class="col">
           <div>
-            <h2 class="black display-4" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING INFRASTRUCTURE.</h2>
+            <h2 class="black display-4 text-center" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING INFRASTRUCTURE.</h2>
           </div>
+      </div>
+    </div>
+    <div class="row one-box-up">
+      <div class="col">
+        <p class="text-center black">NO. OF REPOS</p>
+        <h1 class="display-1 text-center black"><span id="stat-one">56,987</span></h1>
+      </div>
+      <div class="col">
+        <p class="text-center black">NO. OF MAINTAINERS</p>
+        <h1 class="display-1 text-center black"><span id="stat-two">56,987</span></h1>
+      </div>
+      <div class="col">
+        <p class="text-center black">STAR COUNT</p>
+        <a href="https://github.com/teaxyz/cli/stargazers" target="_blank"><h1 class="display-1 text-center black"><span class="stargazers">56,987</span></h1></a>
+      </div>
+      <div class="col">
+        <p class="text-center black">CURRENT RELEASE</p>
+        <a href="https://github.com/teaxyz/cli/releases" target="_blank"><h1 class="display-1 text-center black"><span class="release" style="text-transform:lowercase;">56,987</span></h1></a>
       </div>
     </div>
   </div>
@@ -524,48 +564,51 @@
 
 <!-- Features -->
 
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h2 class="display-3">TO CALL TEA ‘REVOLUTIONARY’ WOULD BE AN UNDERSTATEMENT. <a href="https://twitter.com/mxcl?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">@MXCL</a> HAS SET A NEW BAR.</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col">
+
+        <!-- Homebrew -->
+
+        <div class="speed-terminal mb-3" style="box-shadow:none;">
+          <div class="terminal-bar black-bg flex-start p-1 ps-3">
+            <div class="traffic-light"></div>
+            <div class="traffic-light"></div>
+            <div class="traffic-light"></div>
+          </div>
+          <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
+            <p class="teal small"></p>
+          </div>
+        </div>
+
+        <!-- tea -->
+
+        <div class="speed-terminal">
+          <div class="terminal-bar black-bg flex-start p-1 ps-3">
+            <div class="traffic-light"></div>
+            <div class="traffic-light"></div>
+            <div class="traffic-light"></div>
+          </div>
+          <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
+            <p class="teal small"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Homebrew v. tea Section -->
 
 <section class="features">
   <div class="container">
-    <div class="row one-box">
-      <div class="col">
-        <h3 class="display-6 one-box-down">tea Features (<span class="release"></span>)</h3>
-        <h2 class="display-3">TO CALL TEA ‘REVOLUTIONARY’ WOULD BE AN UNDERSTATEMENT. <a href="https://twitter.com/mxcl?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">@MXCL</a> HAS SET A NEW BAR.</h2>
-      </div>
-    </div>
-    <div class="row three-boxes-down">
-      <div class="col">
-        <div class="row speed-comparison">
-          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
-            <h3 class="dark-gray display-6">homebrew (slow)</h3>
-            <div class="speed-terminal" style="box-shadow:none;">
-              <div class="terminal-bar black-bg flex-start p-1 ps-3">
-                <div class="traffic-light"></div>
-                <div class="traffic-light"></div>
-                <div class="traffic-light"></div>
-              </div>
-              <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
-                <p class="teal small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-            <h3 class="display-6">tea (fast)</h3>
-            <div class="speed-terminal">
-              <div class="terminal-bar black-bg flex-start p-1 ps-3">
-                <div class="traffic-light"></div>
-                <div class="traffic-light"></div>
-                <div class="traffic-light"></div>
-              </div>
-              <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
-                <p class="teal small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- First -->
 
@@ -596,7 +639,7 @@
       </div>
     </div>
 
-    <!-- {{- partial "tea-magic-terminal-animation.html" -}} -->
+    <hr>
 
     <!-- Second -->
 
@@ -689,7 +732,7 @@
   .speed-terminal{
     width: 100%;
     height: auto;
-    min-height: 400px;
+    min-height: 50%;
     border: 2px solid gray;
     background-color: #1a1a1a;
     border-radius: 10px;

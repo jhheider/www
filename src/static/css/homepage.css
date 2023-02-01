@@ -137,14 +137,6 @@ mark{
 
 @media only screen and (min-width: 1200px) {
 
-  .hero-section{
-    background-image: url("/Images/x-large-grid.svg") !important;
-    background-attachment: scroll;
-    background-position: top;
-    background-repeat: repeat-y;
-    background-size: cover !important;
-  }
-
   .lead-text-container{
     border: 1px solid #949494 !important;
     width: 600px;
