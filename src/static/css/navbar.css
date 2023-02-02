@@ -7,8 +7,10 @@
   height: 62px;
   background-color: #1a1a1a !important;
   text-transform: uppercase;
-  border-bottom: 2px solid gray;
+  border-bottom: 1px solid gray;
 }
+
+/* Drop Verion */
 
 .top-logo{
   height: 60px;
