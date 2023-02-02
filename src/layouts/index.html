@@ -11,6 +11,15 @@
     background-size: cover !important;
   }
 
+  @media only screen and (max-width: 576px) {
+
+    .hero{
+      background-image: none !important;
+
+    }
+
+  }
+
   .stats-top{
     background-image: url("/Images/gen-art/orange-pattern.jpg") !important;
     background-attachment: fixed;
@@ -55,13 +64,17 @@
         <h1 class="display-1" style="z-index:3; position: relative;"><span class="inner-glow">Invisible</span> yet <span class="callout white">powerful</span></h1>
           <p class="lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
           <p class="mb-5">Introducing tea, the cross-platform package manager of the future. Say goodbye to slow package managers. With tea, simply type commands and it takes care of the rest. Get the latest version easily and support specific tool versions for different projects. Encoding dependencies in the README makes it readable by humans and tea, providing easier access for users. Experience better package management with tea.</p>
-          <div class="flex-start mb-3">
-            <a href="https://github.com/teaxyz/cli" class="me-3">
-              <button class="hbtn hb-fill-right"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform: lowercase;"></span>)</button>
-            </a>
-            <a href="https://github.com/teaxyz/cli">
-              <button class="hbtn-light hb-light-fill-right"><i class="icon-github" style="position:relative;top:2px;"></i>GITHUB (&#9734;<span class="stargazers" style="text-transform: lowercase;"></span>)</button>
-            </a>
+          <div class="row mb-3">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+              <a href="https://github.com/teaxyz/cli">
+                <button class="hbtn hb-fill-right" style="width:100% !important;"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform:lowercase;"></span>)</button>
+              </a>
+            </div>
+            <div class="col">
+              <a href="https://github.com/teaxyz/cli">
+                <button class="hbtn-light hb-light-fill-right" style="width:100%;"><i class="icon-github" style="position:relative;top:2px;"></i>GITHUB (&#9734;<span class="stargazers" style="text-transform: lowercase;"></span>)</button>
+              </a>
+            </div>
           </div>
           <p class="small dark-gray mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
@@ -762,9 +775,7 @@
   </div>
 </section>
 
-<div class="full-width-cta-container">
- {{- partial "full-width-cta-split.html" . -}}
-</div>
+<hr>
 
 <style>
 

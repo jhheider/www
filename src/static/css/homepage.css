@@ -1,95 +1,20 @@
 /* General/Utilities */
-@media only screen and (min-width: 1792px) {
 
   html,body{
     background-color: #1a1a1a;
-    max-width: 1920px;
+    max-width: none;
     overflow-x: hidden;
+    margin-top:30px;
   }
 
   .container{
     max-width: none;
-    padding: 4.5vw 8.371vw 4.185vw 8.371vw;
+    padding: 8.371vw 4.5vw;
   }
 
-
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1792px) {
-
-  html,body{
-    background-color: #1a1a1a;
-    max-width: 1920px;
-    overflow-x: hidden;
+  .hero{
+    height: 100vh;
   }
-
-  .container{
-    max-width: 1920px;
-    padding: 4.5vw 8.371vw 4.185vw 8.371vw;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-
-  html,body{
-    background-color: #1a1a1a;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
-
-  .container{
-    max-width: 1920px;
-    padding: 4.2vw 10vw 4.185vw 10vw !important;
-  }
-
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-
-  html,body{
-    background-color: #1a1a1a;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
-
-  .container{
-    max-width: 1920px;
-    padding: 4.185vw 5.040vw 4.185vw 5.040vw !important;
-  }
-}
-
-@media only screen and (min-width: 576px) and (max-width: 768px) {
-
-  html,body{
-    background-color: #1a1a1a;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
-
-  .container{
-    max-width: 1920px;
-    padding: 4.185vw 6.510vw 4.185vw 6.510vw;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-
-  html,body{
-    background-color: #1a1a1a;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
-
-  section{
-    padding-left: 4vw !important;
-    padding-right: 4vw !important;
-  }
-
-  .container{
-    max-width: 1920px;
-    padding: 5.5vw 3vw !important;
-  }
-}
 
 /* Brand Colors */
 

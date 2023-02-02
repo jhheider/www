@@ -4,9 +4,10 @@
   position: fixed;
   width:100%;
   padding: 0px !important;
-  height: 60px;
+  height: 62px;
   background-color: #1a1a1a !important;
   text-transform: uppercase;
+  border-bottom: 2px solid gray;
 }
 
 .top-logo{
