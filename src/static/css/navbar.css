@@ -9,8 +9,16 @@
   text-transform: uppercase;
 }
 
+.top-logo{
+  height: 60px;
+  width: 60px;
+  margin: 0px !important;
+}
+
 .navbar-brand{
   height: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
 div.container-fluid.top-nav{
