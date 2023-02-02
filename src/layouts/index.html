@@ -55,7 +55,23 @@
     text-transform: uppercase;
   }
 
+  @media only screen and (max-width: 768px) {
+    .mobile-ctas{
+      visibility: visible;
+    }
+    .desktop-ctas{
+      display:none;
+    }
+  }
 
+  @media only screen and (min-width: 768px) {
+    .mobile-ctas{
+      display:none;
+    }
+    .desktop-ctas{
+      visibility: visible;
+    }
+  }
 
 </style>
 
@@ -66,18 +82,42 @@
         <h1 class="display-1" style="z-index:3; position: relative;"><span class="inner-glow ">Invisible</span> yet <span class="callout white">powerful</span></h1>
           <p class="lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
           <p class="mb-5">Introducing tea, the cross-platform package manager of the future. Say goodbye to slow package managers. With tea, simply type commands and it takes care of the rest. Get the latest version easily and support specific tool versions for different projects. Encoding dependencies in the README makes it readable by humans and tea, providing easier access for users. Experience better package management with tea.</p>
-          <div class="row mb-3">
+          <!-- Desktop CTA's -->
+          <div class="row mb-3 desktop-ctas">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+              <a href="https://github.com/teaxyz/cli">
+                <button class="hbtn hb-fill-right" style="width:100% !important;"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform:lowercase;"></span>)</button>
+              </a>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+              <a href="https://github.com/teaxyz/cli">
+                <button class="hbtn-light hb-light-fill-right" style="width:100% !important;"><i class="icon-github" style="position:relative;top:2px;"></i>GITHUB (&#9734;<span class="stargazers" style="text-transform: lowercase;"></span>)</button>
+              </a>
+            </div>
+          </div>
+          <!-- Mobile CTA's -->
+          <div class="row mb-3 mobile-ctas">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
               <a href="https://github.com/teaxyz/cli">
                 <button class="hbtn hb-fill-right" style="width:100% !important;"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform:lowercase;"></span>)</button>
               </a>
             </div>
             <div class="col">
-              <a href="https://github.com/teaxyz/cli">
-                <button class="hbtn-light hb-light-fill-right" style="width:100%;"><i class="icon-github" style="position:relative;top:2px;"></i>GITHUB (&#9734;<span class="stargazers" style="text-transform: lowercase;"></span>)</button>
-              </a>
+              <button class="hbtn-light hb-light-fill-right" id="follow-button" style="width:100%; text-transform:uppercase;"><i class="icon-twitter" style="position:relative;top:2px;"></i>Follow Us on Twitter</button>
             </div>
           </div>
+          <!-- Deep-linking script for Twitter follow button -->
+          <script>
+            document.getElementById("follow-button").addEventListener("click", function() {
+              if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+                window.location.href = "twitter://user?screen_name=username";
+              } else if (navigator.userAgent.match(/Android/i)) {
+                window.location.href = "twitter://user?screen_name=username";
+              } else {
+                window.location.href = "https://twitter.com/username";
+              }
+            });
+          </script>
           <p class="small dark-gray mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
