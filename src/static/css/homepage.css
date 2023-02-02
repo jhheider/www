@@ -12,8 +12,12 @@
     padding: 8.371vw 4.5vw;
   }
 
-  .hero{
-    height: 100vh;
+  @media only screen and (min-width: 992px) {
+
+    .hero{
+      height: 100vh;
+    }
+
   }
 
 /* Brand Colors */
@@ -289,22 +293,8 @@ mark{
 
 @media only screen and (max-width: 576px) {
 
-  .hero-section{
-    background-image: url("/Images/mobile-grid.svg");
-    background-attachment: scroll;
-    background-position: top;
-    background-repeat: repeat;
-    background-size: cover;
-    padding-top: 7vw;
-  }
-
   .hero-float{
     float: none !important;
-  }
-
-  .impact-section{
-    padding-top: 20vw;
-    padding-bottom: 20vw;
   }
 
   .package-before-section{

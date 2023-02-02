@@ -11,21 +11,12 @@
     background-size: cover !important;
   }
 
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 992px) {
 
     .hero{
       background-image: none !important;
-
     }
 
-  }
-
-  .stats-top{
-    background-image: url("/Images/gen-art/orange-pattern.jpg") !important;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: repeat;
-    background-size: contain;
   }
 
   code{
@@ -60,7 +51,7 @@
 <section class="hero">
   <div class="container">
     <div class="row gx-5">
-      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-auto">
         <h1 class="display-1" style="z-index:3; position: relative;"><span class="inner-glow">Invisible</span> yet <span class="callout white">powerful</span></h1>
           <p class="lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
           <p class="mb-5">Introducing tea, the cross-platform package manager of the future. Say goodbye to slow package managers. With tea, simply type commands and it takes care of the rest. Get the latest version easily and support specific tool versions for different projects. Encoding dependencies in the README makes it readable by humans and tea, providing easier access for users. Experience better package management with tea.</p>
@@ -133,8 +124,6 @@
 
 <style>
 
-  @media only screen and (min-width: 1200px) {
-
     .term-icon{
       position: relative;
       top: 3px;
@@ -142,17 +131,6 @@
 
     .term-btn{
       text-transform: uppercase;
-    }
-
-    #tryIt{
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #8000ff;
-      border: none;
-      color: white;
-      font-familY: "pp-neue-machina";
-      padding: 5px 20px;
     }
 
     .traffic-light{
@@ -169,10 +147,6 @@
       min-height: 40%;
       width: 100%;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top:-0.3vw;
-      margin-bottom: -8.371vw;
       border-radius: 10px;
       background-color: #1a1a1a;
       border: 1px solid gray;
@@ -217,356 +191,6 @@
     .terminal-content{
       overflow: hidden;
     }
-
-  }
-
-  @media only screen and (min-width: 992px) and (max-width: 1200px) {
-
-    .term-icon{
-      position: relative;
-      top: 3px;
-    }
-
-    .term-btn{
-      text-transform: uppercase;
-    }
-
-    #tryIt{
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #8000ff;
-      border: none;
-      color: white;
-      font-familY: "pp-neue-machina";
-      padding: 5px 20px;
-    }
-
-    .traffic-light{
-      height: 16px;
-      width: 16px;
-      border: 1px solid gray;
-      border-radius: 100px;
-      display: inline-block;
-      margin-right: 5px;
-    }
-
-    .terminal{
-      height: auto;
-      min-height: 449px;
-      width: 58.594vw;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top:-0.3vw;
-      margin-bottom: -8.371vw;
-      border-radius: 10px;
-      background-color: #1a1a1a;
-      border: 1px solid gray;
-      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .terminal-bar{
-      height: 30px;
-      border-radius: 8px 8px 0px 0px;
-      border-bottom: 1px solid gray;
-    }
-
-    #terminal-input:after {
-      content: "|";
-      color: green;
-      position: absolute;
-      left: 0;
-      animation: blink 1s linear infinite;
-    }
-
-    @keyframes blink {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    #terminal-output {
-      white-space: pre;
-      display: inline-block;
-    }
-    #terminal-input {
-      position: relative;
-      display: inline-block;
-    }
-    .terminal-content{
-      overflow: hidden;
-    }
-
-  }
-
-  @media only screen and (min-width: 768px) and (max-width: 992px) {
-
-    .term-icon{
-      position: relative;
-      top: 3px;
-    }
-
-    .term-btn{
-      text-transform: uppercase;
-    }
-
-    #tryIt{
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #8000ff;
-      border: none;
-      color: white;
-      font-familY: "pp-neue-machina";
-      padding: 5px 20px;
-    }
-
-    .traffic-light{
-      height: 16px;
-      width: 16px;
-      border: 1px solid gray;
-      border-radius: 100px;
-      display: inline-block;
-      margin-right: 5px;
-    }
-
-    .terminal{
-      height: auto;
-      min-height: 449px;
-      width: 100%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top:-0.3vw;
-      margin-bottom: -8.371vw;
-      border-radius: 10px;
-      background-color: #1a1a1a;
-      border: 1px solid gray;
-      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .terminal-bar{
-      height: 30px;
-      border-radius: 8px 8px 0px 0px;
-      border-bottom: 1px solid gray;
-    }
-
-    #terminal-input:after {
-      content: "|";
-      color: green;
-      position: absolute;
-      left: 0;
-      animation: blink 1s linear infinite;
-    }
-
-    @keyframes blink {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    #terminal-output {
-      white-space: pre;
-      display: inline-block;
-    }
-    #terminal-input {
-      position: relative;
-      display: inline-block;
-    }
-    .terminal-content{
-      overflow: hidden;
-    }
-
-  }
-
-  @media only screen and (min-width: 576px) and (max-width: 768px) {
-
-    .term-icon{
-      position: relative;
-      top: 3px;
-    }
-
-    .term-btn{
-      text-transform: uppercase;
-    }
-
-    #tryIt{
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #8000ff;
-      border: none;
-      color: white;
-      font-familY: "pp-neue-machina";
-      padding: 5px 20px;
-    }
-
-    .traffic-light{
-      height: 16px;
-      width: 16px;
-      border: 1px solid gray;
-      border-radius: 100px;
-      display: inline-block;
-      margin-right: 5px;
-    }
-
-    .terminal{
-      height: auto;
-      min-height: 449px;
-      width: 100%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top:-0.3vw;
-      margin-bottom: -8.371vw;
-      border-radius: 10px;
-      background-color: #1a1a1a;
-      border: 1px solid gray;
-      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .terminal-bar{
-      height: 30px;
-      border-radius: 8px 8px 0px 0px;
-      border-bottom: 1px solid gray;
-    }
-
-    #terminal-input:after {
-      content: "|";
-      color: green;
-      position: absolute;
-      left: 0;
-      animation: blink 1s linear infinite;
-    }
-
-    @keyframes blink {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    #terminal-output {
-      white-space: pre;
-      display: inline-block;
-    }
-    #terminal-input {
-      position: relative;
-      display: inline-block;
-    }
-    .terminal-content{
-      overflow: hidden;
-    }
-
-  }
-
-  @media only screen and (max-width: 576px) {
-
-    .term-icon{
-      position: relative;
-      top: 3px;
-    }
-
-    .term-btn{
-      text-transform: uppercase;
-    }
-
-    #tryIt{
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #8000ff;
-      border: none;
-      color: white;
-      font-familY: "pp-neue-machina";
-      padding: 5px 20px;
-    }
-
-    .traffic-light{
-      height: 16px;
-      width: 16px;
-      border: 1px solid gray;
-      border-radius: 100px;
-      display: inline-block;
-      margin-right: 5px;
-    }
-
-    .terminal{
-      height: auto;
-      min-height: 449px;
-      width: 100%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top:-0.3vw;
-      margin-bottom: -8.371vw;
-      border-radius: 10px;
-      background-color: #1a1a1a;
-      border: 1px solid gray;
-      box-shadow: 0px 10px 18px rgba(10, 05, 05, .5);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .terminal-bar{
-      height: 30px;
-      border-radius: 8px 8px 0px 0px;
-      border-bottom: 1px solid gray;
-    }
-
-    #terminal-input:after {
-      content: "|";
-      color: green;
-      position: absolute;
-      left: 0;
-      animation: blink 1s linear infinite;
-    }
-
-    @keyframes blink {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    #terminal-output {
-      white-space: pre;
-      display: inline-block;
-    }
-    #terminal-input {
-      position: relative;
-      display: inline-block;
-    }
-    .terminal-content{
-      overflow: hidden;
-    }
-
-  }
 
 </style>
 
@@ -577,26 +201,26 @@
     <div class="row">
       <div class="col">
           <div>
-            <h2 class="black display-4 text-center" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING INFRASTRUCTURE.</h2>
+            <h2 class="black display-4 text-xl-center text-lg-center text-md-left text-sm-left text-left" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING INFRASTRUCTURE.</h2>
           </div>
       </div>
     </div>
     <div class="row one-box-up">
       <div class="col">
-        <p class="text-center black">NO. OF REPOS</p>
-        <h1 class="display-1 text-center black"><span id="stat-one">56,987</span></h1>
+        <p class="text-xl-center text-lg-center text-md-left text-sm-left text-left black">NO. OF REPOS</p>
+        <h1 class="display-1 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span id="stat-one">56,987</span></h1>
       </div>
       <div class="col">
-        <p class="text-center black">NO. OF MAINTAINERS</p>
-        <h1 class="display-1 text-center black"><span id="stat-two">56,987</span></h1>
+        <p class="text-xl-center text-lg-center text-md-left text-sm-left text-left black">NO. OF MAINTAINERS</p>
+        <h1 class="display-1 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span id="stat-two">56,987</span></h1>
       </div>
       <div class="col">
-        <p class="text-center black">STAR COUNT</p>
-        <a href="https://github.com/teaxyz/cli/stargazers" target="_blank"><h1 class="display-1 text-center black"><span class="stargazers">56,987</span></h1></a>
+        <p class="text-xl-center text-lg-center text-md-left text-sm-left text-left black">STAR COUNT</p>
+        <a href="https://github.com/teaxyz/cli/stargazers" target="_blank"><h1 class="display-1 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span class="stargazers">56,987</span></h1></a>
       </div>
       <div class="col">
-        <p class="text-center black">CURRENT RELEASE</p>
-        <a href="https://github.com/teaxyz/cli/releases" target="_blank"><h1 class="display-1 text-center black"><span class="release" style="text-transform:lowercase;">56,987</span></h1></a>
+        <p class="text-xl-center text-lg-center text-md-left text-sm-left text-left black">CURRENT RELEASE</p>
+        <a href="https://github.com/teaxyz/cli/releases" target="_blank"><h1 class="display-1 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span class="release" style="text-transform:lowercase;">56,987</span></h1></a>
       </div>
     </div>
   </div>
