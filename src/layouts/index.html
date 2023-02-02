@@ -27,6 +27,17 @@
   .inner-glow{
     color: #1a1a1a;
     text-shadow: 0 0px 18px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .code-box{
@@ -52,7 +63,7 @@
   <div class="container">
     <div class="row gx-5">
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-auto">
-        <h1 class="display-1" style="z-index:3; position: relative;"><span class="inner-glow">Invisible</span> yet <span class="callout white">powerful</span></h1>
+        <h1 class="display-1" style="z-index:3; position: relative;"><span class="inner-glow ">Invisible</span> yet <span class="callout white">powerful</span></h1>
           <p class="lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
           <p class="mb-5">Introducing tea, the cross-platform package manager of the future. Say goodbye to slow package managers. With tea, simply type commands and it takes care of the rest. Get the latest version easily and support specific tool versions for different projects. Encoding dependencies in the README makes it readable by humans and tea, providing easier access for users. Experience better package management with tea.</p>
           <div class="row mb-3">
