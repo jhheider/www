@@ -45,7 +45,7 @@ just package-pages
 | Project      | Version |
 |--------------|---------|
 | gohugo.io    |  >=0.99 |
-| nodejs.org   |  >=14   |
+| nodejs.org   |  =18.13.0 |
 | npmjs.com    |  *      |
 | just.systems |  ~1     |
 
