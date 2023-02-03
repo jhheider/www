@@ -1,0 +1,98 @@
+<!-- Desktop CTA's -->
+<div class="row mb-3 desktop-ctas">
+  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+    <a href="https://github.com/teaxyz/cli">
+      <button class="hbtn hb-fill-right" style="width:100% !important;"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform:lowercase;"></span>)</button>
+    </a>
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+    <a href="https://github.com/teaxyz/cli">
+      <button class="hbtn-light hb-light-fill-right" style="width:100% !important;"><i class="icon-github" style="position:relative;top:2px;"></i>GITHUB (&#9734;<span class="stargazers" style="text-transform: lowercase;"></span>)</button>
+    </a>
+  </div>
+</div>
+<!-- Mobile CTA's -->
+<div class="row mb-3 mt-5 mobile-ctas">
+  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+    <form id="subscribeForm">
+      <div class="mb-3">
+        <input class="p-3 text-center" placeholder="Enter your email" type="email" id="email" required>
+      </div>
+      <button class="hbtn hb-fill-right" style="width:100%;" id="email-btn" type="submit">Subscribe</button>
+    </form>
+    <div id="formResponse"></div>
+  </div>
+
+  <div class="or-divider flex">
+    <hr>
+    <p class="small grid-gray">or</p>
+    <hr>
+  </div>
+
+  <style>
+    #email{
+      width:100%;
+      height: 60px;
+      background-color: #1a1a1a;
+      border: 1.5px solid #949494;
+      color: white;
+      font-family: "inter", sans-serif;
+      text-transform: uppercase;
+    }
+    #email-btn{
+      text-transform: uppercase;
+    }
+  </style>
+
+  <script>
+    const subscribeForm = document.getElementById('subscribeForm');
+    const formResponse = document.getElementById('formResponse');
+
+    subscribeForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+
+      if (!email) {
+        formResponse.innerHTML = '<p style="color: red">Please enter a valid email address.</p>';
+        return;
+      }
+
+      fetch('https://manage.klaviyo.com/api/v1/list/R2UVm3/members', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          api_key: 'pk_231a258e61a40283566192ee59310c7af4'
+        })
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to subscribe');
+        }
+        formResponse.innerHTML = '<p style="color: green">Form submitted!</p>';
+      })
+      .catch(error => {
+        formResponse.innerHTML = '<p style="color: red">An error occurred. Please try again later.</p>';
+      });
+    });
+  </script>
+
+  <div class="col">
+    <button class="hbtn-light hb-light-fill-right mb-4" id="follow-button" style="width:100%; text-transform:uppercase;"><i class="icon-twitter" style="position:relative;top:2px;"></i>Follow Us on Twitter</button>
+  </div>
+</div>
+<!-- Deep-linking script for Twitter follow button -->
+<script>
+  document.getElementById("follow-button").addEventListener("click", function() {
+    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+      window.location.href = "twitter://user?screen_name=teaxyz";
+    } else if (navigator.userAgent.match(/Android/i)) {
+      window.location.href = "twitter://user?screen_name=teaxyz";
+    } else {
+      window.location.href = "https://twitter.com/teaxyz";
+    }
+  });
+</script>

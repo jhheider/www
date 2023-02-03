@@ -1,62 +1,106 @@
+<div class="terminal flex">
+  <div class="terminal-bar black-bg flex-start p-1 ps-3">
+    <div class="traffic-light"></div>
+    <div class="traffic-light"></div>
+    <div class="traffic-light"></div>
+  </div>
+  <div class="flex p-2" style="border-bottom: 1px solid gray;">
+      <div class="flex pt-2 pb-2 ps-4 pe-2" style="width: 100%; border: 1px solid #949494; border-radius: 5px;">
+        <code id="copy-text" class="white">sh <(curl tea.xyz)</code>
+        <button class="hbtn hb-fill-right" id="copy-button">Copy</button>
+      </div>
+  </div>
+    <div class="p-5">
+      <div class="terminal-content">
+        <code id="terminal-output"></code>
+        <p id="terminal-input"></p>
+      </div>
+  </div>
+</div>
 
-        <script>
-          const commands = [
-            { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
-            { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
-    <thead>
-        <tr>
-            <th>% Total</th>
-            <th>% Received</th>
-            <th>% Xferd</th>
-            <th>Average Speed</th>
-            <th>Time</th>
-            <th>Time</th>
-            <th>Time</th>
-            <th>Current</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>100</td>
-            <td>13306</td>
-            <td>100</td>
-            <td>54983</td>
-            <td>0</td>
-            <td>--:--:--</td>
-            <td>--:--:--</td>
-            <td>--:--:--</td>
-        </tr>
-        <tr>
-            <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
-        </tr>
-    </tbody>
+<script>
+      const commands = [
+        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
+        { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
+<thead>
+    <tr>
+        <th>% Total</th>
+        <th>% Received</th>
+        <th>% Xferd</th>
+        <th>Average Speed</th>
+        <th>Time</th>
+        <th>Time</th>
+        <th>Time</th>
+        <th>Current</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>100</td>
+        <td>13306</td>
+        <td>100</td>
+        <td>54983</td>
+        <td>0</td>
+        <td>--:--:--</td>
+        <td>--:--:--</td>
+        <td>--:--:--</td>
+    </tr>
+    <tr>
+        <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
+    </tr>
+</tbody>
 </table>
 ` },
-            { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
-            { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
-          ];
+        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
+        { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
+      ];
 
-          let commandIndex = 0;
-          let command = commands[commandIndex];
-          let commandOutput = "";
+      let commandIndex = 0;
+      let command = commands[commandIndex];
+      let commandOutput = "";
 
-          function typeCommand() {
-            if (commandIndex === commands.length) {
-              return;
-            }
-            if (command.input.length === 0) {
-              commandOutput += '\n' + command.output + '\n';
-              document.querySelector("#terminal-output").innerHTML = commandOutput;
-              commandIndex++;
-              command = commands[commandIndex];
-              setTimeout(typeCommand, 1000);
-              return;
-            }
-            commandOutput += command.input[0];
-            command.input = command.input.slice(1);
-            document.querySelector("#terminal-output").innerHTML = commandOutput;
-            setTimeout(typeCommand, 100);
-          }
+      function typeCommand() {
+        if (commandIndex === commands.length) {
+          return;
+        }
+        if (command.input.length === 0) {
+          commandOutput += '\n' + command.output + '\n';
+          document.querySelector("#terminal-output").innerHTML = commandOutput;
+          commandIndex++;
+          command = commands[commandIndex];
+          setTimeout(typeCommand, 1000);
+          return;
+        }
+        commandOutput += command.input[0];
+        command.input = command.input.slice(1);
+        document.querySelector("#terminal-output").innerHTML = commandOutput;
+        setTimeout(typeCommand, 100);
+      }
 
-          typeCommand();
-        </script>
+      typeCommand();
+    </script>
+
+    <script>
+
+      $("#copy-button").on("click", function() {
+        var copyText = "sh <(curl https://tea.xyz)";
+        var tempInput = document.createElement("input");
+        tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+        tempInput.value = copyText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        // Change the button text to 'Copied'
+        var button = $("#copy-button");
+        var originalText = button.text();
+        button.text("Copied!");
+
+        // Change the button text back to original after 5 seconds
+        setTimeout(function() {
+          button.text(originalText);
+        }, 2000);
+      });
+
+    </script>
