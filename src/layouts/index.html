@@ -65,6 +65,9 @@
     .boilerplate{
       display:none;
     }
+    .hero-description{
+      display:none;
+    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -84,7 +87,7 @@
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-auto">
         <h1 class="display-1" style="z-index:3; position: relative;"><span class="inner-glow ">Invisible</span> yet <span class="callout white">powerful</span></h1>
           <p class="lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
-          <p class="mb-5">Introducing tea, the cross-platform package manager of the future. Say goodbye to slow package managers. With tea, simply type commands and it takes care of the rest. Get the latest version easily and support specific tool versions for different projects. Encoding dependencies in the README makes it readable by humans and tea, providing easier access for users. Experience better package management with tea.</p>
+          <p class="mb-5 hero-description">Introducing tea, the cross-platform package manager of the future. Say goodbye to slow package managers. With tea, simply type commands and it takes care of the rest. Get the latest version easily and support specific tool versions for different projects. Encoding dependencies in the README makes it readable by humans and tea, providing easier access for users. Experience better package management with tea.</p>
           <!-- Desktop CTA's -->
           <div class="row mb-3 desktop-ctas">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
@@ -99,10 +102,74 @@
             </div>
           </div>
           <!-- Mobile CTA's -->
-          <div class="row mb-3 mobile-ctas">
+          <div class="row mb-3 mt-5 mobile-ctas">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
-              {{- partial "klaviyo-form.html" -}}
+              <form id="subscribeForm">
+                <div class="mb-3">
+                  <input class="p-3 text-center" placeholder="Enter your email" type="email" id="email" required>
+                </div>
+                <button class="hbtn hb-fill-right" style="width:100%;" id="email-btn" type="submit">Subscribe</button>
+              </form>
+              <div id="formResponse"></div>
             </div>
+
+            <div class="or-divider flex">
+              <hr>
+              <p class="small grid-gray">or</p>
+              <hr>
+            </div>
+
+            <style>
+              #email{
+                width:100%;
+                height: 60px;
+                background-color: #1a1a1a;
+                border: 1.5px solid #949494;
+                color: white;
+                font-family: "inter", sans-serif;
+                text-transform: uppercase;
+              }
+              #email-btn{
+                text-transform: uppercase;
+              }
+            </style>
+
+            <script>
+              const subscribeForm = document.getElementById('subscribeForm');
+              const formResponse = document.getElementById('formResponse');
+
+              subscribeForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const email = document.getElementById('email').value;
+
+                if (!email) {
+                  formResponse.innerHTML = '<p style="color: red">Please enter a valid email address.</p>';
+                  return;
+                }
+
+                fetch('https://manage.klaviyo.com/api/v1/list/R2UVm3/members', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    email: email,
+                    api_key: 'pk_231a258e61a40283566192ee59310c7af4'
+                  })
+                })
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error('Failed to subscribe');
+                  }
+                  formResponse.innerHTML = '<p style="color: green">Form submitted!</p>';
+                })
+                .catch(error => {
+                  formResponse.innerHTML = '<p style="color: red">An error occurred. Please try again later.</p>';
+                });
+              });
+            </script>
+
             <div class="col">
               <button class="hbtn-light hb-light-fill-right mb-4" id="follow-button" style="width:100%; text-transform:uppercase;"><i class="icon-twitter" style="position:relative;top:2px;"></i>Follow Us on Twitter</button>
             </div>
