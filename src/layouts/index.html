@@ -98,9 +98,7 @@
           <!-- Mobile CTA's -->
           <div class="row mb-3 mobile-ctas">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
-              <a href="https://github.com/teaxyz/cli">
-                <button class="hbtn hb-fill-right" style="width:100% !important;"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform:lowercase;"></span>)</button>
-              </a>
+              {{- partial "klaviyo-form.html" -}}
             </div>
             <div class="col">
               <button class="hbtn-light hb-light-fill-right" id="follow-button" style="width:100%; text-transform:uppercase;"><i class="icon-twitter" style="position:relative;top:2px;"></i>Follow Us on Twitter</button>
@@ -110,11 +108,11 @@
           <script>
             document.getElementById("follow-button").addEventListener("click", function() {
               if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-                window.location.href = "twitter://user?screen_name=username";
+                window.location.href = "twitter://user?screen_name=teaxyz";
               } else if (navigator.userAgent.match(/Android/i)) {
-                window.location.href = "twitter://user?screen_name=username";
+                window.location.href = "twitter://user?screen_name=teaxyz";
               } else {
-                window.location.href = "https://twitter.com/username";
+                window.location.href = "https://twitter.com/teaxyz";
               }
             });
           </script>
