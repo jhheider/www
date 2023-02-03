@@ -267,8 +267,6 @@
 
 <hr>
 
-<!-- Homebrew v. tea Section -->
-
 <section>
   <div class="container">
     <div class="row one-box-down">
@@ -292,11 +290,74 @@
             <div class="traffic-light"></div>
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
-            <p class="teal small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <code id="terminal-output-2"></code>
           </div>
         </div>
       </div>
     </div>
+
+
+  <script>
+      const commands2 = [
+        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
+        { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
+<thead>
+    <tr>
+        <th>% Total</th>
+        <th>% Received</th>
+        <th>% Xferd</th>
+        <th>Average Speed</th>
+        <th>Time</th>
+        <th>Time</th>
+        <th>Time</th>
+        <th>Current</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>100</td>
+        <td>13306</td>
+        <td>100</td>
+        <td>54983</td>
+        <td>0</td>
+        <td>--:--:--</td>
+        <td>--:--:--</td>
+        <td>--:--:--</td>
+    </tr>
+    <tr>
+        <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
+    </tr>
+</tbody>
+</table>
+` },
+        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
+        { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
+      ];
+
+      let commandIndex2 = 0;
+      let command2 = commands2[commandIndex2];
+      let commandOutput2 = "";
+
+      function typeCommand2() {
+        if (commandIndex2 === commands2.length) {
+          return;
+        }
+        if (command2.input.length === 0) {
+          commandOutput2 += '\n' + command2.output + '\n';
+          document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
+          commandIndex2++;
+          command2 = commands2[commandIndex2];
+          setTimeout(typeCommand2, 1000);
+          return;
+        }
+        commandOutput2 += command2.input[0];
+        command2.input = command2.input.slice(1);
+        document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
+        setTimeout(typeCommand2, 100);
+      }
+
+      typeCommand2();
+  </script>
 
     <div class="divider">
       <hr>
@@ -325,11 +386,73 @@
             <div class="traffic-light"></div>
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
-            <p class="teal small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <code id="terminal-output-3"></code>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+      const commands3 = [
+        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
+        { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
+<thead>
+    <tr>
+        <th>% Total</th>
+        <th>% Received</th>
+        <th>% Xferd</th>
+        <th>Average Speed</th>
+        <th>Time</th>
+        <th>Time</th>
+        <th>Time</th>
+        <th>Current</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>100</td>
+        <td>13306</td>
+        <td>100</td>
+        <td>54983</td>
+        <td>0</td>
+        <td>--:--:--</td>
+        <td>--:--:--</td>
+        <td>--:--:--</td>
+    </tr>
+    <tr>
+        <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
+    </tr>
+</tbody>
+</table>
+` },
+        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
+        { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
+      ];
+
+      let commandIndex3 = 0;
+      let command3 = commands3[commandIndex3];
+      let commandOutput3 = "";
+
+      function typeCommand3() {
+        if (commandIndex3 === commands3.length) {
+          return;
+        }
+        if (command3.input.length === 0) {
+          commandOutput3 += '\n' + command3.output + '\n';
+          document.querySelector("#terminal-output-3").innerHTML = commandOutput3;
+          commandIndex3++;
+          command3 = commands3[commandIndex3];
+          setTimeout(typeCommand3, 1000);
+          return;
+        }
+        commandOutput3 += command3.input[0];
+        command3.input = command3.input.slice(1);
+        document.querySelector("#terminal-output-3").innerHTML = commandOutput3;
+        setTimeout(typeCommand3, 100);
+      }
+
+      typeCommand3();
+    </script>
 
     <div class="divider">
       <hr>
@@ -358,11 +481,73 @@
             <div class="traffic-light"></div>
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
-            <p class="teal small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <code id="terminal-output-4"></code>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+      const commands4 = [
+        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
+        { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
+<thead>
+    <tr>
+        <th>% Total</th>
+        <th>% Received</th>
+        <th>% Xferd</th>
+        <th>Average Speed</th>
+        <th>Time</th>
+        <th>Time</th>
+        <th>Time</th>
+        <th>Current</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>100</td>
+        <td>13306</td>
+        <td>100</td>
+        <td>54983</td>
+        <td>0</td>
+        <td>--:--:--</td>
+        <td>--:--:--</td>
+        <td>--:--:--</td>
+    </tr>
+    <tr>
+        <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
+    </tr>
+</tbody>
+</table>
+` },
+        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
+        { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
+      ];
+
+      let commandIndex4 = 0;
+      let command4 = commands4[commandIndex4];
+      let commandOutput4 = "";
+
+      function typeCommand4() {
+        if (commandIndex4 === commands4.length) {
+          return;
+        }
+        if (command4.input.length === 0) {
+          commandOutput4 += '\n' + command4.output + '\n';
+          document.querySelector("#terminal-output-4").innerHTML = commandOutput4;
+          commandIndex4++;
+          command4 = commands4[commandIndex4];
+          setTimeout(typeCommand4, 1000);
+          return;
+        }
+        commandOutput4 += command4.input[0];
+        command4.input = command4.input.slice(1);
+        document.querySelector("#terminal-output-4").innerHTML = commandOutput4;
+        setTimeout(typeCommand4, 100);
+      }
+
+      typeCommand4();
+    </script>
 
   </div>
 </section>
