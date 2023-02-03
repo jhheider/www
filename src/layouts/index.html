@@ -76,7 +76,8 @@
   @media only screen and (min-width: 768px) {
     .mobile-ctas,
     .mobile-lead,
-    .mobile-term-loc{
+    .mobile-term-loc,
+    .mobile-disclaimer{
       display:none;
     }
     .desktop-ctas,
@@ -95,19 +96,17 @@
           <p class="lead hero-lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
           <p class="lead mobile-lead mb-5">tea/cli... from the creator of <a href="https://brew.sh/" target="_blank">brew</a></p>
           <p class="mb-5 hero-description">Introducing tea, the cross-platform package manager of the future. Say goodbye to slow package managers. With tea, simply type commands and it takes care of the rest. Get the latest version easily and support specific tool versions for different projects. Encoding dependencies in the README makes it readable by humans and tea, providing easier access for users. Experience better package management with tea.</p>
-          <div class="mobile-term-loc mb-4">
-            {{- partial "hero-terminal-animation.html" -}}
-          </div>
-          <p class="light-gray"><strong>Dev tools are best domonstrated on desktop.</strong> But we get it... you're out and about (or in the loo), so drop us your email or follow us on Twitter so you can be reminded when you're back at your desk.</p>
 
-          {{- partial "main-ctas.html" -}}
+          {{- partial "desktop-ctas.html" -}}
 
           <p class="small dark-gray mb-5 boilerplate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-        <div class="desktop-term-loc">
+        <div class="terminal-animation mb-3">
           {{- partial "hero-terminal-animation.html" -}}
         </div>
+        <p class="mobile-disclaimer light-gray"><strong>Dev tools are best domonstrated on desktop.</strong> But we get it... you're out and about (or in the loo), so drop us your email or follow us on Twitter so you can be reminded when you're back at your desk.</p>
+        {{- partial "mobile-ctas.html" -}}
       </div>
     </div>
   </div>
