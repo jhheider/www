@@ -289,6 +289,12 @@
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
           </div>
+          <div class="flex p-2" style="border-bottom: 1px solid gray;">
+              <div class="flex pt-2 pb-2 ps-4 pe-2" style="width: 100%; border: 1px solid #949494; border-radius: 5px;">
+                <code id="copy-text" class="white">sh <(curl tea.xyz)</code>
+                <button class="hbtn hb-fill-right" id="start-btn">Run Demo</button>
+              </div>
+          </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
             <code id="terminal-output-2"></code>
           </div>
@@ -297,67 +303,67 @@
     </div>
 
 
-  <script>
-      const commands2 = [
-        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
-        { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
-<thead>
-    <tr>
-        <th>% Total</th>
-        <th>% Received</th>
-        <th>% Xferd</th>
-        <th>Average Speed</th>
-        <th>Time</th>
-        <th>Time</th>
-        <th>Time</th>
-        <th>Current</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>100</td>
-        <td>13306</td>
-        <td>100</td>
-        <td>54983</td>
-        <td>0</td>
-        <td>--:--:--</td>
-        <td>--:--:--</td>
-        <td>--:--:--</td>
-    </tr>
-    <tr>
-        <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
-    </tr>
-</tbody>
-</table>
-` },
-        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
-        { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
-      ];
+    <script>
+        const commands2 = [
+          { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
+          { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
+  <thead>
+      <tr>
+          <th>% Total</th>
+          <th>% Received</th>
+          <th>% Xferd</th>
+          <th>Average Speed</th>
+          <th>Time</th>
+          <th>Time</th>
+          <th>Time</th>
+          <th>Current</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>100</td>
+          <td>13306</td>
+          <td>100</td>
+          <td>54983</td>
+          <td>0</td>
+          <td>--:--:--</td>
+          <td>--:--:--</td>
+          <td>--:--:--</td>
+      </tr>
+      <tr>
+          <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
+      </tr>
+  </tbody>
+  </table>
+  ` },
+          { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
+          { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
+        ];
 
-      let commandIndex2 = 0;
-      let command2 = commands2[commandIndex2];
-      let commandOutput2 = "";
+        let commandIndex2 = 0;
+        let command2 = commands2[commandIndex2];
+        let commandOutput2 = "";
 
-      function typeCommand2() {
-        if (commandIndex2 === commands2.length) {
-          return;
-        }
-        if (command2.input.length === 0) {
-          commandOutput2 += '\n' + command2.output + '\n';
+        function typeCommand2() {
+          if (commandIndex2 === commands2.length) {
+            return;
+          }
+          if (command2.input.length === 0) {
+            commandOutput2 += '\n' + command2.output + '\n';
+            document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
+            commandIndex2++;
+            command2 = commands2[commandIndex2];
+            setTimeout(typeCommand2, 1000);
+            return;
+          }
+          commandOutput2 += command2.input[0];
+          command2.input = command2.input.slice(1);
           document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
-          commandIndex2++;
-          command2 = commands2[commandIndex2];
-          setTimeout(typeCommand2, 1000);
-          return;
+          setTimeout(typeCommand2, 100);
         }
-        commandOutput2 += command2.input[0];
-        command2.input = command2.input.slice(1);
-        document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
-        setTimeout(typeCommand2, 100);
-      }
 
-      typeCommand2();
-  </script>
+        document.querySelector("#start-btn").addEventListener("click", typeCommand2);
+    </script>
 
     <div class="divider">
       <hr>
