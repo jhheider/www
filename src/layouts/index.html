@@ -461,14 +461,16 @@ Created next project successfully
           </div>
         </div>
       <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 xol-12 pb-xl-0 pb-lg-0 pb-md-5 pb-sm-5 pb-5 mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5 order-xl-2 order-lg-2 order-md-1 order-sm-1 order-1">
-        <div class="feature-terminal">
+        <div class="feature-terminal" id="start-button" style="cursor:pointer;">
           <div class="terminal-bar black-bg flex-start p-1 ps-3">
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
-            <code id="terminal-output-3"></code>
+            <code id="terminal-output-3">
+              {{- partial "play-btn.html" -}}
+            </code>
           </div>
         </div>
       </div>
@@ -476,39 +478,26 @@ Created next project successfully
 
     <script>
       const commands3 = [
-        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
-        { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
-<thead>
-    <tr>
-        <th>% Total</th>
-        <th>% Received</th>
-        <th>% Xferd</th>
-        <th>Average Speed</th>
-        <th>Time</th>
-        <th>Time</th>
-        <th>Time</th>
-        <th>Current</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>100</td>
-        <td>13306</td>
-        <td>100</td>
-        <td>54983</td>
-        <td>0</td>
-        <td>--:--:--</td>
-        <td>--:--:--</td>
-        <td>--:--:--</td>
-    </tr>
-    <tr>
-        <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
-    </tr>
-</tbody>
-</table>
-` },
-        { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
-        { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
+        { input: "$ node --version<br>", output: `v19.3.0<br><br>` },
+        { input: "$ cat <<EOF >>my-project/README.md<br>", output: `# Dependencies<br>
+          <table>
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Version</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>nodejs.org</td>
+                <td>^18.4</td>
+              </tr>
+            </tbody>
+          </table>
+EOF
+    <br><br>` },
+        { input: "$ cd my-project<br>", output: `my-project<br><br>` },
+        { input: "$ node --version<br>", output: `v18.13.0` },
       ];
 
       let commandIndex3 = 0;
@@ -533,7 +522,7 @@ Created next project successfully
         setTimeout(typeCommand3, 100);
       }
 
-      typeCommand3();
+      document.querySelector("#start-button").addEventListener("click", typeCommand3);
     </script>
 
     <div class="divider">
@@ -556,14 +545,16 @@ Created next project successfully
           </div>
         </div>
       <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 xol-12 pb-xl-0 pb-lg-0 pb-md-5 pb-sm-5 pb-5 mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5">
-        <div class="feature-terminal">
+        <div class="feature-terminal" id="start-animation-4" style="cursor:pointer;">
           <div class="terminal-bar black-bg flex-start p-1 ps-3">
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
-            <code id="terminal-output-4"></code>
+            <code id="terminal-output-4">
+              {{- partial "play-btn.html" -}}
+            </code>
           </div>
         </div>
       </div>
@@ -573,35 +564,35 @@ Created next project successfully
       const commands4 = [
         { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
         { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
-<thead>
-    <tr>
-        <th>% Total</th>
-        <th>% Received</th>
-        <th>% Xferd</th>
-        <th>Average Speed</th>
-        <th>Time</th>
-        <th>Time</th>
-        <th>Time</th>
-        <th>Current</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>100</td>
-        <td>13306</td>
-        <td>100</td>
-        <td>54983</td>
-        <td>0</td>
-        <td>--:--:--</td>
-        <td>--:--:--</td>
-        <td>--:--:--</td>
-    </tr>
-    <tr>
-        <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
-    </tr>
-</tbody>
-</table>
-` },
+    <thead>
+        <tr>
+            <th>% Total</th>
+            <th>% Received</th>
+            <th>% Xferd</th>
+            <th>Average Speed</th>
+            <th>Time</th>
+            <th>Time</th>
+            <th>Time</th>
+            <th>Current</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>100</td>
+            <td>13306</td>
+            <td>100</td>
+            <td>54983</td>
+            <td>0</td>
+            <td>--:--:--</td>
+            <td>--:--:--</td>
+            <td>--:--:--</td>
+        </tr>
+        <tr>
+            <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
+        </tr>
+    </tbody>
+    </table>
+    ` },
         { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
         { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
       ];
@@ -628,7 +619,9 @@ Created next project successfully
         setTimeout(typeCommand4, 100);
       }
 
-      typeCommand4();
+      document.querySelector("#start-animation-4").addEventListener("click", function() {
+        typeCommand4();
+      });
     </script>
 
   </div>
