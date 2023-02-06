@@ -283,20 +283,16 @@
           </div>
         </div>
       <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 xol-12 pb-xl-0 pb-lg-0 pb-md-5 pb-sm-5 pb-5 mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5">
-        <div class="feature-terminal">
+        <div class="feature-terminal" id="start-btn" style="cursor:pointer;">
           <div class="terminal-bar black-bg flex-start p-1 ps-3">
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
           </div>
-          <div class="flex p-2" style="border-bottom: 1px solid gray;">
-              <div class="flex pt-2 pb-2 ps-4 pe-2" style="width: 100%; border: 1px solid #949494; border-radius: 5px;">
-                <code id="copy-text" class="white">sh <(curl tea.xyz)</code>
-                <button class="hbtn hb-fill-right" id="start-btn">Run Demo</button>
-              </div>
-          </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
-            <code id="terminal-output-2"></code>
+            <code id="terminal-output-2">
+              <span class="light-gray">Click to run demo...</span>
+            </code>
           </div>
         </div>
       </div>
@@ -305,37 +301,26 @@
 
     <script>
         const commands2 = [
-          { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `command not found: node<br><span class="dark-gray">#Node is not installed, thus command is not found :/ ...</span><br>` },
-          { input: "$ sh <(curl tea.xyz) --yes", output: `installing ~/.tea...<br><table class="teal">
-  <thead>
-      <tr>
-          <th>% Total</th>
-          <th>% Received</th>
-          <th>% Xferd</th>
-          <th>Average Speed</th>
-          <th>Time</th>
-          <th>Time</th>
-          <th>Time</th>
-          <th>Current</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>100</td>
-          <td>13306</td>
-          <td>100</td>
-          <td>54983</td>
-          <td>0</td>
-          <td>--:--:--</td>
-          <td>--:--:--</td>
-          <td>--:--:--</td>
-      </tr>
-      <tr>
-          <td colspan="8">k, we installed  <mark>/Users/userName/.tea/tea.xyz/v0.21.0/bin/tea</mark></td>
-      </tr>
-  </tbody>
-  </table>
-  ` },
+          { input: "$ tea bun create next ./app<br>", output: `<span class="dark-gray">[package.json] Detected React - added "react-refresh"<br>
+[package.json] Detected Next.js<br><br></span>` },
+          { input: "", output: `<span class="dark-gray">$ bun install</span><br>
+bun install v0.4.0 (a94bba63)
+  🔍 Resolving [1/11]
+[99.00ms] git
+ + @types/react@18.0.27
+ + bun-framework-next@12.2.5
+ + react-refresh@0.10.0
+ + typescript@4.9.5
+ + next@12.2.3
+ + react@18.2.0
+ + react-dom@18.2.0
+ + react-is@18.2.0
+
+ 25 packages installed [704.00ms]
+
+[724.00ms] bun install
+
+` },
           { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19<br><span class="dark-gray">#tea magically installs needed dependencies...</span>` },
           { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
         ];
