@@ -291,13 +291,12 @@
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
             <code id="terminal-output-2">
-              <span class="light-gray">Click to run demo...</span>
+              {{- partial "play-btn" -}}
             </code>
           </div>
         </div>
       </div>
     </div>
-
     <script>
         const commands2 = [
           { input: "$ tea bun create next ./app<br>", output: `<span class="dark-gray">[package.json] Detected React - added "react-refresh"<br>
