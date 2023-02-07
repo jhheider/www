@@ -1,22 +1,32 @@
 <!-- Mobile CTA's -->
-<div class="row mb-3 mt-5 mobile-ctas">
-  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+
+<div class="row mt-5 gx-3 mobile-ctas">
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+    <button class="hbtn hb-fill-right" id="email-btn" style="width:100%;">Subscribe</button>
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+    <button class="hbtn-light hb-light-fill-right mb-4" id="follow-button" style="width:100%; text-transform:uppercase;"><i class="icon-twitter" style="position:relative;top:2px;"></i>Follow Us</button>
+  </div>
+</div>
+
+<div class="mb-4 subscribe-collapse">
+  <div class="col">
     <form id="subscribeForm">
       <div class="mb-3">
         <input class="p-3 text-center" placeholder="Enter your email" type="email" id="email" required>
       </div>
-      <button class="hbtn hb-fill-right" style="width:100%;" id="email-btn" type="submit">Subscribe</button>
+      <button class="hbtn hb-fill-right" style="width:100%;" id="subscribe-submit-btn" type="submit">Subscribe</button>
     </form>
     <div id="formResponse"></div>
   </div>
-
-  <div class="or-divider flex">
-    <hr>
-    <p class="small grid-gray">or</p>
-    <hr>
-  </div>
+</div>
 
   <style>
+
+    .subscribe-collapse{
+      display:none;
+    }
+
     #email{
       width:100%;
       height: 60px;
@@ -32,46 +42,42 @@
     }
   </style>
 
-  <script>
-    const subscribeForm = document.getElementById('subscribeForm');
-    const formResponse = document.getElementById('formResponse');
+<script>
+  const subscribeForm = document.getElementById('subscribeForm');
+  const formResponse = document.getElementById('formResponse');
 
-    subscribeForm.addEventListener('submit', (event) => {
-      event.preventDefault();
+  subscribeForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-      const email = document.getElementById('email').value;
+    const email = document.getElementById('email').value;
 
-      if (!email) {
-        formResponse.innerHTML = '<p style="color: red">Please enter a valid email address.</p>';
-        return;
+    if (!email) {
+      formResponse.innerHTML = '<p style="color: red">Please enter a valid email address.</p>';
+      return;
+    }
+
+    fetch('https://manage.klaviyo.com/api/v1/list/R2UVm3/members', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        api_key: 'pk_231a258e61a40283566192ee59310c7af4'
+      })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to subscribe');
       }
-
-      fetch('https://manage.klaviyo.com/api/v1/list/R2UVm3/members', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email,
-          api_key: 'pk_231a258e61a40283566192ee59310c7af4'
-        })
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to subscribe');
-        }
-        formResponse.innerHTML = '<p style="color: green">Form submitted!</p>';
-      })
-      .catch(error => {
-        formResponse.innerHTML = '<p style="color: red">An error occurred. Please try again later.</p>';
-      });
+      formResponse.innerHTML = '<p style="color: green">Form submitted!</p>';
+    })
+    .catch(error => {
+      formResponse.innerHTML = '<p style="color: red">An error occurred. Please try again later.</p>';
     });
-  </script>
+  });
+</script>
 
-  <div class="col">
-    <button class="hbtn-light hb-light-fill-right mb-4" id="follow-button" style="width:100%; text-transform:uppercase;"><i class="icon-twitter" style="position:relative;top:2px;"></i>Follow Us on Twitter</button>
-  </div>
-</div>
 <!-- Deep-linking script for Twitter follow button -->
 <script>
   document.getElementById("follow-button").addEventListener("click", function() {
