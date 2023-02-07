@@ -42,51 +42,52 @@
     }
   </style>
 
-<script>
-  const subscribeForm = document.getElementById('subscribeForm');
-  const formResponse = document.getElementById('formResponse');
+  <script>
+    const emailBtn = document.getElementById("email-btn");
+    const subscribeCollapse = document.querySelector(".subscribe-collapse");
 
-  subscribeForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const email = document.getElementById('email').value;
-
-    if (!email) {
-      formResponse.innerHTML = '<p style="color: red">Please enter a valid email address.</p>';
-      return;
-    }
-
-    fetch('https://manage.klaviyo.com/api/v1/list/R2UVm3/members', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: email,
-        api_key: 'pk_231a258e61a40283566192ee59310c7af4'
-      })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to subscribe');
+    emailBtn.addEventListener("click", function() {
+      if (subscribeCollapse.style.display === "none") {
+        subscribeCollapse.style.display = "block";
+      } else {
+        subscribeCollapse.style.display = "none";
       }
-      formResponse.innerHTML = '<p style="color: green">Form submitted!</p>';
-    })
-    .catch(error => {
-      formResponse.innerHTML = '<p style="color: red">An error occurred. Please try again later.</p>';
     });
-  });
-</script>
 
-<!-- Deep-linking script for Twitter follow button -->
-<script>
-  document.getElementById("follow-button").addEventListener("click", function() {
-    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-      window.location.href = "twitter://user?screen_name=teaxyz";
-    } else if (navigator.userAgent.match(/Android/i)) {
-      window.location.href = "twitter://user?screen_name=teaxyz";
-    } else {
-      window.location.href = "https://twitter.com/teaxyz";
-    }
-  });
-</script>
+    const subscribeForm = document.getElementById("subscribeForm");
+    const formResponse = document.getElementById("formResponse");
+
+    subscribeForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+
+      if (!email) {
+        formResponse.innerHTML =
+          '<p style="color: red">Please enter a valid email address.</p>';
+        return;
+      }
+
+      fetch("https://manage.klaviyo.com/api/v1/list/R2UVm3/members", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: email,
+          api_key: "pk_231a258e61a40283566192ee59310c7af4"
+        })
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Failed to subscribe");
+          }
+          formResponse.innerHTML =
+            '<p style="color: green">Form submitted!</p>';
+        })
+        .catch(error => {
+          formResponse.innerHTML =
+            '<p style="color: red">An error occurred. Please try again later.</p>';
+        });
+    });
+  </script>
