@@ -152,6 +152,11 @@
       margin-right: 5px;
     }
 
+    #hero-terminal-content{
+      min-height: 0px !important;
+      max-height: none !important;
+    }
+
     .terminal{
       height: auto;
       min-height: 40%;
@@ -303,7 +308,9 @@
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
             <code id="terminal-output-2">
-              {{- partial "play-btn" -}}
+              <div style="margin-top: 15%;">
+                {{- partial "play-btn.html" -}}
+              </div>
             </code>
           </div>
         </div>
@@ -476,7 +483,9 @@ Created next project successfully
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
             <code id="terminal-output-3">
-              {{- partial "play-btn.html" -}}
+              <div style="margin-top: 15%;">
+                {{- partial "play-btn.html" -}}
+              </div>
             </code>
           </div>
         </div>
@@ -555,7 +564,9 @@ EOF
           </div>
           <div class="terminal-content p-xl-5 p-lg-5 p-md-5 p-sm-2 p-3">
             <code id="terminal-output-4">
-              {{- partial "play-btn.html" -}}
+              <div style="margin-top: 15%;">
+                {{- partial "play-btn.html" -}}
+              </div>
             </code>
           </div>
         </div>
@@ -620,19 +631,35 @@ EOF
     position: fixed;
     width: 100%;
   }
-  .feature-terminal{
-    width: 100%;
-    min-height: 400px;
-    border: 2px solid gray;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0px 10px 18px #121212;
-    animation: float 3s ease-in-out infinite;
+  @media only screen and (max-width: 768px) {
+    .feature-terminal{
+      width: 100%;
+      min-height: 250px;
+      border: 2px solid gray;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0px 10px 18px #121212;
+      animation: float 3s ease-in-out infinite;
+    }
+    .terminal-content{
+      height: 250px;
+    }
   }
-  .terminal-content{
-    overflow-y: auto;
-    min-height:400px;
-    max-height: 400px;
+  @media only screen and (min-width: 768px) {
+    .terminal-content{
+      overflow-y: auto;
+      min-height:400px;
+      max-height: 400px;
+    }
+    .feature-terminal{
+      width: 100%;
+      min-height: 400px;
+      border: 2px solid gray;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0px 10px 18px #121212;
+      animation: float 3s ease-in-out infinite;
+    }
   }
   .speed-terminal{
     width: 100%;
@@ -730,9 +757,9 @@ EOF
             width: 1px;
             height: 35px;
             background-color: #949494;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
           }
 
           .circle-gray{
@@ -744,8 +771,6 @@ EOF
             margin-left: auto;
             margin-right: auto;
           }
-
-
 
         </style>
 
