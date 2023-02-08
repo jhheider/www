@@ -91,3 +91,16 @@
         });
     });
   </script>
+
+  <!-- Deep-linking script for Twitter follow button -->
+<script>
+  document.getElementById("follow-button").addEventListener("click", function() {
+    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+      window.location.href = "twitter://user?screen_name=teaxyz";
+    } else if (navigator.userAgent.match(/Android/i)) {
+      window.location.href = "twitter://user?screen_name=teaxyz";
+    } else {
+      window.location.href = "https://twitter.com/teaxyz";
+    }
+  });
+</script>
