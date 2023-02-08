@@ -72,6 +72,14 @@
     .mobile-lead{
       text-align:center;
     }
+    .mbtn{
+      height:50px;
+    }
+    .hero-col{
+      padding-top: 16vw;
+      padding-bottom: 16vw;
+    }
+
   }
 
   @media only screen and (min-width: 768px) {
@@ -86,6 +94,12 @@
     .desktop-term-loc{
       visibility: visible;
     }
+    .bottom-cta{
+      display: block;
+      width:50%;
+      margin-left:auto;
+      margin-right:auto;
+    }
   }
 
 </style>
@@ -93,7 +107,7 @@
 <section class="hero">
   <div class="container">
     <div class="row gx-5">
-      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-auto">
+      <div class="hero-col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-auto">
         <h1 class="display-1 hero-text" style="z-index:3; position: relative;"><span class="inner-glow ">Invisible</span> yet <span class="callout white">powerful</span></h1>
           <p class="lead hero-lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
           <p class="lead mobile-lead mb-5">tea/cli... from the creator of <a href="https://brew.sh/" target="_blank">brew</a></p>
@@ -111,7 +125,6 @@
         <div class="terminal-animation mb-3">
           {{- partial "hero-terminal-animation.html" -}}
         </div>
-        <p class="mobile-disclaimer light-gray"><strong>Dev tools are best domonstrated on desktop.</strong> But we get it... you're out and about (or in the loo), so drop us your email or follow us on Twitter so you can be reminded when you're back at your desk.</p>
       </div>
     </div>
   </div>
@@ -266,9 +279,10 @@
 
 -->
 
-<hr>
-
 <section>
+  <div class="section-divider">
+    <img src="/Images/pixel-section-divider-teal.svg" style="pointer-events:none;" alt="">
+  </div>
   <div class="container">
     <div class="row one-box-down">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
@@ -615,7 +629,6 @@ EOF
   }
   .terminal-content{
     overflow-y: auto;
-    height: 400px;
   }
   .speed-terminal{
     width: 100%;
@@ -906,7 +919,8 @@ EOF
     <div class="row two-boxes">
       <div class="col">
         <h2 class="display-3 text-center">Ready to start building?<br>All you need is tea.</h2>
-        <p class="lead text-center">Introducing tea’s +pkg syntax, the ultimate tool for streamlined open source access, allowing you to access the entire ecosystem with one command, compose and combine everything, and even more.</p>
+        <p class="lead text-center mb-5">Introducing tea’s +pkg syntax, the ultimate tool for streamlined open source access, allowing you to access the entire ecosystem with one command, compose and combine everything, and even more.</p>
+        <div class="bottom-cta">{{- partial "desktop-ctas.html" -}}</div>
       </div>
     </div>
   </div>
