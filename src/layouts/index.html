@@ -3,6 +3,26 @@
 <!-- Hero Section -->
 
 <style>
+
+  .comment{
+    background-color: #ff4100;
+    border-radius: 5px;
+  }
+
+  .comment-success{
+    background-color: #00ffd0;
+    border-radius: 5px;
+  }
+
+  .comment-process{
+    background-color: #ffff00;
+    border-radius: 5px;
+  }
+
+  .comment-success code{
+    color: #1a1a1a;
+  }
+
   .hero{
     background-image: url("/Images/hero-background-mountains.png") !important;
     background-attachment: scroll;
@@ -112,7 +132,7 @@
       <div class="hero-col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 my-auto">
         <h1 class="display-1 hero-text" style="z-index:3; position: relative;"><span class="inner-glow ">Invisible</span> yet <span class="callout white">powerful</span></h1>
           <p class="lead hero-lead">Upgrade to Tea - the revolutionary, cross-platform package manager. Say goodbye to slow & clunky, and say hello to fast & smooth updates. From the creator of Brew.</p>
-          <p class="lead mobile-lead mb-5">tea/cli... from the creator of <a href="https://brew.sh/" target="_blank">brew</a></p>
+          <p class="lead mobile-lead mb-5">tea... from the creator of <a href="https://brew.sh/" target="_blank">brew</a></p>
           <p class="mb-5 hero-description">Introducing tea, the cross-platform package manager of the future. Say goodbye to slow package managers. With tea, simply type commands and it takes care of the rest. Get the latest version easily and support specific tool versions for different projects. Encoding dependencies in the README makes it readable by humans and tea, providing easier access for users. Experience better package management with tea.</p>
 
           <div class="mobile-ctas">
@@ -150,11 +170,6 @@
       border-radius: 100px;
       display: inline-block;
       margin-right: 5px;
-    }
-
-    #hero-terminal-content{
-      min-height: 0px !important;
-      max-height: none !important;
     }
 
     .terminal{
@@ -198,13 +213,16 @@
     #terminal-output {
       white-space: pre;
       display: inline-block;
+      width: 100%;
     }
     #terminal-input {
       position: relative;
       display: inline-block;
+      witdth: 100%;
     }
     .terminal-content{
       overflow: hidden;
+      width: 100%;
     }
 
 </style>
