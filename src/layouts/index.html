@@ -102,6 +102,9 @@
     .email{
       height: 50px !important;
     }
+    .install-label{
+      text-align: center;
+    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -124,6 +127,12 @@
     }
   }
 
+  .pointer{
+    display: inline-block;
+    position: relative;
+    animation: float 1s ease-in-out infinite;
+  }
+
 </style>
 
 <section class="hero">
@@ -144,6 +153,9 @@
           <p class="small dark-gray mb-5 boilerplate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+        <div>
+          <p class="install-label"><span class="pointer">👇</span> Install tea by running our one-liner</p>
+        </div>
         <div class="terminal-animation mb-3">
           {{- partial "hero-terminal-animation.html" -}}
         </div>
@@ -531,7 +543,7 @@ Created next project successfully
               </tr>
             </tbody>
           </table>
-EOF
+    EOF
     <br><br>` },
         { input: "$ cd my-project<br>", output: `my-project<br><br>` },
         { input: "$ node --version<br>", output: `v18.13.0` },
@@ -559,7 +571,14 @@ EOF
         setTimeout(typeCommand3, 100);
       }
 
-      document.querySelector("#start-button").addEventListener("click", typeCommand3);
+      const terminalOutput = document.querySelector("#terminal-output-3");
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          typeCommand3();
+          observer.unobserve(terminalOutput);
+        }
+      });
+      observer.observe(terminalOutput);
     </script>
 
     <div class="divider">
