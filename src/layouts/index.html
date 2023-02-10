@@ -247,26 +247,26 @@
     <div class="row">
       <div class="col">
           <div>
-            <h2 class="black display-4 text-xl-center text-lg-center text-md-left text-sm-left text-left" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING INFRASTRUCTURE.</h2>
+            <h2 class="black display-5 text-xl-center text-lg-center text-md-left text-sm-left text-left" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS A UNIFIED PACKAGING INFRASTRUCTURE.</h2>
           </div>
       </div>
     </div>
     <div class="row one-box-up">
       <div class="col">
         <p class="text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span class="too-much">NO. OF </span>REPOS</p>
-        <h1 class="display-1 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span id="stat-one">56,987</span></h1>
+        <h1 class="display-2 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span id="stat-one">56,987</span></h1>
       </div>
       <div class="col">
         <p class="text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span class="too-much">NO. OF </span>MAINTAINERS</p>
-        <h1 class="display-1 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span id="stat-two">56,987</span></h1>
+        <h1 class="display-2 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span id="stat-two">56,987</span></h1>
       </div>
       <div class="col">
         <p class="text-xl-center text-lg-center text-md-left text-sm-left text-left black">STAR COUNT</p>
-        <a href="https://github.com/teaxyz/cli/stargazers" target="_blank"><h1 class="display-1 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span class="stargazers">56,987</span></h1></a>
+        <a href="https://github.com/teaxyz/cli/stargazers" target="_blank"><h1 class="display-2 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span class="stargazers">56,987</span></h1></a>
       </div>
       <div class="col">
         <p class="text-xl-center text-lg-center text-md-left text-sm-left text-left black">CURRENT RELEASE</p>
-        <a href="https://github.com/teaxyz/cli/releases" target="_blank"><h1 class="display-1 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span class="release" style="text-transform:lowercase;">56,987</span></h1></a>
+        <a href="https://github.com/teaxyz/cli/releases" target="_blank"><h1 class="display-2 text-xl-center text-lg-center text-md-left text-sm-left text-left black"><span class="release" style="text-transform:lowercase;">56,987</span></h1></a>
       </div>
     </div>
   </div>
@@ -643,7 +643,9 @@ Created next project successfully
   </div>
 </section>
 
+<!--
 <hr>
+-->
 
 <style>
 
@@ -718,7 +720,7 @@ Created next project successfully
         <div class="gs-parent">
           <div class="gs-content">
             <h2 class="display-5">Getting started with tea!</h2>
-            <p class="lead mb-5">Tea is a cross-platform binary that can be easily installed using a curl command or by using the one-liner installer. The installer sets up tea and its shell magic without requiring "sudo" or Xcode Command Line Tools, and is compatible with Linux, macOS, and WSL. Package managers such as brew or Docker can also be used for installation, or you can use GitHub Actions to install tea as part of your workflow.</p>
+            <p class="mb-5">Tea is a cross-platform binary that can be easily installed using a curl command or by using the one-liner installer. The installer sets up tea and its shell magic without requiring "sudo" or Xcode Command Line Tools, and is compatible with Linux, macOS, and WSL. Package managers such as brew or Docker can also be used for installation, or you can use GitHub Actions to install tea as part of your workflow.</p>
             <a href="https://github.com/teaxyz/cli#getting-started" target="_blank">
               <button class="hbtn hb-fill-right" id="hb-btn" style="text-transform:uppercase;"><i class="btn-icon icon-github"></i>VIEW README<span style="text-transform:lowercase;">.md</span></button>
             </a>
@@ -734,8 +736,7 @@ Created next project successfully
 
       </div>
       <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ps-xl-5 ps-lg-5 ps-md-0 ps-sm-3 ps-3">
-        <div class="">
-          <!-- terminal description -->
+        <!-- terminal description -->
           <p class="mb-4 lead light-gray">If you want tea’s shell magic, use the installer:</p>
           <!-- Terminal sample -->
           <div class="terminal flex term-getting-started term-lead">
@@ -750,14 +751,10 @@ Created next project successfully
                 </div>
             </div>
           </div>
-        </div>
-
-        <div class="vertical-rule"></div>
-        <div class="circle mb-3"></div>
-
 
         <style>
-
+          .term-getting-started{
+          }
           .vertical-rule {
             width: 2px;
             height: 75px;
@@ -766,7 +763,6 @@ Created next project successfully
             margin-left: auto;
             margin-right: auto;
           }
-
           .circle{
             width:12px;
             border: 2px solid #00ffd0;
@@ -776,16 +772,14 @@ Created next project successfully
             margin-left: auto;
             margin-right: auto;
           }
-
           .vertical-rule-gray {
             width: 1px;
             height: 35px;
             background-color: #949494;
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
           }
-
           .circle-gray{
             width:12px;
             border: 1px solid #949494;
@@ -795,9 +789,12 @@ Created next project successfully
             margin-left: auto;
             margin-right: auto;
           }
-
         </style>
 
+      </div>
+    </div>
+    <div class="row one-box">
+      <div class="col">
         <div>
           <!-- terminal description -->
           <p class="mb-4 light-gray">This will confirm before setting up ~/.tea and adding to your ~/.shellrc. Our one-liner even abstracts installing tea itself:</p>
@@ -815,10 +812,8 @@ Created next project successfully
             </div>
           </div>
         </div>
-
-        <div class="vertical-rule-gray"></div>
-        <div class="circle-gray mb-3"></div>
-
+      </div>
+      <div class="col">
         <div>
           <!-- terminal description -->
           <p class="mb-4 light-gray">This way, you don't need to start with "how to install tea" in your tutorials and blog posts. The installer also updates tea. If you hate installers, use brew:</p>
@@ -836,30 +831,6 @@ Created next project successfully
             </div>
           </div>
         </div>
-
-        <div class="vertical-rule-gray"></div>
-        <div class="circle-gray mb-3"></div>
-
-        <div class="mb-3">
-          <!-- terminal description -->
-          <p class="mb-4 light-gray">You can also install tea through GitHub Actions:</p>
-          <!-- Terminal sample -->
-          <div class="terminal flex term-getting-started">
-            <div class="terminal-bar black-bg flex-start p-1 ps-3">
-              <div class="traffic-light"></div>
-              <div class="traffic-light"></div>
-              <div class="traffic-light"></div>
-            </div>
-              <div class="p-5">
-                <div class="terminal-content-gs">
-                  <p>- uses: teaxyz/setup@v0</p>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="light-gray">tea is supported on macOS >= 11, Linux (glibc >= 23), and WSL, with Windows native support coming soon.</p>
-
       </div>
     </div>
   </div>
