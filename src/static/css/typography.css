@@ -78,12 +78,12 @@ li{
 }
 
 a{
-  color: #00ffd0;
+  color: #fff !important;
   text-decoration: none;
 }
 
 a:hover{
-  color: #00ffd0;
+  color: #fff !important;
   text-decoration: none !important;
 }
 
