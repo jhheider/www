@@ -242,7 +242,7 @@
 <div class="section-divider teal-bg">
   <img src="/Images/pixel-section-divider.svg" style="pointer-events:none;" alt="">
 </div>
-<section class="teal-bg impact-section one-box">
+<section class="teal-bg impact-section two-boxes">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -319,12 +319,17 @@
   <div class="section-divider">
     <img src="/Images/pixel-section-divider-teal.svg" style="pointer-events:none;" alt="">
   </div>
-  <div class="container one-box-up">
+  <div class="container two-boxes-up">
+    <div class="row two-boxes-down">
+      <div class="col">
+        <h2 class="display-4 text-center">features</h2>
+      </div>
+    </div>
     <div class="row one-box-down">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
-            <h2 class="display-4">tea magic</h2>
-            <p class="lead">Easily access the entire open source ecosystem with tea. Simply prefix your commands with "tea" and if the tool isn't installed, tea will install it for you. Add magic to your shell scripts and use developer environments to enhance your workflow.</p>
+            <h2 class="display-5">tea magic</h2>
+            <p>Easily access the entire open source ecosystem with tea. Simply prefix your commands with "tea" and if the tool isn't installed, tea will install it for you. Add magic to your shell scripts and use developer environments to enhance your workflow.</p>
           </div>
         </div>
       <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 xol-12 pb-xl-0 pb-lg-0 pb-md-5 pb-sm-5 pb-5 mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5">
@@ -345,10 +350,10 @@
       </div>
     </div>
     <script>
-        const commands2 = [
-          { input: "$ tea bun create next ./app<br>", output: `<span class="dark-gray">[package.json] Detected React - added "react-refresh"<br>
+  const commands2 = [
+    { input: "$ tea bun create next ./app<br>", output: `<span class="dark-gray">[package.json] Detected React - added "react-refresh"<br>
 [package.json] Detected Next.js<br><br></span>` },
-          { input: "", output: `<span class="dark-gray">$ bun install</span><br>
+    { input: "", output: `<span class="dark-gray">$ bun install</span><br>
 bun install v0.4.0 (a94bba63)<br>
   🔍 Resolving [1/11]<br>
 [99.00ms] git<br>
@@ -366,135 +371,48 @@ bun install v0.4.0 (a94bba63)<br>
 [724.00ms] bun install<br><br>
 
 ` },
-          { input: "", output: `<span class="dark-gray">$ bun bun --use next</span><br><br>` },
-          { input: "", output: `bun-framework-next v12.2.5<br><br>
-          <span class="ms-3">10.50 KB   bun-framework-next/client.development.tsx [0]</span><br>
-          <span class="ms-3">2.97 KB   bun-framework-next/fallback.development.tsx [1]</span><br>
-          <span class="ms-3">3.34 KB   bun-framework-next/page-loader.ts [2]<br></span><br>` },
-          { input: "", output: `next v12.2.3<br><br>
-          0.16 KB   next/app.js [3]<br>
-1.04 KB   next/dist/client/add-base-path.js [4]<br>
-0.77 KB   next/dist/client/add-locale.js [5]<br>
-0.75 KB   next/dist/client/detect-domain-locale.js [6]<br>
-0.80 KB   next/dist/client/has-base-path.js [7]<br>
-4.85 KB   next/dist/client/head-manager.js [8]<br>
-1.12 KB   next/dist/client/normalize-trailing-slash.js [9]<br>
-4.50 KB   next/dist/client/page-loader.js [10]<br>
-1.01 KB   next/dist/client/remove-base-path.js [11]<br>
-0.74 KB   next/dist/client/remove-locale.js [12]<br>
-1.35 KB   next/dist/client/request-idle-callback.js [13]<br>
-8.49 KB   next/dist/client/route-loader.js [14]<br>
-4.78 KB   next/dist/client/router.js [15]<br>
-6.95 KB   next/dist/client/script.js [16]<br>
-1.22 KB   next/dist/client/trusted-types.js [17]<br>
-1.44 KB   next/dist/client/with-router.js [18]<br>
-12.15 KB   next/dist/compiled/path-to-regexp/index.js [19]<br>
-7.62 KB   next/dist/compiled/react-is/cjs/react-is.development.js [20]<br>
-0.24 KB   next/dist/compiled/react-is/index.js [21]<br>
-0.98 KB   next/dist/lib/is-error.js [22]<br>
-2.43 KB   next/dist/pages/_app.js [23]<br>
-0.65 KB   next/dist/shared/lib/amp-context.js [24]<br>
-0.42 KB   next/dist/shared/lib/amp-mode.js [25]<br>
-0.56 KB   next/dist/shared/lib/escape-regexp.js [26]<br>
-0.69 KB   next/dist/shared/lib/head-manager-context.js [27]<br>
-6.72 KB   next/dist/shared/lib/head.js [28]<br>
-0.87 KB   next/dist/shared/lib/i18n/normalize-locale-path.js [29]<br>
-0.71 KB   next/dist/shared/lib/is-plain-object.js [30]<br>
-0.71 KB   next/dist/shared/lib/mitt.js [31]<br>
-0.71 KB   next/dist/shared/lib/page-path/denormalize-page-path.js [32]<br>
-0.44 KB   next/dist/shared/lib/page-path/normalize-path-sep.js [33]<br>
-0.65 KB   next/dist/shared/lib/router-context.js [34]<br>
-51.00 KB   next/dist/shared/lib/router/router.js [35]<br>
-0.81 KB   next/dist/shared/lib/router/utils/add-locale.js [36]<br>
-0.63 KB   next/dist/shared/lib/router/utils/add-path-prefix.js [37]<br>
-12.70 KB   next/dist/shared/lib/router/utils/add-path-suffix.js [38]<br>
-1.27 KB   next/dist/shared/lib/router/utils/format-next-pathname-info.js [39]<br>
-3.58 KB   next/dist/shared/lib/router/utils/format-url.js [40]<br>
-0.57 KB   next/dist/shared/lib/router/utils/get-asset-path-from-route.js [41]<br>
-1.77 KB   next/dist/shared/lib/router/utils/get-next-pathname-info.js [42]<br>
-0.70 KB   next/dist/shared/lib/router/utils/index.js [43]<br>
-0.46 KB   next/dist/shared/lib/router/utils/is-dynamic.js [44]<br>
-0.91 KB   next/dist/shared/lib/router/utils/parse-path.js [45]<br>
-1.20 KB   next/dist/shared/lib/router/utils/parse-relative-url.js [46]<br>
-0.93 KB   next/dist/shared/lib/router/utils/parse-url.js [47]<br>
-0.63 KB   next/dist/shared/lib/router/utils/path-has-prefix.js [48]<br>
-1.62 KB   next/dist/shared/lib/router/utils/path-match.js [49]<br>
-6.75 KB   next/dist/shared/lib/router/utils/prepare-destination.js [50]<br>
-1.71 KB   next/dist/shared/lib/router/utils/querystring.js [51]<br>
-0.69 KB   next/dist/shared/lib/router/utils/remove-path-prefix.js [52]<br>
-0.47 KB   next/dist/shared/lib/router/utils/remove-trailing-slash.js [53]<br>
-3.85 KB   next/dist/shared/lib/router/utils/resolve-rewrites.js [54]<br>
-1.15 KB   next/dist/shared/lib/router/utils/route-matcher.js [55]<br>
-5.32 KB   next/dist/shared/lib/router/utils/route-regex.js [56]<br>
-5.42 KB   next/dist/shared/lib/router/utils/sorted-routes.js [57]<br>
-0.52 KB   next/dist/shared/lib/runtime-config.js [58]<br>
-3.21 KB   next/dist/shared/lib/side-effect.js [59]<br>
-5.53 KB   next/dist/shared/lib/utils.js [60]<br>
-0.16 KB   next/head.js [61]<br><br></span>` },
-{ input: "", output: `react v18.2.0<br><br>
-<span class="ms-3"> 30.58 KB   react/cjs/react-jsx-dev-runtime.development.js [62]</span><br>
-<span class="ms-3">64.50 KB   react/cjs/react.development.js [63]</span><br>
-<span class="ms-3">0.17 KB   react/index.js [64]</span><br>
-<span class="ms-3">0.20 KB   react/jsx-dev-runtime.js [65]<br></span><br>` },
-{ input: "", output: `  1.13 MB JavaScript
-       73 modules
-        6 packages
- 41492 LOC parsed x2
-    119ms elapsed
- Saved to ./node_modules.bun, ./node_modules.server.bun
+  ];
 
-[2.41s] bun create next
+  let commandIndex2 = 0;
+  let command2 = commands2[commandIndex2];
+  let commandOutput2 = "";
 
-Come hang out in bun's Discord: https://bun.sh/discord
+  function typeCommand2() {
+    if (commandIndex2 === commands2.length) {
+      return;
+    }
+    if (command2.input.length === 0) {
+      commandOutput2 += '\n' + command2.output + '\n';
+      document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
+      commandIndex2++;
+      command2 = commands2[commandIndex2];
+      setTimeout(typeCommand2, 1000);
+      return;
+    }
+    commandOutput2 += command2.input[0];
+    command2.input = command2.input.slice(1);
+    document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
+    setTimeout(typeCommand2, 100);
+  }
 
------
+  const observer2 = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      typeCommand2();
+      observer2.disconnect();
+    }
+  });
+  const target2 = document.querySelector("#terminal-output-2");
+  observer2.observe(target2);
+</script>
 
-A local git repository was created for you and dependencies were installed automatically.
-
-Created next project successfully
-
-# When dependencies change, run this to update node_modules.bun:
-
-  bun bun --use next
-
-# To get started, run:
-
-  cd app
-  bun dev` },
-              ];
-
-        let commandIndex2 = 0;
-        let command2 = commands2[commandIndex2];
-        let commandOutput2 = "";
-
-        function typeCommand2() {
-          if (commandIndex2 === commands2.length) {
-            return;
-          }
-          if (command2.input.length === 0) {
-            commandOutput2 += '\n' + command2.output + '\n';
-            document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
-            commandIndex2++;
-            command2 = commands2[commandIndex2];
-            setTimeout(typeCommand2, 1000);
-            return;
-          }
-          commandOutput2 += command2.input[0];
-          command2.input = command2.input.slice(1);
-          document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
-          setTimeout(typeCommand2, 100);
-        }
-
-        document.querySelector("#start-btn").addEventListener("click", typeCommand2);
-    </script>
 
     <!-- Second -->
 
     <div class="row one-box">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2 flex">
           <div class="feature-content pe-xl-5 pe-lg-3 pe-md-0 pe-sm-0 pe-0">
-            <h2 class="display-4">Developer Environments</h2>
-            <p class="lead">Simplify your development environment setup with tea by automatically fetching the specific versions of tools your project needs. With a range of specifications, tea provides a seamless solution to manage project dependencies. Debug changes, supplement your environment, and see the full environment with ease.</p>
+            <h2 class="display-5">Developer Environments</h2>
+            <p>Simplify your development environment setup with tea by automatically fetching the specific versions of tools your project needs. With a range of specifications, tea provides a seamless solution to manage project dependencies. Debug changes, supplement your environment, and see the full environment with ease.</p>
           </div>
         </div>
       <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 xol-12 pb-xl-0 pb-lg-0 pb-md-5 pb-sm-5 pb-5 mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5 order-xl-2 order-lg-2 order-md-1 order-sm-1 order-1">
@@ -576,8 +494,8 @@ Created next project successfully
     <div class="row one-box">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
-            <h2 class="display-4">tea scripts</h2>
-            <p class="lead">This is next-generation, cross-platform package management. With tea, you no longer have to install packages—just type the commands you need and tea does the rest. Enjoy seamless and flexible version control, with the full https://semver.org spec supported.</p>
+            <h2 class="display-5">tea scripts</h2>
+            <p>This is next-generation, cross-platform package management. With tea, you no longer have to install packages—just type the commands you need and tea does the rest. Enjoy seamless and flexible version control, with the full https://semver.org spec supported.</p>
           </div>
         </div>
       <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 xol-12 pb-xl-0 pb-lg-0 pb-md-5 pb-sm-5 pb-5 mt-xl-0 mt-lg-0 mt-md-5 mt-sm-5 mt-5">
@@ -599,49 +517,52 @@ Created next project successfully
     </div>
 
     <script>
-      const commands4 = [
-        { input: "tea https://github.com/teaxyz/demos/blob/main/hello-universe.sh<br><br>", output: `*** Interpreters ***<br><br>`},
-        { input: "", output: `TypeScript: Hello, World!<br>`},
-        { input: "", output: `Go: Hello, World!<br>`},
-        { input: "", output: `JavaScript: Hello, World!<br>`},
-        { input: "", output: `Perl: Hello, World!<br>`},
-        { input: "", output: `Python: Hello, World!<br>`},
-        { input: "", output: `Ruby: Hello World!<br>`},
-        { input: "", output: `Lua: Hello, World!<br><br>`},
-        { input: "", output: `*** Compilers ***<br><br>`},
-        { input: "", output: `C: Hello, World!<br>`},
-        { input: "", output: `Rust: Hello, World!<br>`},
-      ];
+  const commands4 = [
+    { input: "tea https://github.com/teaxyz/demos/blob/main/hello-universe.sh<br><br>", output: `*** Interpreters ***<br><br>`},
+    { input: "", output: `TypeScript: Hello, World!<br>`},
+    { input: "", output: `Go: Hello, World!<br>`},
+    { input: "", output: `JavaScript: Hello, World!<br>`},
+    { input: "", output: `Perl: Hello, World!<br>`},
+    { input: "", output: `Python: Hello, World!<br>`},
+    { input: "", output: `Ruby: Hello World!<br>`},
+    { input: "", output: `Lua: Hello, World!<br><br>`},
+    { input: "", output: `*** Compilers ***<br><br>`},
+    { input: "", output: `C: Hello, World!<br>`},
+    { input: "", output: `Rust: Hello, World!<br>`},
+  ];
 
-      let commandIndex4 = 0;
-      let command4 = commands4[commandIndex4];
-      let commandOutput4 = "";
+  let commandIndex4 = 0;
+  let command4 = commands4[commandIndex4];
+  let commandOutput4 = "";
 
-      function typeCommand4() {
-        if (commandIndex4 === commands4.length) {
-          return;
-        }
-        if (command4.input.length === 0) {
-          commandOutput4 += '\n' + command4.output + '\n';
-          document.querySelector("#terminal-output-4").innerHTML = commandOutput4;
-          commandIndex4++;
-          command4 = commands4[commandIndex4];
-          setTimeout(typeCommand4, 1000);
-          return;
-        }
-        commandOutput4 += command4.input[0];
-        command4.input = command4.input.slice(1);
-        document.querySelector("#terminal-output-4").innerHTML = commandOutput4;
-        setTimeout(typeCommand4, 100);
-      }
+  function typeCommand4() {
+    if (commandIndex4 === commands4.length) {
+      return;
+    }
+    if (command4.input.length === 0) {
+      commandOutput4 += '\n' + command4.output + '\n';
+      document.querySelector("#terminal-output-4").innerHTML = commandOutput4;
+      commandIndex4++;
+      command4 = commands4[commandIndex4];
+      setTimeout(typeCommand4, 1000);
+      return;
+    }
+    commandOutput4 += command4.input[0];
+    command4.input = command4.input.slice(1);
+    document.querySelector("#terminal-output-4").innerHTML = commandOutput4;
+    setTimeout(typeCommand4, 100);
+  }
 
-      document.querySelector("#start-animation-4").addEventListener("click", function() {
-        typeCommand4();
-      });
-    </script>
+  const terminalOutput4 = document.querySelector("#terminal-output-4");
+  const observer4 = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      typeCommand4();
+      observer4.disconnect();
+    }
+  });
+  observer4.observe(terminalOutput4);
+</script>
 
-  </div>
-</section>
 
 <!--
 <hr>
@@ -715,7 +636,7 @@ Created next project successfully
 
 <section class="gs-section">
   <div class="container">
-    <div class="row one-box">
+    <div class="row one-box-up">
       <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 mb-5">
         <div class="gs-parent">
           <div class="gs-content">
@@ -793,7 +714,7 @@ Created next project successfully
 
       </div>
     </div>
-    <div class="row one-box">
+    <div class="row two-boxes-down">
       <div class="col">
         <div>
           <!-- terminal description -->
