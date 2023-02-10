@@ -1,0 +1,55 @@
+<script>
+  const commands3 = [
+    { input: "$ node --version<br>", output: `v19.3.0<br><br>` },
+    { input: "$ cat <<EOF >>my-project/README.md<br>", output: `# Dependencies<br>
+      <table>
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Version</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>nodejs.org</td>
+            <td>^18.4</td>
+          </tr>
+        </tbody>
+      </table>
+EOF
+<br><br>` },
+    { input: "$ cd my-project<br>", output: `my-project<br><br>` },
+    { input: "$ node --version<br>", output: `v18.13.0` },
+  ];
+
+  let commandIndex3 = 0;
+  let command3 = commands3[commandIndex3];
+  let commandOutput3 = "";
+
+  function typeCommand3() {
+    if (commandIndex3 === commands3.length) {
+      return;
+    }
+    if (command3.input.length === 0) {
+      commandOutput3 += '\n' + command3.output + '\n';
+      document.querySelector("#terminal-output-3").innerHTML = commandOutput3;
+      commandIndex3++;
+      command3 = commands3[commandIndex3];
+      setTimeout(typeCommand3, 1000);
+      return;
+    }
+    commandOutput3 += command3.input[0];
+    command3.input = command3.input.slice(1);
+    document.querySelector("#terminal-output-3").innerHTML = commandOutput3;
+    setTimeout(typeCommand3, 100);
+  }
+
+  const terminalOutput = document.querySelector("#terminal-output-3");
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      typeCommand3();
+      observer.unobserve(terminalOutput);
+    }
+  });
+  observer.observe(terminalOutput);
+</script>

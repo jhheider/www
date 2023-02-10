@@ -1,0 +1,55 @@
+<script>
+const commands2 = [
+{ input: "$ tea bun create next ./app<br>", output: `<span class="dark-gray">[package.json] Detected React - added "react-refresh"<br>
+[package.json] Detected Next.js<br><br></span>` },
+{ input: "", output: `<span class="dark-gray">$ bun install</span><br>
+bun install v0.4.0 (a94bba63)<br>
+🔍 Resolving [1/11]<br>
+[99.00ms] git<br>
+<span style="color:green">+</span> @types/react@18.0.27<br>
+<span style="color:green">+</span> bun-framework-next@12.2.5<br>
+<span style="color:green">+</span> react-refresh@0.10.0<br>
+<span style="color:green">+</span> typescript@4.9.5<br>
+<span style="color:green">+</span> next@12.2.3<br>
+<span style="color:green">+</span> react@18.2.0<br>
+<span style="color:green">+</span> react-dom@18.2.0<br>
+<span style="color:green">+</span> react-is@18.2.0<br>
+
+25 packages installed [704.00ms]<br>
+
+[724.00ms] bun install<br><br>
+
+` },
+];
+
+let commandIndex2 = 0;
+let command2 = commands2[commandIndex2];
+let commandOutput2 = "";
+
+function typeCommand2() {
+if (commandIndex2 === commands2.length) {
+  return;
+}
+if (command2.input.length === 0) {
+  commandOutput2 += '\n' + command2.output + '\n';
+  document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
+  commandIndex2++;
+  command2 = commands2[commandIndex2];
+  setTimeout(typeCommand2, 1000);
+  return;
+}
+commandOutput2 += command2.input[0];
+command2.input = command2.input.slice(1);
+document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
+setTimeout(typeCommand2, 100);
+}
+
+const observer2 = new IntersectionObserver((entries) => {
+if (entries[0].isIntersecting) {
+  typeCommand2();
+  observer2.disconnect();
+}
+});
+const target2 = document.querySelector("#terminal-output-2");
+observer2.observe(target2);
+</script>

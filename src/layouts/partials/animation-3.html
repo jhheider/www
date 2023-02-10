@@ -1,0 +1,46 @@
+<script>
+const commands4 = [
+{ input: "tea https://github.com/teaxyz/demos/blob/main/hello-universe.sh<br><br>", output: `*** Interpreters ***<br><br>`},
+{ input: "", output: `TypeScript: Hello, World!<br>`},
+{ input: "", output: `Go: Hello, World!<br>`},
+{ input: "", output: `JavaScript: Hello, World!<br>`},
+{ input: "", output: `Perl: Hello, World!<br>`},
+{ input: "", output: `Python: Hello, World!<br>`},
+{ input: "", output: `Ruby: Hello World!<br>`},
+{ input: "", output: `Lua: Hello, World!<br><br>`},
+{ input: "", output: `*** Compilers ***<br><br>`},
+{ input: "", output: `C: Hello, World!<br>`},
+{ input: "", output: `Rust: Hello, World!<br>`},
+];
+
+let commandIndex4 = 0;
+let command4 = commands4[commandIndex4];
+let commandOutput4 = "";
+
+function typeCommand4() {
+if (commandIndex4 === commands4.length) {
+  return;
+}
+if (command4.input.length === 0) {
+  commandOutput4 += '\n' + command4.output + '\n';
+  document.querySelector("#terminal-output-4").innerHTML = commandOutput4;
+  commandIndex4++;
+  command4 = commands4[commandIndex4];
+  setTimeout(typeCommand4, 1000);
+  return;
+}
+commandOutput4 += command4.input[0];
+command4.input = command4.input.slice(1);
+document.querySelector("#terminal-output-4").innerHTML = commandOutput4;
+setTimeout(typeCommand4, 100);
+}
+
+const terminalOutput4 = document.querySelector("#terminal-output-4");
+const observer4 = new IntersectionObserver((entries) => {
+if (entries[0].isIntersecting) {
+  typeCommand4();
+  observer4.disconnect();
+}
+});
+observer4.observe(terminalOutput4);
+</script>
