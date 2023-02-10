@@ -22,7 +22,7 @@
   .comment-success code{
     color: #1a1a1a;
   }
-
+/*
   .hero{
     background-image: url("/Images/hero-background-mountains.png") !important;
     background-attachment: scroll;
@@ -30,7 +30,7 @@
     background-repeat: repeat-y;
     background-size: cover !important;
   }
-
+*/
   @media only screen and (max-width: 992px) {
 
     .hero{
@@ -238,6 +238,28 @@
 
 </style>
 
+<section>
+  <div class="container">
+    <hr>
+    <div class="row one-box">
+      <div class="col">
+        <p class="text-uppercase text-center small mb-5 grid-gray">As featured on</p>
+        <div class="row logos" style="width:60%;margin-left:auto;margin-right:auto;">
+          <div class="col-4 text-center">
+            <img src="/Images/binance.svg" alt="Binance Labs" style="width:140px;">
+          </div>
+          <div class="col-4 text-center">
+            <img src="/Images/tech-crunch-tea-xyz.svg" alt="Binance Labs" style="width:140px;">
+          </div>
+          <div class="col-4 text-center">
+            <img src="/Images/stackoverflow-logo.svg" alt="Binance Labs" style="width:140px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Teal Impact Section -->
 <div class="section-divider teal-bg">
   <img src="/Images/pixel-section-divider.svg" style="pointer-events:none;" alt="">
@@ -319,14 +341,15 @@
   <div class="section-divider">
     <img src="/Images/pixel-section-divider-teal.svg" style="pointer-events:none;" alt="">
   </div>
-  <div class="container two-boxes-up">
-    <div class="row two-boxes-down">
-      <div class="col">
-        <h2 class="display-4 text-center">features</h2>
+  <div class="container two-boxes">
+    <div class="row one-box-down">
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+        <h2 class="display-5">features</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
-    <div class="row one-box-down">
-      <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
+    <div class="row">
+      <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
             <h2 class="display-5">tea magic</h2>
             <p>Easily access the entire open source ecosystem with tea. Simply prefix your commands with "tea" and if the tool isn't installed, tea will install it for you. Add magic to your shell scripts and use developer environments to enhance your workflow.</p>
@@ -408,8 +431,8 @@ bun install v0.4.0 (a94bba63)<br>
 
     <!-- Second -->
 
-    <div class="row one-box">
-      <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2 flex">
+    <div class="row">
+      <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2 flex">
           <div class="feature-content pe-xl-5 pe-lg-3 pe-md-0 pe-sm-0 pe-0">
             <h2 class="display-5">Developer Environments</h2>
             <p>Simplify your development environment setup with tea by automatically fetching the specific versions of tools your project needs. With a range of specifications, tea provides a seamless solution to manage project dependencies. Debug changes, supplement your environment, and see the full environment with ease.</p>
@@ -491,8 +514,8 @@ bun install v0.4.0 (a94bba63)<br>
 
     <!-- Third -->
 
-    <div class="row one-box">
-      <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 mb-xl-0 mb-lg-0 mb-md-5 mb-sm-5 mb-5 flex order-2">
+    <div class="row one-box-down">
+      <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
             <h2 class="display-5">tea scripts</h2>
             <p>This is next-generation, cross-platform package management. With tea, you no longer have to install packages—just type the commands you need and tea does the rest. Enjoy seamless and flexible version control, with the full https://semver.org spec supported.</p>
@@ -634,11 +657,11 @@ bun install v0.4.0 (a94bba63)<br>
 
 <!-- Getting Started -->
 
-<section class="gs-section">
+<section>
   <div class="container">
     <div class="row one-box-up">
       <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 mb-5">
-        <div class="gs-parent">
+        <div>
           <div class="gs-content">
             <h2 class="display-5">Getting started with tea!</h2>
             <p class="mb-5">Tea is a cross-platform binary that can be easily installed using a curl command or by using the one-liner installer. The installer sets up tea and its shell magic without requiring "sudo" or Xcode Command Line Tools, and is compatible with Linux, macOS, and WSL. Package managers such as brew or Docker can also be used for installation, or you can use GitHub Actions to install tea as part of your workflow.</p>
@@ -647,13 +670,6 @@ bun install v0.4.0 (a94bba63)<br>
             </a>
           </div>
         </div>
-
-        <style>
-          .gs-parent{
-          }
-          .gs-content{
-          }
-        </style>
 
       </div>
       <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ps-xl-5 ps-lg-5 ps-md-0 ps-sm-3 ps-3">
