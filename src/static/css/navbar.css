@@ -4,7 +4,7 @@
   position: fixed;
   width:100%;
   padding: 0px !important;
-  height: 62px;
+  height: 52px;
   background-color: #1a1a1a !important;
   text-transform: uppercase;
   border-bottom: 1px solid gray;
@@ -13,8 +13,8 @@
 /* Drop Verion */
 
 .top-logo{
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   margin: 0px !important;
 }
 
