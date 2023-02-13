@@ -1,25 +1,8 @@
 <script>
 const commands2 = [
-{ input: "$ tea bun create next ./app<br>", output: `<span class="dark-gray">[package.json] Detected React - added "react-refresh"<br>
-[package.json] Detected Next.js<br><br></span>` },
-{ input: "", output: `<span class="dark-gray">$ bun install</span><br>
-bun install v0.4.0 (a94bba63)<br>
-🔍 Resolving [1/11]<br>
-[99.00ms] git<br>
-<span style="color:green">+</span> @types/react@18.0.27<br>
-<span style="color:green">+</span> bun-framework-next@12.2.5<br>
-<span style="color:green">+</span> react-refresh@0.10.0<br>
-<span style="color:green">+</span> typescript@4.9.5<br>
-<span style="color:green">+</span> next@12.2.3<br>
-<span style="color:green">+</span> react@18.2.0<br>
-<span style="color:green">+</span> react-dom@18.2.0<br>
-<span style="color:green">+</span> react-is@18.2.0<br>
-
-25 packages installed [704.00ms]<br>
-
-[724.00ms] bun install<br><br>
-
-` },
+{ input: "sh <(curl https://tea.xyz)<br>################################", output: `<br><br>k, we installed  /Users/thomassmith/.tea/tea.xyz/v0.24.2/bin/tea` },
+{ input: `<br><br>tea redis-cli ping<br>################################`, output: `<br>installed: ~/.tea/redis.io/v7.0.8<br><div class="comment-success p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-check-circle"></i>tea installs 'redis' automagically.</code></div>` },
+{ input: "", output: `<br><br>pong` },
 ];
 
 let commandIndex2 = 0;
