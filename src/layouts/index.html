@@ -479,12 +479,12 @@
 </style>
 
 
-<!-- Getting Started -->
+<!-- Getting Started
 
 <section>
   <div class="container">
     <div class="row one-box-up">
-      <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 mb-5">
+      <div class="">
         <div>
           <div>
             <h2 class="display-5">Getting started with tea!</h2>
@@ -493,10 +493,10 @@
         </div>
 
       </div>
-      <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ps-xl-5 ps-lg-5 ps-md-0 ps-sm-3 ps-3">
-        <!-- terminal description -->
+      <div class="">
+
           <p class="mb-4 lead light-gray">If you want tea’s shell magic, use the installer:</p>
-          <!-- Terminal sample -->
+
           <div class="terminal flex term-getting-started term-lead">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
               <div class="traffic-light"></div>
@@ -514,9 +514,9 @@
     <div class="row two-boxes-down">
       <div class="col">
         <div>
-          <!-- terminal description -->
+
           <p class="mb-4 light-gray">This will confirm before setting up ~/.tea and adding to your ~/.shellrc. Our one-liner even abstracts installing tea itself:</p>
-          <!-- Terminal sample -->
+
           <div class="terminal flex term-getting-started">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
               <div class="traffic-light"></div>
@@ -533,9 +533,9 @@
       </div>
       <div class="col">
         <div>
-          <!-- terminal description -->
+
           <p class="mb-4 light-gray">This way, you don't need to start with "how to install tea" in your tutorials and blog posts. The installer also updates tea. If you hate installers, use brew:</p>
-          <!-- Terminal sample -->
+
           <div class="terminal flex term-getting-started">
             <div class="terminal-bar black-bg flex-start p-1 ps-3">
               <div class="traffic-light"></div>
@@ -625,12 +625,12 @@
 <section>
   <div class="container one-box-up one-box-down">
     <div class="row one-box-down">
-      <div class="col">
+      <div class="col p-0">
         <h2 class="display-5">DON’T JUST TAKE OUR WORD FOR IT… TWITTER’S BEEN SIPPING THE TEA TOO!</h2>
       </div>
     </div>
     <div class="row twitter-desktop">
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 p-0">
         <div class="twitter-card mb-4">
           <div class="title-bar flex-start p-1 ps-3">
             <i class="icon-discord"></i>
@@ -649,7 +649,7 @@
       </div>
     </div>
     <div class="row twitter-mobile">
-      <div class="col">
+      <div class="col p-0">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 {{- range .Data.Pages }}
@@ -749,12 +749,17 @@
 <section class="one-box">
   <div class="container">
     <div class="row">
-      <h2 class="display-5">OSS wouldn't work without talented contributors like you.</h2>
-      <p class="mb-5">We at tea would like to give a big shout out to all the open-source developers out there. Your contributions and dedication to making the world a better place through technology is truly admirable. Thanks to your hard work and generosity, projects like teaxyz/cli can continue to improve and evolve. If you are interested in joining our team of code crusaders, we welcome you with open arms. Head on over to the teaxyz/cli repository on Github and start contributing today! Let's continue to make a positive impact on the world of technology together.</p>
+      <div class="col p-0">
+        <h2 class="display-5">OSS wouldn't work without talented contributors like you.</h2>
+        <p class="mb-5">We at tea would like to give a big shout out to all the open-source developers out there. Your contributions and dedication to making the world a better place through technology is truly admirable. Thanks to your hard work and generosity, projects like teaxyz/cli can continue to improve and evolve. If you are interested in joining our team of code crusaders, we welcome you with open arms. Head on over to the teaxyz/cli repository on Github and start contributing today! Let's continue to make a positive impact on the world of technology together.</p>
+
+      </div>
 
     </div>
-    <div class="row" id="contributors-list">
+    <div class="row" id="contributors-list" style="padding:0px !important">
+      <div>
 
+      </div>
     </div>
   </div>
 </section>
@@ -764,7 +769,7 @@
   $.getJSON("https://api.github.com/repos/teaxyz/cli/contributors", function(contributors) {
   var contributorsList = $("#contributors-list");
   $.each(contributors, function(i, contributor) {
-  contributorsList.append("<div class='col-3 col-sm-3 col-md-3 col-lg-1 col-xl-1'>" + "<a href='" + contributor.html_url + "' target='_blank'><img class='con-img mb-3' src='" + contributor.avatar_url + "'></a>" + "<p class='small' style='hyphens:auto;'>" + contributor.login + "</p>" + "</div>");
+  contributorsList.append("<div class='col-3 col-sm-3 col-md-3 col-lg-1 col-xl-1 ps-0'>" + "<a href='" + contributor.html_url + "' target='_blank'><img class='con-img mb-3' src='" + contributor.avatar_url + "'></a>" + "<p class='small' style='hyphens:auto;'>" + contributor.login + "</p>" + "</div>");
   });
   });
 
