@@ -23,23 +23,28 @@
         </div>
       </div>
       <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12 col-12 mt-5 ps-xl-5">
-        <h6 class="white">Quick Links</h6>
+        <h6 class="white mt-2">Quick Links</h6>
         <a href="https://medium.com/teaxyz">blog</a><br>
         <a href="/press/">press</a><br>
         <a href="/careers/">careers</a><br>
         <a href="/privacy-policy/">privacy policy</a><br>
         <a href="/terms-of-use/">terms of use</a><br>
       </div>
-      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mt-5 ps-3">
-        <div class="email-placeholder flex" style="height:100%;width:100%;background-color:#212121;">
-          <p class="text-center" style="display:block;margin-left:auto;margin-right:auto;">email placeholder</p>
-        </div>
-
+      <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12 mt-5 ps-3" style="margin-left:auto;">
+        <h6 class="white mb-3 mt-2">Enter your email to join our newsletter:</h6>
+        <form class="mb-2" id="subscribeForm">
+          <div class="form-container p-1 flex">
+            <input class="email p-3" placeholder="Enter your email" type="email" id="email" required>
+            <button class="ms-2 email email-send hbtn hb-fill-right" style="width:100%;" id="subscribe-submit-btn" type="submit"><i class="icon-telegram"></i></button>
+          </div>
+        </form>
+        <div id="formResponse"></div>
+        <p class="small grid-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <p class="small">©<span id="copyYear"></span> tea inc. You can also share our <a href="https://linktr.ee/teaxyz" class="teal">Linktree</a>.</p>
+        <p class="small">©<span id="copyYear"></span> tea inc. You can also share our <a href="https://linktr.ee/teaxyz" class="teal" style="color:#00ffd0 !important;">Linktree</a>.</p>
       </div>
     </div>
   </div>
