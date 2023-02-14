@@ -47,13 +47,18 @@ mark{
   color: #1a1a1a;
 }
 
-@media only screen and (min-width: 576px) {
-
-  #impact-break{
-    display:none;
-  }
+.navbar{
+  position: fixed;
+  width:100%;
+  padding: 0px !important;
+  background-color: #1a1a1a !important;
+  text-transform: uppercase;
+  border-bottom: 1px solid gray;
 }
 
+.top-logo{
+  width:50px !important;
+}
 
 .flex {
   display: flex;
