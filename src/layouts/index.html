@@ -730,11 +730,44 @@
       <div class="col p-0">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                {{- range .Data.Pages }}
-                    <div class="swiper-slide">
-                        {{- partial "twitter-card.html" . -}}
+
+                <div class="swiper-slide">
+                  <div class="twitter-card mb-4">
+                    <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
+                      <p>You guys are really onto something with <a href="https://github.com/teaxyz/cli#magic" style="color:#00ffd0 !important;">magics</a> – it's so awesome. I've been using it all day and I am hooked.</p>
+                      <p class="small light-gray">David D</p>
                     </div>
-                {{- end }}
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="twitter-card mb-4">
+                    <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
+                      <p>im trying to package yarn seems to have a bug in linux. So i tried recreating it locally.</p>
+                      <ol class="small">
+                        <li>create linux docker container</li>
+                        <li>tried installing tea, did not work</li>
+                        <li>apt update</li>
+                        <li>apt install curl</li>
+                        <li>install tea</li>
+                        <li>$ ./pantry.core/scripts/build.ts yarnpkg.com</li>
+                      </ol>
+                      <p>when i did step 6, it was the amazing moment,  i realized I have not setup deno yet but tea does it for me.
+                      I know we have this  feature but when I unintentionally experienced it. its just wow. just wow</p>
+                      <p class="small light-gray">Neil M</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                      <div class="twitter-card mb-4">
+                        <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
+                          <p>It is hard to think of a more perfect use for blockchain technology than coordinating package releases for opensource software. What @teaxyz_ is embarking on will improve security, maintenance, and reliability, while providing much-needed incentive for independent developers. 🙌🏼</p>
+                          <p class="small light-gray">jcinis.eth</p>
+                        </div>
+                      </div>
+                </div>
+
             </div>
         </div>
       </div>
