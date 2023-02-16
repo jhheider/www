@@ -36,6 +36,31 @@
 
 /* Spacers & Dividers */
 
+.klaviyo-form{
+  border: 1px solid #949494;
+  padding: 5px;
+  border-radius: 5px;
+}
+#email_61878536{
+  background-color: #1a1a1a !important;
+  border-radius: 0px !important;
+  border: none !important;
+  font-family: "inter", sans-serif !important;
+  color: #ffffff !important;
+  height: 40px !important;
+}
+#email_61878536:focus{
+  border:none !important;
+  box-shadow: none !important;
+}
+.go3894874857{
+  background-color: #8000ff!important;
+  font-family: "inter", sans-serif !important;
+  border-radius: 3px !important;
+  font-weight: 400 !important;
+  height: 40px !important;
+}
+
 hr{
   border-bottom: 1px solid #949494 !important;
   opacity: 1;
