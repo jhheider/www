@@ -6,17 +6,17 @@
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
         <div class="package-thumbnail">
           {{ range where $.Site.Data.packages "name" .Title }}
-          <img class="package-image" src="{{- .thumb_image_url -}}" alt="{{- .name -}}" style="width:100%; height:100%;">
+          <img class="package-image mb-5" src="{{- .thumb_image_url -}}" alt="{{- .name -}}" style="width:100%; height:100%;">
           {{ end }}
         </div>
       </div>
       <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
-        <h3>{{- .Title -}}</h3>
+        <h3 class="display-4 mt-5">{{- .Title -}}</h3>
         {{ range where $.Site.Data.packages "name" .Title }}
-          <p class="one-box-down">{{- .desc -}}</p>
+          <p class="one-box-down lead">{{- .desc -}}</p>
           {{ if not (eq .package_yml_url "#")}}
             <a target="_blank" href="{{- .package_yml_url -}}">
-              <button class="detail-btn-large me-3" id="purple-bg-btn"><i class="icon-enter-arrow"></i>View on GitHub</button>
+              <button class="detail-btn-large me-3 mb-3" id="purple-bg-btn"><i class="icon-enter-arrow"></i>View on GitHub</button>
             </a>
           {{end}}
           {{ if not (eq .homepage "") }}
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col grid-gray">
+      <div class="col grid-gray mb-5">
         Copy the tea one-liner below into your terminal to install &#160;{{- .Title -}}. tea will interpret the documentation and take care of any dependencies.
       </div>
     </div>
