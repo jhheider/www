@@ -4,6 +4,7 @@
     <div class="row">
       <div class="col">
         {{- partial "search-menu.html" "searchTermDesktop" -}}
+        <hr>
 
         <div class="package-grid">
 
@@ -34,9 +35,7 @@
   }
   .package-grid {
     display: grid;
-    grid-template-columns:auto;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
+    grid-template-columns: auto;
   }
 
   @media only screen and (min-width: 1200px) {
