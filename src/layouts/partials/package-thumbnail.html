@@ -1,5 +1,6 @@
 <div class="card card-thumbnail" style="width: 100%" data-name="{{- .name -}}" data-popularity="{{- .dl_count -}}" data-last_modified="{{- .last_modified -}}" data-description="{{- .desc -}}">
   <a href="/+{{- lower .full_name -}}/">
+    <div class="p-3">
     <figure class="card-img-top" >
       <img class="package-image" src="{{- .thumb_image_url -}}" alt="{{- .name -}}" style="width:100%; height:100%;">
       <article class="card-thumb-label">
@@ -29,6 +30,7 @@
     <a href="/+{{- lower .full_name -}}/">
       <button class="detail-btn-mobile"><i class="icon-enter-arrow"></i>details</button>
     </a>
+  </div>
   </div>
 </div>
 
@@ -65,12 +67,8 @@ figure:hover{
 
 }
 
-
-
-@media only screen and (min-width: 992px) {
-
 .card-thumb-label i{
-  font-size: 1.5vw;
+
 }
 
 .card-thumb-label {
@@ -86,8 +84,6 @@ figure:hover{
 
 .card-thumb-label h3 {
   color: black;
-  font-size: 1.8vw;
-  line-height: 1.8vw;
   margin: 0px 0px 0.5vw 0vw;
   padding: 0px;
 }
@@ -104,7 +100,6 @@ figure:hover{
   background: none;
   border-radius: 0px !important;
   border: 1px solid #949494;
-  padding: 1.674vw;
 }
 
 .thumbnail-body{
@@ -116,14 +111,11 @@ figure:hover{
 
 .card-img-top{
   border-radius: 0px;
-  margin-bottom: 1.674vw;
 }
 
 .card-text{
-  font-size: 0.781vw;
   float:left;
   position: relative;
-  top:0.502vw;
 }
 
 .card-text-container{
@@ -134,150 +126,6 @@ figure:hover{
 
 .thumbnail-body-mobile{
   display: none;
-}
-
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-
-.card-thumb-label i{
-  font-size: 2vw;
-}
-
-.card-thumb-label {
-  position: absolute;
-  background: rgba(255,255,255,0.9);
-  left: 0;
-  bottom: 0vw;
-  padding: 1.116vw;
-  text-align: left;
-  width: 90%;
-  height: 40%;
-}
-
-.card-thumb-label h3 {
-  color: black;
-  font-size: 2.8vw;
-  line-height: 2.8vw;
-  margin: 0px 0px 1vw 0vw;
-  padding: 0px;
-}
-
-.card-thumb-label h4 {
-  color: black;
-  font-size: 1.5vw;
-  line-height: 1.5vw;
-  margin: 0px;
-  padding: 0px;
-}
-
-.card-thumbnail{
-  background: none;
-  border-radius: 0px !important;
-  border: 1px solid #949494;
-  padding: 1.674vw;
-}
-
-.thumbnail-body{
-  display: flex;
-  border-radius: 0px !important;
-  padding: 0vw;
-  justify-content: space-between;
-}
-
-.card-img-top{
-  border-radius: 0px;
-  margin-bottom: 1.674vw;
-}
-
-.card-text{
-  font-size: 0.781vw;
-  float:left;
-  position: relative;
-  top:0.502vw;
-}
-
-.card-text-container{
-  float:left;
-  position: relative;
-  width:48%;
-}
-
-.thumbnail-body-mobile{
-  display: none;
-}
-
-}
-
-@media only screen and (min-width: 576px) and (max-width: 768px) {
-
-.card-thumb-label i{
-  font-size: 2.5vw;
-}
-
-.card-thumb-label {
-  position: absolute;
-  background: rgba(255,255,255,0.9);
-  left: 0;
-  bottom: 0vw;
-  padding: 1.116vw;
-  text-align: left;
-  width: 90%;
-  height: 40%;
-}
-
-.card-thumb-label h3 {
-  color: black;
-  font-size: 3vw;
-  line-height: 3vw;
-  margin: 0px 0px 0.5vw 0vw;
-  padding: 0px;
-}
-
-.card-thumb-label h4 {
-  color: black;
-  font-size: 1.5vw;
-  line-height: 1.5vw;
-  margin: 0px;
-  padding: 0px;
-}
-
-.card-thumbnail{
-  background: none;
-  border-radius: 0px !important;
-  border: 1px solid #949494;
-  padding: 1.674vw;
-}
-
-.thumbnail-body{
-  display: flex;
-  border-radius: 0px !important;
-  padding: 0vw;
-  justify-content: space-between;
-}
-
-.card-img-top{
-  border-radius: 0px;
-  margin-bottom: 1.674vw;
-}
-
-.card-text{
-  font-size: 0.781vw;
-  float:left;
-  position: relative;
-  top:0.502vw;
-}
-
-.card-text-container{
-  float:left;
-  position: relative;
-  width:48%;
-}
-
-.thumbnail-body-mobile{
-  display: none;
-}
-
 }
 
 @media only screen and (max-width: 576px) {
