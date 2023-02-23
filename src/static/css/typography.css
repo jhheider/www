@@ -62,6 +62,8 @@ h5{
 }
 
 p{
+  font-size: 1.1rem;
+  line-height: 1.7rem;
   font-family: "inter", sans-serif !important;
   color: #ffffff;
   font-weight: 500;
