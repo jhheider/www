@@ -895,11 +895,19 @@
 
 <script>
 
-  $.getJSON("https://api.github.com/repos/teaxyz/cli/contributors", function(contributors) {
   var contributorsList = $("#contributors-list");
-  $.each(contributors, function(i, contributor) {
-  contributorsList.append("<div class='col-3 col-sm-3 col-md-3 col-lg-1 col-xl-1 ps-0'>" + "<a href='" + contributor.html_url + "' target='_blank'><img class='con-img mb-3' src='" + contributor.avatar_url + "'></a>" + "<p class='small' style='hyphens:auto;'>" + contributor.login + "</p>" + "</div>");
-  });
+
+  $.getJSON("https://api.github.com/repos/teaxyz/cli/contributors", function(cliContributors) {
+    $.getJSON("https://api.github.com/repos/teaxyz/pantry.extra/contributors", function(extraContributors) {
+      var allContributors = cliContributors.concat(extraContributors);
+      var uniqueContributors = {};
+      $.each(allContributors, function(i, contributor) {
+        if (!(contributor.id in uniqueContributors)) {
+          uniqueContributors[contributor.id] = true;
+          contributorsList.append("<div class='col-3 col-sm-3 col-md-3 col-lg-1 col-xl-1 ps-0'>" + "<a href='" + contributor.html_url + "' target='_blank'><img class='con-img mb-3' src='" + contributor.avatar_url + "'></a>" + "<p class='small' style='hyphens:auto;'>" + contributor.login + "</p>" + "</div>");
+        }
+      });
+    });
   });
 
 </script>
