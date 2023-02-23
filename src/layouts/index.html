@@ -403,6 +403,8 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
 
     {{- partial "animation-3.html" . -}}
 
@@ -537,255 +539,70 @@
 </section>
 
 
-<!-- Getting Started
-
-<section>
-  <div class="container">
-    <div class="row one-box-up">
-      <div class="">
-        <div>
-          <div>
-            <h2 class="display-5">Getting started with tea!</h2>
-            <p class="mb-5">Tea is a cross-platform binary that can be easily installed using a curl command or by using the one-liner installer. The installer sets up tea and its shell magic without requiring "sudo" or Xcode Command Line Tools, and is compatible with Linux, macOS, and WSL. Package managers such as brew or Docker can also be used for installation, or you can use GitHub Actions to install tea as part of your workflow.</p>
-          </div>
-        </div>
-
-      </div>
-      <div class="">
-
-          <p class="mb-4 lead light-gray">If you want tea’s shell magic, use the installer:</p>
-
-          <div class="terminal flex term-getting-started term-lead">
-            <div class="terminal-bar black-bg flex-start p-1 ps-3">
-              <div class="traffic-light"></div>
-              <div class="traffic-light"></div>
-              <div class="traffic-light"></div>
-            </div>
-              <div class="p-5">
-                <div class="terminal-content-gs">
-                  <p>sh <(curl https://tea.xyz)</p>
-                </div>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="row two-boxes-down">
-      <div class="col">
-        <div>
-
-          <p class="mb-4 light-gray">This will confirm before setting up ~/.tea and adding to your ~/.shellrc. Our one-liner even abstracts installing tea itself:</p>
-
-          <div class="terminal flex term-getting-started">
-            <div class="terminal-bar black-bg flex-start p-1 ps-3">
-              <div class="traffic-light"></div>
-              <div class="traffic-light"></div>
-              <div class="traffic-light"></div>
-            </div>
-              <div class="p-5">
-                <div class="terminal-content-gs">
-                  <p>sh <(curl tea.xyz) bun run start</p>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div>
-
-          <p class="mb-4 light-gray">This way, you don't need to start with "how to install tea" in your tutorials and blog posts. The installer also updates tea. If you hate installers, use brew:</p>
-
-          <div class="terminal flex term-getting-started">
-            <div class="terminal-bar black-bg flex-start p-1 ps-3">
-              <div class="traffic-light"></div>
-              <div class="traffic-light"></div>
-              <div class="traffic-light"></div>
-            </div>
-              <div class="p-5">
-                <div class="terminal-content-gs">
-                  <p>$ brew install teaxyz/pkgs/tea-cli</p>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .term-getting-started{
-    min-height: 0px !important;
-    height: auto;
-    width: 100% !important;
-    animation: none !important;
-    margin-bottom: 0 !important;
-  }
-  .term-lead{
-    border: 2px solid #00ffd0;
-  }
-</style>
-
-<!--
-<hr>
--->
-
-<!--
-
-<section class="statistics" style="padding-top: 8.371vw !important; padding-bottom: 8.371vw !important;">
-
-<div class="gen-art" id="gen-art-5"></div>
-<div class="gen-art" id="gen-art-6"></div>
-<div class="gen-art" id="gen-art-9"></div>
-
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <h2 class="display-2">sta'tea'stics</h2>
-        <p class="lead">Much like its predecessor, <a href="https://brew.sh/">brew</a>, tea is seeing a rapid rate of adoption. Developers around the world are doing amazing things with our next&#8208;generation, cross&#8208;platform package manager.</p>
-        <p>In true open&#8208;source fashion, we&#39;re asking the community for <a href="https://github.com/teaxyz/cli">contributions to tea/cli</a>, as well as packaging assistance in an effort to add the web&#39;s top 300 packages to <a href="https://github.com/teaxyz/pantry.zero#contributing">our pantry</a>. Now is the time to be an early contributor in what will inevitably become the foundation of the future internet.</p><br>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="metric-block" style="float:right; margin-top:-300px;">
-          <p class="stat-head">NUMBER OF REPOS</p>
-          <p class="stat-number teal" id="stat-one"></p>
-          <p class="gray stat-small-text">Number of rated repos owned by tea&#8208;authenticated developers.</p>
-        </div>
-        <div class="gen-art-mobile" id="m-gen-art-3"></div>
-        <div class="gen-art-mobile" id="m-gen-art-4"></div>
-        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
-        <div class="metric-block mb-5 mt-4">
-          <p class="stat-head">AUTHENTICATED DEVS</p>
-          <p class="stat-number teal"><span id="count2"></span></p>
-          <p class="gray stat-small-text">This is the number of OSS developers who have chosen to join the battle for the future of the internet.</p>
-        </div>
-        <div class="gen-art-mobile" id="m-gen-art-5"></div>
-        <div class="gen-art-mobile" id="m-gen-art-6"></div>
-        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
-        <div class="metric-block" style="float:right;">
-          <p class="stat-head">TEA MAINTAINERS</p>
-          <p class="stat-number teal" id="stat-two"></p>
-          <p class="gray stat-small-text">Number of tea-maintainers for those <span id="stat-one-small"></span> repos.</p>
-        </div>
-        <div class="gen-art-mobile" id="m-gen-art-7"></div>
-        <div class="gen-art-mobile" id="m-gen-art-8"></div>
-        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
-      </div>
-    </div>
-  </div>
-</section>
-<div class="full-width-cta-container">
- {{- partial "full-width-cta-split.html" . -}}
-</div>
--->
-
 <style>
 
   .top-bar{
-    border-bottom: 2px solid #6000bf;
+    border-bottom: 2px solid #1a1a1a;
   }
 
 </style>
 
-<section>
-  <div class="container one-box-up one-box one-box-down">
+
+<section class="teal-bg">
+  <div class="container one-box-up two-boxes two-boxes-down">
     <div class="row one-box-down">
       <div class="col p-0">
-        <h2 class="display-5">Don't just take our word for it; everybody's liking the new brew</h2>
+        <h2 class="display-5 black text-center">Don't just take our word for it; everybody's liking the new brew</h2>
       </div>
     </div>
     <div class="row twitter-desktop">
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 p-0">
         <div class="twitter-card mb-4">
           <div class="top-bar flex p-1 ps-3">
-            <i class="icon-discord white lead"></i>
+            <i class="icon-discord black lead"></i>
           </div>
           <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
-            <p>You guys are really onto something with <a href="https://github.com/teaxyz/cli#magic" style="color:#00ffd0 !important;">magics</a> – it's so awesome. I've been using it all day and I am hooked.</p>
-            <hr class="mb-3">
+            <p class="black">You guys are really onto something with <a href="https://github.com/teaxyz/cli#magic" style="color:#1a1a1a !important;">magics</a> – it's so awesome. I've been using it all day and I am hooked.</p>
+            <hr class="mb-3" style="border-bottom: 1px solid black !important;">
             <div class="flex-start">
-              <div class="avatar">
-
-              </div>
-              <p class="small test-name light-gray">David D</p>
+              <div class="avatar"></div>
+              <p class="small test-name black">David D</p>
             </div>
           </div>
         </div>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         <div class="twitter-card mb-4">
+          <div class="top-bar flex p-1 ps-3">
+            <i class="icon-github black lead"></i>
+          </div>
           <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
             <div class="">
 
             </div>
-            <p>im trying to package yarn seems to have a bug in linux. So i tried recreating it locally.</p>
-            <ol class="small">
-              <li>create linux docker container</li>
-              <li>tried installing tea, did not work</li>
-              <li>apt update</li>
-              <li>apt install curl</li>
-              <li>install tea</li>
-              <li>$ ./pantry.core/scripts/build.ts yarnpkg.com</li>
-            </ol>
-            <p>when i did step 6, it was the amazing moment,  i realized I have not setup deno yet but tea does it for me.
-            I know we have this  feature but when I unintentionally experienced it. its just wow. just wow</p>
-            <p class="small light-gray">Neil M</p>
+            <p class="black">when i did ran <code class="orange">./pantry.core/scripts/build.ts yarnpkg.com</code>, it was the amazing moment, i realized I have not setup deno yet but tea does it for me.
+            I know we have this feature but when I unintentionally experienced it. its just wow. just wow</p>
+            <hr class="mb-3" style="border-bottom: 1px solid black !important;">
+            <div class="flex-start">
+              <div class="avatar"></div>
+              <p class="small test-name black">Neil M</p>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 p-0">
         <div class="twitter-card mb-4">
-          <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
-            <p>It is hard to think of a more perfect use for blockchain technology than coordinating package releases for opensource software. What @teaxyz_ is embarking on will improve security, maintenance, and reliability, while providing much-needed incentive for independent developers. 🙌🏼</p>
-            <p class="small light-gray">jcinis.eth</p>
+          <div class="top-bar flex p-1 ps-3">
+            <i class="icon-twitter black lead"></i>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row twitter-mobile">
-      <div class="col p-0">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                  <div class="twitter-card mb-4">
-                    <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
-                      <p>You guys are really onto something with <a href="https://github.com/teaxyz/cli#magic" style="color:#00ffd0 !important;">magics</a> – it's so awesome. I've been using it all day and I am hooked.</p>
-                      <p class="small light-gray">David D</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="twitter-card mb-4">
-                    <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
-                      <p>im trying to package yarn seems to have a bug in linux. So i tried recreating it locally.</p>
-                      <ol class="small">
-                        <li>create linux docker container</li>
-                        <li>tried installing tea, did not work</li>
-                        <li>apt update</li>
-                        <li>apt install curl</li>
-                        <li>install tea</li>
-                        <li>$ ./pantry.core/scripts/build.ts yarnpkg.com</li>
-                      </ol>
-                      <p>when i did step 6, it was the amazing moment,  i realized I have not setup deno yet but tea does it for me.
-                      I know we have this  feature but when I unintentionally experienced it. its just wow. just wow</p>
-                      <p class="small light-gray">Neil M</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                      <div class="twitter-card mb-4">
-                        <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
-                          <p>It is hard to think of a more perfect use for blockchain technology than coordinating package releases for opensource software. What @teaxyz_ is embarking on will improve security, maintenance, and reliability, while providing much-needed incentive for independent developers. 🙌🏼</p>
-                          <p class="small light-gray">jcinis.eth</p>
-                        </div>
-                      </div>
-                </div>
-
+          <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
+            <p class="black">It is hard to think of a more perfect use for blockchain technology than coordinating package releases for opensource software. What @teaxyz_ is embarking on will improve security, maintenance, and reliability, while providing much-needed incentive for independent developers. 🙌🏼</p>
+            <hr class="mb-3" style="border-bottom: 1px solid black !important;">
+            <div class="flex-start">
+              <div class="avatar"></div>
+              <p class="small test-name black">jcinis.eth</p>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -820,38 +637,12 @@
 
 <style>
 
-  @media only screen and (min-width: 576px) {
-
-    .twitter-desktop{
-      visibility: visible;
-    }
-    .twitter-mobile{
-      visibility: hidden;
-      display: none;
-    }
-
-  }
-
-  @media only screen and (max-width: 576px) {
-
-    .twitter-desktop{
-      visibility: hidden;
-      display: none;
-    }
-    .twitter-mobile{
-      visibility: visible;
-    }
-
-  }
-
   .twitter-card{
-    border: 2px solid #6000bf;
-    border-radius: 10px;
-    box-shadow: 0px 10px 18px #121212;
+    border: 2px solid #1a1a1a;
+    background-color: #33ffd9 !important;
   }
   .title-bar{
     height:30px;
-    border-bottom: 1px solid gray;
   }
   .avatar{
     height: 20px;
