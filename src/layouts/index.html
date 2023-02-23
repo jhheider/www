@@ -680,8 +680,16 @@
 </div>
 -->
 
+<style>
+
+  .top-bar{
+    border-bottom: 2px solid #6000bf;
+  }
+
+</style>
+
 <section>
-  <div class="container one-box-up two-boxes-down">
+  <div class="container one-box-up one-box one-box-down">
     <div class="row one-box-down">
       <div class="col p-0">
         <h2 class="display-5">Don't just take our word for it; everybody's liking the new brew</h2>
@@ -690,15 +698,27 @@
     <div class="row twitter-desktop">
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 p-0">
         <div class="twitter-card mb-4">
+          <div class="top-bar flex p-1 ps-3">
+            <i class="icon-discord white lead"></i>
+          </div>
           <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
             <p>You guys are really onto something with <a href="https://github.com/teaxyz/cli#magic" style="color:#00ffd0 !important;">magics</a> – it's so awesome. I've been using it all day and I am hooked.</p>
-            <p class="small light-gray">David D</p>
+            <hr class="mb-3">
+            <div class="flex-start">
+              <div class="avatar">
+
+              </div>
+              <p class="small test-name light-gray">David D</p>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         <div class="twitter-card mb-4">
           <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
+            <div class="">
+
+            </div>
             <p>im trying to package yarn seems to have a bug in linux. So i tried recreating it locally.</p>
             <ol class="small">
               <li>create linux docker container</li>
@@ -825,7 +845,7 @@
   }
 
   .twitter-card{
-    border: 2px solid gray;
+    border: 2px solid #6000bf;
     border-radius: 10px;
     box-shadow: 0px 10px 18px #121212;
   }
@@ -833,9 +853,22 @@
     height:30px;
     border-bottom: 1px solid gray;
   }
-
-  .title-bar i{
-    color: #2675f5;
+  .avatar{
+    height: 20px;
+    width: 20px;
+    border-radius: 30px;
+    background-color: gray;
+    display: inline-block;
+  }
+  .test-name{
+    display: inline-block;
+    position: relative;
+    bottom: 4px;
+    margin-left: 5px;
+  }
+  .top-bar i{
+    position: relative;
+    top: 2px;
   }
 
 </style>
