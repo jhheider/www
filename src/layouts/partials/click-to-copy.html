@@ -1,0 +1,30 @@
+<p class="install-label text-center">Install tea by running our one-liner:</p>
+<div class="flex pt-2 pb-2 ps-4 pe-2 mb-4 black-bg" style="width: 100%; border: 1px solid #949494; border-radius: 5px;">
+  <code id="copy-text" class="white">sh <(curl tea.xyz)</code>
+  <button class="hbtn hb-fill-right" id="copy-button">Copy</button>
+</div>
+
+<script>
+
+  $("#copy-button").on("click", function() {
+    var copyText = "sh <(curl https://tea.xyz)";
+    var tempInput = document.createElement("input");
+    tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+    tempInput.value = copyText;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    // Change the button text to 'Copied'
+    var button = $("#copy-button");
+    var originalText = button.text();
+    button.text("Copied!");
+
+    // Change the button text back to original after 5 seconds
+    setTimeout(function() {
+      button.text(originalText);
+    }, 2000);
+  });
+
+</script>
