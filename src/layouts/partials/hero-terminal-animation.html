@@ -50,10 +50,18 @@
       return;
     }
 
-    commandOutput += command.input[0];
+    const currentChar = command.input[0];
+    commandOutput += currentChar;
     command.input = command.input.slice(1);
+
+    // Check if the current character is within the .grid-gray span
+    if (document.querySelector(".grid-gray").contains(document.createTextNode(currentChar))) {
+      setTimeout(typeCommand, 0); // Reduce timeout delay for faster animation
+    } else {
+      setTimeout(typeCommand, 100);
+    }
+
     document.querySelector("#terminal-output").innerHTML = commandOutput;
-    setTimeout(typeCommand, 100);
   }
 
   typeCommand();
