@@ -25,9 +25,9 @@
 
 <script>
   const commands = [
-    { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `<span class="mb-5">command not found: node</span><br><div class="comment p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-exclamation-circle"></i>Node is not installed, thus command is not found</code></div>`},
-    { input: "$ sh <(curl tea.xyz) --yes<br><span class='grid-gray'>############################################################</span>", output: ``},
-    { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19` },
+    { input: "<span class='purple'>$</span> node --eval 'console.log(\"Hello World!\")'", output: `<span class="mb-5">command not found: node</span><br><div class="comment p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-exclamation-circle"></i>Node is not installed, thus command is not found</code></div>`},
+    { input: "<span class='purple'>$</span> sh <(curl tea.xyz) --yes<br>############################################################", output: ``},
+    { input: "<span class='purple'>$</span> node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19` },
     { input: "", output: `Hello World! &#128526;<br><div class="comment-success p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-check-circle"></i>tea magically installs needed dependencies</code></div>` },
   ];
 
@@ -56,7 +56,7 @@
 
     // Check if the current character is within the .grid-gray span
     if (document.querySelector(".grid-gray").contains(document.createTextNode(currentChar))) {
-      setTimeout(typeCommand, 0); // Reduce timeout delay for faster animation
+      setTimeout(typeCommand, 50); // Reduce timeout delay for '#' character for faster animation
     } else {
       setTimeout(typeCommand, 100);
     }
