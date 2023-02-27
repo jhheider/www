@@ -1,7 +1,7 @@
 <script>
   const commands3 = [
-    { input: "<span class='purple'>$</span> node --version<br>", output: `v19.3.0<br><br>` },
-    { input: "<span class='purple'>$</span> cat <<EOF >>my-project/README.md<br>", output: `# Dependencies<br>
+    { input: "$ node --version<br>", output: `v19.3.0<br><br>` },
+    { input: "$ cat <<EOF >>my-project/README.md<br>", output: `# Dependencies<br>
       <table>
         <thead>
           <tr>
@@ -18,8 +18,8 @@
       </table>
 EOF
 <br><br>` },
-    { input: "<span class='purple'>$</span> cd my-project<br>", output: `my-project<br><br>` },
-    { input: "<span class='purple'>$</span> node --version<br>", output: `v18.13.0` },
+    { input: "$ cd my-project<br>", output: `my-project<br><br>` },
+    { input: "$ node --version<br>", output: `v18.13.0` },
   ];
 
   let commandIndex3 = 0;
