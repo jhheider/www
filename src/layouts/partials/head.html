@@ -146,25 +146,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 
-    <script>
-      window.onload = function() {
-      // Get all the <p> elements
-      var paragraphs = document.getElementsByTagName('p');
-
-      // Loop through each <p> element
-      for (var i = 0; i < paragraphs.length; i++) {
-        // Get the text content of the <p> element
-        var text = paragraphs[i].textContent;
-
-        // Replace every instance of the word 'tea' with the word wrapped in a span with a class of 'highlight'
-        var highlightedText = text.replace(/tea/g, '<span class="highlight">tea</span>');
-
-        // Set the HTML of the <p> element to the highlighted text
-        paragraphs[i].innerHTML = highlightedText;
-      }
-    }
-    </script>
-
     <style>
       .highlight {
         font-family: "sono", sans-serif !important;
