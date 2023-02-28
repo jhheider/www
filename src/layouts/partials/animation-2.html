@@ -2,20 +2,9 @@
   const commands3 = [
     { input: '$ node --version<br>', output: `v19.3.0<br><br>` },
     { input: `$ cat &lt;&lt;EOF &gt;&gt;my-project/README.md<br>`, output: `# Dependencies<br>
-      <table>
-        <thead>
-          <tr>
-            <th>Project</th>
-            <th>Version</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>nodejs.org</td>
-            <td>^18.4</td>
-          </tr>
-        </tbody>
-      </table>
+      | Project &nbsp;&nbsp;&nbsp;| Version |<br>
+      |------------|---------|<br>
+      | nodejs.org | ^18.4 &nbsp;&nbsp;|<br>
   EOF
   <br><br>` },
     { input: '$ cd my-project<br>', output: `my-project<br><br>` },
