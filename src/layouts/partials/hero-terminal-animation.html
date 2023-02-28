@@ -51,9 +51,9 @@
     }
 
     let currentChar = command.input[0];
-      if (currentChar === '$') {
-        currentChar = '<span class="purple">$</span>';
-      }
+    if (currentChar === '$') {
+      currentChar = '<span class="purple">$</span>';
+    }
     commandOutput += currentChar;
     command.input = command.input.slice(1);
 
@@ -61,7 +61,9 @@
     if (document.querySelector(".grid-gray").contains(document.createTextNode(currentChar))) {
       setTimeout(typeCommand, 50); // Reduce timeout delay for '#' character for faster animation
     } else {
-      setTimeout(typeCommand, 80);
+      // Add a random delay between 40ms and 80ms (except for '#' characters)
+      const delay = Math.floor(Math.random() * 40) + 80;
+      setTimeout(typeCommand, delay);
     }
 
     document.querySelector("#terminal-output").innerHTML = commandOutput;
