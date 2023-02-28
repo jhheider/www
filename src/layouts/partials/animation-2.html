@@ -24,7 +24,7 @@
       document.querySelector('#terminal-output-3').innerHTML = commandOutput3;
       commandIndex3++;
       command3 = commands3[commandIndex3];
-      setTimeout(typeCommand3, 1000);
+      setTimeout(typeCommand3, 1500);
       return;
     }
     let char = command3.input[0];
@@ -34,7 +34,7 @@
     commandOutput3 += char;
     command3.input = command3.input.slice(1);
     document.querySelector('#terminal-output-3').innerHTML = commandOutput3;
-    setTimeout(typeCommand3, 80);
+    setTimeout(typeCommand3, Math.floor(Math.random() * (150 - 70) + 70));
   }
 
   const terminalOutput = document.querySelector('#terminal-output-3');
