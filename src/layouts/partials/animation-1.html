@@ -1,38 +1,42 @@
 <script>
-const commands2 = [
-{ input: "$ sh <(curl https://tea.xyz)<br>################################", output: `<br><br>k, we installed  /Users/thomassmith/.tea/tea.xyz/v0.24.2/bin/tea` },
-{ input: `<br><br>$ tea redis-cli ping<br>################################`, output: `<br>installed: ~/.tea/redis.io/v7.0.8<br><div class="comment-success p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-check-circle"></i>tea installs 'redis' automagically.</code></div>` },
-{ input: "", output: `<br><br>pong` },
-];
+  const commands2 = [
+    { input: '$ sh <(curl https://tea.xyz)<br>################################', output: '<br><br>k, we installed  /Users/thomassmith/.tea/tea.xyz/v0.24.2/bin/tea' },
+    { input: `<br><br>$ tea redis-cli ping<br>################################`, output: `<br>installed: ~/.tea/redis.io/v7.0.8<br><div class="comment-success p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-check-circle"></i>tea installs 'redis' automagically.</code></div>` },
+    { input: '', output: '<br>pong' },
+  ];
 
-let commandIndex2 = 0;
-let command2 = commands2[commandIndex2];
-let commandOutput2 = "";
+  let commandIndex2 = 0;
+  let command2 = commands2[commandIndex2];
+  let commandOutput2 = '';
 
-function typeCommand2() {
-if (commandIndex2 === commands2.length) {
-  return;
-}
-if (command2.input.length === 0) {
-  commandOutput2 += '\n' + command2.output + '\n';
-  document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
-  commandIndex2++;
-  command2 = commands2[commandIndex2];
-  setTimeout(typeCommand2, 1000);
-  return;
-}
-commandOutput2 += command2.input[0];
-command2.input = command2.input.slice(1);
-document.querySelector("#terminal-output-2").innerHTML = commandOutput2;
-setTimeout(typeCommand2, 100);
-}
+  function typeCommand2() {
+    if (commandIndex2 === commands2.length) {
+      return;
+    }
+    if (command2.input.length === 0) {
+      commandOutput2 += '\n' + command2.output + '\n';
+      document.querySelector('#terminal-output-2').innerHTML = commandOutput2;
+      commandIndex2++;
+      command2 = commands2[commandIndex2];
+      setTimeout(typeCommand2, 1000);
+      return;
+    }
+    let char = command2.input[0];
+    if (char === '$') {
+      char = '<span class="purple">$</span>';
+    }
+    commandOutput2 += char;
+    command2.input = command2.input.slice(1);
+    document.querySelector('#terminal-output-2').innerHTML = commandOutput2;
+    setTimeout(typeCommand2, 100);
+  }
 
-const observer2 = new IntersectionObserver((entries) => {
-if (entries[0].isIntersecting) {
-  typeCommand2();
-  observer2.disconnect();
-}
-});
-const target2 = document.querySelector("#terminal-output-2");
-observer2.observe(target2);
+  const observer2 = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      typeCommand2();
+      observer2.disconnect();
+    }
+  });
+  const target2 = document.querySelector('#terminal-output-2');
+  observer2.observe(target2);
 </script>
