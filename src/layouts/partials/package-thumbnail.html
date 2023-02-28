@@ -15,7 +15,7 @@
   <div class="card-body thumbnail-body">
     <div class="card-text-container">
       <p class="card-text small">
-        <span class="">V&NonBreakingSpace;{{- .version -}}</span>
+        <span class="grid-gray">V&NonBreakingSpace;{{- .version -}}</span>
         <!--
         TODO: uncomment once install counts improve
         <br>
@@ -23,7 +23,7 @@
       </p>
     </div>
     <a href="/+{{- lower .full_name -}}/">
-      {{- partial "detail-btn.html" . -}}
+      <button class="hbtn hb-fill-right detail-btn" type="button" name="button">Details</button>
     </a>
   </div>
   <div class="card-body thumbnail-body-mobile">
@@ -35,6 +35,12 @@
 </div>
 
 <style>
+
+.detail-btn{
+  width: 100px !important;
+  height: 30px;
+  padding:0px;
+}
 
 .package-title{
   font-size: 1.5rem;
@@ -118,12 +124,15 @@ figure:hover{
 .card-text{
   float:left;
   position: relative;
+  font-size: .8rem;
+  top:2px;
 }
 
 .card-text-container{
   float:left;
   position: relative;
   width:48%;
+  display: flex;
 }
 
 .thumbnail-body-mobile{
