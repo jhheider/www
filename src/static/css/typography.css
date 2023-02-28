@@ -19,6 +19,11 @@
   font-family: "mona";
   src: url("/fonts/Mona-Sans-ExtraBold.woff");
 }
+
+@font-face {
+  font-family: "mona-sb";
+  src: url("/fonts/Mona-Sans-SemiBold.woff");
+}
 /*
 h1,h2,h3,h4,h5,h6,p,.lead{
   -ms-hyphens: auto;
@@ -39,24 +44,24 @@ h1{
 }
 
 h2{
-  font-family: "mona", sans-serif;
+  font-family: "mona-sb", sans-serif;
   color:#00ffd0;
   text-transform:uppercase;
   hyphens: auto;
 }
 
 h3{
-  font-family: "mona", sans-serif;
+  font-family: "mona-sb", sans-serif;
   color:#00ffd0;
 }
 
 h4{
-  font-family: "mona", sans-serif;
+  font-family: "mona-sb", sans-serif;
   color:#00ffd0;
 }
 
 h5{
-  font-family: "mona", sans-serif;
+  font-family: "mona-sb", sans-serif;
   color:#00ffd0;
   text-transform: uppercase;
 }
