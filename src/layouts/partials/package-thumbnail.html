@@ -4,18 +4,18 @@
     <figure class="card-img-top" >
       <img class="package-image" src="{{- .thumb_image_url -}}" alt="{{- .name -}}" style="width:100%; height:100%;">
       <article class="card-thumb-label">
-        <i class="icon-tea-logo-iconasset-1"></i>
-        <h3>{{- .name -}}</h3>
+        <i class="icon-tea-logo-iconasset-1 lead" style="color:#1a1a1a;"></i>
+        <h3 class="package-title mb-1">{{- .name -}}</h3>
         {{ if not (eq .maintainer "") }}
-          <h4>&#x2022;&nbsp;{{- .maintainer -}}</h4>
+          <h4 class="small">&#x2022;&nbsp;{{- .maintainer -}}</h4>
         {{end}}
       </article>
     </figure>
   </a>
   <div class="card-body thumbnail-body">
     <div class="card-text-container">
-      <p class="card-text">
-        <span class="package-version-no">V&NonBreakingSpace;{{- .version -}}</span>
+      <p class="card-text small">
+        <span class="">V&NonBreakingSpace;{{- .version -}}</span>
         <!--
         TODO: uncomment once install counts improve
         <br>
@@ -35,6 +35,10 @@
 </div>
 
 <style>
+
+.package-title{
+  font-size: 1.5rem;
+}
 
 div.card.card-thumbnail{
 background-color: #1a1a1a;
@@ -79,7 +83,7 @@ figure:hover{
   padding: 1.116vw;
   text-align: left;
   width: 90%;
-  height: 40;
+  height: 50%;
 }
 
 .card-thumb-label h3 {
