@@ -36,7 +36,8 @@
     commandOutput4 += char;
     command4.input = command4.input.slice(1);
     document.querySelector('#terminal-output-4').innerHTML = commandOutput4;
-    setTimeout(typeCommand4, 80);
+    const delay = Math.floor(Math.random() * 100) + 50; // random delay between 50 and 150 ms
+    setTimeout(typeCommand4, delay);
   }
 
   const terminalOutput4 = document.querySelector('#terminal-output-4');
