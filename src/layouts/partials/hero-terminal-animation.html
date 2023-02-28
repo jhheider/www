@@ -45,7 +45,8 @@
         document.querySelector("#terminal-output").innerHTML = commandOutput;
         commandIndex++;
         command = commands[commandIndex];
-        setTimeout(typeCommand, 1000);
+        // Add a longer delay after each command output (500ms in this case)
+        setTimeout(typeCommand, 2000);
       }, 1000);
       return;
     }
