@@ -299,7 +299,7 @@
   <div class="section-divider">
     <img src="/Images/pixel-section-divider-teal.svg" style="pointer-events:none;" alt="">
   </div>
-  <div class="container two-boxes">
+  <div class="container two-boxes-up one-box-down">
     <div class="row one-box-down">
       <div class="col">
         <h2 class="display-5 text-center">features</h2>
@@ -385,7 +385,7 @@
 
     <!-- Third -->
 
-    <div class="row one-box-down">
+    <div class="row">
       <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12 flex order-2">
           <div class="feature-content ps-xl-5 ps-lg-3 ps-md-0 ps-sm-0 ps-0">
             <h2 class="display-5">tea scripts</h2>
@@ -485,15 +485,25 @@
   }
 </style>
 
+<section>
+  <div class="container one-box-down">
+    <div class="row">
+      <div class="col">
+        <img src="/Images/lg-screen-grid.svg" alt="grid-element">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="two-boxes-down">
   <div class="container">
     <div class="row">
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-auto pe-5">
         <h2 class="display-5">Getting started with tea!</h2>
         <p class="mb-5"><span class="tea">tea</span> is a standalone binary for all platforms. You can curl it by itself or, if you want magic, use our installer. We provide a docker image and GitHub action for easier CI/CD.</p>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
-        <div class="terminal flex term-getting-started term-lead">
+        <div class="terminal mb-4 flex term-getting-started term-lead" style="min-height:auto; border:2px solid #00ffd0;">
           <div class="terminal-bar black-bg flex-start p-1 ps-3">
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
@@ -501,17 +511,13 @@
           </div>
             <div class="p-5">
               <div class="terminal-content-gs">
-                <code>sh <(curl https://tea.xyz)</code>
+                <code>$ sh <(curl https://tea.xyz)</code>
               </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3 ">
-        <p class="mb-4 light-gray">This will confirm before setting up <span class="tea">~/.tea</span> and adding to your ~/.shellrc. Our one-liner even abstracts installing <span class="tea">tea</span> itself:</p>
+        <p class="mb-4 light-gray small">This will confirm before setting up <span class="tea">~/.tea</span> and adding to your ~/.shellrc. Our one-liner even abstracts installing <span class="tea">tea</span> itself:</p>
 
-        <div class="terminal flex term-getting-started">
+        <div class="terminal mb-4 flex term-getting-started" style="min-height:auto;">
           <div class="terminal-bar black-bg flex-start p-1 ps-3">
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
@@ -519,15 +525,14 @@
           </div>
             <div class="p-5">
               <div class="terminal-content-gs">
-                <code>sh <(curl tea.xyz) bun run start</code>
+                <code>$ sh <(curl tea.xyz) bun run start</code>
               </div>
           </div>
         </div>
-      </div>
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-        <p class="mb-4 light-gray">This will confirm before setting up ~/.tea and adding to your ~/.shellrc. Our one-liner even abstracts installing <span class="tea">tea</span> itself:</p>
 
-        <div class="terminal flex term-getting-started">
+        <p class="mb-4 light-gray small">This way, you don't need to start with "how to install tea" in your tutorials and blog posts. The installer also updates <span class="tea">tea</span>. If you hate installers, use brew:</p>
+
+        <div class="terminal flex term-getting-started" style="min-height:auto;">
           <div class="terminal-bar black-bg flex-start p-1 ps-3">
             <div class="traffic-light"></div>
             <div class="traffic-light"></div>
@@ -535,12 +540,12 @@
           </div>
             <div class="p-5">
               <div class="terminal-content-gs">
-                <code>sh <(curl tea.xyz) bun run start</code>
+                <code>$ brew install teaxyz/pkgs/tea-cli</code>
               </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
 </section>
