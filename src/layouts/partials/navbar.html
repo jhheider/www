@@ -1,4 +1,4 @@
-<nav class="navbar bg-dark navbar-expand-lg navbar-dark sticky-top my-auto main-nav">
+<nav class="navbar navbar-expand-lg sticky-top my-auto main-nav">
     <div class="container-fluid top-nav p-0">
       <a class="navbar-brand p-0" href="/"><img src="/Images/tea-logo-1.png" class="top-logo" alt="top-logo"></a>
       <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -8,11 +8,11 @@
       <div class="collapse navbar-collapse flex" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto my-auto">
           {{ range .Site.Menus.main }}
-          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3 top-nav-item">
             <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
           </li>
           {{ end }}
-          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3 top-nav-item">
             <a class="nav-link" aria-current="page" href="https://github.com/teaxyz/cli/stargazers">GitHub (<span class="stargazers"></span>)</a>
           </li>
           <style>
@@ -118,6 +118,14 @@
 
             #top-menu-btn{
               height:50px;
+            }
+
+            .top-nav-item{
+              color: #e1e1e1 !important;
+            }
+
+            .top-nav-item:hover{
+              color: #1a1a1a !important;
             }
 
           </style>

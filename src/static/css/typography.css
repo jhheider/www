@@ -85,13 +85,19 @@ li{
 }
 
 a{
-  color: #fff !important;
+  color: #fff;
   text-decoration: none;
 }
 
-a:hover{
-  color: #fff !important;
-  text-decoration: none !important;
+a.nav-link{
+  color: #e1e1e1;
+  border-bottom: 1px solid #1a1a1a;
+
+}
+
+a.nav-link:hover{
+  color: #00ffd0;
+  border-bottom: 1px solid #00ffd0;
 }
 
 /* Breakpoint-Specific Typography */
