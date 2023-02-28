@@ -57,12 +57,13 @@
     commandOutput += currentChar;
     command.input = command.input.slice(1);
 
-    // Check if the current character is within the .grid-gray span
-    if (document.querySelector(".grid-gray").contains(document.createTextNode(currentChar))) {
-      setTimeout(typeCommand, 50); // Reduce timeout delay for '#' character for faster animation
+    // Check if the current character is a '#' character
+    if (currentChar === '#') {
+      // Animate the '#' character really fast
+      setTimeout(typeCommand, 10);
     } else {
       // Add a random delay between 40ms and 80ms (except for '#' characters)
-      const delay = Math.floor(Math.random() * 40) + 80;
+      const delay = Math.floor(Math.random() * 40) + 40;
       setTimeout(typeCommand, delay);
     }
 
