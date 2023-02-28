@@ -25,9 +25,9 @@
 
 <script>
   const commands = [
-    { input: "<span class='purple'>$</span> node --eval 'console.log(\"Hello World!\")'", output: `<span class="mb-5">command not found: node</span><br><div class="comment p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-exclamation-circle"></i>Node is not installed, thus command is not found</code></div>`},
-    { input: "<span class='purple'>$</span> sh <(curl tea.xyz) --yes<br>############################################################", output: ``},
-    { input: "<span class='purple'>$</span> node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19` },
+    { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `<span class="mb-5">command not found: node</span><br><div class="comment p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-exclamation-circle"></i>Node is not installed, thus command is not found</code></div>`},
+    { input: "$ sh <(curl tea.xyz) --yes<br>############################################################", output: ``},
+    { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19` },
     { input: "", output: `Hello World! &#128526;<br><div class="comment-success p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-check-circle"></i>tea magically installs needed dependencies</code></div>` },
   ];
 
@@ -50,7 +50,10 @@
       return;
     }
 
-    const currentChar = command.input[0];
+    let currentChar = command.input[0];
+      if (currentChar === '$') {
+        currentChar = '<span class="purple">$</span>';
+      }
     commandOutput += currentChar;
     command.input = command.input.slice(1);
 
