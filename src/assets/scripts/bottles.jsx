@@ -1,12 +1,24 @@
 function Bottles() {
   const [bottles, setBottles] = React.useState();
+  const [isLoading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     fetch("https://app.tea.xyz/api/bottles")
       .then((res) => res.json())
-      .then((res) => setBottles(res));
+      .then((res) => {
+        setBottles(res);
+        setLoading(false);
+      });
   }, []);
 
+  if (isLoading) return (
+    <div id="bottle-preloader" className="flex">
+      <div id="bottle-status" className="my-auto">
+        <i className="icon-tea-logo-iconasset-1 grid-gray tea-icon lead mb-0"></i>
+        <div id="bottle-loading-text"><p className="grid-gray">steeping...</p></div>
+      </div>
+    </div>
+  );
   if (!bottles) return null;
 
   const names = [...new Set(bottles.map((b) => b.name))];
