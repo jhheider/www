@@ -1,33 +1,45 @@
 {{ define "main" }}
 
 <!-- Hero Section -->
-<section class="hero one-box" style="height:100vh;">
+<section class="hero">
   <div class="container">
     <div class="row gx-5">
-      <div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
-      <div class="hero-col col-xl-8 col-lg-8 col-md-0 col-sm-0 col-0 my-auto" style="100vh">
-        <h1 class="display-1 hero-text text-center" style="z-index:3; position: relative;"><span class="inner-glow ">WHITE PAPER</h1>
-          <p class="lead hero-lead mb-5 text-center">Take a look under the hood (bonnet) and see how we're planning on leveraging blockchain technology to fix open-source. We welcome commentary and feedback via any of our community channels.</p>
-          <div class="row desktop-ctas">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
-              <a href="https://tea.xyz/tea.white-paper.pdf">
-                <button class="hbtn hb-fill-right" style="width:100% !important;">Download Whitepaper</button>
-              </a>
+      <div class="col">
+        <div class="content-container flex" style="height:100vh;">
+        <div class="wp-content">
+          <div class="wp-content-inner w-75" style="margin-left:auto; margin-right:auto;">
+          <h1 class="display-1 hero-text text-center" style="z-index:3; position: relative;"><span class="inner-glow ">WHITE PAPER</h1>
+            <p class="lead hero-lead mb-5 text-center">Take a look under the hood (bonnet) and see how we're planning on leveraging blockchain technology to fix open-source. We welcome commentary and feedback via any of our community channels.</p>
+            <div class="row desktop-ctas">
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+                <a href="https://tea.xyz/tea.white-paper.pdf">
+                  <button class="hbtn hb-fill-right" style="width:100% !important; text-transform:uppercase;">Download Whitepaper</button>
+                </a>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                <a href="https://github.com/teaxyz/white-paper">
+                  <button class="hbtn-light hb-light-fill-right" style="width:100% !important;">CONTRIBUTE ON GITHUB</button>
+                </a>
+              </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-              <a href="https://github.com/teaxyz/white-paper">
-                <button class="hbtn-light hb-light-fill-right" style="width:100% !important;"><i class="icon-github" style="position:relative;top:2px;"></i>CONTRIBUTE</button>
-              </a>
             </div>
-          </div>
-
+        </div>
+        </div>
       </div>
-      <div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
     </div>
   </div>
 </section>
 
 <style>
+
+  @media only screen and (max-width: 576px) {
+    .wp-content-inner{
+      width:100% !important;
+    }
+  }
+
+
+
   .split-btn{
     display: inline-block;
     width: 50%;
@@ -36,7 +48,7 @@
   .split-right{
     border-left: 0px !important;
   }
-
+  /*
   .dropdown-toggle{
     height: 50px;
     width: auto;
@@ -45,6 +57,7 @@
     font-family: "inter", sans-serif;
 
   }
+  */
 
 </style>
 
