@@ -1,364 +1,222 @@
-
-  <div class="card card-thumbnail" style="width: 100%" data-name="{{- .name -}}" data-popularity="{{- .dl_count -}}" data-last_modified="{{- .last_modified -}}" data-description="{{- .desc -}}">
+<div class="card card-thumbnail" style="width: 100%" data-name="{{- .name -}}" data-popularity="{{- .dl_count -}}" data-last_modified="{{- .last_modified -}}" data-description="{{- .desc -}}">
+  <a href="/+{{- lower .full_name -}}/">
+    <div class="p-3">
+    <figure class="card-img-top" >
+      <img class="package-image" src="{{- .thumb_image_url -}}" alt="{{- .name -}}" style="width:100%; height:100%;">
+      <article class="card-thumb-label">
+        <i class="icon-tea-logo-iconasset-1 lead" style="color:#1a1a1a;"></i>
+        <h3 class="package-title mb-1">{{- .name -}}</h3>
+        {{ if not (eq .maintainer "") }}
+          <h4 class="small">&#x2022;&nbsp;{{- .maintainer -}}</h4>
+        {{end}}
+      </article>
+    </figure>
+  </a>
+  <div class="card-body thumbnail-body">
+    <div class="card-text-container">
+      <p class="card-text small">
+        <span class="grid-gray">V&NonBreakingSpace;{{- .version -}}</span>
+        <!--
+        TODO: uncomment once install counts improve
+        <br>
+        <span class="package-install-no">>{{- .installs -}}&nbsp;installs</span> -->
+      </p>
+    </div>
     <a href="/+{{- lower .full_name -}}/">
-      <figure class="card-img-top" >
-        <img class="package-image" src="{{- .thumb_image_url -}}" alt="{{- .name -}}" style="width:100%; height:100%;">
-        <article class="card-thumb-label">
-          <i class="icon-tea-logo-iconasset-1"></i>
-          <h3>{{- .name -}}</h3>
-          {{ if not (eq .maintainer "") }}
-            <h4>&#x2022;&nbsp;{{- .maintainer -}}</h4>
-          {{end}}
-        </article>
-      </figure>
+      <button class="hbtn hb-fill-right detail-btn" type="button" name="button">Details</button>
     </a>
-    <div class="card-body thumbnail-body">
-      <div class="card-text-container">
-        <p class="card-text">
-          <span class="package-version-no">V&NonBreakingSpace;{{- .version -}}</span>
-          <!--
-          TODO: uncomment once install counts improve
-          <br>
-          <span class="package-install-no">>{{- .installs -}}&nbsp;installs</span> -->
-        </p>
-      </div>
-      <a href="/+{{- lower .full_name -}}/">
-        {{- partial "detail-btn.html" . -}}
-      </a>
-    </div>
-    <div class="card-body thumbnail-body-mobile">
-      <a href="/+{{- lower .full_name -}}/">
-        <button class="detail-btn-mobile"><i class="icon-enter-arrow"></i>details</button>
-      </a>
-    </div>
   </div>
+  <div class="card-body thumbnail-body-mobile">
+    <a href="/+{{- lower .full_name -}}/">
+      <button class="detail-btn-mobile"><i class="icon-enter-arrow"></i>details</button>
+    </a>
+  </div>
+  </div>
+</div>
 
 <style>
 
+.detail-btn{
+  width: 100px !important;
+  height: 30px;
+  padding:0px;
+}
+
+.package-title{
+  font-size: 1.5rem;
+}
+
 div.card.card-thumbnail{
-  background-color: #1a1a1a;
-  transition: all .3s;
+background-color: #1a1a1a;
+transition: all .3s;
 }
 
 .card-img-top {
-  position: relative;
+position: relative;
 }
 
 .detail-btn{
-  position: relative;
-  float:right!important;
-  right: 0;
+position: relative;
+float:right!important;
+right: 0;
 }
 
 @media only screen and (min-width: 576px) {
 
-  .package-image{
-    box-shadow: 0px 0px 12px #0c0c0c !important;
-  }
+.package-image{
+  box-shadow: 0px 0px 12px #0c0c0c !important;
+}
 
-  figure{
-    transition: 0.2s ease-in-out;
-  }
+figure{
+  transition: 0.2s ease-in-out;
+}
 
-  figure:hover{
-    transform: scale(1.02);
-  }
+figure:hover{
+  transform: scale(1.02);
+}
 
 }
 
-
-
-@media only screen and (min-width: 992px) {
-
-  .card-thumb-label i{
-    font-size: 1.5vw;
-  }
-
-  .card-thumb-label {
-    position: absolute;
-    background: rgba(255,255,255,0.9);
-    left: 0;
-    bottom: 0vw;
-    padding: 1.116vw;
-    text-align: left;
-    width: 90%;
-    height: 40;
-  }
-
-  .card-thumb-label h3 {
-    color: black;
-    font-size: 1.8vw;
-    line-height: 1.8vw;
-    margin: 0px 0px 0.5vw 0vw;
-    padding: 0px;
-  }
-
-  .card-thumb-label h4 {
-    color: black;
-    font-size: .9vw;
-    line-height: 1vw;
-    margin: 0px;
-    padding: 0px;
-  }
-
-  .card-thumbnail{
-    background: none;
-    border-radius: 0px !important;
-    border: 1px solid #949494;
-    padding: 1.674vw;
-  }
-
-  .thumbnail-body{
-    display: flex;
-    border-radius: 0px !important;
-    padding: 0vw;
-    justify-content: space-between;
-  }
-
-  .card-img-top{
-    border-radius: 0px;
-    margin-bottom: 1.674vw;
-  }
-
-  .card-text{
-    font-size: 0.781vw;
-    float:left;
-    position: relative;
-    top:0.502vw;
-  }
-
-  .card-text-container{
-    float:left;
-    position: relative;
-    width:48%;
-  }
-
-  .thumbnail-body-mobile{
-    display: none;
-  }
+.card-thumb-label i{
 
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-
-  .card-thumb-label i{
-    font-size: 2vw;
-  }
-
-  .card-thumb-label {
-    position: absolute;
-    background: rgba(255,255,255,0.9);
-    left: 0;
-    bottom: 0vw;
-    padding: 1.116vw;
-    text-align: left;
-    width: 90%;
-    height: 40%;
-  }
-
-  .card-thumb-label h3 {
-    color: black;
-    font-size: 2.8vw;
-    line-height: 2.8vw;
-    margin: 0px 0px 1vw 0vw;
-    padding: 0px;
-  }
-
-  .card-thumb-label h4 {
-    color: black;
-    font-size: 1.5vw;
-    line-height: 1.5vw;
-    margin: 0px;
-    padding: 0px;
-  }
-
-  .card-thumbnail{
-    background: none;
-    border-radius: 0px !important;
-    border: 1px solid #949494;
-    padding: 1.674vw;
-  }
-
-  .thumbnail-body{
-    display: flex;
-    border-radius: 0px !important;
-    padding: 0vw;
-    justify-content: space-between;
-  }
-
-  .card-img-top{
-    border-radius: 0px;
-    margin-bottom: 1.674vw;
-  }
-
-  .card-text{
-    font-size: 0.781vw;
-    float:left;
-    position: relative;
-    top:0.502vw;
-  }
-
-  .card-text-container{
-    float:left;
-    position: relative;
-    width:48%;
-  }
-
-  .thumbnail-body-mobile{
-    display: none;
-  }
-
+.card-thumb-label {
+  position: absolute;
+  background: rgba(255,255,255,0.9);
+  left: 0;
+  bottom: 0vw;
+  padding: 1.116vw;
+  text-align: left;
+  width: 90%;
+  height: 50%;
 }
 
-@media only screen and (min-width: 576px) and (max-width: 768px) {
+.card-thumb-label h3 {
+  color: black;
+  margin: 0px 0px 0.5vw 0vw;
+  padding: 0px;
+}
 
-  .card-thumb-label i{
-    font-size: 2.5vw;
-  }
+.card-thumb-label h4 {
+  color: black;
+  margin: 0px;
+  padding: 0px;
+}
 
-  .card-thumb-label {
-    position: absolute;
-    background: rgba(255,255,255,0.9);
-    left: 0;
-    bottom: 0vw;
-    padding: 1.116vw;
-    text-align: left;
-    width: 90%;
-    height: 40%;
-  }
+.card-thumbnail{
+  background: none;
+  border-radius: 0px !important;
+  border: 1px solid #949494;
+}
 
-  .card-thumb-label h3 {
-    color: black;
-    font-size: 3vw;
-    line-height: 3vw;
-    margin: 0px 0px 0.5vw 0vw;
-    padding: 0px;
-  }
+.thumbnail-body{
+  display: flex;
+  border-radius: 0px !important;
+  padding: 0vw;
+  justify-content: space-between;
+}
 
-  .card-thumb-label h4 {
-    color: black;
-    font-size: 1.5vw;
-    line-height: 1.5vw;
-    margin: 0px;
-    padding: 0px;
-  }
+.card-img-top{
+  border-radius: 0px;
+}
 
-  .card-thumbnail{
-    background: none;
-    border-radius: 0px !important;
-    border: 1px solid #949494;
-    padding: 1.674vw;
-  }
+.card-text{
+  float:left;
+  position: relative;
+  font-size: .8rem;
+  top:2px;
+}
 
-  .thumbnail-body{
-    display: flex;
-    border-radius: 0px !important;
-    padding: 0vw;
-    justify-content: space-between;
-  }
+.card-text-container{
+  float:left;
+  position: relative;
+  width:48%;
+  display: flex;
+}
 
-  .card-img-top{
-    border-radius: 0px;
-    margin-bottom: 1.674vw;
-  }
-
-  .card-text{
-    font-size: 0.781vw;
-    float:left;
-    position: relative;
-    top:0.502vw;
-  }
-
-  .card-text-container{
-    float:left;
-    position: relative;
-    width:48%;
-  }
-
-  .thumbnail-body-mobile{
-    display: none;
-  }
-
+.thumbnail-body-mobile{
+  display: none;
 }
 
 @media only screen and (max-width: 576px) {
 
-  .card-thumb-label i{
-    font-size: 5vw;
-  }
+.card-thumb-label i{
+  font-size: 5vw;
+}
 
-  .card-thumb-label {
-    position: absolute;
-    background: rgba(255,255,255,0.9);
-    left: 0;
-    bottom: 0;
-    padding: 3vw;
-    text-align: left;
-    width: 100%;
-    height: 50%;
-  }
+.card-thumb-label {
+  position: absolute;
+  background: rgba(255,255,255,0.9);
+  left: 0;
+  bottom: 0;
+  padding: 3vw;
+  text-align: left;
+  width: 100%;
+  height: 50%;
+}
 
-  .card-thumb-label h3 {
-    color: black;
-    font-size: 6.8vw;
-    line-height: 6.8vw;
-    margin: 0px 0px 1vw 0vw;
-    padding: 0px;
-  }
+.card-thumb-label h3 {
+  color: black;
+  font-size: 6.8vw;
+  line-height: 6.8vw;
+  margin: 0px 0px 1vw 0vw;
+  padding: 0px;
+}
 
-  .card-thumb-label h4 {
-    color: black;
-    font-size: 3vw;
-    line-height: 3vw;
-    margin: 0px;
-    padding: 0px;
-  }
+.card-thumb-label h4 {
+  color: black;
+  font-size: 3vw;
+  line-height: 3vw;
+  margin: 0px;
+  padding: 0px;
+}
 
-  .card-thumbnail{
-    background: none;
-    border-radius: 0px !important;
-    border: none;
-  }
+.card-thumbnail{
+  background: none;
+  border-radius: 0px !important;
+  border: none;
+}
 
-  .thumbnail-body{
-    border-radius: 0px !important;
-    padding: 0vw;
-    display:none;
-  }
+.thumbnail-body{
+  border-radius: 0px !important;
+  padding: 0vw;
+  display:none;
+}
 
-  .thumbnail-body-mobile{
-    background-color: #8000ff;
-    padding: 1.25vw 0vw !important;
-  }
+.thumbnail-body-mobile{
+  background-color: #8000ff;
+  padding: 1.25vw 0vw !important;
+}
 
-  .card-img-top{
-    border-radius: 0px;
-    margin-bottom: 0vw;
-  }
+.card-img-top{
+  border-radius: 0px;
+  margin-bottom: 0vw;
+}
 
-  .detail-btn-mobile{
-    background:none;
-    border:none;
-    color: white;
-    font-family: "pp-neue-machina", sans-serif;
-    font-size: 4vw;
-    width: 100%;
-    height: 100%;
-    text-transform: uppercase;
-    padding-top: 2vw !important;
-  }
+.detail-btn-mobile{
+  background:none;
+  border:none;
+  color: white;
+  font-family: "pp-neue-machina", sans-serif;
+  font-size: 4vw;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  padding-top: 2vw !important;
+}
 
-  .detail-btn-mobile .icon-enter-arrow{
-    display: inline-block;
-    position: relaitve;
-    margin-right: 2vw;
-    transition: 0.2s ease-in-out;
-  }
+.detail-btn-mobile .icon-enter-arrow{
+  display: inline-block;
+  position: relaitve;
+  margin-right: 2vw;
+  transition: 0.2s ease-in-out;
+}
 
-  .detail-btn-mobile:hover .icon-enter-arrow{
-    display: inline-block;
-    transform: rotate(-45deg) !important;
-  }
+.detail-btn-mobile:hover .icon-enter-arrow{
+  display: inline-block;
+  transform: rotate(-45deg) !important;
+}
 
 }
 

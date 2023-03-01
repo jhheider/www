@@ -1,33 +1,57 @@
 {{ define "main" }}
 
-
-
 <!-- Package Grid -->
 
 <!-- Desktop/Tablet Package Display -->
 
-  <span>
+  <span class="grid-package-display black-bg">
     {{- partial "package-grid.html" . -}}
   </span>
 
 <!-- Mobile Package Display -->
-  <!-- dont remove, it is not completely useless there is a ui bug i couldnt figure out 
-    the only solution is to keep it here. sorry - neil
-    -->
+
   <span class="swiper-package-display">
     {{- partial "swiper.html" . -}}
   </span>
 
-<!-- Style for Swiper -->
+<hr>
+
+<section>
+  <div class="container">
+    <div class="row two-boxes">
+      <div class="col packing-illustration me-4">
+
+      </div>
+      <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+        <h2 class="display-5 text-left">Wanna help us with the top 300 packages?</h2>
+        <p class="lead text-left">In order to ensure that the sun never sets on our packaging empire, we at tea are looking for help from the communi'tea to package up the top 300 packages.</p>
+        <p class="mb-5">Our developers are working hard, but it's a daunting task that we can't handle on our own. And of course, we're also grateful for packages <i>outside</i> of that top 300 roster. While at the moment, we're requesting that you assist purely for your love of open-source, once we launch our protocol, maintainers & contributors will be remunerated for their work via tea token.</p>
+        <div class="row desktop-ctas">
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+            <a href="https://github.com/teaxyz/cli#getting-started">
+              <button class="hbtn hb-fill-right" style="width:100% !important;"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform:lowercase;"></span>)</button>
+            </a>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <a href="https://github.com/teaxyz/cli">
+              <button class="hbtn-light hb-light-fill-right" style="width:100% !important;"><i class="icon-github" style="position:relative;top:2px;"></i>READ THE DOCS (&#9734;<span class="stargazers" style="text-transform: lowercase;"></span>)</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
-  .grid-package-display{
-    display:block;
+
+  .packing-illustration{
+    background: url('/Images/futuristic-packaging.jpg');
+    background-size: cover;
+    background-position: scroll;
+    border-radius: 10px;
   }
-  .swiper-package-display {
-    /* dont remove refer to comment above */
-    display: none;
-  }
+
 </style>
 
 {{ end }}

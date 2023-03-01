@@ -1,28 +1,31 @@
 {{ define "main" }}
 
-{{- partial "white-paper-gen-art.html" -}}
-
 <!-- Hero Section -->
-<div class="section two-boxes wp-hero-section">
+<section class="hero one-box">
   <div class="container">
-    <div class="row">
-      <div class="col" style="position: relative; z-index: 2;">
-        <h1>White Paper</h1>
-        <div class="wp-lead-text-container animated-5 animatedFadeInUp fadeInUp p-4 black-bg">
-          <p class="lead" style="margin-bottom: 0px;">Open‐source is about the many coming together to create something great. In the spirit of that, we’re inviting developers, speculators, and enthusiasts alike to contribute to our white paper and help brew the future of the internet. This is our revolutionary undertaking to create equitable open‐source for web3, and we want you to be a part of laying its groundwork.</p>
-        </div>
-        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+    <div class="row gx-5">
+      <div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
+      <div class="hero-col col-xl-8 col-lg-8 col-md-0 col-sm-0 col-0 my-auto">
+        <h1 class="display-1 hero-text text-center" style="z-index:3; position: relative;"><span class="inner-glow ">WHITE PAPER</h1>
+          <p class="lead hero-lead mb-5 text-center">Take a look under the hood (bonnet) and see how we're planning on leveraging blockchain technology to fix open-source. We welcome commentary and feedback via any of our community channels.</p>
+          <div class="row desktop-ctas">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+              <a href="https://tea.xyz/tea.white-paper.pdf">
+                <button class="hbtn hb-fill-right" style="width:100% !important;"><i class="icon-tea-logo-iconasset-1"></i>INSTALL TEA (<span class="release" style="text-transform:lowercase;"></span>)</button>
+              </a>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+              <a href="https://github.com/teaxyz/white-paper">
+                <button class="hbtn-light hb-light-fill-right" style="width:100% !important;"><i class="icon-github" style="position:relative;top:2px;"></i>CONTRIBUTE</button>
+              </a>
+            </div>
+          </div>
+
       </div>
+      <div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
     </div>
   </div>
-</div>
-
-<hr>
-  <div class="row button-container">
-    <a href="/tea.white-paper.pdf" role="button" class="btn btn-primary split-btn" id="nav-cta"><i class="icon-enter-arrow"></i>DOWNLOAD WHITEPAPER</a>
-    <a href="https://github.com/teaxyz/white-paper" role="button" class="btn btn-primary split-btn split-right" id="nav-cta"><i class="icon-enter-arrow"></i>CONTRIBUTE ON GITHUB</a>
-  </div>
-<hr>
+</section>
 
 <style>
   .split-btn{
@@ -34,6 +37,15 @@
     border-left: 0px !important;
   }
 
+  .dropdown-toggle{
+    height: 50px;
+    width: auto;
+    padding: 0px 30px;
+    border: 1px solid #fff;
+    font-family: "inter", sans-serif;
+
+  }
+
 </style>
 
 
@@ -41,15 +53,14 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h4>Our white paper is available in multiple languages</h4>
-        <p>Thanks to the tea community's generosity and time, our white paper is available in several world languages. Select your preferred language from the dropdown menu.</p>
+        <h3 class="display-6">Our white paper is available in multiple languages</h3>
+        <p class="mb-4">Thanks to the tea community's generosity and time, our white paper is available in several world languages. Select your preferred language from the dropdown menu.</p>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle languages" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="hbtn-light hb-light-fill-right dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Choose a Language
           </button>
           <ul class="dropdown-menu" id="language-selector"></ul>
         </div>
-          <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
       </div>
     </div>
   </div>
@@ -129,30 +140,5 @@
     </div>
   </div>
 </section>
-
-  <!-- Start PDF
-
-  <div class="container pdf-iframe"
-    style="margin-bottom:100px; overflow:auto; -webkit-overflow-scrolling:touch; z-index:2;">
-    <iframe id="wp-iframe"src="https://tea.xyz/tea.white-paper.pdf#toolbar=0&navpanes=0&view=fitH" width="100%" height="800px">
-    </iframe>
-  </div>
-
-  <div class="container mobile-pdf" style="margin-bottom:100px;">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div style="display:flex; flex-direction:column; background-color:#23282C;" class="card-body pt-5 pb-5">
-            <div style="margin-top:auto; margin-bottom:auto;">
-              <p class="text-center">Mobile browsers can be finicky, so please view our white paper via the button
-                below.</p>
-              <a id="mobile-wp-download" style="display:block; margin-left:auto; margin-right:auto;" class="btn btn-primary mb-3"
-                href="https://tea.xyz/tea.white-paper.pdf" role="button">Download our White Paper</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
 
 {{ end }}

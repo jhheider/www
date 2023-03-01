@@ -1,0 +1,75 @@
+<div class="terminal flex">
+  <div class="terminal-bar black-bg flex-start p-1 ps-3">
+    <div class="traffic-light"></div>
+    <div class="traffic-light"></div>
+    <div class="traffic-light"></div>
+  </div>
+    <div class="p-xl-5 p-lg-5 p-md-3 p-sm-3 p-3">
+      <div class="terminal-content" id="hero-terminal-content">
+        <code id="terminal-output"></code>
+        <p id="terminal-input"></p>
+      </div>
+  </div>
+</div>
+
+<style>
+
+  .icon-exclamation-circle,
+  .icon-check-circle{
+    position: relative;
+    top:2px;
+    margin-right:5px;
+  }
+
+</style>
+
+<script>
+  const commands = [
+    { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `<span class="mb-5">command not found: node</span><br><div class="comment p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-exclamation-circle"></i>Node is not installed, thus command is not found</code></div>`},
+    { input: "$ sh <(curl tea.xyz) --yes<br>############################################################", output: ``},
+    { input: "$ node --eval 'console.log(\"Hello World!\")'", output: `tea: installing nodejs.org^19` },
+    { input: "", output: `Hello World! &#128526;<br><div class="comment-success p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-check-circle"></i>tea magically installs needed dependencies</code></div>` },
+  ];
+
+  let commandIndex = 0;
+  let command = commands[commandIndex];
+  let commandOutput = "";
+
+  function typeCommand() {
+    if (commandIndex === commands.length) {
+      return;
+    }
+    if (command.input.length === 0) {
+      setTimeout(() => {
+        commandOutput += '\n' + command.output + '\n';
+        document.querySelector("#terminal-output").innerHTML = commandOutput;
+        commandIndex++;
+        command = commands[commandIndex];
+        // Add a longer delay after each command output (500ms in this case)
+        setTimeout(typeCommand, 2000);
+      }, 1000);
+      return;
+    }
+
+    let currentChar = command.input[0];
+    if (currentChar === '$') {
+      currentChar = '<span class="purple">$</span>';
+    }
+    commandOutput += currentChar;
+    command.input = command.input.slice(1);
+
+    // Check if the current character is a '#' character
+    if (currentChar === '#') {
+      // Animate the '#' character really fast
+      setTimeout(typeCommand, 10);
+    } else {
+      // Add a random delay between 40ms and 80ms (except for '#' characters)
+      const delay = Math.floor(Math.random() * 40) + 40;
+      setTimeout(typeCommand, delay);
+    }
+
+    document.querySelector("#terminal-output").innerHTML = commandOutput;
+  }
+
+  typeCommand();
+</script>

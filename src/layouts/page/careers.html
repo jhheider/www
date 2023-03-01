@@ -1,20 +1,13 @@
 {{ define "main" }}
 
-<section class="two-boxes hero-section">
-
-<div>
-
-  <span id="aa62fd265a9f"></span>
-
-</div>
-
+<!-- Hero Section -->
+<section class="hero one-box teal-bg">
   <div class="container">
     <div class="row">
-      <div class="col">
-        <h1>Careers</h1>
-        <p class="lead">Join us!</p>
-        <p>tea is building an open-source ecosystem that is fair for everyone. We are growing our team of talented people to make this happen. We are looking for curious, passionate, and smart teammates. If you are interested please check out our open positions below.</p>
-        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      <div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
+      <div class="hero-col col-xl-8 col-lg-8 col-md-0 col-sm-0 col-0 my-auto">
+        <h1 class="display-1 hero-text text-center black" style="z-index:3; position: relative;"><span class="inner-glow ">Careers</h1>
+          <p class="lead hero-lead mb-5 text-center black"><span class="tea">tea</span> is building an open-source ecosystem that is fair for everyone. We are growing our team of talented people to make this happen. We are looking for curious, passionate, and smart teammates. If you are interested please check out our open positions below.</p>
       </div>
     </div>
   </div>
@@ -22,104 +15,106 @@
 
 <hr>
 
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" id="jobOne" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body two-boxes">
-          <div class="one-box-down">
-            <p>Employment type: <span id="typeOne"></span></p>
-            <p>Department: <span id="deptOne"></span></p>
-            <p>Location: <span id="locOne"></span></p>
-          </div>
-          <div class="one-box-down">
-            <hr>
-          </div>
-          <div class="one-box-down" id="descOne"></div>
-          <div>
-            <a href="" id="linkOne">
-            <button class="detail-btn-large"><i class="icon-enter-arrow"></i>VIEW ALL DETAILS</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" id="jobTwo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div class="accordion-body two-boxes">
-          <div class="one-box-down">
-            <p>Employment type: <span id="typeTwo"></span></p>
-            <p>Department: <span id="deptTwo"></span></p>
-            <p>Location: <span id="locTwo"></span></p>
-          </div>
-          <div class="one-box-down">
-            <hr>
-          </div>
-          <div class="one-box-down" id="descTwo"></div>
-          <div>
-            <a href="" id="linkTwo">
-            <button class="detail-btn-large"><i class="icon-enter-arrow"></i>VIEW ALL DETAILS</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" id="jobThree" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Accordion Item #3
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-        <div class="accordion-body two-boxes">
-          <div class="one-box-down">
-            <p>Employment type: <span id="typeThree"></span></p>
-            <p>Department: <span id="deptThree"></span></p>
-            <p>Location: <span id="locThree"></span></p>
-          </div>
-          <div class="one-box-down">
-            <hr>
-          </div>
-          <div class="one-box-down" id="descThree"></div>
-          <div>
-            <a href="" id="linkThree">
-            <button class="detail-btn-large"><i class="icon-enter-arrow"></i>VIEW ALL DETAILS</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- Why Work at tea -->
-<section class="teal-bg two-boxes">
-  <div class="row">
-    <div class="container two-boxes">
+<section>
+  <div class="container one-box">
+    <div class="container mt-5 mb-5 me-0">
       <div class="row">
         <div class="col">
-          <h3 class="black text-center">Why work @ tea?</h3>
-          <p class="text-center black" style="background-color:#00ffd0 !important;">Join a team of motivated and passionate individuals and be a part of a rapidly growing and exciting project in web3 and open source technologies. We offer an attractive salary, relocation packages (if applicable), token/equity options and performance&#8208;based bonuses.</p>
+          <h3 class="display-6 mb-4">Current Openings</h3>
         </div>
       </div>
+      <div class="row" id="card-container"></div>
     </div>
-  </div>
-
 </section>
 
+    <script>
+      // Fetch data from API
+      fetch("https://tea.breezy.hr/json?verbose=true")
+        .then(response => response.json())
+        .then(data => {
+          // Loop through data and create card for each item
+          data.forEach(item => {
+            // Create card element
+            const card = document.createElement("div");
+            card.classList.add("card", "mb-4");
+
+            // Create card body element
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body", "p-4");
+
+            // Add name to card body as a link to the URL
+            const title = document.createElement("a");
+            title.classList.add("card-title", "display-6", "teal");
+            title.href = item.url;
+            title.textContent = item.name;
+            cardBody.appendChild(title);
+
+            // Add description to card body
+            const description = document.createElement("div");
+            description.classList.add("card-text","mt-3","mb-5");
+            description.innerHTML = item.description.slice(0, 700);
+            cardBody.appendChild(description);
+
+            // Add show more link to card body
+            const showMoreLink = document.createElement("a");
+            showMoreLink.classList.add("me-3", "teal");
+            showMoreLink.href = "#";
+            showMoreLink.textContent = "Show more";
+            showMoreLink.addEventListener("click", event => {
+              event.preventDefault();
+              if (description.innerHTML === item.description) {
+                description.innerHTML = item.description.slice(0, 700);
+                showMoreLink.textContent = "Show more";
+              } else {
+                description.innerHTML = item.description;
+                showMoreLink.textContent = "Show less";
+              }
+            });
+            cardBody.appendChild(showMoreLink);
+
+            // Add url link to card body
+            const urlLink = document.createElement("a");
+            urlLink.classList.add("teal");
+            urlLink.href = item.url;
+            urlLink.textContent = "View on BreezyHR";
+            cardBody.appendChild(urlLink);
+
+            // Add card body to card
+            card.appendChild(cardBody);
+
+            // Add card to container
+            const container = document.getElementById("card-container");
+            const row = document.createElement("div");
+            row.classList.add("row");
+            const col = document.createElement("div");
+            col.classList.add("col");
+            col.appendChild(card);
+            row.appendChild(col);
+            container.appendChild(row);
+          });
+        })
+        .catch(error => console.log(error));
+    </script>
+
+
 <style>
+
+  a:hover{
+    color: #2675f5;
+  }
 
   .accordion-button{
     line-height: 6vw;
   }
+
+  .card-body{
+    background-color: #1a1a1a;
+  }
+
+  .card-text.show-more {
+    max-height: none !important;
+  }
+
 
 </style>
 

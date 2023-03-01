@@ -1,18 +1,299 @@
 <hr>
-  <div class="row button-container">
-    <a href="#" role="button" class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-0 mt-0 split-btn" id="nav-cta"><i class="icon-enter-arrow"></i>NPM</a>
-    <a href="#" role="button" class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-0 mt-0 split-btn split-right" id="nav-cta"><i class="icon-enter-arrow"></i>INSTALL</a>
+  <div class="row button-container flex">
+    <a href="https://github.com/teaxyz/cli" class="ps-0 pe-0 btn-div" id="btn-div-top" >
+      <button class="sbtn sb-fill-top">GIVE US A STAR (<span class="stargazers" style="text-transform: lowercase;"></span>)</button>
+    </a>
+    <a href="https://github.com/teaxyz/cli" class="ps-0 pe-0 btn-div" id="btn-div" >
+      <button class="sbtn sb-fill-top">INSTALL TEA (<span class="release" style="text-transform: lowercase;"></span>)</button>
+    </a>
   </div>
 <hr>
 
 <style>
-  .split-btn{
-    display: inline-block;
-    width: 50%;
+
+  @media only screen and (min-width: 1200px) {
+
+    .btn-div{
+      width: 50%;
+      border-left: 2px solid #949494;
+    }
+
+    #btn-div{
+      border-right: 2px solid #949494;
+    }
+
+    .sbtn {
+      font-family: "pp-neue-machina";
+      background-color: #1a1a1a;
+      position: relative;
+      box-sizing: border-box;
+      height: 8.8vw !important;
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+      border: none;
+      text-decoration: none;
+      color: rgb(225, 225, 225);
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .sb-fill-top::before {
+          position: absolute;
+          content: "";
+          background: rgb(6, 255, 208);
+          transition-duration: 0.2s;
+          z-index: -1;
+          inset: auto auto 0px 0px;
+          width: 100%;
+          height: 0px;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover::before {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover {
+          color: rgb(10, 5, 5);
+          background: rgb(255, 255, 255);
+          transition: color 0.2s ease 0s, background 0s ease 0.3s;
+    }
+
   }
 
-  .split-right{
-    border-left: 0px !important;
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+    .btn-div{
+      width: 50%;
+      border-left: 2px solid #949494;
+    }
+
+    #btn-div{
+      border-right: 2px solid #949494;
+    }
+
+    .sbtn {
+      font-family: "pp-neue-machina";
+      background-color: #1a1a1a;
+      position: relative;
+      box-sizing: border-box;
+      height: 8.8vw !important;
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+      border: none;
+      text-decoration: none;
+      color: rgb(225, 225, 225);
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .sb-fill-top::before {
+          position: absolute;
+          content: "";
+          background: rgb(6, 255, 208);
+          transition-duration: 0.2s;
+          z-index: -1;
+          inset: auto auto 0px 0px;
+          width: 100%;
+          height: 0px;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover::before {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover {
+          color: rgb(10, 5, 5);
+          background: rgb(255, 255, 255);
+          transition: color 0.2s ease 0s, background 0s ease 0.3s;
+    }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    .btn-div{
+      width: 50%;
+      border-left: 2px solid #949494;
+    }
+
+    #btn-div{
+      border-right: 2px solid #949494;
+    }
+
+    .sbtn {
+      font-family: "pp-neue-machina";
+      background-color: #1a1a1a;
+      position: relative;
+      box-sizing: border-box;
+      height: 8.8vw !important;
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+      border: none;
+      text-decoration: none;
+      color: rgb(225, 225, 225);
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .sb-fill-top::before {
+          position: absolute;
+          content: "";
+          background: rgb(6, 255, 208);
+          transition-duration: 0.2s;
+          z-index: -1;
+          inset: auto auto 0px 0px;
+          width: 100%;
+          height: 0px;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover::before {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover {
+          color: rgb(10, 5, 5);
+          background: rgb(255, 255, 255);
+          transition: color 0.2s ease 0s, background 0s ease 0.3s;
+    }
+
+  }
+
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+
+    .btn-div{
+      width: 50%;
+      border-left: 2px solid #949494;
+    }
+
+    #btn-div{
+      border-right: 2px solid #949494;
+    }
+
+    .sbtn {
+      font-family: "pp-neue-machina";
+      background-color: #1a1a1a;
+      position: relative;
+      box-sizing: border-box;
+      height: 8.8vw !important;
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+      border: none;
+      text-decoration: none;
+      color: rgb(225, 225, 225);
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .sb-fill-top::before {
+          position: absolute;
+          content: "";
+          background: rgb(6, 255, 208);
+          transition-duration: 0.2s;
+          z-index: -1;
+          inset: auto auto 0px 0px;
+          width: 100%;
+          height: 0px;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover::before {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover {
+          color: rgb(10, 5, 5);
+          background: rgb(255, 255, 255);
+          transition: color 0.2s ease 0s, background 0s ease 0.3s;
+    }
+
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    .btn-div{
+      width: 100%;
+      border-left: 2px solid #949494;
+    }
+
+    #btn-div{
+      border-right: 2px solid #949494;
+    }
+
+    #btn-div-top{
+      border-right: 2px solid #949494;
+      border-bottom: 2px solid #949494;
+    }
+
+    .sbtn {
+      font-family: "pp-neue-machina";
+      background-color: #1a1a1a;
+      position: relative;
+      box-sizing: border-box;
+      height: 10.938vw !important;
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+      border: none;
+      text-decoration: none;
+      color: rgb(225, 225, 225);
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .sb-fill-top::before {
+          position: absolute;
+          content: "";
+          background: rgb(6, 255, 208);
+          transition-duration: 0.2s;
+          z-index: -1;
+          inset: auto auto 0px 0px;
+          width: 100%;
+          height: 0px;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover::before {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+    }
+
+
+    .sb-fill-top:hover {
+          color: rgb(10, 5, 5);
+          background: rgb(255, 255, 255);
+          transition: color 0.2s ease 0s, background 0s ease 0.3s;
+    }
+
   }
 
 </style>

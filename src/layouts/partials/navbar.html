@@ -1,21 +1,141 @@
-<nav class="navbar bg-dark navbar-expand-lg navbar-dark sticky-top my-auto main-nav">
-    <div class="container-fluid top-nav">
-      <a class="navbar-brand" href="/"><img class="nav-logo" src="/Images/tea-logo-2.svg"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+<nav class="navbar navbar-expand-lg sticky-top my-auto main-nav">
+    <div class="container-fluid top-nav p-0">
+      <a class="navbar-brand p-0" href="/"><img src="/Images/tea-logo-1.png" class="top-logo" alt="top-logo"></a>
+      <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
         aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
-        MENU
+        <i class="icon-hamburger-icon-square dark-gray"></i>
       </button>
-      <div class="collapse navbar-collapse pt-2 pb-2" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto me-4 my-auto">
+      <div class="collapse navbar-collapse flex" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto my-auto">
           {{ range .Site.Menus.main }}
-          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3 top-nav-item">
             <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
           </li>
           {{ end }}
-          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-            <a class="nav-link" aria-current="page" href="https://github.com/teaxyz/cli">GITHUB (&#9734;<span class="stargazers"></span>, <span class="release"></span>)</a>
+          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3 top-nav-item">
+            <a class="nav-link" aria-current="page" href="https://github.com/teaxyz/cli/stargazers">GitHub (<span class="stargazers"></span>)</a>
           </li>
+          <style>
+
+            .hbtn {
+              background-color: #8000ff;
+              position: relative;
+              box-sizing: border-box;
+              height: 60px;
+              display: inline-block;
+              overflow: hidden;
+              padding: 8px 20px;
+              width: 300px;
+              text-align: center;
+              border: 1px solid #8000ff;
+              text-decoration: none;
+              color: rgb(225, 225, 225);
+              white-space: nowrap;
+              z-index: 0;
+            }
+
+
+            .hbtn i {
+                  padding-right: 8px;
+            }
+
+
+            .hb-fill-right::before {
+                  position: absolute;
+                  content: "";
+                  background: rgb(91, 0, 184);
+                  transition-duration: 0.2s;
+                  z-index: -1;
+                  inset: 0px auto auto 0px;
+                  width: 0px;
+                  height: 100%;
+                  opacity: 1;
+            }
+
+
+            .hb-fill-right:hover::before {
+                  width: 100%;
+                  height: 100%;
+                  opacity: 1;
+            }
+
+
+            .hb-fill-right:hover {
+                  color: rgb(255, 255, 255);
+                  background: rgb(91, 0, 184);
+                  transition: color 0.3s ease 0s, background 0s ease 0.3s;
+            }
+
+            .hbtn-light {
+              font-family: "pp-neue-machina";
+              background: none !important;
+              position: relative;
+              box-sizing: border-box;
+              height: 60px;
+              display: inline-block;
+              overflow: hidden;
+              padding: 8px 20px;
+              width: 300px;
+              text-align: center;
+              border: 1px solid #e1e1e1;
+              text-decoration: none;
+              color: #e1e1e1;
+              white-space: nowrap;
+              z-index: 0;
+            }
+
+
+            .hbtn-light i {
+                  padding-right: 8px;
+            }
+
+
+            .hb-light-fill-right::before {
+                  position: absolute;
+                  content: "";
+                  background: #e1e1e1;
+                  transition-duration: 0.2s;
+                  z-index: -1;
+                  inset: 0px auto auto 0px;
+                  width: 0px;
+                  height: 100%;
+                  opacity: 1;
+            }
+
+
+            .hb-light-fill-right:hover::before {
+                  width: 100%;
+                  height: 100%;
+                  opacity: 1;
+            }
+
+
+            .hb-light-fill-right:hover {
+                  color: #1a1a1a;
+                  background: rgb(91, 0, 184);
+                  transition: color 0.3s ease 0s, background 0s ease 0.3s;
+            }
+
+            #top-menu-btn{
+              height:50px;
+            }
+
+            .top-nav-item{
+              color: #e1e1e1 !important;
+            }
+
+            .top-nav-item:hover{
+              color: #1a1a1a !important;
+            }
+
+          </style>
+
         </ul>
+        <a href="https://github.com/teaxyz/cli#getting-started" class="ms-3">
+          <button class="hbtn hb-fill-right" id="top-menu-btn">INSTALL TEA</button>
+        </a>
+
+
         <!--
           <a class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-4 mt-4" id="nav-cta" href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz" role="button"><span id="cta-text">Authenticate with tea</span><span class="badge rounded-pill bg-primary ms-3"><span id="count1">287</span></span><span id="lp-text"></span></a>-->
       </div>

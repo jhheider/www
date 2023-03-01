@@ -1,0 +1,51 @@
+<script>
+  const commands2 = [
+    { input: '$ sh <(curl https://tea.xyz)<br>##########################################', output: '<br>k, we installed  /Users/thomassmith/.tea/tea.xyz/v0.24.2/bin/tea' },
+    { input: `<br>$ tea redis-cli ping<br>##########################################`, output: `<br>installed: ~/.tea/redis.io/v7.0.8<br><div class="comment-success p-2" style="position:relative; top:5px;"><code class="small"><i class="icon-check-circle"></i>tea installs 'redis' automagically.</code></div>` },
+    { input: '', output: 'pong' },
+  ];
+
+  let commandIndex2 = 0;
+  let command2 = commands2[commandIndex2];
+  let commandOutput2 = '';
+
+  function typeCommand2() {
+    if (commandIndex2 === commands2.length) {
+      return;
+    }
+    if (command2.input.length === 0) {
+      setTimeout(() => {
+        commandOutput2 += '<br>' + command2.output + '<br>';
+        document.querySelector('#terminal-output-2').innerHTML = commandOutput2;
+        commandIndex2++;
+        command2 = commands2[commandIndex2];
+        setTimeout(typeCommand2, 1000);
+      }, 2000);
+      return;
+    }
+    let currentChar = command2.input[0];
+    if (currentChar === '#') {
+      currentChar = '#';
+      const delay = 20;
+      setTimeout(typeCommand2, delay);
+    } else {
+      const delay = Math.floor(Math.random() * 40) + 80;
+      setTimeout(typeCommand2, delay);
+    }
+    if (currentChar === '$') {
+      currentChar = '<span class="purple">$</span>';
+    }
+    commandOutput2 += currentChar;
+    command2.input = command2.input.slice(1);
+    document.querySelector('#terminal-output-2').innerHTML = commandOutput2;
+  }
+
+  const observer2 = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      typeCommand2();
+      observer2.disconnect();
+    }
+  });
+  const target2 = document.querySelector('#terminal-output-2');
+  observer2.observe(target2);
+</script>

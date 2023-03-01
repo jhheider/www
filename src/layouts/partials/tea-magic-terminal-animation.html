@@ -1,0 +1,32 @@
+<script>
+  const arrCommands = [
+    { input: "$ python --eval 'print(\"Hello World!\")'", output: `command not found: python<br><span class="dark-gray">#Python is not installed, thus command is not found :/ ...</span><br>` },
+    { input: "$ sh <(curl mysite.com) --yes", output: `installing ~/.mysite...`},
+    { input: "$ python --eval 'print(\"Hello World!\")'", output: `mysite: installing python.org^19<br><span class="dark-gray">#mysite magically installs needed dependencies...</span>` },
+    { input: "", output: `Hello World! &#128526;<br><span class="dark-gray">#and tah-dah!</span>` },
+  ];
+
+  let intCommandIndex = 0;
+  let objCommand = arrCommands[intCommandIndex];
+  let strCommandOutput = "";
+
+  function typeCommand() {
+    if (intCommandIndex === arrCommands.length) {
+      return;
+    }
+    if (objCommand.input.length === 0) {
+      strCommandOutput += '\n' + objCommand.output + '\n';
+      document.querySelector("#terminal-display").innerHTML = strCommandOutput;
+      intCommandIndex++;
+      objCommand = arrCommands[intCommandIndex];
+      setTimeout(typeCommand, 1000);
+      return;
+    }
+    strCommandOutput += objCommand.input[0];
+    objCommand.input = objCommand.input.slice(1);
+    document.querySelector("#terminal-display").innerHTML = strCommandOutput;
+    setTimeout(typeCommand, 100);
+  }
+
+  typeCommand();
+</script>

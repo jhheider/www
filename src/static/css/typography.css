@@ -10,264 +10,111 @@
   src: url("/fonts/Sono-Light.woff2");
 }
 
+@font-face {
+  font-family: "inter";
+  src: url("/fonts/Inter-Regular.woff");
+}
+
+@font-face {
+  font-family: "mona";
+  src: url("/fonts/Mona-Sans-ExtraBold.woff");
+}
+
+@font-face {
+  font-family: "mona-sb";
+  src: url("/fonts/Mona-Sans-SemiBold.woff");
+}
+/*
 h1,h2,h3,h4,h5,h6,p,.lead{
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto !important;
 }
+*/
+
+.impact{
+  text-shadow: 0px 0px 18px #121212;
+}
 
 h1{
-  font-family: "pp-neue-machina", sans-serif;
+  font-family: "mona", sans-serif;
   color:#00ffd0;
   text-transform:uppercase;
-  text-shadow: 0px 0px 4px #1a1a1a !important;
 }
 
 h2{
-  font-family: "pp-neue-machina", sans-serif;
+  font-family: "mona-sb", sans-serif;
   color:#00ffd0;
+  text-transform:uppercase;
+  hyphens: auto;
 }
 
 h3{
-  font-family: "pp-neue-machina", sans-serif;
+  font-family: "mona-sb", sans-serif;
   color:#00ffd0;
 }
 
 h4{
-  font-family: "pp-neue-machina", sans-serif;
+  font-family: "mona-sb", sans-serif;
   color:#00ffd0;
 }
 
 h5{
-  font-family: "pp-neue-machina", sans-serif;
+  font-family: "mona-sb", sans-serif;
   color:#00ffd0;
   text-transform: uppercase;
 }
 
-.lead{
-  background-color: #1a1a1a !important;
+h6{
+  font-family: "mona-sb", sans-serif;
+  color:#00ffd0;
 }
 
 p{
-  font-family: "sono", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  font-family: "inter", sans-serif !important;
   color: #ffffff;
+  font-weight: 500;
 }
 
 li{
-  font-family: "sono", sans-serif;
+  font-family: "inter", sans-serif !important;
+  color: #ffffff;
+}
+
+.terminal-output,.terminal-input{
+  font-family: "sono", sans-serif !important;
   color: #ffffff;
 }
 
 a{
-  color: #00ffd0;
+  color: #fff;
   text-decoration: none;
 }
 
-a:hover{
+a.nav-link{
+  color: #e1e1e1;
+  border-bottom: 1px solid #1a1a1a;
+
+}
+
+a.nav-link:hover{
   color: #00ffd0;
-  text-decoration: underline;
+  border-bottom: 1px solid #00ffd0;
 }
 
 /* Breakpoint-Specific Typography */
-
-
-/* Extra-Large Screens*/
-@media only screen and (min-width: 1200px) {
-
-  .impact{
-    font-size: 7.812vw !important;
-    line-height: 8.3vw!important;
-    margin-top: 2vw !important;
-    margin-bottom: 1vw !important;
-  }
-
-  h1{
-    font-size: 11.5vw;
-    line-height: 12.4vw;
-    margin-top: -1.116vw;
-    margin-left: -0.837vw;
-  }
-
-  h2{
-    font-size: 5.5vw;
-    line-height: 8.4vw;
-  }
-
-  h3{
-    font-size: 3.8rem;
-    line-height: 4.8vw;
-  }
-
-  h4{
-    font-size: 2.121vw;
-    line-height: 2.5vw;
-  }
-
-  h5{
-    font-size: 1.5vw;
-    line-height: 4.116vw;
-    margin-top: -0.3vw;
-    margin-bottom: 1.2vw;
-  }
-
-  .lead{
-    font-size: 1.5vw !important;
-    line-height: 2.3vw !important;
-    margin-bottom: 2.232vw;
-  }
-
-  p{
-    font-size: 1.116vw;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-
-  .impact{
-    font-size: 8.5vw !important;
-    line-height: 9.9vw!important;
-    margin-top: 4vw !important;
-    margin-bottom: 1.9vw !important;
-  }
-
-  h1{
-    font-size: 14vw;
-    line-height: 15vw;
-    margin-top: -0.3vw;
-    margin-left: -0.837vw;
-  }
-
-  h2{
-    font-size: 6.5vw;
-    line-height: 10vw;
-  }
-
-  h3{
-    font-size: 3.4rem;
-    line-height: 10vw;
-  }
-
-  h4{
-    font-size: 3vw;
-    line-height: 5.116vw;
-  }
-
-  h5{
-    font-size: 1.5vw;
-    line-height: 5vw;
-    margin-top: -0.3vw;
-    margin-bottom: 1.2vw;
-  }
-
-  .lead{
-    font-size: 2vw !important;
-    line-height: 2.8vw !important;
-    margin-bottom: 2.232vw;
-  }
-
-  p{
-    font-size: 1.667vw;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-
-  .impact{
-    font-size: 8.5vw !important;
-    line-height: 9.9vw!important;
-    margin-top: 4vw !important;
-    margin-bottom: 1.2vw !important;
-  }
-
-  h1{
-    font-size: 14vw;
-    line-height: 15vw;
-    margin-top: -0.3vw;
-    margin-left: -0.837vw;
-  }
-
-  h2{
-    font-size: 7vw;
-    line-height: 10vw;
-  }
-
-  h3{
-    font-size: 4.5vw;
-    line-height: 10vw;
-  }
-
-  h4{
-    font-size: 3.5vw;
-    line-height: 5vw;
-  }
-
-  h5{
-    font-size: 2vw;
-    line-height: 5vw;
-  }
-
-  .lead{
-    font-size: 2.419vw !important;
-    line-height: 3.5vw !important;
-  }
-
-  p{
-    font-size: 2.016vw;
-  }
-
-}
-
-@media only screen and (min-width: 576px) and (max-width: 768px){
-
-  .impact{
-    font-size: 12vw !important;
-    line-height: 13.3vw!important;
-    margin-top: 0vw !important;
-    margin-bottom: 2vw !important;
-  }
-
-  h1{
-    font-size: 14vw;
-    line-height: 20vw;
-    margin-top: 2vw;
-    margin-left: -0.7vw;
-  }
-
-  h2{
-    font-size: 6rem;
-    line-height: 7rem;
-  }
-
-  h3{
-    font-size: 3.8rem;
-    line-height: 80px;
-  }
-
-  h4{
-    font-size: 38px;
-    line-height: 45px;
-  }
-
-  .lead{
-    font-size: 3.125vw !important;
-    line-height: 3.776vw !important;
-    margin-bottom: 40px;
-  }
-
-  p{
-    font-size: 20px;
-  }
-
-}
 
 @media only screen and (max-width: 576px) {
 
   .impact{
     font-size: 12vw !important;
-    line-height: 13.3vw!important;
-    margin-top: 0vw !important;
-    margin-bottom: 2vw !important;
+    line-height: 11.2vw!important;
+    margin-top: 1vw !important;
+    margin-bottom: -2.5vw !important;
+    text-align: left !important;
   }
 
   h1{
@@ -290,15 +137,6 @@ a:hover{
     line-height: 9vw;
   }
 
-  .lead{
-    font-size: 4.800vw !important;
-    line-height: 6vw !important;
-  }
-
-  p{
-    font-size: 4vw;
-  }
-
   a.nav-link.footer-link.small{
     font-size: 3vw;
     padding-left: 0px !important;
@@ -308,5 +146,4 @@ a:hover{
   ul.nav.justify-content-end{
     justify-content: flex-start !important;
   }
-
 }
