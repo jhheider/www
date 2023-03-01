@@ -66,6 +66,11 @@ h5{
   text-transform: uppercase;
 }
 
+h6{
+  font-family: "mona-sb", sans-serif;
+  color:#00ffd0;
+}
+
 p{
   font-size: 1.1rem;
   line-height: 1.7rem;

@@ -1,13 +1,13 @@
 {{ define "main" }}
 
 <!-- Hero Section -->
-<section class="hero one-box">
+<section class="hero one-box teal-bg">
   <div class="container">
-    <div class="row gx-5">
+    <div class="row">
       <div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
       <div class="hero-col col-xl-8 col-lg-8 col-md-0 col-sm-0 col-0 my-auto">
-        <h1 class="display-1 hero-text text-center" style="z-index:3; position: relative;"><span class="inner-glow ">Careers</h1>
-          <p class="lead hero-lead mb-5 text-center">tea is building an open-source ecosystem that is fair for everyone. We are growing our team of talented people to make this happen. We are looking for curious, passionate, and smart teammates. If you are interested please check out our open positions below.</p>
+        <h1 class="display-1 hero-text text-center black" style="z-index:3; position: relative;"><span class="inner-glow ">Careers</h1>
+          <p class="lead hero-lead mb-5 text-center black"><span class="tea">tea</span> is building an open-source ecosystem that is fair for everyone. We are growing our team of talented people to make this happen. We are looking for curious, passionate, and smart teammates. If you are interested please check out our open positions below.</p>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 
 <section>
   <div class="container one-box">
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5 me-0">
       <div class="row">
         <div class="col">
           <h3 class="display-6 mb-4">Current Openings</h3>
@@ -27,90 +27,81 @@
     </div>
 </section>
 
-<!-- Why Work at tea -->
-<section class="teal-bg two-boxes">
-  <div class="row">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h3 class="black text-center">Why work @ tea?</h3>
-          <p class="text-center black" style="background-color:#00ffd0 !important;">Join a team of motivated and passionate individuals and be a part of a rapidly growing and exciting project in web3 and open source technologies. We offer an attractive salary, relocation packages (if applicable), token/equity options and performance&#8208;based bonuses.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script>
+      // Fetch data from API
+      fetch("https://tea.breezy.hr/json?verbose=true")
+        .then(response => response.json())
+        .then(data => {
+          // Loop through data and create card for each item
+          data.forEach(item => {
+            // Create card element
+            const card = document.createElement("div");
+            card.classList.add("card", "mb-4");
 
-</section>
+            // Create card body element
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body", "p-4");
 
-<script>
-  // Fetch data from API
-  fetch("https://tea.breezy.hr/json?verbose=true")
-    .then(response => response.json())
-    .then(data => {
-      // Loop through data and create card for each item
-      data.forEach(item => {
-        // Create card element
-        const card = document.createElement("div");
-        card.classList.add("card", "mb-3");
+            // Add name to card body as a link to the URL
+            const title = document.createElement("a");
+            title.classList.add("card-title", "display-6", "teal");
+            title.href = item.url;
+            title.textContent = item.name;
+            cardBody.appendChild(title);
 
-        // Create card body element
-        const cardBody = document.createElement("div");
-        cardBody.classList.add("card-body");
+            // Add description to card body
+            const description = document.createElement("div");
+            description.classList.add("card-text","mt-3","mb-5");
+            description.innerHTML = item.description.slice(0, 700);
+            cardBody.appendChild(description);
 
-        // Add name to card body
-        const title = document.createElement("h5");
-        title.classList.add("card-title");
-        title.textContent = item.name;
-        cardBody.appendChild(title);
-
-        // Add description to card body
-        const description = document.createElement("div");
-        description.classList.add("card-text");
-        description.innerHTML = item.description.slice(0, 100);
-        cardBody.appendChild(description);
-
-        // Add show more link to card body
-        const showMoreLink = document.createElement("a");
-        showMoreLink.classList.add("text-primary", "mr-3");
-        showMoreLink.href = "#";
-        showMoreLink.textContent = "Show more";
-        showMoreLink.addEventListener("click", event => {
-          event.preventDefault();
-          if (description.innerHTML === item.description) {
-            description.innerHTML = item.description.slice(0, 100);
+            // Add show more link to card body
+            const showMoreLink = document.createElement("a");
+            showMoreLink.classList.add("me-3", "teal");
+            showMoreLink.href = "#";
             showMoreLink.textContent = "Show more";
-          } else {
-            description.innerHTML = item.description;
-            showMoreLink.textContent = "Show less";
-          }
-        });
-        cardBody.appendChild(showMoreLink);
+            showMoreLink.addEventListener("click", event => {
+              event.preventDefault();
+              if (description.innerHTML === item.description) {
+                description.innerHTML = item.description.slice(0, 700);
+                showMoreLink.textContent = "Show more";
+              } else {
+                description.innerHTML = item.description;
+                showMoreLink.textContent = "Show less";
+              }
+            });
+            cardBody.appendChild(showMoreLink);
 
-        // Add url link to card body
-        const urlLink = document.createElement("a");
-        urlLink.classList.add("text-primary");
-        urlLink.href = item.url;
-        urlLink.textContent = "Go to URL";
-        cardBody.appendChild(urlLink);
+            // Add url link to card body
+            const urlLink = document.createElement("a");
+            urlLink.classList.add("teal");
+            urlLink.href = item.url;
+            urlLink.textContent = "View on BreezyHR";
+            cardBody.appendChild(urlLink);
 
-        // Add card body to card
-        card.appendChild(cardBody);
+            // Add card body to card
+            card.appendChild(cardBody);
 
-        // Add card to container
-        const container = document.getElementById("card-container");
-        const row = document.createElement("div");
-        row.classList.add("row");
-        const col = document.createElement("div");
-        col.classList.add("col");
-        col.appendChild(card);
-        row.appendChild(col);
-        container.appendChild(row);
-      });
-    })
-    .catch(error => console.log(error));
-</script>
+            // Add card to container
+            const container = document.getElementById("card-container");
+            const row = document.createElement("div");
+            row.classList.add("row");
+            const col = document.createElement("div");
+            col.classList.add("col");
+            col.appendChild(card);
+            row.appendChild(col);
+            container.appendChild(row);
+          });
+        })
+        .catch(error => console.log(error));
+    </script>
+
 
 <style>
+
+  a:hover{
+    color: #2675f5;
+  }
 
   .accordion-button{
     line-height: 6vw;
