@@ -143,25 +143,37 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     $(document).ready(function() {
       var repository = "teaxyz/cli";
       var url = "https://api.github.com/repos/" + repository;
+      var token = "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";
 
-      $.get(url, function(data) {
-        var stargazers = "(" + numeral(data.stargazers_count).format("0.0a") + ")";
-        $(".stargazers").html(stargazers).hide().fadeIn(400);
+      $.ajax({
+        url: url,
+        headers: {
+          "Authorization": "token " + token
+        },
+        success: function(data) {
+          var stargazers = "(" + numeral(data.stargazers_count).format("0.0a") + ")";
+          $(".stargazers").html(stargazers).hide().fadeIn(400);
+        }
       });
     });
   </script>
 
 
-<script>
+  <script>
+    $(document).ready(function() {
+      var repository = "teaxyz/cli";
+      var url = "https://api.github.com/repos/"+ repository +"/releases/latest";
+      var token = "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";
 
-  $(document).ready(function() {
-  var repository = "teaxyz/cli";
-  var url = "https://api.github.com/repos/"+ repository +"/releases/latest";
-
-  $.get(url, function(data) {
-  var release = data.tag_name;
-  $(".release").html(release).hide().fadeIn(400);
-  });
-  });
-
-</script>
+      $.ajax({
+        url: url,
+        headers: {
+          "Authorization": "token " + token
+        },
+        success: function(data) {
+          var release = data.tag_name;
+          $(".release").html(release).hide().fadeIn(400);
+        }
+      });
+    });
+  </script>
