@@ -181,6 +181,10 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
           var release = JSON.parse(localStorage.getItem('dataRelease')).tag_name;
           $(".stargazers").html(stargazers).hide().fadeIn(400);
           $(".release").html(release).hide().fadeIn(400);
+
+          // Reserve the space for the stargazers element
+          var stargazersWidth = $(".stargazers").width();
+          $(".content").css("min-width", stargazersWidth);
         });
       }
     });
