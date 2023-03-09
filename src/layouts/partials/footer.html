@@ -152,7 +152,7 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 
       if (dataRepo && dataRelease) {
         // If the data is already stored, use it to update the page
-        var stargazers = "(" + numeral(dataRepo.stargazers_count).format("0,0") + ")";
+        var stargazers = "(" + numeral(dataRepo.stargazers_count).format("0.0a") + ")";
         var release = dataRelease.tag_name;
         $(".stargazers").html(stargazers).hide().fadeIn(400);
         $(".release").html(release).hide().fadeIn(400);
@@ -177,8 +177,8 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
           localStorage.setItem('dataRelease', JSON.stringify(dataRelease[0]));
 
           // Update the page with the response data
-          var stargazers = "(" + numeral(dataRepo[0].stargazers_count).format("0,0") + ")";
-          var release = dataRelease[0].tag_name;
+          var stargazers = "(" + numeral(JSON.parse(localStorage.getItem('dataRepo')).stargazers_count).format("0.0a") + ")";
+          var release = JSON.parse(localStorage.getItem('dataRelease')).tag_name;
           $(".stargazers").html(stargazers).hide().fadeIn(400);
           $(".release").html(release).hide().fadeIn(400);
         });
