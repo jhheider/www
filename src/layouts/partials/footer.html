@@ -142,38 +142,46 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
   <script>
     $(document).ready(function() {
       var repository = "teaxyz/cli";
-      var url = "https://api.github.com/repos/" + repository;
+      var urlRepo = "https://api.github.com/repos/" + repository;
+      var urlRelease = "https://api.github.com/repos/" + repository + "/releases/latest";
       var token = "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";
 
-      $.ajax({
-        url: url,
-        headers: {
-          "Authorization": "token " + token
-        },
-        success: function(data) {
-          var stargazers = "(" + numeral(data.stargazers_count).format("0.0a") + ")";
+      // Check if the data is already stored in local storage
+      var dataRepo = JSON.parse(localStorage.getItem('dataRepo'));
+      var dataRelease = JSON.parse(localStorage.getItem('dataRelease'));
+
+      if (dataRepo && dataRelease) {
+        // If the data is already stored, use it to update the page
+        var stargazers = "(" + numeral(dataRepo.stargazers_count).format("0,0") + ")";
+        var release = dataRelease.tag_name;
+        $(".stargazers").html(stargazers).hide().fadeIn(400);
+        $(".release").html(release).hide().fadeIn(400);
+      } else {
+        // If the data is not stored, make the API requests
+        $.when(
+          $.ajax({
+            url: urlRepo,
+            headers: {
+              "Authorization": "token " + token
+            },
+          }),
+          $.ajax({
+            url: urlRelease,
+            headers: {
+              "Authorization": "token " + token
+            },
+          })
+        ).done(function(dataRepo, dataRelease) {
+          // Store the response data in local storage
+          localStorage.setItem('dataRepo', JSON.stringify(dataRepo[0]));
+          localStorage.setItem('dataRelease', JSON.stringify(dataRelease[0]));
+
+          // Update the page with the response data
+          var stargazers = "(" + numeral(dataRepo[0].stargazers_count).format("0,0") + ")";
+          var release = dataRelease[0].tag_name;
           $(".stargazers").html(stargazers).hide().fadeIn(400);
-        }
-      });
-    });
-  </script>
-
-
-  <script>
-    $(document).ready(function() {
-      var repository = "teaxyz/cli";
-      var url = "https://api.github.com/repos/"+ repository +"/releases/latest";
-      var token = "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";
-
-      $.ajax({
-        url: url,
-        headers: {
-          "Authorization": "token " + token
-        },
-        success: function(data) {
-          var release = data.tag_name;
           $(".release").html(release).hide().fadeIn(400);
-        }
-      });
+        });
+      }
     });
   </script>
