@@ -9,14 +9,14 @@ title = 'Equitable Open-Source for Web3'
     identifier = 'docs'
     name = 'Docs'
     title = 'docs'
-    url = 'https://github.com/teaxyz/cli/blob/main/README.md'
+    url = 'https://docs.tea.xyz'
     weight = 3
 
   [[menu.main]]
     identifier = 'Quick Start'
     name = 'Quick Start'
     title = 'Quick Start'
-    url = 'https://github.com/teaxyz/cli#getting-started'
+    url = 'https://docs.tea.xyz/getting-started/install-tea'
     weight = 4
 
 [security]
