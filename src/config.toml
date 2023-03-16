@@ -12,13 +12,6 @@ title = 'Equitable Open-Source for Web3'
     url = 'https://docs.tea.xyz'
     weight = 3
 
-  [[menu.main]]
-    identifier = 'Quick Start'
-    name = 'Quick Start'
-    title = 'Quick Start'
-    url = 'https://docs.tea.xyz/getting-started/install-tea'
-    weight = 4
-
 [security]
   [security.exec]
     allow = ['^go$', '^postcss$', '^npx$', '^babel$']
