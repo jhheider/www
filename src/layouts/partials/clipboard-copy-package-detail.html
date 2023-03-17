@@ -1,7 +1,7 @@
 <div class="row mt-3 mb-3" onclick="myFunction()">
     <div class="col">
       <div class="input-container p-1" style="display:flex; justify-content:space-between;">
-        <input class="one-liner ms-3" type="text" value="sh <(curl tea.xyz) +{{- .full_name -}}" id="shortcodeCopy" readonly>
+        <input class="one-liner ms-3" type="text" value="sh <(curl tea.xyz) +{{- .full_name -}}&nbsp;sh" id="shortcodeCopy" readonly>
 
         <!-- The button used to copy the text -->
 
@@ -49,7 +49,7 @@
     copyText.setSelectionRange(0, 99999); // For mobile devices
 
      // Copy the text inside the text field
-    navigator.clipboard.writeText(copiedValue + " +{{- .full_name -}}");
+    navigator.clipboard.writeText(copiedValue + " +{{- .full_name -}}" + " " + "sh");
 
     document.getElementById("liveToastBtn").innerHTML = "copied!";
 
