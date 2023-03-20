@@ -24,13 +24,8 @@ jobs:
 
     - uses: actions/checkout@v3
 
-    - name: Copy packages.json summary from dist.tea.xyz
-      uses: prewk/s3-cp-action@v2
-      with:
-        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        source: 's3://dist.tea.xyz/mock_packages.json'
-        dest: './src/data/packages.json'
+    - run: |
+        curl https://api.tea.xyz/v1/packages -H "Accept: application/json" >> ./src/data/packages.json
 
     - name: Create Package Detail Pages from packages.json
       uses: getneil/jq-action@v1
