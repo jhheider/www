@@ -35,7 +35,9 @@ jobs:
         echo "relativeurls = true" >>config.toml
       working-directory: src
 
-    - run: |
+    - name: add packages data
+      run: |
+        rm ./src/data/packages.json
         curl https://api.tea.xyz/v1/packages -H "Accept: application/json" >> ./src/data/packages.json
 
     - name: Create Package Detail Pages from packages.json
