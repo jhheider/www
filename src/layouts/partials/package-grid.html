@@ -210,9 +210,10 @@
   function getMatchScore(term, dataset) {
     // provide higher value with name
     const { name, description } = dataset;
+    const exactMatch = name.toLocaleLowerCase().includes(term.toLocaleLowerCase());
     const nameScore = stringSimilarity.compareTwoStrings(name, term);
     const descriptionScore = stringSimilarity.compareTwoStrings(description, term);
-    return (nameScore*80) + (descriptionScore*20)
+    return (nameScore*80) + (descriptionScore*20) + (exactMatch ? 100 : 0);
   }
 
   const loadMoreButton = document.getElementById('loadMorePackagesBtn');
