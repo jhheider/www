@@ -160,12 +160,21 @@
     <div class="row">
       <div class="col">
         {{- partial "click-to-copy.html" . -}}
+        <p class="no-installer grid-gray text-center"><span class="tea">tea</span> is a stand&#8208;alone binary, see <a class="install-link" href="https://docs.tea.xyz/getting-started/install-tea/without-installer">our docs</a> for more installation methods.</p>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+
+    .install-link{
+      color: #00ffd0;
+    }
+
+    .install-link:hover{
+      color: #ffffff;
+    }
 
     .term-icon{
       position: relative;
