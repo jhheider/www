@@ -121,11 +121,13 @@
     if (searchInput.value) {
       const term = searchInput.value;
       const packages = getPackageThumbs();
+      for(let pkg of packages) {
+        pkg.match_score = getMatchScore(term, pkg.dataset);
+      }
       const sortedPackages = packages.sort((a, b) => {
-        const aScore = getMatchScore(term, a.dataset);
-        const bScore = getMatchScore(term, b.dataset);
-        return bScore - aScore;
+        return b.match_score - (a ? a.match_score : 0);
       });
+
       const grid = document.getElementById('packageGrid');
       grid.textContent = '';
       let searchCount = 0;
@@ -209,10 +211,11 @@
 
   function getMatchScore(term, dataset) {
     // provide higher value with name
-    const { name, description } = dataset;
+    const { name, maintainer, description } = dataset;
+    const exactMatch = [maintainer, name].join(" ").toLocaleLowerCase().includes(term.toLocaleLowerCase());
     const nameScore = stringSimilarity.compareTwoStrings(name, term);
     const descriptionScore = stringSimilarity.compareTwoStrings(description, term);
-    return (nameScore*80) + (descriptionScore*20)
+    return (nameScore*80) + (descriptionScore*20) + (exactMatch ? 100 : 0);
   }
 
   const loadMoreButton = document.getElementById('loadMorePackagesBtn');
