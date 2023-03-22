@@ -311,17 +311,75 @@
 </section>
 
 <section class="authenticate">
-  <div class="container auth-container one-box black-bg">
+  <div class="container auth-container one-box black-bg p-5">
     <div class="row">
       <div class="col">
-          <h2 class="display-6 text-center black">Authenticate with tea</h2>
-          <p class="text-center black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+          <h2 class="display-6 text-xl-center text-lg-center text-md-center text-sm-left text-left black">Authenticate with tea</h2>
+          <p class="black mb-5 text-xl-center text-lg-center text-md-center text-sm-left text-left">As part of our long&#8208;term, web3 vision, we&#39;re asking developers to authenticate via GitHub. Authentications will be integral in our mission to remunerate OSS developers for their valuable contributions to the modern internet landscape. </p>
+          <a href="https://docs.tea.xyz/getting-started">
+            <button class="hbtn-black hb-fill-right-black auth-click" style="width:100% !important;">AUTHENTICATE WITH GITHUB</button>
+          </a>
+          <p class="small auth-boiler mt-3 black">By clicking above, you&#39;ll be redirected to our GitHub OAuth app. We ask for your country of residence, as well as the hex address for your web3 wallet. This information will be used to assign you a rank based on your GitHub contributions, which in turn, will be used to determine remunerations after the launch of our <span class="tea">tea</span> protocol. You can learn more about our privacy policy <a class="purple" href="/privacy-policy/">here</a>.</p>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+
+    .auth-boiler{
+      line-height: 1.4em;
+    }
+
+    .hbtn-black {
+      background-color: #1a1a1a;
+      position: relative;
+      box-sizing: border-box;
+      height: 60px;
+      display: inline-block;
+      overflow: hidden;
+      padding: 8px 20px;
+      width: 300px;
+      text-align: center;
+      border: 1px solid #1a1a1a;
+      text-decoration: none;
+      color: rgb(225, 225, 225);
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .hb-fill-right-black::before {
+          position: absolute;
+          content: "";
+          background: rgb(077, 077, 077);
+          transition-duration: 0.2s;
+          z-index: -1;
+          inset: 0px auto auto 0px;
+          width: 0px;
+          height: 100%;
+          opacity: 1;
+    }
+
+
+    .hb-fill-right-black:hover::before {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+    }
+
+
+    .hb-fill-right-black:hover {
+          color: rgb(255, 255, 255);
+          background: rgb(91, 0, 184);
+          transition: color 0.3s ease 0s, background 0s ease 0.3s;
+    }
+
+  .auth-click{
+    max-width: 290px;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+  }
 
   .auth-container{
     max-width: 800px;
