@@ -121,11 +121,13 @@
     if (searchInput.value) {
       const term = searchInput.value;
       const packages = getPackageThumbs();
+      for(let pkg of packages) {
+        pkg.match_score = getMatchScore(term, pkg.dataset);
+      }
       const sortedPackages = packages.sort((a, b) => {
-        const aScore = getMatchScore(term, a.dataset);
-        const bScore = getMatchScore(term, b.dataset);
-        return bScore - aScore;
+        return b.match_score - (a ? a.match_score : 0);
       });
+
       const grid = document.getElementById('packageGrid');
       grid.textContent = '';
       let searchCount = 0;
