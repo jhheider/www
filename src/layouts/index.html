@@ -285,7 +285,7 @@
       <div class="col">
           <div>
             <h2 class="black display-5 text-xl-center text-lg-center text-md-left text-sm-left text-left" style="z-index:2;">THIS ISN’T A PACKAGE MANAGER. TEA IS UNIFIED PACKAGING INFRASTRUCTURE.</h2>
-            <p class="lead black text-center">And through that packaging infrastructure, we have plans of leveraging blockchain to help remunerate devs for their contributions to OSS. You can learn more about our grand ambitions for web3 by checking out our <a href="https://tea.xyz/tea.white-paper.pdf" style="color:#1a1a1a !important;">white paper here</a>.</p>
+            <p class="lead black text-xl-center text-lg-center text-md-center text-sm-left text-left">And through that packaging infrastructure, we have plans of leveraging blockchain to help remunerate devs for their contributions to OSS. You can learn more about our grand ambitions for web3 by checking out our <a href="https://tea.xyz/tea.white-paper.pdf" style="color:#1a1a1a !important;">white paper here</a>.</p>
           </div>
       </div>
     </div>
@@ -310,14 +310,14 @@
   </div>
 </section>
 
-<section class="authenticate">
-  <div class="container auth-container one-box black-bg p-5">
+<section class="authenticate p-2 pt-xl-0 pt-lg-0 pt-md-0 pt-sm-5 pb-xl-0 pb-lg-0 pb-md-0 pb-sm-5 pt-5 pb-5">
+  <div class="container auth-container one-box black-bg p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
     <div class="row">
       <div class="col">
-          <h2 class="display-6 text-xl-center text-lg-center text-md-center text-sm-left text-left black">Authenticate with tea</h2>
+          <h2 class="display-6 text-xl-center text-lg-center text-md-center text-sm-left text-left black"><span id="count" style="color:#8000ff;"></span> OSS Devs Have Authenticated with GitHub</h2>
           <p class="black mb-5 text-xl-center text-lg-center text-md-center text-sm-left text-left">As part of our long&#8208;term, web3 vision, we&#39;re asking developers to authenticate via GitHub. Authentications will be integral in our mission to remunerate OSS developers for their valuable contributions to the modern internet landscape. </p>
-          <a href="https://docs.tea.xyz/getting-started">
-            <button class="hbtn-black hb-fill-right-black auth-click" style="width:100% !important;">AUTHENTICATE WITH GITHUB</button>
+          <a href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz">
+            <button class="hbtn-black hb-fill-right-black auth-click">AUTHENTICATE WITH GITHUB</button>
           </a>
           <p class="small auth-boiler mt-3 black">By clicking above, you&#39;ll be redirected to our GitHub OAuth app. We ask for your country of residence, as well as the hex address for your web3 wallet. This information will be used to assign you a rank based on your GitHub contributions, which in turn, will be used to determine remunerations after the launch of our <span class="tea">tea</span> protocol. You can learn more about our privacy policy <a class="purple" href="/privacy-policy/">here</a>.</p>
       </div>
@@ -374,18 +374,41 @@
           transition: color 0.3s ease 0s, background 0s ease 0.3s;
     }
 
-  .auth-click{
-    max-width: 290px;
-    display: block;
-    margin-left:auto;
-    margin-right:auto;
+  @media only screen and (min-width: 576px) {
+
+    .auth-click{
+      max-width: 290px;
+      display: block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .auth-container{
+      max-width: 800px;
+      margin-top: -100px;
+      border: 2px solid #1a1a1a;
+      background-color: #33ffd9;
+    }
+
   }
 
-  .auth-container{
-    max-width: 800px;
-    margin-top: -100px;
-    border: 2px solid #1a1a1a;
-    background-color: #33ffd9;
+  @media only screen and (max-width: 576px) {
+
+    .auth-click{
+      max-width: 290px;
+      display: block;
+      margin-right:auto;
+    }
+    .auth-container{
+      max-width: 800px;
+      margin-top: -100px;
+      border: 2px solid #1a1a1a;
+      background-color: #33ffd9;
+    }
+    .authenticate{
+      background-color: #00ffd0;
+    }
+
   }
 
 </style>
