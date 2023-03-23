@@ -764,13 +764,13 @@
 </section>
 
 <section class="chai">
-  <div class="container chai-bg orange-bg p-5" style="border-radius:5px;">
-    <div class="row">
-      <div class="col-4">
+  <div class="container">
+    <div class="row chai-bg one-box pe-xl-5 pe-lg-5" style="border-radius:5px;">
+      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
 
       </div>
-      <div class="col-8">
-        <h2 class="display-6 white">And we can't fix OSS with just any tea&hellip; we need some CHAI</h2>
+      <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+        <h2 class="display-6 white chai-header">And we can't fix OSS with just any tea&hellip; we need some <span style="color:#ff8e00;">CHAI</span></h2>
         <p>The open source package registry can be thought of a directed graph, with each package version representing a node and dependency relationships as edges. An on-chain graph could align incentives between open source maintainers and users for different projects. It can evaluate the impact of these projects based on their dependencies, and even proportionately reward them. It is difficult to design & implement such a network -- one that knows about every open source package & their depedencies -- but we believe the aligned incentives will yield much better outcomes for our open source maintainers.</p>
         <p class="mb-4">Chai_v1 is the system that collects all the nodes & edges across all package managers, and verifies the maintainers for each one. It will be prepopulated with packages from <code class="chai-code p-1">tea</code> (300 & counting), <code class="chai-code p-1">brew</code> (6k), <code class="chai-code p-1">crates</code> (104k), <code class="chai-code p-1">PyPI</code> (300k), and <code class="chai-code p-1">npm</code> (1.6M) as nodes, and all their relationships, and pagerank scores available. It will eventually enable users to formalize their project maintainer status with an additional commit message to the main branch of their repo.</p>
         <a href="https://github.com/teaxyz/chai/tree/95c3b927556b8c51f72b922fe2e0222f5551fba4">
@@ -782,13 +782,17 @@
 </section>
 
 <style>
-
-  .chai-bg{
-    background-image: url("/Images/chai-background.jpg") !important;
-    background-attachment: scroll;
-    background-position: left;
-    background-repeat: repeat-y;
-    background-size: cover !important;
+  @media only screen and (min-width: 768px) {
+    .chai-bg{
+      background-image: url("/Images/chai-background.jpg") !important;
+      background-attachment: scroll;
+      background-position: left;
+      background-repeat: repeat-y;
+      background-size: cover !important;
+    }
+  }
+  .chai-header{
+    text-transform: none !important;
   }
   #chai-btn{
     height: 40px;
