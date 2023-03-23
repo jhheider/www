@@ -21,6 +21,7 @@ type: page
 title: \"$(_jq '.name')\"
 maintainer: \"$(_jq '.maintainer')\"
 Description: \"$(_jq '.desc' | tr '\"' "'")\"
+og_image: \"$(_jq '.thumb_image_url')\"
 layout: \"package-detail\"
 ---"
    echo "$content" > "$2"/"+$full_name".md
