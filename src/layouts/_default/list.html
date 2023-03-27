@@ -7,7 +7,7 @@
 
 {{ partial "navbar.html" . }}
 
-  <main style="height:100vh;">
+  <main>
     <section class="teal-bg">
       <div class="container one-box">
         <div class="row">
@@ -22,14 +22,18 @@
     <div class="container blog-list two-boxes">
       <div class="row">
             {{ range .Pages }}
-            <div class="col-4 mb-5">
-              <div class="blog-listing">
-                <a class="display-6" href="{{ .RelPermalink }}">{{ .Title }}</a><br>
-                <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
-                <span class="preview-content">{{ .Content }}</span>
+            <div class="col-4 mb-4">
+              <a href="{{ .RelPermalink }}">
+                <div class="blog-listing p-3 pb-5">
+                  {{ if .Params.featured_image }}
+                    <img class="featured-image mb-3" src="{{ .Params.featured_image }}" alt="{{ .Title }}" />
+                  {{ end }}
+                  <a class="display-6" href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+                  <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
+                  <span class="preview-content">{{ .Content }}</span>
+                </div>
+                </a>
               </div>
-
-            </div>
             {{ end }}
           <a href="/">Back to home</a>
       </div>
@@ -49,6 +53,15 @@
     overflow: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+  }
+
+  .featured-image {
+    width: 100%; /* Adjust the width as needed */
+    height: 100px; /* Maintain the image's aspect ratio */
+  }
+
+  .blog-listing{
+    border: 1px solid #949494;
   }
 
 </style>
