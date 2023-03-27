@@ -21,18 +21,17 @@
     <hr>
     <div class="container blog-list two-boxes">
       <div class="row">
-        <div class="col">
-          <ul>
             {{ range .Pages }}
-              <li class="blog-listing">
+            <div class="col-4 mb-5">
+              <div class="blog-listing">
                 <a class="display-6" href="{{ .RelPermalink }}">{{ .Title }}</a><br>
-                <span>{{ .Date.Format "2006-01-02" }}</span>
+                <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
                 <span class="preview-content">{{ .Content }}</span>
-              </li>
+              </div>
+
+            </div>
             {{ end }}
-          </ul>
           <a href="/">Back to home</a>
-        </div>
       </div>
     </div>
   </main>
