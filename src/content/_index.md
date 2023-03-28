@@ -1,7 +1,6 @@
 ---
-title: "Home"
+title: "Install tea"
 Description: "the next-generation, cross‐platform package manager"
 layout: "index"
-menu: main
-weight: 1
+og_image: "https://s3.amazonaws.com/www.tea.xyz/cover.png"
 ---

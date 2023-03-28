@@ -18,9 +18,10 @@ for row in $(jq -r '.[] | @base64' < "$1"); do
    touch "$2"/"+$full_name".md
    content="---
 type: page
-title: \"$(_jq '.name')\"
+title: \"Install $(_jq '.name')\"
 maintainer: \"$(_jq '.maintainer')\"
 Description: \"$(_jq '.desc' | tr '\"' "'")\"
+og_image: \"$(_jq '.thumb_image_url')\"
 layout: \"package-detail\"
 ---"
    echo "$content" > "$2"/"+$full_name".md
