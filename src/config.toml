@@ -5,14 +5,6 @@ title = 'Equitable Open-Source for Web3'
 # menu links via config file
 
 [menu]
-
-  [[menu.main]]
-    identifier = 'home'
-    name = 'Home'
-    title = 'home'
-    url = '/'
-    weight = 1
-
   [[menu.main]]
     identifier = 'docs'
     name = 'Docs'
