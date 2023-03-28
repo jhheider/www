@@ -19,19 +19,22 @@
       </div>
     </section>
     <hr>
-    <div class="container blog-list two-boxes">
+    <div class="container blog-list one-box">
       <div class="row">
+        <h2 class="mb-4">Recent Posts</h2>
             {{ range .Pages }}
-            <div class="col-4 mb-4">
+            <div class="blog-col col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
               <a href="{{ .RelPermalink }}">
-                <div class="blog-listing p-3 pb-5">
+                <div class="blog-listing">
                   {{ if .Params.featured_image }}
-                    <img class="featured-image mb-3" src="{{ .Params.featured_image }}" alt="{{ .Title }}" />
+                    <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
                   {{ end }}
-                  <a class="subhead" href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
-                  <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
-                  <span class="preview-content">{{ .Content }}</span>
-                </div>
+                    <div class="p-4 pb-5">
+                      <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+                      <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
+                      <span class="preview-content small">{{ .Content }}</span>
+                    </div>
+                  </div>
                 </a>
               </div>
             {{ end }}
@@ -56,12 +59,19 @@
   }
 
   .featured-image {
-    width: 100%; /* Adjust the width as needed */
-    height: 100px; /* Maintain the image's aspect ratio */
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
   }
 
   .blog-listing{
     border: 1px solid #949494;
+    transition: 0.2s ease-in-out;
+  }
+
+  .blog-listing:hover{
+    background-color: #252525 !important;
   }
 
 </style>
