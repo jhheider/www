@@ -28,7 +28,7 @@
                   {{ if .Params.featured_image }}
                     <img class="featured-image mb-3" src="{{ .Params.featured_image }}" alt="{{ .Title }}" />
                   {{ end }}
-                  <a class="display-6" href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+                  <a class="subhead" href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
                   <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
                   <span class="preview-content">{{ .Content }}</span>
                 </div>
