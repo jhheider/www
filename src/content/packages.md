@@ -1,6 +1,6 @@
 ---
-title: "tea Pantry"
-Description: "Browse and Install Open-Source Software"
+title: "Pantry"
+Description: "Browse our packages"
 layout: "packages"
 menu: main
 weight: 1
