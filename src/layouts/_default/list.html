@@ -30,7 +30,7 @@
                     <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
                   {{ end }}
                     <div class="p-4 pb-5">
-                      <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+                      <a href="{{ .RelPermalink }}"><h3 class="display-6">{{ .Title }}</h3></a>
                       <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
                       <span class="preview-content small">{{ .Content }}</span>
                     </div>
@@ -68,6 +68,7 @@
   .blog-listing{
     border: 1px solid #949494;
     transition: 0.2s ease-in-out;
+    min-height: 400px;
   }
 
   .blog-listing:hover{
