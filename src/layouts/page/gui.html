@@ -5,33 +5,104 @@
 <section class="two-boxes">
   <div class="container">
     <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-auto">
+        <h1 class="display-4">The App Store for Developers</h1>
+        <p class="mb-5">Meet GUI - the app store for developers! Our visual package manager lets you browse, install, and update open-source software in a snap. Say goodbye to manual updates and hello to streamlined development. Try it today!</p>
+        <div class="flex">
+          <a href="https://docs.tea.xyz/getting-started">
+            <button class="hbtn hb-fill-right github-click" style="width:180px;height:40px;font-size:14px;">DOWNLOAD GUI</button>
+          </a>
+          <p class="small gray">Version 0.5.2 | Currently in Beta</p>
+        </div>
+        </div>
       <div class="col">
-        <h1>The App Store for Developers</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <button type="button" name="button">Download</button>
-      </div>
-      <div class="col">
+        <div class="download-hero dark-gray-bg">
 
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<section>
+  <div class="scrolling-container">
+    <div class="screenshot" style="background-color:gray;"></div>
+    <div class="screenshot" style="background-color:green;"></div>
+    <div class="screenshot" style="background-color:blue;"></div>
+    <!-- Add more screenshots as desired -->
+  </div>
+  <script src="scripts.js"></script>
+</section>
+
+<style media="screen">
+
+  h1{
+    font-size:50px !important;
+  }
+
+  p{
+    font-size: 16px;
+  }
+
+  .download-hero{
+    height: 500px;
+    border-radius: 10px;
+  }
+
+  .hbtn-black {
+    background-color: #1a1a1a;
+    position: relative;
+    box-sizing: border-box;
+    height: 60px;
+    display: inline-block;
+    overflow: hidden;
+    padding: 8px 20px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #1a1a1a;
+    text-decoration: none;
+    color: rgb(225, 225, 225);
+    white-space: nowrap;
+    z-index: 0;
+  }
+  .hb-fill-right-black::before {
+    position: absolute;
+    content: "";
+    background: rgb(077, 077, 077);
+    transition-duration: 0.2s;
+    z-index: -1;
+    inset: 0px auto auto 0px;
+    width: 0px;
+    height: 100%;
+    opacity: 1;
+  }
+  .hb-fill-right-black:hover::before {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  .hb-fill-right-black:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(91, 0, 184);
+    transition: color 0.3s ease 0s, background 0s ease 0.3s;
+  }
+</style>
+
 <!-- Features -->
 
-<section class="one-box">
+<section class="two-boxes">
   <div class="container">
     <div class="row">
       <div class="col">
-        <h3>Title here.</h3>
+        <h3>One-Click Installs</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
       <div class="col">
-        <h3>Title here.</h3>
+        <h3>Easy Updates</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
       <div class="col">
-        <h3>Title here.</h3>
+        <h3>Version Management</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
     </div>
@@ -45,10 +116,25 @@
     <div class="row">
       <div class="col">
         <h3 class="black text-center">Download the GUI today</h3>
-        <button style="margin-left:auto;margin-right:auto;display:block;" type="button" name="button">Download</button>
+        <a href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz">
+          <button class="hbtn-black hb-fill-right-black auth-click">DOWNLOAD</button>
+        </a>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+      const container = document.querySelector(".scrolling-container");
+      const screenshots = document.querySelectorAll(".screenshot");
+
+      // Clone the first screenshot to make the scrolling loop seamless
+      const firstScreenshotClone = screenshots[0].cloneNode(true);
+      container.appendChild(firstScreenshotClone);
+  });
+
+</script>
 
 {{end}}
