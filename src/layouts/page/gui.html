@@ -7,12 +7,19 @@
     <div class="row">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-auto">
         <h1 class="display-4">The App Store for Developers</h1>
-        <p class="mb-5">Meet GUI - the app store for developers! Our visual package manager lets you browse, install, and update open-source software in a snap. Say goodbye to manual updates and hello to streamlined development. Try it today!</p>
+        <p class="mb-4">Meet GUI - the app store for developers! Our visual package manager lets you browse, install, and update open-source software in a snap. Say goodbye to manual updates and hello to streamlined development. Try it today!</p>
+        <p>Download the <span class="tea">tea/gui</span> beta for Mac (v0.0.37)</p>
         <div style="display:flex;align-items:flex-start;">
-          <a href="https://docs.tea.xyz/getting-started">
-            <button class="hbtn hb-fill-right github-click" style="width:180px;height:40px;font-size:14px;">DOWNLOAD GUI</button>
-          </a>
-          <p class="small light-gray ms-3" style="position:relative;top:7px;">v0.0.37 | Currently in Beta</p>
+          <div class="">
+            <a href="http://preview.gui.tea.xyz.s3-website-us-east-1.amazonaws.com/release/tea-0.0.37-arm64.dmg">
+              <button class="hbtn hb-fill-right github-click" style="width:180px;height:40px;font-size:14px;"><i class="icon-apple"></i>M1/M2 Chip</button>
+            </a>
+          </div>
+          <div class="ms-3">
+            <a href="http://preview.gui.tea.xyz.s3-website-us-east-1.amazonaws.com/release/tea-0.0.37.dmg">
+              <button class="hbtn hb-fill-right github-click" style="width:180px;height:40px;font-size:14px;"><i class="icon-apple"></i>Intel Chip</button>
+            </a>
+          </div>
         </div>
         </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-4 mt-4">
@@ -23,6 +30,11 @@
 </section>
 
 <style media="screen">
+
+  .icon-apple{
+    position: relative;
+    top:2px;
+  }
 
   h1{
     font-size:50px !important;
@@ -66,28 +78,24 @@
     <div class="row">
       <div class="col">
         <h3 class="black text-center">Get started with visual package management today!</h3>
+        <p class="black text-center">Download the <span class="tea">tea/gui</span> beta for Mac (v0.0.37)</p>
         <div class="mb-2" style="display:flex;justify-content:center;">
-          <a href="https://docs.tea.xyz/getting-started">
-            <button class="hbtn hb-fill-right github-click" style="width:180px;height:40px;font-size:14px;">DOWNLOAD GUI</button>
-          </a>
+          <div style="display:flex;align-items:flex-start;">
+            <div class="">
+              <a href="http://preview.gui.tea.xyz.s3-website-us-east-1.amazonaws.com/release/tea-0.0.37-arm64.dmg">
+                <button class="hbtn hb-fill-right github-click" style="width:180px;height:40px;font-size:14px;"><i class="icon-apple"></i>M1/M2 Chip</button>
+              </a>
+            </div>
+            <div class="ms-3">
+              <a href="http://preview.gui.tea.xyz.s3-website-us-east-1.amazonaws.com/release/tea-0.0.37.dmg">
+                <button class="hbtn hb-fill-right github-click" style="width:180px;height:40px;font-size:14px;"><i class="icon-apple"></i>Intel Chip</button>
+              </a>
+            </div>
+          </div>
         </div>
-        <p class="dark-gray small text-center">v0.0.37 | Currently in Beta</p>
       </div>
     </div>
   </div>
 </section>
-
-<script>
-
-  document.addEventListener("DOMContentLoaded", function() {
-      const container = document.querySelector(".scrolling-container");
-      const screenshots = document.querySelectorAll(".screenshot");
-
-      // Clone the first screenshot to make the scrolling loop seamless
-      const firstScreenshotClone = screenshots[0].cloneNode(true);
-      container.appendChild(firstScreenshotClone);
-  });
-
-</script>
 
 {{end}}
