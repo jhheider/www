@@ -79,14 +79,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Prompt:wght@700&display=swap"
       rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:alt" content="sh &lt;(curl tea.xyz)">
-    <meta name="twitter:title" content="{{ .Params.title }}">
-    <meta name="twitter:site" content="@teaxyz_">
-    <meta name="twitter:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png">
-    <meta name="twitter:description" content="{{ .Params.Description }}">
+
     <meta name="twitter:creator" content="@mxcl">
     {{ if eq .Params.layout "package-detail" }}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image:alt" content="sh &lt;(curl tea.xyz) +{{ .Params.full_name }}">
+      <meta name="twitter:title" content="tea | {{ .Params.title }}">
+      <meta name="twitter:site" content="@teaxyz_">
+      <meta name="twitter:image" content="{{- .Params.og_image_url -}}">
+      <meta name="twitter:description" content="{{ .Params.Description }}">
       <meta property="og:url" content="https://tea.xyz/+{{ .Params.full_name }}" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="tea | {{ .Params.title }}" />
@@ -95,6 +96,12 @@
       <meta property="og:image:alt" content="sh &lt;(curl tea.xyz) +{{ .Params.full_name }}" />
       <meta property="og:site_name" content="tea.xyz">
     {{ else }}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image:alt" content="sh &lt;(curl tea.xyz)">
+      <meta name="twitter:title" content="{{ .Params.title }}">
+      <meta name="twitter:site" content="@teaxyz_">
+      <meta name="twitter:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png">
+      <meta name="twitter:description" content="{{ .Params.Description }}">
       <meta property="og:url" content="https://tea.xyz" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="{{ .Params.title }}" />
