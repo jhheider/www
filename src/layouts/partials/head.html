@@ -86,14 +86,23 @@
     <meta name="twitter:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png">
     <meta name="twitter:description" content="{{ .Params.Description }}">
     <meta name="twitter:creator" content="@mxcl">
-
-    <meta property="og:url" content="http://tea.xyz" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ .Params.title }}" />
-    <meta property="og:description" content="{{ .Params.Description }}" />
-    <meta property="og:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png" />
-    <meta property="og:image:alt" content="sh &lt;(curl tea.xyz)" />
-    <meta property="og:site_name" content="tea.xyz">
+    {{ if eq .Params.layout "package-detail" }}
+      <meta property="og:url" content="https://tea.xyz/+{{ .Params.full_name }}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="tea | {{ .Params.title }}" />
+      <meta property="og:description" content="{{ .Params.Description }}" />
+      <meta property="og:image" content="{{- .Params.og_image_url -}}" />
+      <meta property="og:image:alt" content="sh &lt;(curl tea.xyz) +{{ .Params.full_name }}" />
+      <meta property="og:site_name" content="tea.xyz">
+    {{ else }}
+      <meta property="og:url" content="https://tea.xyz" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="{{ .Params.title }}" />
+      <meta property="og:description" content="{{ .Params.Description }}" />
+      <meta property="og:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png" />
+      <meta property="og:image:alt" content="sh &lt;(curl tea.xyz)" />
+      <meta property="og:site_name" content="tea.xyz">
+    {{ end }}
     <meta name="facebook-domain-verification" content="0fsbdl7joh0gha23zbhtovtpn0z0cl" />
     <meta name="description" content="tea is the next-generation, cross-platform package manager from the creator of brew.">
 

@@ -20,6 +20,8 @@ for row in $(jq -r '.[] | @base64' < "$1"); do
 type: page
 title: \"$(_jq '.name')\"
 maintainer: \"$(_jq '.maintainer')\"
+full_name: \"$(_jq '.full_name')\"
+og_image_url: \"$(_jq '.thumb_image_url')\"
 Description: \"$(_jq '.desc' | tr '\"' "'")\"
 layout: \"package-detail\"
 ---"
