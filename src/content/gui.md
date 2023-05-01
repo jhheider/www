@@ -1,5 +1,7 @@
 ---
-title: "Download the GUI"
-Description: "The App Store for Developers"
+title: "tea/gui"
+Description: "The Open-Store for Open-Source"
 layout: "gui"
+menu: main
+weight: 1
 ---

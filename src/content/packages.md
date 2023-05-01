@@ -3,5 +3,5 @@ title: "Pantry"
 Description: "install open-source software with tea"
 layout: "packages"
 menu: main
-weight: 1
+weight: 2
 ---
