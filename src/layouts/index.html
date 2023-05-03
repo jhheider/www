@@ -135,10 +135,15 @@
 
 </style>
 
-<section class="gui-ribbon mt-xl-4 mt-lg-4 mt-md-4 md-sm-0 mt-0">
-  <div class="container pt-2 pb-2 ps-3 pe-3" style="border-radius:2px; background-color:#2675f5; border: 1px solid #135DD4;">
+<section id="gui-ribbon-section" class="gui-ribbon mt-xl-4 mt-lg-4 mt-md-4 md-sm-0 mt-0 fixed-section p-2">
+  <div class="container" style="border-radius:2px; background-color:#2675f5; border: 1px solid #135DD4;">
+    <div class="row border-bottom border-primary">
+      <div class="col">
+        <span class="close-btn text-right white" onclick="closeSection()"><i class="icon-tea-x-btn" style="font-size:8px;"></i></span>
+      </div>
+    </div>
     <div class="row">
-      <div class="col flex">
+      <div class="col pt-2 pb-2 ps-3 pe-3 flex">
         <p class="pe-3" style="position:relative;top:7px;font-size:14px;line-height: 20px;">We've just released the beta for our visual package manager, <span class="tea">tea/gui</span></p>
         <a href="/gui/">
           <button class="hbtn-light hb-light-fill-right github-click-secondary" style="width:125px;height:30px;font-size:14px;font-family:'inter';"><span style="position:relative; top:-4px;">Try it out</span></button>
@@ -147,6 +152,40 @@
     </div>
   </div>
 </section>
+
+<style>
+  .close-btn{
+    position: relative;
+    float: right !important;
+    cursor: pointer;
+    transition: ease-in-out;
+    top:-2px;
+    right:-2px;
+  }
+  .close-btn:hover{
+    opacity:0.5;
+  }
+  .fixed-section {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  .border-primary {
+    border-bottom: 1px solid #0052D6 !important;
+  }
+  body {
+    padding-top: 100px; /* adjust to the height of your fixed section */
+  }
+</style>
+
+<script>
+  function closeSection() {
+    document.getElementById("gui-ribbon-section").style.display = "none";
+    document.body.style.paddingTop = "0";
+  }
+</script>
 
 <section class="hero one-box">
   <div class="container">
