@@ -111,6 +111,10 @@
     .install-label{
       text-align: center;
     }
+    .teacli-col{
+      border-bottom: 1px solid #949494;
+      border-right: none;
+    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -130,6 +134,10 @@
       width:50%;
       margin-left:auto;
       margin-right:auto;
+    }
+    .teacli-col{
+      border-bottom: none;
+      border-right: 1px solid #949494;
     }
   }
 
@@ -199,9 +207,9 @@
           <div class="mobile-ctas">
             {{- partial "mobile-ctas.html" -}}
           </div>
-
+          <!--
           {{- partial "desktop-ctas.html" -}}
-
+          -->
       </div>
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <div class="terminal-animation mb-3">
@@ -209,10 +217,44 @@
         </div>
       </div>
     </div>
+    <div class="row mb-5">
+      <div class="col">
+        <h2 class="text-center display-6" style="text-transform:none !important; font-size: 40px; line-height:48px;">two ways to install tea</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-mg-6 col-sm-12 col-12 ps-5 pe-5 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-5 mb-5 teacli-col">
+        <h3 class="text-center" style="font-size:28px; line-height:32px;">Download tea/gui (beta) for MacOS</h3>
+        <p class="text-center mb-4">A new visual package manager that everyone can use.</p>
+        <div class="row mb-3 gx-3">
+          <div class="col">
+            <a href="https://dist.tea.xyz/tea.xyz/gui/tea-latest-arm64.dmg">
+              <button class="hbtn hb-fill-right gui-dl-click" style="width:100%;"><i class="icon-apple"></i>M1/M2 Chip</button>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://dist.tea.xyz/tea.xyz/gui/tea-latest.dmg">
+              <button class="hbtn hb-fill-right gui-dl-click" style="width:100%;"><i class="icon-apple"></i>Intel Chip</button>
+            </a>
+          </div>
+        </div>
+        <p class="grid-gray text-center small">And head over to <a class="install-link" href="https://www.producthunt.com/posts/tea">Product Hunt</a> for more info (and maybe give us an upvote).</p>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-mg-6 col-sm-12 col-12 ps-5 pe-5">
+        <h3 class="text-center" style="font-size:28px; line-height:32px;">Copy our one-liner to your terminal</h3>
+        <p class="text-center mb-4">Best for developers who are used to working with CLIs.</p>
+        {{- partial "click-to-copy.html" . -}}
+        <p class="no-installer grid-gray text-center small"><span class="tea">tea</span> is a stand&#8208;alone binary, see <a class="install-link" href="https://docs.tea.xyz/getting-started/install-tea/without-installer">our docs</a> for more installation methods.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
     <div class="row">
       <div class="col">
-        {{- partial "click-to-copy.html" . -}}
-        <p class="no-installer grid-gray text-center"><span class="tea">tea</span> is a stand&#8208;alone binary, see <a class="install-link" href="https://docs.tea.xyz/getting-started/install-tea/without-installer">our docs</a> for more installation methods.</p>
+        <hr>
       </div>
     </div>
   </div>
