@@ -37,8 +37,18 @@
         // Display message when no jobs are available
         const container = document.getElementById("card-container");
         const noJobsMessage = document.createElement("div");
-        noJobsMessage.classList.add("alert", "alert-info");
-        noJobsMessage.textContent = "No jobs available right now";
+
+        // Insert the custom message
+        noJobsMessage.innerHTML = `
+        <div class="p-5" style="border:1px solid #949494; border-radius:5px;">
+          <h2 class="text-center" style="text-transform:none;font-size:28px;line-height:32px;">No open positions, but stay connected!</h2>
+          <p class="text-center mb-4">We encourage you to become a part of our vibrant community on Discord as we're keen to hire from within. Join our Discord server to engage with like-minded people, stay updated about future opportunities, and become a part of our growing group of OSS enthusiasts.</p>
+          <a href="https://discord.gg/tea-906608167901876256">
+            <button class="hbtn hb-fill-right gui-dl-click" style="width:200px;height:40px;display:block;margin-left:auto;margin-right:auto;">Join Discord</button>
+          </a>
+        </div>
+        `;
+
         container.appendChild(noJobsMessage);
       } else {
         // Loop through data and create card for each item
@@ -105,7 +115,6 @@
     })
     .catch(error => console.log(error));
 </script>
-
 
 <style>
 
