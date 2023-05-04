@@ -27,75 +27,94 @@
     </div>
 </section>
 
-    <script>
-      // Fetch data from API
-      fetch("https://tea.breezy.hr/json?verbose=true")
-        .then(response => response.json())
-        .then(data => {
-          // Loop through data and create card for each item
-          data.forEach(item => {
-            // Create card element
-            const card = document.createElement("div");
-            card.classList.add("card", "mb-4");
+<script>
+  // Fetch data from API
+  fetch("https://tea.breezy.hr/json?verbose=true")
+    .then(response => response.json())
+    .then(data => {
+      // Check if data is empty
+      if (data.length === 0) {
+        // Display message when no jobs are available
+        const container = document.getElementById("card-container");
+        const noJobsMessage = document.createElement("div");
 
-            // Create card body element
-            const cardBody = document.createElement("div");
-            cardBody.classList.add("card-body", "p-4");
+        // Insert the custom message
+        noJobsMessage.innerHTML = `
+        <div class="p-5" style="border:1px solid #949494; border-radius:5px;">
+          <h2 class="text-center" style="text-transform:none;font-size:28px;line-height:32px;">No open positions, but stay connected!</h2>
+          <p class="text-center mb-4">We encourage you to become a part of our vibrant community on Discord as we're keen to hire from within. Join our Discord server to engage with like-minded people, stay updated about future opportunities, and become a part of our growing group of OSS enthusiasts.</p>
+          <a href="https://discord.gg/tea-906608167901876256">
+            <button class="hbtn hb-fill-right gui-dl-click" style="width:200px;height:40px;display:block;margin-left:auto;margin-right:auto;">Join Discord</button>
+          </a>
+        </div>
+        `;
 
-            // Add name to card body as a link to the URL
-            const title = document.createElement("a");
-            title.classList.add("card-title", "display-6", "teal");
-            title.href = item.url;
-            title.textContent = item.name;
-            cardBody.appendChild(title);
+        container.appendChild(noJobsMessage);
+      } else {
+        // Loop through data and create card for each item
+        data.forEach(item => {
+          // Create card element
+          const card = document.createElement("div");
+          card.classList.add("card", "mb-4");
 
-            // Add description to card body
-            const description = document.createElement("div");
-            description.classList.add("card-text","mt-3","mb-5");
-            description.innerHTML = item.description.slice(0, 700);
-            cardBody.appendChild(description);
+          // Create card body element
+          const cardBody = document.createElement("div");
+          cardBody.classList.add("card-body", "p-4");
 
-            // Add show more link to card body
-            const showMoreLink = document.createElement("a");
-            showMoreLink.classList.add("me-3", "teal");
-            showMoreLink.href = "#";
-            showMoreLink.textContent = "Show more";
-            showMoreLink.addEventListener("click", event => {
-              event.preventDefault();
-              if (description.innerHTML === item.description) {
-                description.innerHTML = item.description.slice(0, 700);
-                showMoreLink.textContent = "Show more";
-              } else {
-                description.innerHTML = item.description;
-                showMoreLink.textContent = "Show less";
-              }
-            });
-            cardBody.appendChild(showMoreLink);
+          // Add name to card body as a link to the URL
+          const title = document.createElement("a");
+          title.classList.add("card-title", "display-6", "teal");
+          title.href = item.url;
+          title.textContent = item.name;
+          cardBody.appendChild(title);
 
-            // Add url link to card body
-            const urlLink = document.createElement("a");
-            urlLink.classList.add("teal");
-            urlLink.href = item.url;
-            urlLink.textContent = "View on BreezyHR";
-            cardBody.appendChild(urlLink);
+          // Add description to card body
+          const description = document.createElement("div");
+          description.classList.add("card-text","mt-3","mb-5");
+          description.innerHTML = item.description.slice(0, 700);
+          cardBody.appendChild(description);
 
-            // Add card body to card
-            card.appendChild(cardBody);
-
-            // Add card to container
-            const container = document.getElementById("card-container");
-            const row = document.createElement("div");
-            row.classList.add("row");
-            const col = document.createElement("div");
-            col.classList.add("col");
-            col.appendChild(card);
-            row.appendChild(col);
-            container.appendChild(row);
+          // Add show more link to card body
+          const showMoreLink = document.createElement("a");
+          showMoreLink.classList.add("me-3", "teal");
+          showMoreLink.href = "#";
+          showMoreLink.textContent = "Show more";
+          showMoreLink.addEventListener("click", event => {
+            event.preventDefault();
+            if (description.innerHTML === item.description) {
+              description.innerHTML = item.description.slice(0, 700);
+              showMoreLink.textContent = "Show more";
+            } else {
+              description.innerHTML = item.description;
+              showMoreLink.textContent = "Show less";
+            }
           });
-        })
-        .catch(error => console.log(error));
-    </script>
+          cardBody.appendChild(showMoreLink);
 
+          // Add url link to card body
+          const urlLink = document.createElement("a");
+          urlLink.classList.add("teal");
+          urlLink.href = item.url;
+          urlLink.textContent = "View on BreezyHR";
+          cardBody.appendChild(urlLink);
+
+          // Add card body to card
+          card.appendChild(cardBody);
+
+          // Add card to container
+          const container = document.getElementById("card-container");
+          const row = document.createElement("div");
+          row.classList.add("row");
+          const col = document.createElement("div");
+          col.classList.add("col");
+          col.appendChild(card);
+          row.appendChild(col);
+          container.appendChild(row);
+        });
+      }
+    })
+    .catch(error => console.log(error));
+</script>
 
 <style>
 
