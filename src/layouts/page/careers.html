@@ -27,74 +27,84 @@
     </div>
 </section>
 
-    <script>
-      // Fetch data from API
-      fetch("https://tea.breezy.hr/json?verbose=true")
-        .then(response => response.json())
-        .then(data => {
-          // Loop through data and create card for each item
-          data.forEach(item => {
-            // Create card element
-            const card = document.createElement("div");
-            card.classList.add("card", "mb-4");
+<script>
+  // Fetch data from API
+  fetch("https://tea.breezy.hr/json?verbose=true")
+    .then(response => response.json())
+    .then(data => {
+      // Check if data is empty
+      if (data.length === 0) {
+        // Display message when no jobs are available
+        const container = document.getElementById("card-container");
+        const noJobsMessage = document.createElement("div");
+        noJobsMessage.classList.add("alert", "alert-info");
+        noJobsMessage.textContent = "No jobs available right now";
+        container.appendChild(noJobsMessage);
+      } else {
+        // Loop through data and create card for each item
+        data.forEach(item => {
+          // Create card element
+          const card = document.createElement("div");
+          card.classList.add("card", "mb-4");
 
-            // Create card body element
-            const cardBody = document.createElement("div");
-            cardBody.classList.add("card-body", "p-4");
+          // Create card body element
+          const cardBody = document.createElement("div");
+          cardBody.classList.add("card-body", "p-4");
 
-            // Add name to card body as a link to the URL
-            const title = document.createElement("a");
-            title.classList.add("card-title", "display-6", "teal");
-            title.href = item.url;
-            title.textContent = item.name;
-            cardBody.appendChild(title);
+          // Add name to card body as a link to the URL
+          const title = document.createElement("a");
+          title.classList.add("card-title", "display-6", "teal");
+          title.href = item.url;
+          title.textContent = item.name;
+          cardBody.appendChild(title);
 
-            // Add description to card body
-            const description = document.createElement("div");
-            description.classList.add("card-text","mt-3","mb-5");
-            description.innerHTML = item.description.slice(0, 700);
-            cardBody.appendChild(description);
+          // Add description to card body
+          const description = document.createElement("div");
+          description.classList.add("card-text","mt-3","mb-5");
+          description.innerHTML = item.description.slice(0, 700);
+          cardBody.appendChild(description);
 
-            // Add show more link to card body
-            const showMoreLink = document.createElement("a");
-            showMoreLink.classList.add("me-3", "teal");
-            showMoreLink.href = "#";
-            showMoreLink.textContent = "Show more";
-            showMoreLink.addEventListener("click", event => {
-              event.preventDefault();
-              if (description.innerHTML === item.description) {
-                description.innerHTML = item.description.slice(0, 700);
-                showMoreLink.textContent = "Show more";
-              } else {
-                description.innerHTML = item.description;
-                showMoreLink.textContent = "Show less";
-              }
-            });
-            cardBody.appendChild(showMoreLink);
-
-            // Add url link to card body
-            const urlLink = document.createElement("a");
-            urlLink.classList.add("teal");
-            urlLink.href = item.url;
-            urlLink.textContent = "View on BreezyHR";
-            cardBody.appendChild(urlLink);
-
-            // Add card body to card
-            card.appendChild(cardBody);
-
-            // Add card to container
-            const container = document.getElementById("card-container");
-            const row = document.createElement("div");
-            row.classList.add("row");
-            const col = document.createElement("div");
-            col.classList.add("col");
-            col.appendChild(card);
-            row.appendChild(col);
-            container.appendChild(row);
+          // Add show more link to card body
+          const showMoreLink = document.createElement("a");
+          showMoreLink.classList.add("me-3", "teal");
+          showMoreLink.href = "#";
+          showMoreLink.textContent = "Show more";
+          showMoreLink.addEventListener("click", event => {
+            event.preventDefault();
+            if (description.innerHTML === item.description) {
+              description.innerHTML = item.description.slice(0, 700);
+              showMoreLink.textContent = "Show more";
+            } else {
+              description.innerHTML = item.description;
+              showMoreLink.textContent = "Show less";
+            }
           });
-        })
-        .catch(error => console.log(error));
-    </script>
+          cardBody.appendChild(showMoreLink);
+
+          // Add url link to card body
+          const urlLink = document.createElement("a");
+          urlLink.classList.add("teal");
+          urlLink.href = item.url;
+          urlLink.textContent = "View on BreezyHR";
+          cardBody.appendChild(urlLink);
+
+          // Add card body to card
+          card.appendChild(cardBody);
+
+          // Add card to container
+          const container = document.getElementById("card-container");
+          const row = document.createElement("div");
+          row.classList.add("row");
+          const col = document.createElement("div");
+          col.classList.add("col");
+          col.appendChild(card);
+          row.appendChild(col);
+          container.appendChild(row);
+        });
+      }
+    })
+    .catch(error => console.log(error));
+</script>
 
 
 <style>
