@@ -34,7 +34,7 @@
               <p style="line-height: 60px">don't have tea/gui yet? download <a style="color:aquamarine" href="/gui">here</a></p>
             </div>
           </div>
-        
+
         {{ end }}
           <div class="row">
             <div class="col">
@@ -350,89 +350,4 @@
   );
 </script>
 
-<style>
-
-  .package-thumbnail{
-    width: 100%;
-  }
-
-  a:hover{
-    text-decoration: none;
-  }
-
-  #purple-bg-btn{
-    background-color: #8000FF;
-    border: 2px solid #8000FF;
-  }
-
-  #standard-detail-btn:hover{
-    background-color: #212020 !important;
-    box-shadow: inset 0vw 0vw 0vw 0.335vw #1a1a1a !important;
-  }
-
-  table{
-    color: #fff;
-    width: 100%;
-  }
-
-  table, th, td {
-    border: 1px solid #949494;
-    font-family: "sono", sans-serif;
-    padding: 20px;
-  }
-
-  .expand{
-    cursor: pointer;
-  }
-
-  .tea-icon{
-    display:block;
-    text-align:center;
-    animation: pulse 1s infinite;
-  }
-  @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
-  }
-  #bottle-preloader {
-    width: 100%;
-    height: 200px;
-    background: #1a1a1a;
-    border: 1px solid #949494;;
-  }
-  #bottle-status {
-    width: 100%;
-    height: 200px;
-    position: relative;
-    background-position: center;
-  }
-  #bottle-loading-text {
-    font-size: 20px;
-    text-align: center;
-    animation: pulse 1s infinite !important;
-  }
-
-  @media screen and (max-width: 576px) {
-
-    .bottles-container{
-      padding: 0px !important;
-    }
-
-    table, th, td {
-      border: 1px solid #949494;
-      font-family: "sono", sans-serif;
-      padding: 10px;
-      font-size: 12px;
-    }
-
-    .title-col{
-      padding: 4vw !important;
-
-    }
-
-  }
-
-
-</style>
 {{ end }}
