@@ -14,12 +14,39 @@
         </a>
       </div>
     </div>
-    <p class="grid-gray text-center small">And head over to <a class="install-link" href="https://www.producthunt.com/posts/tea">Product Hunt</a> for more info (and maybe give us an upvote).</p>
+    <p class="grid-gray text-center small twoway-boiler">And head over to <a class="install-link" href="https://www.producthunt.com/posts/tea">Product Hunt</a> for more info (and maybe give us an upvote, while you're at it).</p>
   </div>
   <div class="col-xl-6 col-lg-6 col-mg-6 col-sm-12 col-12 ps-5 pe-5">
     <h3 class="text-center" style="font-size:28px; line-height:32px;">Copy our one-liner to your terminal</h3>
     <p class="text-center mb-4">Best for developers who are used to working with CLIs.</p>
     {{- partial "click-to-copy.html" . -}}
-    <p class="no-installer grid-gray text-center small"><span class="tea">tea</span> is a stand&#8208;alone binary, see <a class="install-link" href="https://docs.tea.xyz/getting-started/install-tea/without-installer">our docs</a> for more installation methods.</p>
+    <p class="no-installer grid-gray text-center small twoway-boiler"><span class="tea">tea</span> is a stand&#8208;alone binary. See <a class="install-link" href="https://docs.tea.xyz/getting-started/install-tea/without-installer">our docs</a> for more installation methods, including&nbsp;<span class="tea brew-install no-break pe-2">brew install</span>&nbsp;.</p>
   </div>
 </div>
+
+<style>
+
+  .twoway-boiler::selection,
+  .install-link::selection,
+  .tea::selection{
+    background-color: #00ffd0;
+    color: #1a1a1a;
+  }
+
+  .twoway-boiler{
+    font-size: 16px;
+    line-height: 26px;
+    color: #e1e1e1 !important;
+  }
+
+  .brew-install{
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: #2B2A2A;
+  }
+
+  .no-break::before {
+    content: "\00a0"; /* non-breaking space character */
+  }
+
+</style>
