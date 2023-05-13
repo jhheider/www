@@ -7,6 +7,9 @@
 
   $(".copy-button").on("click", function() {
     var copyText = $(this).siblings(".copy-text").text();
+    // Update the command to copy 'sh <(curl https://tea.xyz)'
+    copyText = copyText.replace("sh <(curl tea.xyz)", "sh <(curl https://tea.xyz)");
+
     var tempInput = document.createElement("input");
     tempInput.style = "position: absolute; left: -1000px; top: -1000px";
     tempInput.value = copyText;
