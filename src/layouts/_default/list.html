@@ -21,40 +21,65 @@
     <hr>
     <div class="container">
       <div class="row">
-        <div class="col">
-          <h2 class="mb-4">Recent Posts</h2>
+        <div class="col-md-9 pe-4 blog-list one-box">
+          <h2 class="mb-5">Recent Posts</h2>
+          <div class="row content-area">
+            {{ range .Pages }}
+              <div class="blog-col col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+                <a href="{{ .RelPermalink }}">
+                  <div class="blog-listing">
+                    {{ if .Params.featured_image }}
+                      <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
+                    {{ end }}
+                      <div class="p-4 pb-5">
+                        <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+                        <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
+                        <span class="preview-content small">{{ .Content }}</span>
+                      </div>
+                  </div>
+                </a>
+              </div>
+            {{ end }}
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="container blog-list one-box">
-      <div class="row">
-        <div class="content-area">
-          {{ range .Pages }}
-            <div class="blog-col col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
-              <a href="{{ .RelPermalink }}">
-                <div class="blog-listing">
-                  {{ if .Params.featured_image }}
-                    <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
-                  {{ end }}
-                    <div class="p-4 pb-5">
-                      <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
-                      <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
-                      <span class="preview-content small">{{ .Content }}</span>
-                    </div>
-                </div>
-              </a>
-            </div>
-          {{ end }}
-          <a href="/">Back to home</a>
-        </div>
-        <div class="sidebar">
-          <h2 class="mb-4">Sidebar</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <div class="col-md-3 sidebar one-box ps-4">
+          <h3 class="mb-4">About Me</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+
+          <h3 class="mt-4">Search</h3>
+          <input type="text" id="search" name="search" placeholder="Search..">
+
+          <h3 class="mt-4">Subscribe</h3>
+          <p>Subscribe to our newsletter:</p>
+          <input type="email" id="email" name="email" placeholder="Your email..">
+          <input type="submit" value="Subscribe">
+
+          <h3 class="mt-4">Popular Posts</h3>
           <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+            <li>Post 1</li>
+            <li>Post 2</li>
+            <li>Post 3</li>
           </ul>
+
+          <h3 class="mt-4">Categories</h3>
+          <ul>
+            <li>Category 1</li>
+            <li>Category 2</li>
+            <li>Category 3</li>
+          </ul>
+
+          <h3 class="mt-4">Follow Me</h3>
+          <p>Facebook | Twitter | Instagram</p>
+
+          <h3 class="mt-4">Archives</h3>
+          <ul>
+            <li>January 2023</li>
+            <li>February 2023</li>
+            <li>March 2023</li>
+          </ul>
+
+          <h3 class="mt-4">Sponsor</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
       </div>
     </div>
@@ -102,30 +127,9 @@
     line-height: 22px;
   }
 
-  .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.content-area {
-  flex: 0 0 80%;
-  max-width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.blog-col {
-  flex: 0 0 calc(33.3333% - 1em);
-  margin-bottom: 1em;
-}
-
-
 .sidebar {
   flex: 0 0 30%;
   max-width: 20%;
-  padding: 1em;
   border-left: 1px solid #ddd;
 }
 
@@ -136,6 +140,28 @@
 
 .sidebar ul li {
   padding: 0.5em 0;
+}
+
+input[type=text], input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
 }
 </style>
 
