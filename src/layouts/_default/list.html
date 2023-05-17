@@ -19,10 +19,17 @@
       </div>
     </section>
     <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="mb-4">Recent Posts</h2>
+        </div>
+      </div>
+    </div>
     <div class="container blog-list one-box">
       <div class="row">
-        <h2 class="mb-4">Recent Posts</h2>
-            {{ range .Pages }}
+        <div class="content-area">
+          {{ range .Pages }}
             <div class="blog-col col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
               <a href="{{ .RelPermalink }}">
                 <div class="blog-listing">
@@ -30,15 +37,25 @@
                     <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
                   {{ end }}
                     <div class="p-4 pb-5">
-                      <a href="{{ .RelPermalink }}"><h3 class="display-6">{{ .Title }}</h3></a>
+                      <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
                       <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
                       <span class="preview-content small">{{ .Content }}</span>
                     </div>
-                  </div>
-                </a>
-              </div>
-            {{ end }}
+                </div>
+              </a>
+            </div>
+          {{ end }}
           <a href="/">Back to home</a>
+        </div>
+        <div class="sidebar">
+          <h2 class="mb-4">Sidebar</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </div>
       </div>
     </div>
   </main>
@@ -75,6 +92,51 @@
     background-color: #252525 !important;
   }
 
+  h3{
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  p{
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content-area {
+  flex: 0 0 80%;
+  max-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.blog-col {
+  flex: 0 0 calc(33.3333% - 1em);
+  margin-bottom: 1em;
+}
+
+
+.sidebar {
+  flex: 0 0 30%;
+  max-width: 20%;
+  padding: 1em;
+  border-left: 1px solid #ddd;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  padding: 0.5em 0;
+}
 </style>
 
 </html>
