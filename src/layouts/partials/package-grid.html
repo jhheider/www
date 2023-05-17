@@ -94,8 +94,9 @@
     overflow: hidden;
   }
 </style>
-<script async src="https://unpkg.com/string-similarity@4.0.1/umd/string-similarity.min.js"></script>
-<script language="javascript" type="text/javascript">
+<script language="javascript" type="module">
+  import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.js'
+
   const sortOptions = {
     popularity: 'popularity',
     last_modified: 'last_modified',
@@ -108,7 +109,11 @@
 
   const grid = document.getElementById('packageGrid');
   const packagesCache = Array.from(grid.children).filter((e) => e.dataset && e.dataset.name);
-
+  const packagesIndex = new Fuse(packagesCache.map((p) => p.dataset), {
+    keys: ["name", "maintainer", "description"],
+    minMatchCharLength: 3,
+    threshold: 0.3
+  });
   function debounce(fn, delay) {
     var timer = null;
     return function () {
@@ -125,20 +130,21 @@
     const noResult = document.getElementById('noResult');
     if (searchInput.value) {
       const term = searchInput.value;
+      const res = packagesIndex.search(term, { limit: 5 });
+
+      const matchedPackages = res.map((r) => r.item.name);
       const packages = getPackageThumbs();
-      for(let pkg of packages) {
-        pkg.match_score = getMatchScore(term, pkg.dataset);
-      }
-      const sortedPackages = packages.sort((a, b) => {
-        return b.match_score - (a ? a.match_score : 0);
-      });
+
+      const sortedPackages = [
+        ...matchedPackages.map((mp) => packages.find((p) => p.dataset.name === mp)),
+        ...packages.filter((p) => !matchedPackages.includes(p.dataset.name)),
+      ]
 
       const grid = document.getElementById('packageGrid');
       grid.textContent = '';
       let searchCount = 0;
       for(const sp of sortedPackages) {
-        const score = getMatchScore(term, sp.dataset);
-        if (score > 20) {
+        if (matchedPackages.includes(sp.dataset.name)) {
           sp.classList.remove('hidden');
           searchCount++;
         } else {
@@ -214,14 +220,6 @@
     }
   }
 
-  function getMatchScore(term, dataset) {
-    // provide higher value with name
-    const { name, maintainer, description } = dataset;
-    const exactMatch = [maintainer, name].join(" ").toLocaleLowerCase().includes(term.toLocaleLowerCase());
-    const nameScore = stringSimilarity.compareTwoStrings(name, term);
-    const descriptionScore = stringSimilarity.compareTwoStrings(description, term);
-    return (nameScore*80) + (descriptionScore*20) + (exactMatch ? 100 : 0);
-  }
 
   const loadMoreButton = document.getElementById('loadMorePackagesBtn');
   if (showAllPackages) {
