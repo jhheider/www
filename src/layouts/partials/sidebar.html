@@ -1,4 +1,4 @@
-<div class="col-md-3 sidebar pt-4 ps-4">
+<div class="col-md-3 sidebar pt-4 pb-5 ps-4">
 
   <!-- Recent Posts -->
   <h4 class="mt-4">Recent Posts</h4>
@@ -10,15 +10,15 @@
 
   <h4 class="mt-4">categories</h4>
   <ul class="sidebar-list">
-    {{ range .Site.Taxonomies.categories }}
-      <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ .Page.Title }}</a></li>
+    {{ range $key, $value := .Site.Taxonomies.categories }}
+      <li><a href="{{ printf "/%s/%s/" "categories" $key | relLangURL }}">{{ $key }}</a></li>
     {{ end }}
   </ul>
 
   <h4 class="mt-4">tags</h4>
   <ul class="sidebar-list">
-    {{ range .Site.Taxonomies.tags }}
-      <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ .Page.Title }}</a></li>
+    {{ range $key, $value := .Site.Taxonomies.tags }}
+      <li><a href="{{ printf "/%s/%s/" "tags" $key | relLangURL }}">{{ $key }}</a></li>
     {{ end }}
   </ul>
 
