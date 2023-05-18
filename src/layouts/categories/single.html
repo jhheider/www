@@ -4,11 +4,13 @@
 <body>
 {{ partial "navbar.html" . }}
 <main>
-  <div class="container one-box">
-    <h1>{{ .Title }}</h1>
+  <div class="container">
+    <h1>Category: {{ .Title }}</h1>
     <ul>
-      {{ range .Data.Terms.Alphabetical }}
-        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> ({{ .Count }})</li>
+      {{ range .Site.RegularPages }}
+        {{ if in .Params.categories .Title }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
       {{ end }}
     </ul>
   </div>
