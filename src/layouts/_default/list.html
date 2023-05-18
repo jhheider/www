@@ -34,6 +34,7 @@
                       <div class="p-4 pb-5">
                         <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
                         <span class="grid-gray">{{ .Date.Format "2006-01-02" }}</span>
+                        <span class="grid-gray">Categories: {{ range .Params.categories }}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>, {{ end }}</span>
                         <span class="preview-content small">{{ .Content }}</span>
                       </div>
                   </div>
