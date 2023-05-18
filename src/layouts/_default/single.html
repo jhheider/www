@@ -19,6 +19,12 @@
 
         {{ partial "sidebar" . }}
 
+        <div class="share-links">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener">Share on Facebook</a>
+          <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}" target="_blank" rel="noopener">Share on Twitter</a>
+          <a href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}" target="_blank" rel="noopener">Share on LinkedIn</a>
+        </div>
+
       </div>
     </div>
   </main>
@@ -30,8 +36,6 @@
 </html>
 
 <style>
-
-
 .sidebar {
   flex: 0 0 30%;
   max-width: 20%;
@@ -47,11 +51,17 @@
   padding: 0.5em 0;
 }
 
-img{
-  max-width: 100%;
+.share-links {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-code{
-  color:#ff7ba7;
+.share-links a {
+  margin-bottom: 10px;
 }
 </style>
