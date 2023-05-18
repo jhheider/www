@@ -1,14 +1,14 @@
 <div class="col-md-3 sidebar one-box ps-4">
 
   <h4 class="mt-4">categories</h4>
-  <ul>
+  <ul class="sidebar-list">
     {{ range .Site.Taxonomies.categories }}
       <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ .Page.Title }}</a></li>
     {{ end }}
   </ul>
 
   <h4 class="mt-4">tags</h4>
-  <ul>
+  <ul class="sidebar-list">
     {{ range .Site.Taxonomies.tags }}
       <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ .Page.Title }}</a></li>
     {{ end }}
@@ -27,3 +27,12 @@
   <a class="github-button" href="https://github.com/teaxyz/cli" data-icon="octicon-star" data-show-count="true" aria-label="Star teaxyz/cli on GitHub">Star</a>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 </div>
+
+
+<style>
+
+  .sidebar-list{
+    line-height:12px;
+  }
+
+</style>

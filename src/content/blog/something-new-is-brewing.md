@@ -1,6 +1,8 @@
 ---
 title: "Something New is Brewing"
 date: 2022-03-23
+categories: [open-source, programming]
+tags: [programming, homebrew, install tea]
 draft: false
 featured_image: "/Images/techcrunch-gen-art.jpg"
 ---
