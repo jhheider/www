@@ -8,9 +8,9 @@
   <main>
     <div class="container">
       <div class="row">
-        <div class="col-md-9 pe-5">
+        <div class="col-md-9 pe-xl-5 pe-lg-5 pe-md-5 pe-sm-2 pe-2">
           <div class="one-box">
-            <h1 class="display-1">{{ .Title }}</h1>
+            <h1>{{ .Title }}</h1>
             <p>{{ .Date.Format "2006-01-02" }}</p>
             {{ .Content }}
             <a href="{{ "blog" | relURL }}">Back to blog</a>
@@ -30,6 +30,8 @@
 </html>
 
 <style>
+
+
 .sidebar {
   flex: 0 0 30%;
   max-width: 20%;
