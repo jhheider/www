@@ -20,9 +20,9 @@
         {{ partial "sidebar" . }}
 
         <div class="share-links">
-          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener">Share on Facebook</a>
-          <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}" target="_blank" rel="noopener">Share on Twitter</a>
-          <a href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}" target="_blank" rel="noopener">Share on LinkedIn</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener"><i class="icon-facebook"></i></a>
+          <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}" target="_blank" rel="noopener"><i class="icon-twitter"></i></a>
+          <a href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}" target="_blank" rel="noopener"><i class="icon-linkedin"></i></a>
         </div>
 
       </div>
@@ -53,15 +53,34 @@
 
 .share-links {
   position: fixed;
-  left: 0;
+  left: -15px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  z-index: 100;
 }
 
 .share-links a {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
+  border: 1px solid #949494;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+.share-links a:hover {
+  color: #1a1a1a;
+  background-color: #00ffd0;
+}
+
+.share-links a i {
+  display: inline-block;
+  vertical-align: middle;
 }
 </style>
