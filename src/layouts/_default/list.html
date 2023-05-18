@@ -7,90 +7,115 @@
 
 {{ partial "navbar.html" . }}
 
-  <main>
-    <section class="teal-bg">
-      <div class="container one-box">
-        <div class="row">
-          <div class="col text-center">
-            <h1 class="black display-1">{{ .Title }}</h1>
-            <p class="black lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr>
-    <div class="container">
+<main>
+  <section class="teal-bg">
+    <div class="container one-box">
       <div class="row">
-        <div class="col-md-9 pe-4 blog-list one-box">
-          <h2 class="mb-5">Recent Posts</h2>
-          <div class="row content-area">
-            {{ range .Pages }}
-              <div class="blog-col col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
-                <a href="{{ .RelPermalink }}">
-                  <div class="blog-listing">
-                    {{ if .Params.featured_image }}
-                      <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
-                    {{ end }}
-                      <div class="p-4 pb-5">
-                        <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
-                        <span class="grid-gray small">Published: {{ .Date.Format "02/01/2006" }}</span><br>
-                        <span class="grid-gray small">Categories: {{ range .Params.categories }}<a class="grid-gray" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>, {{ end }}</span>
-                        <span class="preview-content small mt-2">{{ .Content }}</span>
-                      </div>
-                  </div>
-                </a>
-              </div>
-            {{ end }}
-          </div>
+        <div class="col text-center">
+          <h1 class="black display-1">{{ .Title }}</h1>
+          <p class="black lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
-
-        {{ partial "sidebar" . }}
-
       </div>
     </div>
-  </main>
-  <footer>
-      {{- partial "footer-content.html" . -}}
-      {{- partial "footer.html" . -}}
-  </footer>
+  </section>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 pe-4 blog-list one-box">
+        <h2 class="mb-5">Recent Posts</h2>
+        <div class="row content-area">
+          {{ range .Pages }}
+            <div class="blog-col col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+              <a href="{{ .RelPermalink }}">
+                <div class="blog-listing">
+                  {{ if .Params.featured_image }}
+                    <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
+                  {{ end }}
+                  <div class="p-4 pb-5">
+                    <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+                    <span class="grid-gray small">Published: {{ .Date.Format "02/01/2006" }}</span><br>
+                    <span class="grid-gray small">Categories: {{ range .Params.categories }}<a class="grid-gray" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>, {{ end }}</span>
+                    <span class="preview-content small mt-2">{{ trim .Summary 5 | plainify }}</span>
+                    <a class="read-more" href="{{ .RelPermalink }}">Read More</a>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+
+      {{ partial "sidebar" . }}
+
+    </div>
+  </div>
+</main>
+<footer>
+  {{- partial "footer-content.html" . -}}
+  {{- partial "footer.html" . -}}
+</footer>
 
 </body>
 
 <style>
 
-  .preview-content{
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
+.preview-content {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  color: #fff;
+}
 
-  .featured-image {
-    width: 100%;
-    height: 100px;
-    background-size: cover;
-    background-position: center;
-  }
+.featured-image {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+}
 
-  .blog-listing{
-    border: 1px solid #949494;
-    transition: 0.2s ease-in-out;
-    min-height: 400px;
-  }
+.blog-listing {
+  border: 1px solid #949494;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
 
-  .blog-listing:hover{
-    background-color: #252525 !important;
-  }
+.content-wrapper {
+  flex-grow: 1;
+}
 
-  h3{
-    font-size: 28px;
-    line-height: 34px;
-  }
+.blog-col {
+  display: flex;
+}
 
-  p{
-    font-size: 14px;
-    line-height: 22px;
-  }
+.blog-listing:hover {
+  background-color: #252525 !important;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 34px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.read-more {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #00ffd0;
+  text-align: left;
+}
+
+.read-more:hover{
+  color: #e1e1e1;
+}
 
 .sidebar {
   flex: 0 0 30%;
