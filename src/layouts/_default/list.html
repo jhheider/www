@@ -10,11 +10,9 @@
 <main>
   <section class="teal-bg">
     <div class="container one-box">
-      <div class="row">
-        <div class="col text-center">
-          <h1 class="black display-1">{{ .Title }}</h1>
-          <p class="black lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+      <div class="col text-center">
+        <h1 class="black display-1">{{ .Title }}</h1>
+        <p class="black lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
     </div>
   </section>
@@ -31,11 +29,10 @@
                     <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
                   {{ end }}
                   <div class="p-4 pb-5">
-                    <a href="{{ .RelPermalink }}"><h3 style="text-transform:lowercase;">{{ .Title }}</h3></a>
+                    <h3 style="text-transform:lowercase;">{{ .Title }}</h3>
                     <span class="grid-gray small">Published: {{ .Date.Format "02/01/2006" }}</span><br>
-                    <span class="grid-gray small">Categories: {{ range .Params.categories }}<a class="grid-gray cat-link" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>, {{ end }}</span>
+                    <span class="grid-gray small">Categories: {{ range .Params.categories }}<span class="grid-gray cat-link">{{ . }}</span>, {{ end }}</span>
                     <span class="preview-content small mt-2">{{ trim .Summary 5 | plainify }}</span>
-                    <a class="read-more" href="{{ .RelPermalink }}">Read More</a>
                   </div>
                 </div>
               </a>
