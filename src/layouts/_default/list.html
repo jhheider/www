@@ -33,7 +33,7 @@
                     {{ end }}
                       <div class="p-4 pb-5">
                         <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
-                        <span class="grid-gray small">Published {{ .Date.Format "02/01/2006" }}</span><br>
+                        <span class="grid-gray small">Published: {{ .Date.Format "02/01/2006" }}</span><br>
                         <span class="grid-gray small">Categories: {{ range .Params.categories }}<a class="grid-gray" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>, {{ end }}</span>
                         <span class="preview-content small mt-2">{{ .Content }}</span>
                       </div>
@@ -43,45 +43,9 @@
             {{ end }}
           </div>
         </div>
-        <div class="col-md-3 sidebar one-box ps-4">
-          <h3 class="mb-4">About Me</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
 
-          <h3 class="mt-4">Search</h3>
-          <input type="text" id="search" name="search" placeholder="Search..">
+        {{ partial "sidebar" . }}
 
-          <h3 class="mt-4">Subscribe</h3>
-          <p>Subscribe to our newsletter:</p>
-          <input type="email" id="email" name="email" placeholder="Your email..">
-          <input type="submit" value="Subscribe">
-
-          <h3 class="mt-4">Popular Posts</h3>
-          <ul>
-            <li>Post 1</li>
-            <li>Post 2</li>
-            <li>Post 3</li>
-          </ul>
-
-          <h3 class="mt-4">Categories</h3>
-          <ul>
-            <li>Category 1</li>
-            <li>Category 2</li>
-            <li>Category 3</li>
-          </ul>
-
-          <h3 class="mt-4">Follow Me</h3>
-          <p>Facebook | Twitter | Instagram</p>
-
-          <h3 class="mt-4">Archives</h3>
-          <ul>
-            <li>January 2023</li>
-            <li>February 2023</li>
-            <li>March 2023</li>
-          </ul>
-
-          <h3 class="mt-4">Sponsor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
       </div>
     </div>
   </main>
@@ -131,7 +95,7 @@
 .sidebar {
   flex: 0 0 30%;
   max-width: 20%;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #949494;
 }
 
 .sidebar ul {
