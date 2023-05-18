@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+{{ partial "navbar.html" . }}
+<main>
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ range .Pages }}
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <!-- Add any additional fields or content from the post you want to display -->
+    {{ end }}
+  </div>
+</main>
+<footer>
+  {{ partial "footer-content.html" . }}
+  {{ partial "footer.html" . }}
+</footer>
+</body>
+</html>

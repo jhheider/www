@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+{{ partial "navbar.html" . }}
+<main>
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <ul>
+      {{ range .Data.Terms.Alphabetical }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> ({{ .Count }})</li>
+      {{ end }}
+    </ul>
+  </div>
+</main>
+<footer>
+  {{ partial "footer-content.html" . }}
+  {{ partial "footer.html" . }}
+</footer>
+</body>
+</html>
