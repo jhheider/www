@@ -1,6 +1,8 @@
 ---
 title: "dev.diary—Finding the Fun"
 date: 2023-01-23
+categories: [dev.diaries, open-source]
+tags: [open-source, homebrew, programming]
 draft: false
 featured_image: "/Images/techcrunch-gen-art.jpg"
 ---
@@ -38,8 +40,6 @@ But I got to wondering… had we in fact found the fun? I decided to add the com
 After a few days I stopped laughing. I started getting excited. This hack wasn’t a hack. It was awesome. It completely delivered on tea’s promise and significantly simplified our narrative.
 
 How do you use tea? You don’t. You use the tools that the open source ecosystem provides. If you read a blog post about a new tool then just type the commands you read into your Terminal and try it out. There’s no “figure out the package name and then install it step”. There’s no “will installing this break other stuff on my system” concerns. If you don’t like it then don’t worry about it—it’s already gone.
-
-
 
 tea still is a “universal interpreter” but that just falls under the general banner; we don’t have to explicitly name this feature; tea just knows how to make what you throw at it work. Be that a command or a script, tea makes it possible for you to get on with what matters: making your app.
 

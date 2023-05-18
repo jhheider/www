@@ -1,6 +1,6 @@
 ---
 title: "blog"
-description: "A collection of my thoughts, insights, and experiences."
+description: "All things open-source."
 date: 2023-03-27
 menu: "main"
 weight: 5
