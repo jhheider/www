@@ -4,7 +4,7 @@ date: 2022-03-23
 categories: [open-source, programming]
 tags: [programming, homebrew, install tea]
 draft: false
-featured_image: "/Images/techcrunch-gen-art.jpg"
+featured_image: "/Images/blog/something-new-is-brewing.jpg"
 ---
 I created Homebrew nearly 13 years ago out of sheer necessity. I found the tooling available to developers at the time haphazard and difficult to tease into shape. After complaining about it at the pub one evening, I was met with an exasperated “Max, quit whining and do something about it”. So I did. (Thanks Jono).
 

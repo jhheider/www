@@ -1,8 +1,10 @@
 ---
 title: "Adding Some Flavor to Your Cup of tea"
-date: 2022-03-23
+date: 2023-05-02
+categories: [gui, package management]
+tags: [homebrew, gui, package management]
 draft: false
-featured_image: "/Images/techcrunch-gen-art.jpg"
+featured_image: "/Images/blog/add-some-flavor.jpg"
 ---
 _A year ago, we brewed the first cup of tea. Now, it’s time to add some honey to the mix._
 

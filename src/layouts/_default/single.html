@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-9 pe-xl-5 pe-lg-5 pe-md-5 pe-sm-2 pe-2">
           <div class="one-box">
-            <h1>{{ .Title }}</h1>
+            <h1 style="text-transform:lowercase;">{{ .Title }}</h1>
             <p>Published: {{ .Date.Format "02/01/2006" }}</p>
             {{ .Content }}
             <a href="{{ "blog" | relURL }}">Back to blog</a>

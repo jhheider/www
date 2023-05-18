@@ -22,7 +22,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9 pe-4 blog-list one-box">
-        <h2 class="mb-5">Recent Posts</h2>
+        <h2 class="mb-4" style="text-transform:lowercase;">Recent Posts</h2>
         <div class="row content-area">
           {{ range .Pages }}
             <div class="blog-col col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -32,9 +32,9 @@
                     <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
                   {{ end }}
                   <div class="p-4 pb-5">
-                    <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+                    <a href="{{ .RelPermalink }}"><h3 style="text-transform:lowercase;">{{ .Title }}</h3></a>
                     <span class="grid-gray small">Published: {{ .Date.Format "02/01/2006" }}</span><br>
-                    <span class="grid-gray small">Categories: {{ range .Params.categories }}<a class="grid-gray" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>, {{ end }}</span>
+                    <span class="grid-gray small">Categories: {{ range .Params.categories }}<a class="grid-gray cat-link" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>, {{ end }}</span>
                     <span class="preview-content small mt-2">{{ trim .Summary 5 | plainify }}</span>
                     <a class="read-more" href="{{ .RelPermalink }}">Read More</a>
                   </div>
@@ -130,6 +130,10 @@ p {
 
 .sidebar ul li {
   padding: 0.5em 0;
+}
+
+.cat-link:hover{
+  color: #00ffd0;
 }
 
 </style>
