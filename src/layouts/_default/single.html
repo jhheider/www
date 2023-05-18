@@ -4,16 +4,21 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  {{  partial "navbar.html" . }}
+  {{ partial "navbar.html" . }}
   <main>
-    <div class="container one-box">
+    <div class="container">
       <div class="row">
-        <div class="col">
-          <h1 class="display-1">{{ .Title }}</h1>
-          <p>{{ .Date.Format "2006-01-02" }}</p>
-          {{ .Content }}
-          <a href="{{ "blog" | relURL }}">Back to blog</a>
+        <div class="col-md-9 pe-5">
+          <div class="one-box">
+            <h1 class="display-1">{{ .Title }}</h1>
+            <p>{{ .Date.Format "2006-01-02" }}</p>
+            {{ .Content }}
+            <a href="{{ "blog" | relURL }}">Back to blog</a>
+          </div>
         </div>
+
+        {{ partial "sidebar" . }}
+
       </div>
     </div>
   </main>
@@ -23,3 +28,20 @@
   </footer>
 </body>
 </html>
+
+<style>
+.sidebar {
+  flex: 0 0 30%;
+  max-width: 20%;
+  border-left: 1px solid #949494;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  padding: 0.5em 0;
+}
+</style>
