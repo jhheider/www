@@ -1,5 +1,13 @@
 <div class="col-md-3 sidebar pt-4 ps-4">
 
+  <!-- Recent Posts -->
+  <h4 class="mt-4">Recent Posts</h4>
+  <ul class="sidebar-list">
+    {{ range first 4 .Site.RegularPages.ByDate.Reverse }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+
   <h4 class="mt-4">categories</h4>
   <ul class="sidebar-list">
     {{ range .Site.Taxonomies.categories }}
@@ -15,11 +23,19 @@
   </ul>
 
   <h4 class="mt-4">communi'tea</h4>
-  <div>
-    <i class="icon-telegram white"></i>
-    <i class="icon-github white"></i>
-    <i class="icon-twitter white"></i>
-    <i class="icon-discord white"></i>
+  <div class="social-icons flex-start">
+    <a href="https://twitter.com/teaxyz">
+      <i class="icon-twitter lead me-2"></i>
+    </a>
+    <a href="https://discord.gg/tea-906608167901876256">
+      <i class="icon-discord lead me-2"></i>
+    </a>
+    <a href="https://github.com/teaxyz/cli">
+      <i class="icon-github lead me-2"></i>
+    </a>
+    <a href="https://t.me/tea_xyz">
+      <i class="icon-telegram lead me-2"></i>
+    </a>
 
   </div>
 
@@ -32,7 +48,11 @@
 <style>
 
   .sidebar-list{
-    line-height:12px;
+    line-height:24px;
+  }
+
+  .sidebar-list li{
+    margin-bottom: -7px;
   }
 
   .sidebar-list a{
