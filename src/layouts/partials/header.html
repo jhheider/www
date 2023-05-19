@@ -7,7 +7,7 @@
 
       <ul class="navbar-nav ms-auto me-4 my-auto">
         {{ range .Site.Menus.main }}
-        <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+        <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3" style="text-transform: uppercase;">
           <a class="top-nav-link nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
         </li>
         {{ end }}
