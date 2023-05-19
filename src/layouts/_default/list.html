@@ -71,12 +71,18 @@
   background-position: center;
 }
 
+.content-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;  /* Make the children stretch to fill the container */
+}
+
 .blog-listing {
   border: 1px solid #949494;
   transition: 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
-  min-height: 250px;
+  height: 100%;  /* Added this line */
   width:100%;
 }
 
