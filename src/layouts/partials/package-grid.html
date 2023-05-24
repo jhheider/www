@@ -5,7 +5,6 @@
     <div class="row">
       <div class="col">
         {{- partial "search-menu.html" "searchTermDesktop" -}}
-        <hr>
 
         <div class="package-grid">
 
@@ -94,6 +93,7 @@
     overflow: hidden;
   }
 </style>
+
 <script language="javascript" type="module">
   import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.js'
 
@@ -109,6 +109,11 @@
 
   const grid = document.getElementById('packageGrid');
   const packagesCache = Array.from(grid.children).filter((e) => e.dataset && e.dataset.name);
+
+  // get reference to search input and set its placeholder
+  const searchInput = document.getElementById('searchTermDesktop');
+  searchInput.placeholder = `Search ${packagesCache.length} packages`;
+
   const packagesIndex = new Fuse(packagesCache.map((p) => p.dataset), {
     keys: ["name", "maintainer", "description"],
     minMatchCharLength: 3,

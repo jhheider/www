@@ -5,7 +5,8 @@
                 <div class="icon">
                 <i class="icon-search-icon"></i>
                 </div>
-                <input id="{{- . -}}" type="search" placeholder="search_" />
+                <!-- Save the input element to a variable to be able to refer to it later -->
+                <input id="{{- . -}}" type="search" placeholder="Search packages" />
             </div>
             {{- partial "sort-dropdown.html" -}}
         </div>
@@ -13,7 +14,6 @@
 </section>
 
 <style>
-
   .icon-search-icon{
     font-size: 30px;
     color: #949494;
@@ -38,7 +38,7 @@
     color:#00ffd0;
     text-transform:uppercase;
     margin-bottom: -5px;
-    min-width: 60%;
+    min-width: 100%;
     padding: 0px;
     background-color: #1a1a1a !important;
     border: none;
