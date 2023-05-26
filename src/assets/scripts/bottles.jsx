@@ -3,7 +3,7 @@ function Bottles() {
   const [isLoading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    fetch("https://api.tea.xyz/v0/bottles")
+    fetch("https://api.dev.tea.xyz/v0/bottles")
       .then((res) => res.json())
       .then((res) => {
         setBottles(res);
