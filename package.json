@@ -4,7 +4,7 @@
   "description": "basic react config for https://tea.xyz",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx babel src --out-dir lib --no-babelrc"
   },
   "repository": {
     "type": "git",

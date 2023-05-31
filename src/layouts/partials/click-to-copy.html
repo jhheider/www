@@ -1,13 +1,15 @@
-<h3 class="install-label text-center display-6 mb-4">Install tea by running our one-liner:</h3>
-<div class="flex pt-1 pb-1 ps-4 pe-1 mb-4 black-bg" style="max-width: 800px; margin-left:auto; margin-right:auto; height:80px; border: 1px solid #949494; border-radius: 5px;">
-  <code id="copy-text" class="white lead">sh <(curl tea.xyz)</code>
-  <button class="hbtn hb-fill-right" id="copy-button" style="height:100%;">Copy</button>
+<div class="flex pt-1 pb-1 ps-4 pe-1 mb-3 black-bg copy-section" style="max-width: 800px; margin-left:auto; margin-right:auto; height:60px; border: 1px solid #949494;">
+  <code class="white copy-text" style="font-size:16px;">sh <(curl tea.xyz)</code>
+  <button class="hbtn hb-fill-right copy-button" style="height:100%; width:30%;">Copy</button>
 </div>
 
 <script>
 
-  $("#copy-button").on("click", function() {
-    var copyText = "sh <(curl https://tea.xyz)";
+  $(".copy-button").on("click", function() {
+    var copyText = $(this).siblings(".copy-text").text();
+    // Update the command to copy 'sh <(curl https://tea.xyz)'
+    copyText = copyText.replace("sh <(curl tea.xyz)", "sh <(curl https://tea.xyz)");
+
     var tempInput = document.createElement("input");
     tempInput.style = "position: absolute; left: -1000px; top: -1000px";
     tempInput.value = copyText;
@@ -17,11 +19,11 @@
     document.body.removeChild(tempInput);
 
     // Change the button text to 'Copied'
-    var button = $("#copy-button");
+    var button = $(this);
     var originalText = button.text();
     button.text("Copied!");
 
-    // Change the button text back to original after 5 seconds
+    // Change the button text back to original after 2 seconds
     setTimeout(function() {
       button.text(originalText);
     }, 2000);

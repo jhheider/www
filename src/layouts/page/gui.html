@@ -1,0 +1,101 @@
+{{ define "main" }}
+
+<!-- Main container -->
+
+<section class="two-boxes">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 my-auto">
+        <h1 class="display-4">The &#39;Open Store&#39; for Open Source</h1>
+        <p class="mb-4">Introduing the <span class="tea">tea/gui (beta)</span>&#8212; a visual package manager that lets you browse, install, and update open-source software in a snap. Say goodbye to manual updates and hello to streamlined development. Try it today!</p>
+        <p>Download the <span class="tea">tea/gui</span> (beta) for Mac</p>
+          <div style="display:flex;align-items:flex-start;">
+            <div class="">
+              <a href="https://dist.tea.xyz/tea.xyz/gui/tea-latest-arm64.dmg">
+                <button class="hbtn hb-fill-right gui-dl-click" style="width:180px;height:40px;font-size:14px;"><i class="icon-apple"></i>M1/M2 Chip</button>
+              </a>
+            </div>
+            <div class="ms-3">
+              <a href="https://dist.tea.xyz/tea.xyz/gui/tea-latest.dmg">
+                <button class="hbtn hb-fill-right gui-dl-click" style="width:180px;height:40px;font-size:14px;"><i class="icon-apple"></i>Intel Chip</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-4 mt-4">
+        <img style="width:100%;" src="/Images/gui-screenshot-hero.png" alt="tea/gui">
+      </div>
+      </div>
+    </div>
+</section>
+
+<style media="screen">
+
+  .icon-apple{
+    position: relative;
+    top:2px;
+  }
+
+  h1{
+    font-size:50px !important;
+  }
+
+  h3{
+    font-size:26px !important;
+    line-height: 1.5em;
+  }
+
+  p{
+    font-size: 16px;
+  }
+</style>
+
+<!-- Features -->
+
+<section class="two-boxes-down">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+        <h3>One-Click Installs</h3>
+        <p>Say goodbye to the days of scavenging through cluttered docs. <span class="tea">tea/gui (beta)</span> enables you to query our expansive pantry and install your desired version of any package with one click. Openai-python, jupyter, youtube-dl, and hundreds more&#8230; all available to you within seconds.</p>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+        <h3>Easy Updates</h3>
+        <p>Our aim is to enhance your workflow, not disrupt it. <span class="tea">tea/gui (beta)</span> will alert you via desktop notifcations when new updates are available for your installed packages. Your can bulk update everything, or update one-by-one in the event you'd like to exercise some more discretion. </p>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+        <h3>Version Management</h3>
+        <p><span class="tea">tea/gui (beta)</span> makes managing your package versions a simply delightful experience. You can prune packages to remove all but the latest version, choose your desired version when installing, and install or add specific versions for previously installed packages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+
+<section class="teal-bg two-boxes">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3 class="black text-center">Get started with visual package management today!</h3>
+        <p class="black text-center">Download the <span class="tea">tea/gui</span> (beta) for Mac</p>
+        <div class="mb-2" style="display:flex;justify-content:center;">
+          <div style="display:flex;align-items:flex-start;">
+            <div class="">
+              <a href="https://dist.tea.xyz/tea.xyz/gui/tea-latest-arm64.dmg">
+                <button class="hbtn hb-fill-right gui-dl-click" style="width:180px;height:40px;font-size:14px;"><i class="icon-apple"></i>M1/M2 Chip</button>
+              </a>
+            </div>
+            <div class="ms-3">
+              <a href="https://dist.tea.xyz/tea.xyz/gui/tea-latest.dmg">
+                <button class="hbtn hb-fill-right gui-dl-click" style="width:180px;height:40px;font-size:14px;"><i class="icon-apple"></i>Intel Chip</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{end}}

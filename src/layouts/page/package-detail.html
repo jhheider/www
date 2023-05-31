@@ -15,22 +15,27 @@
         {{ range where $.Site.Data.packages "name" .Title }}
           <p class="mb-5">{{- .desc -}}</p>
           <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-              {{ if not (eq .package_yml_url "#")}}
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+              <!-- {{ if not (eq .package_yml_url "#")}}
                 <a target="_blank" href="{{- .package_yml_url -}}">
-                <button class="hbtn hb-fill-right mb-3" style="width:100% !important;">VIEW ON GITHUB</button>
+                  <button class="hbtn hb-fill-right mb-3" style="width:100% !important;">VIEW ON GITHUB</button>
+                </a>
+              {{end}} -->
+              <a target="_blank" href="tea://packages/{{- .full_name -}}">
+                <button class="hbtn hb-fill-right mb-3" style="width:100% !important;">INSTALL WITH GUI</button>
               </a>
-            {{end}}
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-              {{ if not (eq .homepage "") }}
+            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+              <!-- {{ if not (eq .homepage "") }}
                 <a target="_blank" href="{{- .homepage -}}">
                 <button class="hbtn-light hb-light-fill-right" style="width:100% !important;">VISIT PACKAGE HOME</button>
               </a>
-              {{end}}
-            {{ end }}
+              {{end}} -->
+              <p style="line-height: 60px">don't have tea/gui yet? download <a style="color:aquamarine" href="/gui">here</a></p>
             </div>
           </div>
+
+        {{ end }}
           <div class="row">
             <div class="col">
               {{ range where $.Site.Data.packages "name" .Title }}
@@ -60,90 +65,289 @@
 </section>
 
 
+<script>
+  const browser = {
+    getUserAgent: function() {
+      return window.navigator.userAgent;
+    },
 
-<style>
+    userAgentContains: function(browserName) {
+      browserName = browserName.toLowerCase();
+      return (
+        this.getUserAgent()
+          .toLowerCase()
+          .indexOf(browserName) > -1
+      );
+    },
 
-  .package-thumbnail{
-    width: 100%;
-  }
+    isOSX: function() {
+      return this.userAgentContains("Macintosh");
+    },
 
-  a:hover{
-    text-decoration: none;
-  }
+    isFirefox: function() {
+      return this.userAgentContains("firefox");
+    },
 
-  #purple-bg-btn{
-    background-color: #8000FF;
-    border: 2px solid #8000FF;
-  }
+    isInternetExplorer: function() {
+      return this.userAgentContains("trident");
+    },
+    /**
+     * Detects IE 11 and older
+     * @return {Boolean} Returns true when IE 11 and older
+     */
+    isIE: function() {
+      var ua = this.getUserAgent().toLowerCase();
 
-  #standard-detail-btn:hover{
-    background-color: #212020 !important;
-    box-shadow: inset 0vw 0vw 0vw 0.335vw #1a1a1a !important;
-  }
+      // Test values.
+      // Uncomment to check result
 
-  table{
-    color: #fff;
-    width: 100%;
-  }
+      // IE 10
+      // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
 
-  table, th, td {
-    border: 1px solid #949494;
-    font-family: "sono", sans-serif;
-    padding: 20px;
-  }
+      // IE 11
+      // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko/20100101 Firefox/12.0';
 
-  .expand{
-    cursor: pointer;
-  }
+      var msie = ua.indexOf("msie");
+      if (msie > 0) {
+        // IE 10 or older
+        return true;
+      }
 
-  .tea-icon{
-    display:block;
-    text-align:center;
-    animation: pulse 1s infinite;
-  }
-  @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
-  }
-  #bottle-preloader {
-    width: 100%;
-    height: 200px;
-    background: #1a1a1a;
-    border: 1px solid #949494;;
-  }
-  #bottle-status {
-    width: 100%;
-    height: 200px;
-    position: relative;
-    background-position: center;
-  }
-  #bottle-loading-text {
-    font-size: 20px;
-    text-align: center;
-    animation: pulse 1s infinite !important;
-  }
+      var trident = ua.indexOf("trident/");
+      if (trident > 0) {
+        // IE 11
+        return true;
+      }
 
-  @media screen and (max-width: 576px) {
+      // other browser
+      return false;
+    },
 
-    .bottles-container{
-      padding: 0px !important;
+    isEdge: function() {
+      var ua = this.getUserAgent().toLowerCase();
+
+      // Test values.
+      // Uncomment to check result
+
+      // Edge
+      // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240';
+
+      var edge = ua.indexOf("edge");
+      if (edge > 0) {
+        return true;
+      }
+
+      return false;
+    },
+
+    isChrome: function() {
+      // IE11 returns undefined for window.chrome
+      // and new Opera 30 outputs true for window.chrome
+      // but needs to check if window.opr is not undefined
+      // and new IE Edge outputs to true for window.chrome
+      // and if not iOS Chrome check
+      const isChromium = window.chrome;
+      const winNav = window.navigator;
+      const vendorName = winNav.vendor;
+      const isOpera = typeof window.opr !== "undefined";
+      const isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+      const isIOSChrome = winNav.userAgent.match("CriOS");
+      return (
+        (isChromium !== null &&
+          typeof isChromium !== "undefined" &&
+          vendorName === "Google Inc." &&
+          isOpera === false &&
+          isIEedge === false) ||
+        isIOSChrome
+      );
+    },
+
+    isOpera: function() {
+      return this.userAgentContains(" OPR/");
+    }
+  };
+
+  let DEFAULT_CUSTOM_PROTOCOL_FAIL_CALLBACK_TIMEOUT;
+
+  const registerEvent = (target, eventType, cb) => {
+    if (target.addEventListener) {
+      target.addEventListener(eventType, cb);
+      return {
+        remove: function() {
+          target.removeEventListener(eventType, cb);
+        }
+      };
+    } else {
+      target.attachEvent(eventType, cb);
+      return {
+        remove: function() {
+          target.detachEvent(eventType, cb);
+        }
+      };
+    }
+  };
+
+  const createHiddenIframe = (target, uri) => {
+    let iframe = document.createElement("iframe");
+    iframe.src = uri;
+    iframe.id = "hiddenIframe";
+    iframe.style.display = "none";
+    target.appendChild(iframe);
+
+    return iframe;
+  };
+
+  const openUriWithHiddenFrame = (uri, failCb, successCb) => {
+    const timeout = setTimeout(function() {
+      failCb();
+      handler.remove();
+    }, DEFAULT_CUSTOM_PROTOCOL_FAIL_CALLBACK_TIMEOUT);
+
+    let iframe = document.querySelector("#hiddenIframe");
+    if (!iframe) {
+      iframe = createHiddenIframe(document.body, "about:blank");
     }
 
-    table, th, td {
-      border: 1px solid #949494;
-      font-family: "sono", sans-serif;
-      padding: 10px;
-      font-size: 12px;
+    let onBlur = () => {
+      clearTimeout(timeout);
+      handler.remove();
+      successCb();
+    };
+    const handler = registerEvent(window, "blur", onBlur);
+
+    iframe.contentWindow.location.href = uri;
+  };
+
+  const openUriWithTimeoutHack = (uri, failCb, successCb) => {
+    const timeout = setTimeout(function() {
+      failCb();
+      handler.remove();
+    }, DEFAULT_CUSTOM_PROTOCOL_FAIL_CALLBACK_TIMEOUT);
+
+    //handle page running in an iframe (blur must be registered with top level window)
+    let target = window;
+    while (target.parent && target != target.parent) {
+      target = target.parent;
     }
 
-    .title-col{
-      padding: 4vw !important;
+    let onBlur = () => {
+      clearTimeout(timeout);
+      handler.remove();
+      successCb();
+    };
 
+    const handler = registerEvent(target, "blur", onBlur);
+
+    window.location.href = uri;
+  };
+
+  const openUriUsingFirefox = (uri, failCb, successCb) => {
+    let iframe = document.querySelector("#hiddenIframe");
+
+    if (!iframe) {
+      iframe = createHiddenIframe(document.body, "about:blank");
     }
 
-  }
+    try {
+      iframe.contentWindow.location.href = uri;
+      successCb();
+    } catch (e) {
+      if (e.name == "NS_ERROR_UNKNOWN_PROTOCOL") {
+        failCb();
+      }
+    }
+  };
 
+  const openUriWithMsLaunchUri = (uri, failCb, successCb) => {
+    navigator.msLaunchUri(uri, successCb, failCb);
+  };
 
-</style>
+  const getBrowserVersion = () => {
+    const ua = window.navigator.userAgent;
+    let tem,
+      M =
+        ua.match(
+          /(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i
+        ) || [];
+    if (/trident/i.test(M[1])) {
+      tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+      return parseFloat(tem[1]) || "";
+    }
+    if (M[1] === "Chrome") {
+      tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+      if (tem != null) {
+        return parseFloat(tem[2]);
+      }
+    }
+    M = M[2]
+      ? [M[1], M[2]]
+      : [window.navigator.appName, window.navigator.appVersion, "-?"];
+    if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+    return parseFloat(M[1]);
+  };
+
+  const protocolCheck = (uri, failCb, successCb, timeout = 2000, unsupportedCb) => {
+    const failCallback = () => {
+      failCb && failCb();
+    };
+
+    const successCallback = () => {
+      successCb && successCb();
+    };
+
+    const unsupportedCallback = () => {
+      unsupportedCb && unsupportedCb();
+    };
+
+    const openUri = () => {
+      if (browser.isFirefox()) {
+        const browserVersion = getBrowserVersion();
+        if (browserVersion >= 64) {
+          openUriWithHiddenFrame(uri, failCallback, successCallback);
+        } else {
+          openUriUsingFirefox(uri, failCallback, successCallback);
+        }
+      } else if (browser.isChrome()) {
+        openUriWithTimeoutHack(uri, failCallback, successCallback);
+      } else if (browser.isOSX()) {
+        openUriWithHiddenFrame(uri, failCallback, successCallback);
+      } else {
+        //not supported, implement please
+        unsupportedCallback();
+      }
+    };
+
+    if (timeout) {
+      DEFAULT_CUSTOM_PROTOCOL_FAIL_CALLBACK_TIMEOUT = timeout;
+    }
+
+    if (browser.isEdge() || browser.isIE()) {
+      //for IE and Edge in Win 8 and Win 10
+      openUriWithMsLaunchUri(uri, failCb, successCb);
+    } else {
+      if (document.hasFocus()) {
+        openUri();
+      } else {
+        let focusHandler = registerEvent(window, "focus", () => {
+          focusHandler.remove();
+          openUri();
+        });
+      }
+    }
+  };
+
+  const fullName = "{{.Params.full_name}}".trim();
+  console.log("fullName:"+fullName);
+
+  protocolCheck(
+    "tea://packages/"+fullName,
+    () => {
+      console.log("Custom protocol not found.");
+    },
+    () => {
+      console.log("Custom protocol found and opened the file successfully.");
+    }, 5000
+  );
+</script>
+
 {{ end }}

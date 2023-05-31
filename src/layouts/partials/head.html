@@ -56,6 +56,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="apple-touch-icon-precomposed" href="/favicon-180.png">
     <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/bottle-style.css">
     <link rel="stylesheet" href="/css/typography.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/generative-art.css">
@@ -79,23 +80,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Prompt:wght@700&display=swap"
       rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:alt" content="sh &lt;(curl tea.xyz)">
-    <meta name="twitter:title" content="tea.">
-    <meta name="twitter:site" content="@teaxyz_">
-    <meta name="twitter:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png">
-    <meta name="twitter:description" content="the next-generation, cross‐platform package manager">
-    <meta name="twitter:creator" content="@mxcl">
 
-    <meta property="og:url" content="http://tea.xyz" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="tea.xyz" />
-    <meta property="og:description" content="the next-generation, cross‐platform package manager" />
-    <meta property="og:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png" />
-    <meta property="og:image:alt" content="sh &lt;(curl tea.xyz)" />
-    <meta property="og:site_name" content="Tea, Inc.">
+    <meta name="twitter:creator" content="@mxcl">
+    {{ if eq .Params.layout "package-detail" }}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image:alt" content="sh &lt;(curl tea.xyz) +{{ .Params.full_name }}">
+      <meta name="twitter:title" content="tea | {{ .Params.title }}">
+      <meta name="twitter:site" content="@teaxyz_">
+      <meta name="twitter:image" content="{{- .Params.og_image_url -}}">
+      <meta name="twitter:description" content="{{ .Params.Description }}">
+      <meta property="og:url" content="https://tea.xyz/+{{ .Params.full_name }}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="tea | {{ .Params.title }}" />
+      <meta property="og:description" content="{{ .Params.Description }}" />
+      <meta property="og:image" content="{{- .Params.og_image_url -}}" />
+      <meta property="og:image:alt" content="sh &lt;(curl tea.xyz) +{{ .Params.full_name }}" />
+      <meta property="og:site_name" content="tea.xyz">
+    {{ else }}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image:alt" content="sh &lt;(curl tea.xyz)">
+      <meta name="twitter:title" content="{{ .Params.title }}">
+      <meta name="twitter:site" content="@teaxyz_">
+      <meta name="twitter:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png">
+      <meta name="twitter:description" content="{{ .Params.Description }}">
+      <meta property="og:url" content="https://tea.xyz" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="{{ .Params.title }}" />
+      <meta property="og:description" content="{{ .Params.Description }}" />
+      <meta property="og:image" content="http://www.tea.xyz.s3-website-us-east-1.amazonaws.com/cover.png" />
+      <meta property="og:image:alt" content="sh &lt;(curl tea.xyz)" />
+      <meta property="og:site_name" content="tea.xyz">
+    {{ end }}
     <meta name="facebook-domain-verification" content="0fsbdl7joh0gha23zbhtovtpn0z0cl" />
-    <meta name="description" content="The tools that build the internet have steeped too long. For the past two decades, big tech has made trillions off the generosity of visionary developers and web pioneers… never thanking, never mentioning, and certainly never paying. At tea, we’re brewing something to change that by enabling developers (you) to continue doing what you love, while earning what you deserve.">
+    <meta name="description" content="tea is the next-generation, cross-platform package manager from the creator of brew.">
 
     <!-- Hotjar Tracking Code for https://tea.xyz -->
     <script>
@@ -129,6 +146,8 @@
           }
       }
     </style>
+
+    <a href="https://www.producthunt.com/posts/tea?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tea" target="_blank" id="product_hunt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=392097&theme=light" alt="tea - The&#0032;Homebrew&#0032;replacement&#0032;from&#0032;the&#0032;maker&#0032;of&#0032;Homebrew | Product Hunt" style="width: 250px; height: 54px; position: fixed; right:20px; bottom: 20px; z-index: 100;" width="250" height="54" /></a>
 
     <script>
       const q = window.location.search.match(/[\^\?&]store=[^&]*/)

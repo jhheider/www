@@ -111,6 +111,10 @@
     .install-label{
       text-align: center;
     }
+    .teacli-col{
+      border-bottom: 1px solid #949494;
+      border-right: none;
+    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -131,9 +135,65 @@
       margin-left:auto;
       margin-right:auto;
     }
+    .teacli-col{
+      border-bottom: none;
+      border-right: 1px solid #949494;
+    }
   }
 
 </style>
+
+<section id="gui-ribbon-section" class="gui-ribbon mt-xl-4 mt-lg-4 mt-md-4 md-sm-0 mt-0 fixed-section p-2">
+  <div class="container" style="border-radius:2px; background-color:#2675f5; border: 1px solid #135DD4;">
+    <div class="row border-bottom border-primary">
+      <div class="col">
+        <span class="close-btn text-right white" onclick="closeSection()"><i class="icon-tea-x-btn" style="font-size:8px;"></i></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col pt-2 pb-2 ps-3 pe-3 flex">
+        <p class="pe-3" style="position:relative;top:7px;font-size:14px;line-height: 20px;">We've just released the beta for our visual package manager, <span class="tea">tea/gui</span></p>
+        <a href="/gui/">
+          <button class="hbtn-light hb-light-fill-right github-click-secondary" style="width:125px;height:30px;font-size:14px;font-family:'inter';"><span style="position:relative; top:-4px;">Try it out</span></button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .close-btn{
+    position: relative;
+    float: right !important;
+    cursor: pointer;
+    transition: ease-in-out;
+    top:-2px;
+    right:-2px;
+  }
+  .close-btn:hover{
+    opacity:0.5;
+  }
+  .fixed-section {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  .border-primary {
+    border-bottom: 1px solid #0052D6 !important;
+  }
+  body {
+    padding-top: 100px; /* adjust to the height of your fixed section */
+  }
+</style>
+
+<script>
+  function closeSection() {
+    document.getElementById("gui-ribbon-section").style.display = "none";
+    document.body.style.paddingTop = "0";
+  }
+</script>
 
 <section class="hero one-box">
   <div class="container">
@@ -147,9 +207,9 @@
           <div class="mobile-ctas">
             {{- partial "mobile-ctas.html" -}}
           </div>
-
+          <!--
           {{- partial "desktop-ctas.html" -}}
-
+          -->
       </div>
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <div class="terminal-animation mb-3">
@@ -157,10 +217,20 @@
         </div>
       </div>
     </div>
+    <div class="row mb-5">
+      <div class="col">
+        <h2 class="text-center display-6" style="text-transform:none !important; font-size: 40px; line-height:48px;">two ways to install tea</h2>
+      </div>
+    </div>
+    {{ partial "tea-two-ways.html" . }}
+  </div>
+</section>
+
+<section>
+  <div class="container">
     <div class="row">
       <div class="col">
-        {{- partial "click-to-copy.html" . -}}
-        <p class="no-installer grid-gray text-center"><span class="tea">tea</span> is a stand&#8208;alone binary, see <a class="install-link" href="https://docs.tea.xyz/getting-started/install-tea/without-installer">our docs</a> for more installation methods.</p>
+        <hr>
       </div>
     </div>
   </div>
@@ -689,17 +759,21 @@
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
         <div class="twitter-card mb-4">
           <div class="top-bar flex p-1 ps-3">
-            <i class="icon-github black lead"></i>
+            <i class="icon-twitter black lead"></i>
           </div>
           <div class="twitter-content p-xl-5 p-lg-5 p-md-3 p-sm-4 p-4">
             <div class="">
 
             </div>
-            <p class="black">When I ran my script (yarnpkg.com), it was an amazing moment––I realized I have not setup deno yet but <span class="tea">tea magic</span> just did it for me. It was a 'wow' moment... just 'wow'.</p>
+            <p class="black">Have you struggled with @StableDiffusion Web UI?
+Don't understand terminal, Python, etc?
+On #macOS?
+@mxcl the innovative creator of @homebrew has launched - @teaxyz & it is great!
+A GUI & CLI for complex apps, incentives on chain, & much more.</p>
             <hr class="mb-3" style="border-bottom: 1px solid black !important;">
             <div class="flex-start">
-              <img class="avatar" src="/Images/neil-m.png" alt="">
-              <p class="small test-name black">Neil M</p>
+              <img class="avatar" src="https://pbs.twimg.com/profile_images/1597691964278849536/9Yq0xkyO_400x400.jpg" alt="">
+              <p class="small test-name black">Brad Nickel</p>
             </div>
           </div>
         </div>
@@ -744,14 +818,14 @@
       <div class="col">
         <h2 class="display-5 text-center">Ready to start building?<br>All you need is tea.</h2>
         <p class="lead text-center mb-5"><span class="tea">tea</span>’s +pkg syntax embodies our core belief that good tools should just get out of the way so that you can keep making the internet a better place. Access the entire open source ecosystem with one command, compose and combine everything, and enjoy an all-around more delightful dev experience.</p>
-        <div class="bottom-cta">{{- partial "desktop-ctas.html" -}}</div>
+        {{ partial "tea-two-ways.html" . }}
       </div>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="container">
+  <div class="container one-box-down">
     <div class="row">
       <div class="col">
         <img src="/Images/lg-screen-grid.svg" alt="grid-element">
@@ -814,7 +888,7 @@
 </script>
 
 <section>
-  <div class="container two-boxes-down">
+  <div class="container">
     <div class="row">
       <div class="col">
         <h2 class="display-5">OSS wouldn't work without talented contributors like you.</h2>
@@ -831,8 +905,18 @@
   </div>
 </section>
 
+<section class="one-box">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="/Images/lg-screen-grid.svg" alt="grid-element">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
-  <div class="container two-boxes-down">
+  <div class="container">
     <div class="row">
       <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12 order-xl-2 order-lg-2 order-md-2 order-sm-2 order-2 my-auto ps-xl-4 ps-lg-4">
         <h2 class="display-5">A mission to fix open-source development</h2>
@@ -841,6 +925,65 @@
       </div>
       <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12 order-xl-1 order-lg-1 order-md-1 order-sm-1 order-1 mb-4">
         <img src="/Images/horizon-illustration.png" class="horizon-img" alt="Over the horizon" style="border-radius:10px; width:100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="one-box">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="/Images/lg-screen-grid.svg" alt="grid-element">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chai">
+  <div class="container">
+    <div class="row chai-bg one-box pe-xl-5 pe-lg-5" style="border-radius:5px;">
+      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+
+      </div>
+      <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+        <h2 class="display-6 white chai-header">And we can't fix OSS with just any tea&hellip; we need some <span style="color:#ff8e00;">CHAI</span></h2>
+        <p>The open source package registry can be thought of as a directed graph, with each package version representing node and dependency relationships as edges. An on-chain graph could align incentives between open source maintainers and users across different projects. It can evaluate the impact of these projects based on their dependencies, and even proportionately reward them. It is difficult to design & implement such a network -- one that knows about every open source package & their dependencies -- but we believe the aligned incentives will yield much better outcomes for our open source maintainers.
+        <p>Chai_v1 is the system that collects all the nodes & edges across all package managers, and verifies the maintainers for each one. It will be pre-populated with packages from tea (300 & counting), brew (6k), crates (104k), PyPI (300k), and npm (1.6M) as nodes, and all their dependencies as edges to ascertain the impact of each one to open source. It will eventually enable users to formalize their project maintainer status with an additional commit message to the main branch of their repo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media only screen and (min-width: 768px) {
+    .chai-bg{
+      background-image: url("/Images/chai-background.jpg") !important;
+      background-attachment: scroll;
+      background-position: left;
+      background-repeat: repeat-y;
+      background-size: cover !important;
+    }
+  }
+  .chai-header{
+    text-transform: none !important;
+  }
+  #chai-btn{
+    height: 40px;
+    width: 290px;
+    text-transform: uppercase;
+  }
+  .chai-code{
+    background-color: #1a1a1a;
+  }
+
+</style>
+
+<section class="one-box">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="/Images/lg-screen-grid.svg" alt="grid-element">
       </div>
     </div>
   </div>

@@ -2,12 +2,10 @@
 
 Deploys to [tea.xyz].
 
-
 # Legal
 
 You may not publish this website in an attempt to masquerade as tea.inc.
 The tea logo and wordmark are registered trademarks of tea.inc.
-
 
 # Contributing
 
@@ -42,12 +40,12 @@ just package-pages
 
 ## Dependencies
 
-| Project      | Version |
-|--------------|---------|
-| gohugo.io    |  >=0.99 |
-| nodejs.org   |  =18.13.0 |
-| npmjs.com    |  *      |
-| just.systems |  ~1     |
+| Project      |  Version   |
+|--------------|------------|
+| gohugo.io    |  >=0.99    |
+| nodejs.org   |  =18.13.0  |
+| npmjs.com    |  >=9<9.6.5 |
+| just.systems |  ~1        |
 
 # Build
 
@@ -59,7 +57,6 @@ hugo --source src --destination ../public --minify
 # or
 just build
 ```
-
 
 [tea.xyz]: https://tea.xyz
 [Bootstrap]: https://getbootstrap.com/docs/5.2/getting-started/introduction/
