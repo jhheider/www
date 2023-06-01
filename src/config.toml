@@ -12,13 +12,6 @@ title = 'Equitable Open-Source for Web3'
     url = 'https://docs.tea.xyz'
     weight = 3
 
-  [[menu.main]]
-    identifier = 'product hunt'
-    name = 'Product Hunt'
-    title = 'product hunt'
-    url = 'https://www.producthunt.com/posts/tea?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tea'
-    weight = 2
-
 [security]
   [security.exec]
     allow = ['^go$', '^postcss$', '^npx$', '^babel$']
