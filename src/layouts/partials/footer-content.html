@@ -95,30 +95,6 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-  <script>
-    $(window).scroll(function () {
-      $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
-    });
-
-    if (localStorage['signup'].match(/:::/)) {
-      const [username, serial_] = localStorage.signup.split(':::');
-      const serial = (+serial_).toLocaleString()
-      $('.box-auth-true').show();
-      $('.box-auth-false').hide();
-      $('#auth-username').html(username);
-      $('#count').html(`${serial} / <span id='count3'></span>`);
-      $('#count-sub-text').html('YOUR AUTHENTICATION NUMBER');
-      $('#communitea').html('Thanks for joining our communi&#39;<span style="color:#54BAAB;">tea</span>');
-      $('#revolution-text').html(
-        'Now stay tuned! As an early authenticator, you’ll be entitled to a variety of exciting rewards, including minted NFT certificates.'
-      );
-      $('#auth-body-text').hide();
-      $('.rounded-pill').hide();
-      $('.auth-btn').html('Configure GitHub App');
-      $('.auth-btn').attr('href', 'https://github.com/apps/tea-xyz')
-    }
-  </script>
-
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
