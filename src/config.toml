@@ -15,3 +15,7 @@ title = 'Equitable Open-Source for Web3'
 [security]
   [security.exec]
     allow = ['^go$', '^postcss$', '^npx$', '^babel$']
+
+[taxonomies]
+  category = "categories"
+  tags = "tags"
