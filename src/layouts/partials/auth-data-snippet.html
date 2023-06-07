@@ -14,7 +14,7 @@
     $('#stat-two').html('<div style="height: 400px"></div>');
 
     try {
-      fetch('https://api.tea.xyz/v0/signups')
+      fetch('https://5ey2dx9k7l.execute-api.us-east-1.amazonaws.com/prod/v0/signups')
         .then(res => res.json())
         .then(res => {
           const signups = res.signups ? res.signups.toLocaleString() : ""
