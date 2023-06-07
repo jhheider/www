@@ -1,0 +1,66 @@
+<div class="col-md-3 sidebar pt-4 pb-5 ps-4 d-none d-md-block">
+
+  <!-- Recent Posts -->
+  <h4 class="mt-4">Recent Posts</h4>
+  <ul class="sidebar-list">
+    {{ range first 4 .Site.RegularPages.ByDate.Reverse }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+
+  <h4 class="mt-4">categories</h4>
+  <ul class="sidebar-list">
+    {{ range $key, $value := .Site.Taxonomies.categories }}
+      <li><a href="{{ printf "/%s/%s/" "categories" $key | relLangURL }}">{{ $key }}</a></li>
+    {{ end }}
+  </ul>
+
+  <h4 class="mt-4">tags</h4>
+  <ul class="sidebar-list">
+    {{ range $key, $value := .Site.Taxonomies.tags }}
+      <li><a href="{{ printf "/%s/%s/" "tags" $key | relLangURL }}">{{ $key }}</a></li>
+    {{ end }}
+  </ul>
+
+  <h4 class="mt-4">communi'tea</h4>
+  <div class="social-icons flex-start">
+    <a href="https://twitter.com/teaxyz">
+      <i class="icon-twitter lead me-2"></i>
+    </a>
+    <a href="https://discord.gg/tea-906608167901876256">
+      <i class="icon-discord lead me-2"></i>
+    </a>
+    <a href="https://github.com/teaxyz/cli">
+      <i class="icon-github lead me-2"></i>
+    </a>
+    <a href="https://t.me/tea_xyz">
+      <i class="icon-telegram lead me-2"></i>
+    </a>
+
+  </div>
+
+  <h4 class="mt-4">give a star</h4>
+  <a class="github-button" href="https://github.com/teaxyz/cli" data-icon="octicon-star" data-show-count="true" aria-label="Star teaxyz/cli on GitHub">Star</a>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</div>
+
+
+<style>
+
+  .sidebar-list{
+    line-height:24px;
+  }
+
+  .sidebar-list li{
+    margin-bottom: -7px;
+  }
+
+  .sidebar-list a{
+    color: #fff;
+  }
+
+  .sidebar-list a:hover{
+    color: #00ffd0;
+  }
+
+</style>

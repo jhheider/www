@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<body>
+
+{{ partial "navbar.html" . }}
+
+<main>
+  <section class="teal-bg">
+    <div class="container one-box">
+      <div class="col text-center">
+        <h1 class="black display-1">{{ .Title }}</h1>
+        <p class="black lead">Welcome to the tea party. This is where we talk about everything from open-source to the future of AI and web3. Follow our dev.diary series to get insight from our brighest devs, and learn what they're doing to make the internet a better place.</p>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 pe-xl-4 pe-lg-4 pe-md-4 pe-sm-3 pe-3 pt-5 pb-5 blog-list">
+        <div class="row content-area">
+          {{ range .Pages }}
+            <div class="blog-col col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+              <a href="{{ .RelPermalink }}">
+                <div class="blog-listing">
+                  {{ if .Params.featured_image }}
+                    <div class="featured-image" style="background-image: url('{{ .Params.featured_image }}');"></div>
+                  {{ end }}
+                  <div class="p-4 pb-5">
+                    <h3 style="text-transform:lowercase;">{{ .Title }}</h3>
+                    <span class="grid-gray small">Published: {{ .Date.Format "02/01/2006" }}</span><br>
+                    <span class="grid-gray small">Categories: {{ range .Params.categories }}<span class="grid-gray cat-link">{{ . }}</span>, {{ end }}</span>
+                    <span class="preview-content small mt-2">{{ trim .Summary 5 | plainify }}</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+
+      {{ partial "sidebar" . }}
+
+    </div>
+  </div>
+</main>
+<footer>
+  {{- partial "footer-content.html" . -}}
+  {{- partial "footer.html" . -}}
+</footer>
+
+</body>
+
+<style>
+
+.preview-content {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+
+.featured-image {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+}
+
+.content-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;  /* Make the children stretch to fill the container */
+}
+
+.blog-listing {
+  border: 1px solid #949494;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  height: 100%;  /* Added this line */
+  width:100%;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+}
+
+.blog-col {
+  display: flex;
+}
+
+.blog-listing:hover {
+  background-color: #252525 !important;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 34px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.lead{
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.read-more {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #00ffd0;
+  text-align: left;
+}
+
+.read-more:hover{
+  color: #e1e1e1;
+}
+
+.sidebar {
+  flex: 0 0 30%;
+  max-width: 20%;
+  border-left: 1px solid #949494;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  padding: 0.5em 0;
+}
+
+.cat-link:hover{
+  color: #00ffd0;
+}
+
+</style>
+
+</html>

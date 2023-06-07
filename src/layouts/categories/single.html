@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+<body>
+{{ partial "navbar.html" . }}
+<main>
+  <div class="container">
+    <h1>Category: {{ .Title }}</h1>
+    <ul>
+      {{ range .Site.RegularPages }}
+        {{ if in .Params.categories .Title }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</main>
+<footer>
+  {{ partial "footer-content.html" . }}
+  {{ partial "footer.html" . }}
+</footer>
+</body>
+</html>
