@@ -3,7 +3,7 @@ function PackageBottles() {
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
-    const url = window.location.pathname.replace('/+', 'https://158h030vz0.execute-api.us-east-1.amazonaws.com/prod/v0/bottles/');
+    const url = window.location.pathname.replace('/+', 'https://app.tea.xyz/v0/bottles/');
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
