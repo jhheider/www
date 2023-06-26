@@ -27,7 +27,7 @@ jobs:
     - name: add packages data
       run: |
         rm ./src/data/packages.json
-        curl https://gui.tea.xyz/packages.json -H "Accept: application/json" >> ./src/data/packages.json
+        node .github/get-packages-data.js
 
     - name: Create Package Detail Pages from packages.json
       uses: getneil/jq-action@v1

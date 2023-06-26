@@ -38,7 +38,7 @@ jobs:
     - name: add packages data
       run: |
         rm ./src/data/packages.json
-        curl https://gui.tea.xyz/packages.json -H "Accept: application/json" >> ./src/data/packages.json
+        node .github/get-packages-data.js
 
     - name: Create Package Detail Pages from packages.json
       uses: getneil/jq-action@v1
@@ -55,12 +55,6 @@ jobs:
     #     args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
     #   env:
     #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-    # update packages json data and rebuild again
-    - name: make images relative path to preview site
-      uses: getneil/jq-action@v1
-      with:
-        cmd: '.github/sync-thumb-images.sh src/data/packages.json'
 
     # intentional to rebuild packages again with relative image data
     # the first one to test it against prod resources via lychee
@@ -89,14 +83,6 @@ jobs:
       run: |
         BUCKET=$(aws s3 ls | grep $(echo teaxyz-pr-$GITHUB_REF_SLUG_URL | sed "s/-merge//") | grep -o '[^ ]*$')
         echo "bucket=$BUCKET" >> $GITHUB_OUTPUT
-
-    - name: cp package images from prod to preview bucket
-      run: |
-        aws s3 cp s3://www.tea.xyz/Images/packages \
-          s3://$NEW_BUCKET/Images/packages \
-          --recursive
-      env:
-        NEW_BUCKET: ${{ steps.DEPLOY_BUCKET.outputs.bucket }}
 
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1
