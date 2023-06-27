@@ -17,6 +17,7 @@ async function main() {
     keywords: pkg.keywords,
     dl_count: pkg.installs || 0,
     installs: pkg.installs ||  0,
+    version: pkg.version,
   }));
   await fs.writeFileSync("./src/data/packages.json", JSON.stringify(packages, null, 2));
 }
