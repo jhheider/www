@@ -1,0 +1,112 @@
+name: ci
+
+on: pull_request
+
+concurrency:
+  group: ${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: add packages data
+        run: |
+          rm ./src/data/packages.json
+          node .github/get-packages-data.js
+
+      - name: Create Package Detail Pages from packages.json
+        uses: getneil/jq-action@v1
+        with:
+          cmd: ".github/build-package-pages.sh src/data/packages.json src/content"
+
+      - uses: teaxyz/setup@v0
+      - run: tea -E just ci
+
+  deploy-staging:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'teaxyz'
+    env:
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+    steps:
+      - name: inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
+      - name: Set STAGE variable in environment for next steps
+        run: echo "STAGE=pr-${{ github.event.number }}-${{ env.GITHUB_HEAD_REF_SLUG }}" >> $GITHUB_ENV
+
+      - name: Create Deployment
+        uses: bobheadxi/deployments@v1
+        id: deployment
+        with:
+          step: start
+          env: ${{ env.STAGE }}
+          ref: ${{ github.head_ref }}
+          override: true
+
+      - uses: actions/checkout@v3
+
+      - name: Apply Staging Configuration
+        run: |
+          sed -i -e 's/^baseURL\s*=.*$/baseUrl = ""/i' config.toml
+          echo "relativeurls = true" >>config.toml
+        working-directory: src
+
+      - name: add packages data
+        run: |
+          rm ./src/data/packages.json
+          node .github/get-packages-data.js
+
+      - name: Create Package Detail Pages from packages.json
+        uses: getneil/jq-action@v1
+        with:
+          cmd: ".github/build-package-pages.sh src/data/packages.json src/content"
+
+      - uses: teaxyz/setup@v0
+      - run: tea -E just ci
+
+      # - name: Check for broken links
+      #   uses: lycheeverse/lychee-action@v1
+      #   with:
+      #     fail: true
+      #     args: --verbose --no-progress './public/**/*.md' './public/**/*.html'
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      # intentional to rebuild packages again with relative image data
+      # the first one to test it against prod resources via lychee
+      # - run: tea -E just ci
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - uses: bahmutov/npm-install@v1
+        with:
+          working-directory: .cdk
+
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy to AWS
+        id: cdk_deploy
+        run: yarn deploy
+        working-directory: .cdk
+
+      - name: get cdk bucket
+        id: DEPLOY_BUCKET
+        run: |
+          BUCKET=$(aws s3 ls | grep $(echo teaxyz-pr-$GITHUB_REF_SLUG_URL | sed "s/-merge//") | grep -o '[^ ]*$')
+          echo "bucket=$BUCKET" >> $GITHUB_OUTPUT
+
+      - name: Seal Deployment
+        uses: bobheadxi/deployments@v1
+        if: always()
+        with:
+          step: finish
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env: ${{ env.STAGE }}
+          env_url: ${{ steps.cdk_deploy.outputs.env_url }}
