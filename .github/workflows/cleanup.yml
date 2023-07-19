@@ -8,6 +8,7 @@ on:
 jobs:
   clean-up:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - name: inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
